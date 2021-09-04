@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+
+        <section class="section-padding gray-bg log-section">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="card card-panel">
+                            <h3 class="text-extrabold">Log in to your account</h3>
+                           <form  method="post">
+                            {% if error %}
+                                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                            {% endif %}
+
+                            {% if app.user %}
+                                <div class="red-text">
+                                    You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+                                </div>
+                            {% endif %} 
+
+                                <input type="hidden" name="_token" value="">
+
+                                <div class="input-field"> 
+                                
+                                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" 
+                                            autofocus
+                                           required
+                                           autofocus
+                                           data-parsley-trigger="change"
+                                           data-parsley-error-message="A valid email address is required.">
+                                    <label for="inputEmail">Email</label>
+                                    <span class="help-block">Type your email address.</span>
+                                </div>
+                                <div class="input-field">
+                               
+    
+                                <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" 
+                                            required
+                                           data-parsley-trigger="change"
+                                           data-parsley-error-message="The password must be at least 6 characters.">
+                                     <label for="inputPassword">Password</label>
+                                    <i class="fa fa-eye show-password"></i>
+                                    <span class="help-block">Type your password.</span>
+                                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                                    </div>
+                                <div class="checkbox">         
+                                        <input type="checkbox" name="_remember_me" id="_remember_me">
+                                        <label for="_remember_me">Keep me logged in
+                                        </label>
+                                </div>
+                                <button type="submit" class="btn btn-lg gradient secondary btn-block waves-effect waves-light mt-20 mb-20">Login</button>
+                            </form>
+
+                                <div class="links">
+                                    <a href="#!">Forgot your password?</a>
+                                </div>
+                            
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+{% endblock %}
