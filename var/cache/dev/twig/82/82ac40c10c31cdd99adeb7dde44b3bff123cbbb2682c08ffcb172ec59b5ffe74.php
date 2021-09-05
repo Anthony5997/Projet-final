@@ -90,10 +90,14 @@ class __TwigTemplate_93a4719728c36b2659256272a43424c23836accf747eb6edda27542d013
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
     ";
-        // line 11
-        echo "<div class=\"container\">
+        // line 10
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 10, $this->source); })()), "user", [], "any", false, false, false, 10));
+        echo "
+<div class=\"container\">
     <h3>Hello</h3>
-</div>
+      ";
+        // line 14
+        echo "</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -115,7 +119,7 @@ class __TwigTemplate_93a4719728c36b2659256272a43424c23836accf747eb6edda27542d013
 
     public function getDebugInfo()
     {
-        return array (  94 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  100 => 14,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -129,9 +133,10 @@ class __TwigTemplate_93a4719728c36b2659256272a43424c23836accf747eb6edda27542d013
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
-    {# {{dump(data)}} #}
+    {{dump(app.user)}}
 <div class=\"container\">
     <h3>Hello</h3>
+      {# <li><a target=\"_self\" href=\"{{ path ('user_edit', {'id': app.user.id})}}\">Profile</a></li> #}
 </div>
 {% endblock %}
 ", "home/index.html.twig", "/shared/httpd/Projet-Final/templates/home/index.html.twig");

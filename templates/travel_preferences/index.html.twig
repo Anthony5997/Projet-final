@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TravelPreferences index{% endblock %}
+
+{% block body %}
+    <h1>TravelPreferences index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Discussion</th>
+                <th>Music</th>
+                <th>Smoking</th>
+                <th>Animals</th>
+                <th>Health_pass</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for travel_preference in travel_preferences %}
+            <tr>
+                <td>{{ travel_preference.id }}</td>
+                <td>{{ travel_preference.discussion }}</td>
+                <td>{{ travel_preference.music }}</td>
+                <td>{{ travel_preference.smoking }}</td>
+                <td>{{ travel_preference.animals }}</td>
+                <td>{{ travel_preference.healthPass }}</td>
+                <td>
+                    <a href="{{ path('travel_preferences_show', {'id': travel_preference.id}) }}">show</a>
+                    <a href="{{ path('travel_preferences_edit', {'id': travel_preference.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('travel_preferences_new') }}">Create new</a>
+{% endblock %}

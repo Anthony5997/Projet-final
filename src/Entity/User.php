@@ -99,7 +99,7 @@ class User implements UserInterface
     private $id_card_file;
 
     /**
-     * @ORM\Column(type="date", nullable=true)
+     * @ORM\Column(type="date", nullable=false)
      */
     private $created_at;
 
@@ -114,11 +114,6 @@ class User implements UserInterface
     private $trips_made;
 
     /**
-     * @ORM\OneToOne(targetEntity=TravelPreferences::class, mappedBy="id_user", cascade={"persist", "remove"})
-     */
-    private $travelPreferences;
-
-    /**
      * @ORM\Column(type="float", nullable=true)
      */
     private $global_rating;
@@ -128,7 +123,7 @@ class User implements UserInterface
      */
     private $user_experience;
 
-    public function getId(): ?int
+    public function getId(): ?string
     {
         return $this->id;
     }
@@ -305,12 +300,12 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getProfilePicture(): ?string
+    public function getProfile_Picture(): ?string
     {
         return $this->profile_picture;
     }
 
-    public function setProfilePicture(?string $profile_picture): self
+    public function setProfile_Picture(?string $profile_picture): self
     {
         $this->profile_picture = $profile_picture;
 
@@ -329,12 +324,12 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getIdCardFile(): ?string
+    public function getId_Card_File(): ?string
     {
         return $this->id_card_file;
     }
 
-    public function setIdCardFile(?string $id_card_file): self
+    public function setId_Card_File(?string $id_card_file): self
     {
         $this->id_card_file = $id_card_file;
 
@@ -373,28 +368,6 @@ class User implements UserInterface
     public function setTripsMade(int $trips_made): self
     {
         $this->trips_made = $trips_made;
-
-        return $this;
-    }
-
-    public function getTravelPreferences(): ?TravelPreferences
-    {
-        return $this->travelPreferences;
-    }
-
-    public function setTravelPreferences(?TravelPreferences $travelPreferences): self
-    {
-        // unset the owning side of the relation if necessary
-        if ($travelPreferences === null && $this->travelPreferences !== null) {
-            $this->travelPreferences->setUserId(null);
-        }
-
-        // set the owning side of the relation if necessary
-        if ($travelPreferences !== null && $travelPreferences->getUserId() !== $this) {
-            $travelPreferences->setUserId($this);
-        }
-
-        $this->travelPreferences = $travelPreferences;
 
         return $this;
     }

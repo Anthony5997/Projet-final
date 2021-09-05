@@ -43,10 +43,11 @@ class TravelPreferences
     private $health_pass;
 
     /**
-     * @ORM\OneToOne(targetEntity=User::class, inversedBy="travelPreferences", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity=User::class, cascade={"persist", "remove"})
      */
     private $user;
 
+  
     public function getId(): ?int
     {
         return $this->id;
@@ -112,15 +113,16 @@ class TravelPreferences
         return $this;
     }
 
-    public function getUserId(): ?User
+    public function getUser(): ?User
     {
         return $this->user;
     }
 
-    public function setUserId(?User $user): self
+    public function setUser(?User $user): self
     {
         $this->user = $user;
 
         return $this;
     }
+
 }

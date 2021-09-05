@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit TravelPreferences{% endblock %}
+
+{% block body %}
+    <h1>Edit TravelPreferences</h1>
+
+    {{ include('travel_preferences/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('travel_preferences_index') }}">back to list</a>
+
+    {{ include('travel_preferences/_delete_form.html.twig') }}
+{% endblock %}
