@@ -171,7 +171,7 @@ class __TwigTemplate_c6ef3a6c5f6b6c62e69443b51f51a55d978ac47eaede4c0050366a0e820
             echo "</td>
                 <td>";
             // line 48
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "profilePicture", [], "any", false, false, false, 48), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "profile_Picture", [], "any", false, false, false, 48), "html", null, true);
             echo "</td>
                 <td>";
             // line 49
@@ -179,7 +179,7 @@ class __TwigTemplate_c6ef3a6c5f6b6c62e69443b51f51a55d978ac47eaede4c0050366a0e820
             echo "</td>
                 <td>";
             // line 50
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "idCardFile", [], "any", false, false, false, 50), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id_Card_File", [], "any", false, false, false, 50), "html", null, true);
             echo "</td>
                 <td>";
             // line 51
@@ -200,11 +200,7 @@ class __TwigTemplate_c6ef3a6c5f6b6c62e69443b51f51a55d978ac47eaede4c0050366a0e820
                 <td>
                     <a href=\"";
             // line 56
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_show", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 56)]), "html", null, true);
-            echo "\">show</a>
-                    <a href=\"";
-            // line 57
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 57)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 56)]), "html", null, true);
             echo "\">edit</a>
                 </td>
             </tr>
@@ -212,7 +208,7 @@ class __TwigTemplate_c6ef3a6c5f6b6c62e69443b51f51a55d978ac47eaede4c0050366a0e820
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 61
+            // line 60
             echo "            <tr>
                 <td colspan=\"20\">no records found</td>
             </tr>
@@ -221,14 +217,10 @@ class __TwigTemplate_c6ef3a6c5f6b6c62e69443b51f51a55d978ac47eaede4c0050366a0e820
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 65
+        // line 64
         echo "        </tbody>
     </table>
 
-    <a href=\"";
-        // line 68
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_new");
-        echo "\">Create new</a>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -250,7 +242,7 @@ class __TwigTemplate_c6ef3a6c5f6b6c62e69443b51f51a55d978ac47eaede4c0050366a0e820
 
     public function getDebugInfo()
     {
-        return array (  230 => 68,  225 => 65,  216 => 61,  207 => 57,  203 => 56,  198 => 54,  194 => 53,  190 => 52,  186 => 51,  182 => 50,  178 => 49,  174 => 48,  170 => 47,  166 => 46,  162 => 45,  158 => 44,  154 => 43,  150 => 42,  146 => 41,  142 => 40,  138 => 39,  134 => 38,  130 => 37,  126 => 36,  123 => 35,  118 => 34,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  221 => 64,  212 => 60,  203 => 56,  198 => 54,  194 => 53,  190 => 52,  186 => 51,  182 => 50,  178 => 49,  174 => 48,  170 => 47,  166 => 46,  162 => 45,  158 => 44,  154 => 43,  150 => 42,  146 => 41,  142 => 40,  138 => 39,  134 => 38,  130 => 37,  126 => 36,  123 => 35,  118 => 34,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -302,15 +294,14 @@ class __TwigTemplate_c6ef3a6c5f6b6c62e69443b51f51a55d978ac47eaede4c0050366a0e820
                 <td>{{ user.country }}</td>
                 <td>{{ user.city }}</td>
                 <td>{{ user.bio }}</td>
-                <td>{{ user.profilePicture }}</td>
+                <td>{{ user.profile_Picture }}</td>
                 <td>{{ user.idCard ? 'Yes' : 'No' }}</td>
-                <td>{{ user.idCardFile }}</td>
+                <td>{{ user.id_Card_File }}</td>
                 <td>{{ user.createdAt ? user.createdAt|date('Y-m-d') : '' }}</td>
                 <td>{{ user.profileCompleted ? 'Yes' : 'No' }}</td>
                 <td>{{ user.tripsMade }}</td>
                 <td>{{ user.globalRating }}</td>
                 <td>
-                    <a href=\"{{ path('user_show', {'id': user.id}) }}\">show</a>
                     <a href=\"{{ path('user_edit', {'id': user.id}) }}\">edit</a>
                 </td>
             </tr>
@@ -322,7 +313,6 @@ class __TwigTemplate_c6ef3a6c5f6b6c62e69443b51f51a55d978ac47eaede4c0050366a0e820
         </tbody>
     </table>
 
-    <a href=\"{{ path('user_new') }}\">Create new</a>
 {% endblock %}
 ", "user/index.html.twig", "/shared/httpd/Projet-Final/templates/user/index.html.twig");
     }

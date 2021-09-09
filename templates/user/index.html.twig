@@ -45,15 +45,14 @@
                 <td>{{ user.country }}</td>
                 <td>{{ user.city }}</td>
                 <td>{{ user.bio }}</td>
-                <td>{{ user.profilePicture }}</td>
+                <td>{{ user.profile_Picture }}</td>
                 <td>{{ user.idCard ? 'Yes' : 'No' }}</td>
-                <td>{{ user.idCardFile }}</td>
+                <td>{{ user.id_Card_File }}</td>
                 <td>{{ user.createdAt ? user.createdAt|date('Y-m-d') : '' }}</td>
                 <td>{{ user.profileCompleted ? 'Yes' : 'No' }}</td>
                 <td>{{ user.tripsMade }}</td>
                 <td>{{ user.globalRating }}</td>
                 <td>
-                    <a href="{{ path('user_show', {'id': user.id}) }}">show</a>
                     <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
                 </td>
             </tr>
@@ -65,5 +64,4 @@
         </tbody>
     </table>
 
-    <a href="{{ path('user_new') }}">Create new</a>
 {% endblock %}

@@ -56,11 +56,6 @@ class Vehicule
     private $vehicule_picture;
 
     /**
-     * @ORM\OneToOne(targetEntity=User::class, cascade={"persist", "remove"})
-     */
-    private $user;
-
-    /**
      * @ORM\ManyToOne(targetEntity=VehiculeType::class)
      */
     private $vehicule_type;
@@ -150,18 +145,6 @@ class Vehicule
     public function setVehiculePicture(?string $vehicule_picture): self
     {
         $this->vehicule_picture = $vehicule_picture;
-
-        return $this;
-    }
-
-    public function getUser(): ?User
-    {
-        return $this->user;
-    }
-
-    public function setUser(?User $user): self
-    {
-        $this->user = $user;
 
         return $this;
     }

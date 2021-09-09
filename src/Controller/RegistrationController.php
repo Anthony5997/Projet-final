@@ -2,9 +2,12 @@
 
 namespace App\Controller;
 
+use App\Entity\TravelPreferences;
 use App\Entity\User;
+use App\Entity\Vehicule;
 use App\Form\RegistrationFormType;
 use App\Repository\UserExperienceLevelRepository;
+use App\Repository\UserRepository;
 use App\Security\Authenticator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -22,6 +25,8 @@ class RegistrationController extends AbstractController
     public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder, GuardAuthenticatorHandler $guardHandler, Authenticator $authenticator, UserExperienceLevelRepository $userExperienceLevelRepository): Response
     {
         $user = new User();
+        $travelPreferences = new TravelPreferences();
+        $vehicule = new Vehicule();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
         $date = new \DateTime();
@@ -42,6 +47,9 @@ class RegistrationController extends AbstractController
             $user->setCreatedAt($date);
             $user->setUserExperience($experience);
             $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($travelPreferences, $vehicule);
+            $user->setTravelPreferences($travelPreferences);
+            $user->setVehicule($vehicule);
             $entityManager->persist($user);
             $entityManager->flush();
             // do anything else you need here, like send an email

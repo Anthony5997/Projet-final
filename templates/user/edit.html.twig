@@ -4,8 +4,11 @@
 
 {% block body %}
     <h1>Edit User</h1>
+    {{dump(vehicule)}}
 
     {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('travel_preferences/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('vehicule/_form.html.twig', {'button_label': 'Update'}) }}
 
 
 {% endblock %}

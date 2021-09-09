@@ -1,4 +1,36 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+ <section class="section-padding">
+                <div class="container">  
+                  <div class="row">
+                      {{ form_start(userPref) }}
+                      <div class="col-xs-12 col-sm-6 col-md-8">
+                                <div class="form-group">
+                                    {{ form_label(userPref.discussion, 'Discussion') }}
+                                    {{ form_widget(userPref.discussion, {'attr': {'class': 'form-control'}}) }}
+                                </div> 
+                                <div class='red-text'>{{ form_errors(userPref.discussion)}}</div>
+                                <div class="form-group">
+                                    {{ form_label(userPref.music, 'Musique') }}
+                                    {{ form_widget(userPref.music, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                                <div class='red-text'>{{ form_errors(userPref.music)}}</div>
+                                <div class="form-group">
+                                    {{ form_label(userPref.smoking,'Fumeur') }} 
+                                    {{ form_widget(userPref.smoking, {'attr': {'class': 'form-control'}}) }}
+                                </div> 
+                                <div class='red-text'>{{ form_errors(userPref.smoking)}}</div>
+                                 <div class="form-group">
+                                    {{ form_label(userPref.animals,'Animaux') }} 
+                                    {{ form_widget(userPref.animals, {'attr': {'class': 'form-control'}}) }}
+                                </div> 
+                                <div class='red-text'>{{ form_errors(userPref.animals)}}</div>
+                                 <div class="form-group">
+                                    {{ form_label(userPref.health_pass,'Pass Sanitaire') }} 
+                                    {{ form_widget(userPref.health_pass, {'attr': {'class': 'form-control'}}) }}
+                                </div> 
+                                <div class='red-text'>{{ form_errors(userPref.health_pass)}}</div>
+                            </div>
+                            <button class="btn">{{ button_label|default('Sauvegarder mes préférences') }}</button>
+                        {{ form_end(userPref) }}
+                    </div>
+                </div>
+            </section> 

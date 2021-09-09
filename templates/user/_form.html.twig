@@ -1,10 +1,3 @@
-{# {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }} #}
-
-{{dump(form)}}
-
   <section class="section-padding">
                 <div class="container">  
                 
@@ -112,15 +105,15 @@
                                         'type' : 'file',
                                         'class': 'form-control'
                                         }}) }}
-                                        <span><i class="material-icons">&#xE24D;</i> CV</span>
+                                        <span><i class="material-icons">&#xE24D;</i> ID CARD</span>
                                     </div>
                                     {% if user.id_card_file != '' %}
                                         <div class="existing-file">
-                                            <a href="{{asset ('/assets/uploads/id_card_file/') ~ user.id_card_file}}" target="_blank"><i class="material-icons">&#xE24D;</i> CV.pdf</a>
+                                            <a href="{{asset ('/assets/uploads/idCard/') ~ user.id_card_file}}" target="_blank"><i class="material-icons">&#xE24D;</i> ID Card.pdf</a>
                                         </div>
-                                        <div class="file-path-wrapper">
+                                        {# <div class="file-path-wrapper">
                                             <input class="file-path validate" type="text" placeholder="Upload your Id Card" readonly>
-                                        </div>
+                                        </div> #}
                                     {% endif %}
                                 </div>
                             </div>
@@ -155,6 +148,7 @@
         </div>
     </div>
 
+             
 
             {# <section class="section-padding gray-bg">
                 <div class="container">
@@ -196,6 +190,3 @@
                             </div>  
                         {{form_end(form2)}}
                     </div> #}
-
-                </div>
-            </section> 

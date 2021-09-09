@@ -1,0 +1,46 @@
+ <section class="section-padding">
+                <div class="container">  
+                  <div class="row">
+                      {{ form_start(vehicule) }}
+                      <div class="col-xs-12 col-sm-6 col-md-8">
+                                <div class="form-group">
+                                    {{ form_label(vehicule.country_of_registration, 'Pays d\'immatriculation') }}
+                                    {{ form_widget(vehicule.country_of_registration, {'attr': {'class': 'form-control'}}) }}
+                                </div> 
+                                <div class='red-text'>{{ form_errors(vehicule.country_of_registration)}}</div>
+                                <div class="form-group">
+                                    {{ form_label(vehicule.numberplate, 'Plaque d\'immatriculation') }}
+                                    {{ form_widget(vehicule.numberplate, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                                <div class='red-text'>{{ form_errors(vehicule.numberplate)}}</div>
+                                <div class="form-group">
+                                    {{ form_label(vehicule.brand,'Marque') }} 
+                                    {{ form_widget(vehicule.brand, {'attr': {'class': 'form-control'}}) }}
+                                </div> 
+                                <div class='red-text'>{{ form_errors(vehicule.brand)}}</div>
+                                 <div class="form-group">
+                                    {{ form_label(vehicule.model,'Modèle') }} 
+                                    {{ form_widget(vehicule.model, {'attr': {'class': 'form-control'}}) }}
+                                </div> 
+                                <div class='red-text'>{{ form_errors(vehicule.model)}}</div>
+                                 <div class="form-group">
+                                    {{ form_label(vehicule.color,'Couleur') }} 
+                                    {{ form_widget(vehicule.color, {'attr': {'class': 'form-control'}}) }}
+                                </div> 
+                                <div class='red-text'>{{ form_errors(vehicule.color)}}</div>
+                                <div class="form-group">
+                                    {{ form_label(vehicule.year,'Année') }} 
+                                    {{ form_widget(vehicule.year, {'attr': {'class': 'form-control'}}) }}
+                                </div> 
+                                <div class='red-text'>{{ form_errors(vehicule.year)}}</div>
+                                <div class="form-group">
+                                    {{ form_label(vehicule.vehicule_picture,'Photo du véhicule') }} 
+                                    {{ form_widget(vehicule.vehicule_picture, {'attr': {'class': 'form-control'}}) }}
+                                </div> 
+                                <div class='red-text'>{{ form_errors(vehicule.vehicule_picture)}}</div>
+                            </div>
+                            <button class="btn">{{ button_label|default('Sauvegarder mon véhicule') }}</button>
+                        {{ form_end(vehicule) }}
+                    </div>
+                </div>
+            </section> 

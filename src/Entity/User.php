@@ -123,6 +123,18 @@ class User implements UserInterface
      */
     private $user_experience;
 
+    /**
+     * @ORM\OneToOne(targetEntity=TravelPreferences::class, cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $travel_preferences;
+
+    /**
+     * @ORM\OneToOne(targetEntity=Vehicule::class, cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $vehicule;
+
     public function getId(): ?string
     {
         return $this->id;
@@ -392,6 +404,30 @@ class User implements UserInterface
     public function setUserExperience(?UserExperienceLevel $user_experience): self
     {
         $this->user_experience = $user_experience;
+
+        return $this;
+    }
+
+    public function getTravelPreferences(): ?TravelPreferences
+    {
+        return $this->travel_preferences;
+    }
+
+    public function setTravelPreferences(TravelPreferences $travel_preferences): self
+    {
+        $this->travel_preferences = $travel_preferences;
+
+        return $this;
+    }
+
+    public function getVehicule(): ?Vehicule
+    {
+        return $this->vehicule;
+    }
+
+    public function setVehicule(Vehicule $vehicule): self
+    {
+        $this->vehicule = $vehicule;
 
         return $this;
     }

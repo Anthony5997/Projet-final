@@ -25,8 +25,12 @@ return [
     'travel_preferences_edit' => [['id'], ['_controller' => 'App\\Controller\\TravelPreferencesController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/travel/preferences']], [], []],
     'travel_preferences_delete' => [['id'], ['_controller' => 'App\\Controller\\TravelPreferencesController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/travel/preferences']], [], []],
     'user_index' => [[], ['_controller' => 'App\\Controller\\UserController::index'], [], [['text', '/user/']], [], []],
-    'user_new' => [[], ['_controller' => 'App\\Controller\\UserController::new'], [], [['text', '/user/new']], [], []],
     'user_show' => [['id'], ['_controller' => 'App\\Controller\\UserController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/user']], [], []],
     'user_edit' => [['id'], ['_controller' => 'App\\Controller\\UserController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/user']], [], []],
     'user_delete' => [['id'], ['_controller' => 'App\\Controller\\UserController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/user']], [], []],
+    'vehicule_index' => [[], ['_controller' => 'App\\Controller\\VehiculeController::index'], [], [['text', '/vehicule/']], [], []],
+    'vehicule_new' => [[], ['_controller' => 'App\\Controller\\VehiculeController::new'], [], [['text', '/vehicule/new']], [], []],
+    'vehicule_show' => [['id'], ['_controller' => 'App\\Controller\\VehiculeController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/vehicule']], [], []],
+    'vehicule_edit' => [['id'], ['_controller' => 'App\\Controller\\VehiculeController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/vehicule']], [], []],
+    'vehicule_delete' => [['id'], ['_controller' => 'App\\Controller\\VehiculeController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/vehicule']], [], []],
 ];

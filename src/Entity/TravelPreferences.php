@@ -41,12 +41,6 @@ class TravelPreferences
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $health_pass;
-
-    /**
-     * @ORM\OneToOne(targetEntity=User::class, cascade={"persist", "remove"})
-     */
-    private $user;
-
   
     public function getId(): ?int
     {
@@ -109,18 +103,6 @@ class TravelPreferences
     public function setHealthPass(?string $health_pass): self
     {
         $this->health_pass = $health_pass;
-
-        return $this;
-    }
-
-    public function getUser(): ?User
-    {
-        return $this->user;
-    }
-
-    public function setUser(?User $user): self
-    {
-        $this->user = $user;
 
         return $this;
     }

@@ -86,10 +86,22 @@ class __TwigTemplate_564d9db4a8728797de8d48a9587a8e831b0203c9c84338c8efb2199f550
 
         // line 6
         echo "    <h1>Edit User</h1>
+    ";
+        // line 7
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context, (isset($context["vehicule"]) || array_key_exists("vehicule", $context) ? $context["vehicule"] : (function () { throw new RuntimeError('Variable "vehicule" does not exist.', 7, $this->source); })()));
+        echo "
 
     ";
-        // line 8
+        // line 9
         echo twig_include($this->env, $context, "user/_form.html.twig", ["button_label" => "Update"]);
+        echo "
+    ";
+        // line 10
+        echo twig_include($this->env, $context, "travel_preferences/_form.html.twig", ["button_label" => "Update"]);
+        echo "
+    ";
+        // line 11
+        echo twig_include($this->env, $context, "vehicule/_form.html.twig", ["button_label" => "Update"]);
         echo "
 
 
@@ -114,7 +126,7 @@ class __TwigTemplate_564d9db4a8728797de8d48a9587a8e831b0203c9c84338c8efb2199f550
 
     public function getDebugInfo()
     {
-        return array (  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  104 => 11,  100 => 10,  96 => 9,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -125,8 +137,11 @@ class __TwigTemplate_564d9db4a8728797de8d48a9587a8e831b0203c9c84338c8efb2199f550
 
 {% block body %}
     <h1>Edit User</h1>
+    {{dump(vehicule)}}
 
     {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('travel_preferences/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('vehicule/_form.html.twig', {'button_label': 'Update'}) }}
 
 
 {% endblock %}

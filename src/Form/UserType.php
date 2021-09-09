@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use App\Entity\TravelPreferences;
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -10,6 +11,8 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Doctrine\ORM\EntityRepository;
 
 
 class UserType extends AbstractType
@@ -58,6 +61,13 @@ class UserType extends AbstractType
                     ])
                 ],
             ])
+            // ->add('travel_preferences', EntityType::class, [
+            //     'class' => TravelPreferences::class,
+            //     'query_builder' => function (EntityRepository $er) {
+            //         return $er->createQueryBuilder('u');
+            //     },
+            //     'choice_label' => 'type',
+            // ])
             ->add('id_card_file', FileType::class, [
                 'label' => 'id card file',
 
