@@ -56,9 +56,10 @@ class Vehicule
     private $vehicule_picture;
 
     /**
-     * @ORM\ManyToOne(targetEntity=VehiculeType::class)
+     * @ORM\ManyToOne(targetEntity=TypeOfVehicule::class)
      */
-    private $vehicule_type;
+    private $typeOfVehicule;
+
 
     public function getId(): ?int
     {
@@ -149,14 +150,14 @@ class Vehicule
         return $this;
     }
 
-    public function getVehiculeType(): ?VehiculeType
+    public function getTypeOfVehicule(): ?TypeOfVehicule
     {
-        return $this->vehicule_type;
+        return $this->typeOfVehicule;
     }
 
-    public function setVehiculeType(?VehiculeType $vehicule_type): self
+    public function setTypeOfVehicule(?TypeOfVehicule $typeOfVehicule): self
     {
-        $this->vehicule_type = $vehicule_type;
+        $this->typeOfVehicule = $typeOfVehicule;
 
         return $this;
     }

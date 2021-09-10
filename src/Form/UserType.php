@@ -32,6 +32,7 @@ class UserType extends AbstractType
             ->add('country')
             ->add('city')
             ->add('bio', TextareaType::class, [
+                'required' => false,
                 'attr' => [
                     'class' => 'form-control'
                 ],

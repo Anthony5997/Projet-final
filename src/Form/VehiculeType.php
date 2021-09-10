@@ -2,12 +2,16 @@
 
 namespace App\Form;
 
+use App\Entity\TypeOfVehicule;
 use App\Entity\Vehicule;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Validator\Constraints\File;
+use Doctrine\ORM\EntityRepository;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+
 
 class VehiculeType extends AbstractType
 {
@@ -45,7 +49,16 @@ class VehiculeType extends AbstractType
                     ])
                 ],
             ])
-           // ->add('vehicule_type')
+            ->add('typeOfVehicule', EntityType::class, [
+            'class' => TypeOfVehicule::class,
+            'query_builder' => function (EntityRepository $er) {
+                return $er->createQueryBuilder('u')
+                    ->orderBy('u.type', 'ASC');
+            },
+            'choice_label' => 'type',
+        ]) 
+    
+        
         ;
     }
 

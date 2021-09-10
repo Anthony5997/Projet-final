@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New TypeOfVehicule{% endblock %}
+
+{% block body %}
+    <h1>Create new TypeOfVehicule</h1>
+
+    {{ include('type_of_vehicule/_form.html.twig') }}
+
+    <a href="{{ path('type_of_vehicule_index') }}">back to list</a>
+{% endblock %}

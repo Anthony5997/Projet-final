@@ -1,0 +1,46 @@
+.profile-picture-profile{
+
+    width: 50%;
+    border-radius: 50%;
+}
+
+.profile-button{
+
+    padding: 10px 20px 10px 20px;
+    border: 1px rgba(173, 216, 230, 0.426) solid;
+    border-radius: 20px;
+    color: royalblue;
+    background-color: transparent;
+}
+
+.input-profile-apropos{
+    margin-top: 10px;
+    padding-left: 65px;
+}
+
+.main-info-profile{
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.profile-separator{
+
+    margin-top:20px;
+    display: flex;
+    border-bottom: 1px rgba(173, 216, 230, 0.426) solid;
+    width: 50%;
+}
+
+.experience-profile{
+    color: grey;
+}
+
+.preference-profile-container{
+
+    background-color: rgba(173, 216, 230, 0.152);
+    border-radius: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+}

@@ -66,10 +66,10 @@ class Vehicule extends \App\Entity\Vehicule implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'country_of_registration', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'numberplate', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'brand', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'model', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'color', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'year', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'vehicule_picture', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'vehicule_type'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'country_of_registration', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'numberplate', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'brand', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'model', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'color', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'year', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'vehicule_picture', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'typeOfVehicule'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'country_of_registration', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'numberplate', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'brand', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'model', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'color', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'year', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'vehicule_picture', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'vehicule_type'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'country_of_registration', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'numberplate', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'brand', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'model', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'color', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'year', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'vehicule_picture', '' . "\0" . 'App\\Entity\\Vehicule' . "\0" . 'typeOfVehicule'];
     }
 
     /**
@@ -348,23 +348,23 @@ class Vehicule extends \App\Entity\Vehicule implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function getVehiculeType(): ?\App\Entity\VehiculeType
+    public function getTypeOfVehicule(): ?\App\Entity\TypeOfVehicule
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getVehiculeType', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getTypeOfVehicule', []);
 
-        return parent::getVehiculeType();
+        return parent::getTypeOfVehicule();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function setVehiculeType(?\App\Entity\VehiculeType $vehicule_type): \App\Entity\Vehicule
+    public function setTypeOfVehicule(?\App\Entity\TypeOfVehicule $typeOfVehicule): \App\Entity\Vehicule
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setVehiculeType', [$vehicule_type]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setTypeOfVehicule', [$typeOfVehicule]);
 
-        return parent::setVehiculeType($vehicule_type);
+        return parent::setTypeOfVehicule($typeOfVehicule);
     }
 
 }

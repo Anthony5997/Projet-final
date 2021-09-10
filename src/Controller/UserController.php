@@ -64,18 +64,20 @@ class UserController extends AbstractController
             $profile_picture = $form->get('profile_picture')->getData();
         
             if($id_card_file !== null){
-                $user->setId_Card_File($this->uploadFiles($id_card_file, 'idCard_directory', $slugger));
+                $user->setId_Card_File($this->uploadFiles($id_card_file, 'id_card_directory', $slugger));
                 $user->setIdCard(true);
                 $this->addFlash('success', 'The ID Card was updated');
             }
             if($profile_picture !== null){
-                $user->setProfile_Picture($this->uploadFiles($profile_picture, 'profilePicture_directory', $slugger));
+                $user->setProfile_Picture($this->uploadFiles($profile_picture, 'profile_picture_directory', $slugger));
                 $this->addFlash('success', 'The photo was updated');
             }
 
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('user_edit', [
+                'id'=>$user->getId()
+            ]);
         }
 
         if ($form2->isSubmitted() && $form2->isValid()) {
@@ -84,16 +86,26 @@ class UserController extends AbstractController
             $entityManager->persist($travelPreferences);
             $entityManager->flush();
 
-            return $this->redirectToRoute('home');
-        }
+            return $this->redirectToRoute('user_edit', [
+                'id'=>$user->getId()
+            ]);        }
 
         if ($formVehicule->isSubmitted() && $formVehicule->isValid()) {
+
+            $vehicule_picture = $formVehicule->get('vehicule_picture')->getData();
+
+            if($vehicule_picture !== null){
+                $vehicule->setVehiculePicture($this->uploadFiles($vehicule_picture, 'vehicule_picture_directory', $slugger));
+                $this->addFlash('success', 'The photo was updated');
+            }
 
             $entityManager = $vehiculeController->getDoctrine()->getManager();
             $entityManager->persist($vehicule);
             $entityManager->flush();
 
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('user_edit', [
+                'id'=>$user->getId()
+            ]);
         }
 
         return $this->render('user/edit.html.twig', [

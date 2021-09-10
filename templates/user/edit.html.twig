@@ -3,12 +3,129 @@
 {% block title %}Edit User{% endblock %}
 
 {% block body %}
-    <h1>Edit User</h1>
-    {{dump(vehicule)}}
+<div class="container">
+    {{dump(user)}}
+    <h1>Mon Profil</h1>
+          {% for message in app.flashes('success') %}
+            <div class="alert alert-success text-white">
+                {{ message }}
+            </div>
+        {% endfor %}
+        {% for message in app.flashes('error') %}
+            <div class="alert alert-error text-white">
+                {{ message }}
+            </div>
+        {% endfor %}
 
-    {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
-    {{ include('travel_preferences/_form.html.twig', {'button_label': 'Update'}) }}
-    {{ include('vehicule/_form.html.twig', {'button_label': 'Update'}) }}
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">A Propos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">Information Personnel</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">Préférences de Voyage</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab">Véhicule Personnel</a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="tabs-1" role="tabpanel">
+               <div class="container">
+                    <div class="main-info-profile">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-4 d-flex flex-column align-items-center justify-content-center">
+                                <p class="">{{user.firstName}}</p>
+                                <p class="experience-profile">{{user.lastName}}</p>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                {% if user.profile_picture != '' %}
+                                    <div class="existing-file">
+                                        <a href="{{asset ('/assets/uploads/profilePicture/') ~ user.profile_picture }}" target="_blank"><img class="profile-picture-profile" src="{{asset ('/assets/uploads/profilePicture/') ~ user.profile_picture }}"/></a>
+                                    </div>
+                                    {% else %}
+                                        <div class="existing-file">
+                                        <a href="{{asset ('/assets/uploads/profilePicture/default_profile_picture.jpg')}}" target="_blank"><img class="profile-picture-profile" src="{{asset ('/assets/uploads/profilePicture/default_profile_picture.jpg')}}"/></a>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-info-profile">
+                        <div class="row">
+                            <div class="input-profile-apropos">
+                                {% if user.profile_picture != '' %}
+                                    <button class="profile-button">
+                                            modifier ma photo de profile <i class="fas fa-plus"></i>
+                                        </button>
+                                    {% else %}
+                                        <button class="profile-button">
+                                            ajouter une photo de profile <i class="fas fa-plus"></i>
+                                        </button>
+                                {% endif %}
+                            </div>
+                            <div class="input-profile-apropos">
+                            {% if user.bio != '' %}
+                                <p>{{user.bio}}</p>
+                                    {% else %}
+                                        <button class="profile-button">
+                                            ajouter une biographie <i class="fas fa-plus"></i>
+                                        </button>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center"><span class="profile-separator"></div>
+                    </div>
+                    <div class="main-info-profile">
+                        <div class="row">
+                            <div class="preference-profile-container col-xs-12 col-sm-6 col-md-5">
+                            <h2>Mes Préférences</h2>
+                              <h6> Discussion : </h6>
+                              <p class="form-control">{{user.travelPreferences.discussion}}</p>
+                              <h6> Fumeur : </h6>
+                              <p class="form-control">{{user.travelPreferences.smoking}}</p>
+                              <h6> Musique : </h6>
+                              <p class="form-control">{{user.travelPreferences.music}}</p>
+                              <h6> Animaux : </h6>
+                              <p class="form-control">{{user.travelPreferences.animals}}</p>
+                              <h6> Pass Sanitaire : </h6>
+                              <p class="form-control">{{user.travelPreferences.healthPass}}</p>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-2"></div>
+                            <div class="preference-profile-container col-xs-12 col-sm-6 col-md-5">
+                            <h2>Mon véhicule</h2>
+                            
+                               <a href="{{asset ('/assets/uploads/vehiculePicture/') ~ user.vehicule.vehiculePicture }}" target="_blank"><img class="profile-picture-profile" src="{{asset ('/assets/uploads/vehiculePicture/' ~ user.vehicule.vehiculePicture )}}"/></a>
+                              <p class="experience-profile">{{user.vehicule.brand}}</p>
+                              <p class="experience-profile">{{user.vehicule.model}}</p>
+                              <p class="experience-profile">{{user.vehicule.color}}</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="tabs-2" role="tabpanel">
+                    {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
+            </div>
+            <div class="tab-pane" id="tabs-3" role="tabpanel">
+                <div class="container">
+                <h5>Mes préférences</h5>
+                    {{ include('travel_preferences/_form.html.twig', {'button_label': 'Update'}) }}
+                </div>
+            </div>
+            <div class="tab-pane" id="tabs-4" role="tabpanel">
+                 {{ include('vehicule/_form.html.twig', {'button_label': 'Update'}) }}
+            </div>
+        </div>
+</div>
+
+   
 
 
 {% endblock %}
