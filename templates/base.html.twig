@@ -14,6 +14,9 @@
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css">
             <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+            <link rel="stylesheet" href="style.css">
         {% endblock %}
 
     </head>
@@ -140,20 +143,34 @@
                 </div>
             </div>
         </header> #}
+{{dump(app.user)}}
+<header>
 
-<nav class="row">
-    <div class="d-flex justify-content-around">
-        <div class="d-flex justify-content-start">
-            X
-        </div>
-        <div class="d-flex">
-           <a class="d-flex justify-content-center" href="{{path('home')}}"><img class="navbar-profile-picture"src="{{ asset('assets/uploads/profilePicture/backpack-613b257dbf531.jpg') }}"/></a>
-        </div>
-        <div class="d-flex justify-content-end">
-            <a class="d-flex justify-content-end" href="{{path('home')}}"> <img class="navbar-profile-picture"src="{{ asset('assets/uploads/profilePicture/default_profile_picture.jpg') }}"/></a>
-        </div>
+    <input type="checkbox" name="" id="toggler">
+    <span class="d-flex"><label class="far fa-user"></label><label for="toggler" class="far fa-angle-right"></label></span>
+    <a href="{{path('home')}}" class="logo">Accueil</a>
+
+    <nav class="navbar">
+    {% if app.user != null %}
+        <a href="{{path('home')}}">home</a>
+        <a href="{{ path ('user_edit', {'id': app.user.id})}}">Mon Profil</a>
+        <a href="#products">products</a>
+     {% else %}
+       <a href="{{ path ('login')}}">Ce connecter</a>
+       <a href="{{ path ('register')}}">S'inscrire</a>
+    
+    {% endif %}
+    </nav>
+    <div class="icons d-flex justify-content-center">
+        <a href="#" class="far fa-plus-circle"></a>
+        <a href="#" class="fas fa-search"></a>
+      {% if app.user != null %}
+        <a class="user-icon-profile" href="{{ path ('user_edit', {'id': app.user.id})}}"><img class="navbar-profile-picture" src="{{asset('assets/uploads/profilePicture/') ~ app.user.profile_picture}}"/></a>
+        {% else %}
+       <a href="{{ path ('login')}}" class="far fa-user-plus user-icon-profile" ></a>
+      {% endif %}
     </div>
-</nav>
+</header>
 
 
     {% block body %}
@@ -167,6 +184,21 @@
             <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.0.8/popper.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+            <script>
+                    $(document).ready(function(){
+                    $('.fa-angle-right').click(function(){
+                    $('.fa-angle-right').toggleClass('fa-times')
+                    })
+                $(window).scroll(function(){
+                if ($(window).scrollTop() >= 20)
+                {
+                    $('header').addClass('active')
+                } else {
+                    $('header').removeClass('active')
+                }
+                    });})
+  
+            </script>
         {% endblock %}
     </body>
 </html>

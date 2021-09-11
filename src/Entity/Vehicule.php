@@ -51,7 +51,7 @@ class Vehicule
     private $year;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=false, options={"default":"default-vehicule.jpg"})
      */
     private $vehicule_picture;
 

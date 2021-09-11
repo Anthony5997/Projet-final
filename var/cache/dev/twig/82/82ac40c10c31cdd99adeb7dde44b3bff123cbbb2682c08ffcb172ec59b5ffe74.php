@@ -89,30 +89,31 @@ class __TwigTemplate_93a4719728c36b2659256272a43424c23836accf747eb6edda27542d013
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
-    ";
-        // line 10
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 10, $this->source); })()), "user", [], "any", false, false, false, 10));
-        echo "
-<div class=\"container\">
-    <h3>Hello</h3>
-    ";
-        // line 13
-        if ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 13, $this->source); })()), "user", [], "any", false, false, false, 13), null))) {
-            // line 14
-            echo "      <li><a target=\"_self\" href=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_edit", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 14, $this->source); })()), "user", [], "any", false, false, false, 14), "id", [], "any", false, false, false, 14)]), "html", null, true);
+<div class=\"home\">
+      ";
+        // line 12
+        echo "  <div class=\"container\">
+      <h3>Hello</h3>
+      ";
+        // line 14
+        if ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 14, $this->source); })()), "user", [], "any", false, false, false, 14), null))) {
+            // line 15
+            echo "        <li><a target=\"_self\" href=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_edit", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 15, $this->source); })()), "user", [], "any", false, false, false, 15), "id", [], "any", false, false, false, 15)]), "html", null, true);
             echo "\">Profile</a></li>
-    ";
+      ";
         }
-        // line 16
-        echo "      <li><a target=\"_self\" href=\"";
+        // line 17
+        echo "        <li><a target=\"_self\" href=\"";
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("login");
         echo "\">Ce connecter</a></li>
-      <li><a target=\"_self\" href=\"";
-        // line 17
+        <li><a target=\"_self\" href=\"";
+        // line 18
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("register");
         echo "\">S'inscrire</a></li>
+  </div>
 </div>
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -134,7 +135,7 @@ class __TwigTemplate_93a4719728c36b2659256272a43424c23836accf747eb6edda27542d013
 
     public function getDebugInfo()
     {
-        return array (  113 => 17,  108 => 16,  102 => 14,  100 => 13,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  112 => 18,  107 => 17,  101 => 15,  99 => 14,  95 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -148,15 +149,18 @@ class __TwigTemplate_93a4719728c36b2659256272a43424c23836accf747eb6edda27542d013
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
-    {{dump(app.user)}}
-<div class=\"container\">
-    <h3>Hello</h3>
-    {% if app.user != null %}
-      <li><a target=\"_self\" href=\"{{ path ('user_edit', {'id': app.user.id})}}\">Profile</a></li>
-    {% endif %}
-      <li><a target=\"_self\" href=\"{{ path ('login')}}\">Ce connecter</a></li>
-      <li><a target=\"_self\" href=\"{{ path ('register')}}\">S'inscrire</a></li>
+<div class=\"home\">
+      {# {{dump(app.user)}} #}
+  <div class=\"container\">
+      <h3>Hello</h3>
+      {% if app.user != null %}
+        <li><a target=\"_self\" href=\"{{ path ('user_edit', {'id': app.user.id})}}\">Profile</a></li>
+      {% endif %}
+        <li><a target=\"_self\" href=\"{{ path ('login')}}\">Ce connecter</a></li>
+        <li><a target=\"_self\" href=\"{{ path ('register')}}\">S'inscrire</a></li>
+  </div>
 </div>
+
 {% endblock %}
 ", "home/index.html.twig", "/shared/httpd/Projet-Final/templates/home/index.html.twig");
     }

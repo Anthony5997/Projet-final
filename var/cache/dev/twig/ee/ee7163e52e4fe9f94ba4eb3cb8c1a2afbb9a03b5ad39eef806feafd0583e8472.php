@@ -85,12 +85,10 @@ class __TwigTemplate_564d9db4a8728797de8d48a9587a8e831b0203c9c84338c8efb2199f550
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "<div class=\"container\">
+        echo "<div class=\"container mt-5\">
     ";
-        // line 7
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 7, $this->source); })()));
-        echo "
-    <h1>Mon Profil</h1>
+        // line 8
+        echo "    <h1>Mon Profil</h1>
           ";
         // line 9
         $context['_parent'] = $context;
@@ -140,6 +138,9 @@ class __TwigTemplate_564d9db4a8728797de8d48a9587a8e831b0203c9c84338c8efb2199f550
             <li class=\"nav-item\">
                 <a class=\"nav-link\" data-toggle=\"tab\" href=\"#tabs-4\" role=\"tab\">Véhicule Personnel</a>
             </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" data-toggle=\"tab\" href=\"#tabs-5\" role=\"tab\">Mon compte</a>
+            </li>
         </ul>
 
         <div class=\"tab-content\">
@@ -147,37 +148,37 @@ class __TwigTemplate_564d9db4a8728797de8d48a9587a8e831b0203c9c84338c8efb2199f550
                <div class=\"container\">
                     <div class=\"main-info-profile\">
                         <div class=\"row\">
-                            <div class=\"col-xs-12 col-sm-6 col-md-4 d-flex flex-column align-items-center justify-content-center\">
+                            <div class=\"col-xs-12 col-sm-4 col-md-4 d-flex flex-column align-items-center justify-content-center\">
                                 <p class=\"\">";
-        // line 41
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 41, $this->source); })()), "firstName", [], "any", false, false, false, 41), "html", null, true);
+        // line 44
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 44, $this->source); })()), "firstName", [], "any", false, false, false, 44), "html", null, true);
         echo "</p>
                                 <p class=\"experience-profile\">";
-        // line 42
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 42, $this->source); })()), "lastName", [], "any", false, false, false, 42), "html", null, true);
+        // line 45
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 45, $this->source); })()), "lastName", [], "any", false, false, false, 45), "html", null, true);
         echo "</p>
                             </div>
-                            <div class=\"col-xs-12 col-sm-6 col-md-4\">
+                            <div class=\"col-xs-12 col-sm-4 col-md-4\">
                             </div>
-                            <div class=\"col-xs-12 col-sm-6 col-md-4\">
+                            <div class=\"col-xs-12 col-sm-4 col-md-4\">
                                 ";
-        // line 47
-        if ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 47, $this->source); })()), "profile_picture", [], "any", false, false, false, 47), ""))) {
-            // line 48
+        // line 50
+        if ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 50, $this->source); })()), "profile_picture", [], "any", false, false, false, 50), ""))) {
+            // line 51
             echo "                                    <div class=\"existing-file\">
                                         <a href=\"";
-            // line 49
-            echo twig_escape_filter($this->env, ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/uploads/profilePicture/") . twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 49, $this->source); })()), "profile_picture", [], "any", false, false, false, 49)), "html", null, true);
+            // line 52
+            echo twig_escape_filter($this->env, ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/uploads/profilePicture/") . twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 52, $this->source); })()), "profile_picture", [], "any", false, false, false, 52)), "html", null, true);
             echo "\" target=\"_blank\"><img class=\"profile-picture-profile\" src=\"";
-            echo twig_escape_filter($this->env, ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/uploads/profilePicture/") . twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 49, $this->source); })()), "profile_picture", [], "any", false, false, false, 49)), "html", null, true);
+            echo twig_escape_filter($this->env, ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/uploads/profilePicture/") . twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 52, $this->source); })()), "profile_picture", [], "any", false, false, false, 52)), "html", null, true);
             echo "\"/></a>
                                     </div>
                                     ";
         } else {
-            // line 52
+            // line 55
             echo "                                        <div class=\"existing-file\">
                                         <a href=\"";
-            // line 53
+            // line 56
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/uploads/profilePicture/default_profile_picture.jpg"), "html", null, true);
             echo "\" target=\"_blank\"><img class=\"profile-picture-profile\" src=\"";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/uploads/profilePicture/default_profile_picture.jpg"), "html", null, true);
@@ -185,7 +186,7 @@ class __TwigTemplate_564d9db4a8728797de8d48a9587a8e831b0203c9c84338c8efb2199f550
                                     </div>
                                 ";
         }
-        // line 56
+        // line 59
         echo "                            </div>
                         </div>
                     </div>
@@ -193,95 +194,103 @@ class __TwigTemplate_564d9db4a8728797de8d48a9587a8e831b0203c9c84338c8efb2199f550
                         <div class=\"row\">
                             <div class=\"input-profile-apropos\">
                                 ";
-        // line 62
-        if ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 62, $this->source); })()), "profile_picture", [], "any", false, false, false, 62), ""))) {
-            // line 63
+        // line 65
+        if ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 65, $this->source); })()), "profile_picture", [], "any", false, false, false, 65), ""))) {
+            // line 66
             echo "                                    <button class=\"profile-button\">
                                             modifier ma photo de profile <i class=\"fas fa-plus\"></i>
                                         </button>
                                     ";
         } else {
-            // line 67
+            // line 70
             echo "                                        <button class=\"profile-button\">
                                             ajouter une photo de profile <i class=\"fas fa-plus\"></i>
                                         </button>
                                 ";
         }
-        // line 71
+        // line 74
         echo "                            </div>
                             <div class=\"input-profile-apropos\">
                             ";
-        // line 73
-        if ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 73, $this->source); })()), "bio", [], "any", false, false, false, 73), ""))) {
-            // line 74
+        // line 76
+        if ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 76, $this->source); })()), "bio", [], "any", false, false, false, 76), ""))) {
+            // line 77
             echo "                                <p>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 74, $this->source); })()), "bio", [], "any", false, false, false, 74), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 77, $this->source); })()), "bio", [], "any", false, false, false, 77), "html", null, true);
             echo "</p>
                                     ";
         } else {
-            // line 76
+            // line 79
             echo "                                        <button class=\"profile-button\">
                                             ajouter une biographie <i class=\"fas fa-plus\"></i>
                                         </button>
                                 ";
         }
-        // line 80
+        // line 83
         echo "                            </div>
                         </div>
                         <div class=\"d-flex justify-content-center\"><span class=\"profile-separator\"></div>
                     </div>
                     <div class=\"main-info-profile\">
                         <div class=\"row\">
-                            <div class=\"preference-profile-container col-xs-12 col-sm-6 col-md-5\">
+                            <div class=\"preference-profile-container col-xs-12 col-sm-5 col-md-5\">
                             <h2>Mes Préférences</h2>
                               <h6> Discussion : </h6>
                               <p class=\"form-control\">";
-        // line 89
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 89, $this->source); })()), "travelPreferences", [], "any", false, false, false, 89), "discussion", [], "any", false, false, false, 89), "html", null, true);
+        // line 92
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 92, $this->source); })()), "travelPreferences", [], "any", false, false, false, 92), "discussion", [], "any", false, false, false, 92), "html", null, true);
         echo "</p>
                               <h6> Fumeur : </h6>
                               <p class=\"form-control\">";
-        // line 91
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 91, $this->source); })()), "travelPreferences", [], "any", false, false, false, 91), "smoking", [], "any", false, false, false, 91), "html", null, true);
+        // line 94
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 94, $this->source); })()), "travelPreferences", [], "any", false, false, false, 94), "smoking", [], "any", false, false, false, 94), "html", null, true);
         echo "</p>
                               <h6> Musique : </h6>
                               <p class=\"form-control\">";
-        // line 93
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 93, $this->source); })()), "travelPreferences", [], "any", false, false, false, 93), "music", [], "any", false, false, false, 93), "html", null, true);
+        // line 96
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 96, $this->source); })()), "travelPreferences", [], "any", false, false, false, 96), "music", [], "any", false, false, false, 96), "html", null, true);
         echo "</p>
                               <h6> Animaux : </h6>
                               <p class=\"form-control\">";
-        // line 95
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 95, $this->source); })()), "travelPreferences", [], "any", false, false, false, 95), "animals", [], "any", false, false, false, 95), "html", null, true);
+        // line 98
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 98, $this->source); })()), "travelPreferences", [], "any", false, false, false, 98), "animals", [], "any", false, false, false, 98), "html", null, true);
         echo "</p>
                               <h6> Pass Sanitaire : </h6>
                               <p class=\"form-control\">";
-        // line 97
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 97, $this->source); })()), "travelPreferences", [], "any", false, false, false, 97), "healthPass", [], "any", false, false, false, 97), "html", null, true);
+        // line 100
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 100, $this->source); })()), "travelPreferences", [], "any", false, false, false, 100), "healthPass", [], "any", false, false, false, 100), "html", null, true);
         echo "</p>
                             </div>
-                            <div class=\"col-xs-12 col-sm-6 col-md-2\"></div>
-                            <div class=\"preference-profile-container col-xs-12 col-sm-6 col-md-5\">
-                            <h2>Mon véhicule</h2>
-                            
-                               <a href=\"";
-        // line 103
-        echo twig_escape_filter($this->env, ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/uploads/vehiculePicture/") . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 103, $this->source); })()), "vehicule", [], "any", false, false, false, 103), "vehiculePicture", [], "any", false, false, false, 103)), "html", null, true);
+                            <div class=\"col-xs-12 col-sm-2 col-md-2\"></div>
+                            <div class=\" col-xs-12 col-sm-5 col-md-5\">
+                            <div class=\"row\">
+                                <h2>Mon véhicule</h2>
+                            </div>
+                            <div class=\"row mt-3 preference-profile-container\">
+                                 <div class=\"col-xs-12 col-sm-6 col-md-6 d-flex flex-column pl-5 justify-content-center\">
+                                    <p class=\"vehicule-profile\">Marque : ";
+        // line 109
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 109, $this->source); })()), "vehicule", [], "any", false, false, false, 109), "brand", [], "any", false, false, false, 109), "html", null, true);
+        echo "</p>
+                                    <p class=\"vehicule-profile\">Modèle : ";
+        // line 110
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 110, $this->source); })()), "vehicule", [], "any", false, false, false, 110), "model", [], "any", false, false, false, 110), "html", null, true);
+        echo "</p>
+                                    <p class=\"vehicule-profile\">Couleur : ";
+        // line 111
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 111, $this->source); })()), "vehicule", [], "any", false, false, false, 111), "color", [], "any", false, false, false, 111), "html", null, true);
+        echo "</p>
+                                </div>
+                                <div class=\"col-xs-12 col-sm-6 col-md-6\">
+                                    <a class=\"d-flex justify-content-center\" href=\"";
+        // line 114
+        echo twig_escape_filter($this->env, ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/uploads/vehiculePicture/") . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 114, $this->source); })()), "vehicule", [], "any", false, false, false, 114), "vehiculePicture", [], "any", false, false, false, 114)), "html", null, true);
         echo "\" target=\"_blank\"><img class=\"profile-picture-profile\" src=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("/assets/uploads/vehiculePicture/" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 103, $this->source); })()), "vehicule", [], "any", false, false, false, 103), "vehiculePicture", [], "any", false, false, false, 103))), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("/assets/uploads/vehiculePicture/" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 114, $this->source); })()), "vehicule", [], "any", false, false, false, 114), "vehiculePicture", [], "any", false, false, false, 114))), "html", null, true);
         echo "\"/></a>
-                              <p class=\"experience-profile\">";
-        // line 104
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 104, $this->source); })()), "vehicule", [], "any", false, false, false, 104), "brand", [], "any", false, false, false, 104), "html", null, true);
-        echo "</p>
-                              <p class=\"experience-profile\">";
-        // line 105
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 105, $this->source); })()), "vehicule", [], "any", false, false, false, 105), "model", [], "any", false, false, false, 105), "html", null, true);
-        echo "</p>
-                              <p class=\"experience-profile\">";
-        // line 106
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 106, $this->source); })()), "vehicule", [], "any", false, false, false, 106), "color", [], "any", false, false, false, 106), "html", null, true);
-        echo "</p>
+                                </div>
+                            </div>
+                            
 
                             </div>
                         </div>
@@ -289,25 +298,34 @@ class __TwigTemplate_564d9db4a8728797de8d48a9587a8e831b0203c9c84338c8efb2199f550
                 </div>
             </div>
             <div class=\"tab-pane\" id=\"tabs-2\" role=\"tabpanel\">
+                <div class=\"container\">
                     ";
-        // line 114
+        // line 126
         echo twig_include($this->env, $context, "user/_form.html.twig", ["button_label" => "Update"]);
         echo "
+                </div>
             </div>
             <div class=\"tab-pane\" id=\"tabs-3\" role=\"tabpanel\">
                 <div class=\"container\">
                 <h5>Mes préférences</h5>
                     ";
-        // line 119
+        // line 132
         echo twig_include($this->env, $context, "travel_preferences/_form.html.twig", ["button_label" => "Update"]);
         echo "
                 </div>
             </div>
             <div class=\"tab-pane\" id=\"tabs-4\" role=\"tabpanel\">
+                <div class=\"container\">
                  ";
-        // line 123
+        // line 137
         echo twig_include($this->env, $context, "vehicule/_form.html.twig", ["button_label" => "Update"]);
         echo "
+                </div>
+            </div>
+             <div class=\"tab-pane\" id=\"tabs-5\" role=\"tabpanel\">
+                <div class=\"container\">
+                 Info Compte
+                </div>
             </div>
         </div>
 </div>
@@ -336,7 +354,7 @@ class __TwigTemplate_564d9db4a8728797de8d48a9587a8e831b0203c9c84338c8efb2199f550
 
     public function getDebugInfo()
     {
-        return array (  309 => 123,  302 => 119,  294 => 114,  283 => 106,  279 => 105,  275 => 104,  269 => 103,  260 => 97,  255 => 95,  250 => 93,  245 => 91,  240 => 89,  229 => 80,  223 => 76,  217 => 74,  215 => 73,  211 => 71,  205 => 67,  199 => 63,  197 => 62,  189 => 56,  181 => 53,  178 => 52,  170 => 49,  167 => 48,  165 => 47,  157 => 42,  153 => 41,  129 => 19,  120 => 16,  117 => 15,  112 => 14,  103 => 11,  100 => 10,  96 => 9,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  321 => 137,  313 => 132,  304 => 126,  287 => 114,  281 => 111,  277 => 110,  273 => 109,  261 => 100,  256 => 98,  251 => 96,  246 => 94,  241 => 92,  230 => 83,  224 => 79,  218 => 77,  216 => 76,  212 => 74,  206 => 70,  200 => 66,  198 => 65,  190 => 59,  182 => 56,  179 => 55,  171 => 52,  168 => 51,  166 => 50,  158 => 45,  154 => 44,  127 => 19,  118 => 16,  115 => 15,  110 => 14,  101 => 11,  98 => 10,  94 => 9,  91 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -346,8 +364,8 @@ class __TwigTemplate_564d9db4a8728797de8d48a9587a8e831b0203c9c84338c8efb2199f550
 {% block title %}Edit User{% endblock %}
 
 {% block body %}
-<div class=\"container\">
-    {{dump(user)}}
+<div class=\"container mt-5\">
+    {# {{dump(user)}} #}
     <h1>Mon Profil</h1>
           {% for message in app.flashes('success') %}
             <div class=\"alert alert-success text-white\">
@@ -373,6 +391,9 @@ class __TwigTemplate_564d9db4a8728797de8d48a9587a8e831b0203c9c84338c8efb2199f550
             <li class=\"nav-item\">
                 <a class=\"nav-link\" data-toggle=\"tab\" href=\"#tabs-4\" role=\"tab\">Véhicule Personnel</a>
             </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" data-toggle=\"tab\" href=\"#tabs-5\" role=\"tab\">Mon compte</a>
+            </li>
         </ul>
 
         <div class=\"tab-content\">
@@ -380,13 +401,13 @@ class __TwigTemplate_564d9db4a8728797de8d48a9587a8e831b0203c9c84338c8efb2199f550
                <div class=\"container\">
                     <div class=\"main-info-profile\">
                         <div class=\"row\">
-                            <div class=\"col-xs-12 col-sm-6 col-md-4 d-flex flex-column align-items-center justify-content-center\">
+                            <div class=\"col-xs-12 col-sm-4 col-md-4 d-flex flex-column align-items-center justify-content-center\">
                                 <p class=\"\">{{user.firstName}}</p>
                                 <p class=\"experience-profile\">{{user.lastName}}</p>
                             </div>
-                            <div class=\"col-xs-12 col-sm-6 col-md-4\">
+                            <div class=\"col-xs-12 col-sm-4 col-md-4\">
                             </div>
-                            <div class=\"col-xs-12 col-sm-6 col-md-4\">
+                            <div class=\"col-xs-12 col-sm-4 col-md-4\">
                                 {% if user.profile_picture != '' %}
                                     <div class=\"existing-file\">
                                         <a href=\"{{asset ('/assets/uploads/profilePicture/') ~ user.profile_picture }}\" target=\"_blank\"><img class=\"profile-picture-profile\" src=\"{{asset ('/assets/uploads/profilePicture/') ~ user.profile_picture }}\"/></a>
@@ -426,7 +447,7 @@ class __TwigTemplate_564d9db4a8728797de8d48a9587a8e831b0203c9c84338c8efb2199f550
                     </div>
                     <div class=\"main-info-profile\">
                         <div class=\"row\">
-                            <div class=\"preference-profile-container col-xs-12 col-sm-6 col-md-5\">
+                            <div class=\"preference-profile-container col-xs-12 col-sm-5 col-md-5\">
                             <h2>Mes Préférences</h2>
                               <h6> Discussion : </h6>
                               <p class=\"form-control\">{{user.travelPreferences.discussion}}</p>
@@ -439,14 +460,22 @@ class __TwigTemplate_564d9db4a8728797de8d48a9587a8e831b0203c9c84338c8efb2199f550
                               <h6> Pass Sanitaire : </h6>
                               <p class=\"form-control\">{{user.travelPreferences.healthPass}}</p>
                             </div>
-                            <div class=\"col-xs-12 col-sm-6 col-md-2\"></div>
-                            <div class=\"preference-profile-container col-xs-12 col-sm-6 col-md-5\">
-                            <h2>Mon véhicule</h2>
+                            <div class=\"col-xs-12 col-sm-2 col-md-2\"></div>
+                            <div class=\" col-xs-12 col-sm-5 col-md-5\">
+                            <div class=\"row\">
+                                <h2>Mon véhicule</h2>
+                            </div>
+                            <div class=\"row mt-3 preference-profile-container\">
+                                 <div class=\"col-xs-12 col-sm-6 col-md-6 d-flex flex-column pl-5 justify-content-center\">
+                                    <p class=\"vehicule-profile\">Marque : {{user.vehicule.brand}}</p>
+                                    <p class=\"vehicule-profile\">Modèle : {{user.vehicule.model}}</p>
+                                    <p class=\"vehicule-profile\">Couleur : {{user.vehicule.color}}</p>
+                                </div>
+                                <div class=\"col-xs-12 col-sm-6 col-md-6\">
+                                    <a class=\"d-flex justify-content-center\" href=\"{{asset ('/assets/uploads/vehiculePicture/') ~ user.vehicule.vehiculePicture }}\" target=\"_blank\"><img class=\"profile-picture-profile\" src=\"{{asset ('/assets/uploads/vehiculePicture/' ~ user.vehicule.vehiculePicture )}}\"/></a>
+                                </div>
+                            </div>
                             
-                               <a href=\"{{asset ('/assets/uploads/vehiculePicture/') ~ user.vehicule.vehiculePicture }}\" target=\"_blank\"><img class=\"profile-picture-profile\" src=\"{{asset ('/assets/uploads/vehiculePicture/' ~ user.vehicule.vehiculePicture )}}\"/></a>
-                              <p class=\"experience-profile\">{{user.vehicule.brand}}</p>
-                              <p class=\"experience-profile\">{{user.vehicule.model}}</p>
-                              <p class=\"experience-profile\">{{user.vehicule.color}}</p>
 
                             </div>
                         </div>
@@ -454,7 +483,9 @@ class __TwigTemplate_564d9db4a8728797de8d48a9587a8e831b0203c9c84338c8efb2199f550
                 </div>
             </div>
             <div class=\"tab-pane\" id=\"tabs-2\" role=\"tabpanel\">
+                <div class=\"container\">
                     {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
+                </div>
             </div>
             <div class=\"tab-pane\" id=\"tabs-3\" role=\"tabpanel\">
                 <div class=\"container\">
@@ -463,7 +494,14 @@ class __TwigTemplate_564d9db4a8728797de8d48a9587a8e831b0203c9c84338c8efb2199f550
                 </div>
             </div>
             <div class=\"tab-pane\" id=\"tabs-4\" role=\"tabpanel\">
+                <div class=\"container\">
                  {{ include('vehicule/_form.html.twig', {'button_label': 'Update'}) }}
+                </div>
+            </div>
+             <div class=\"tab-pane\" id=\"tabs-5\" role=\"tabpanel\">
+                <div class=\"container\">
+                 Info Compte
+                </div>
             </div>
         </div>
 </div>

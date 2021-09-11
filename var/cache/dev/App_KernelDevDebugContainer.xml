@@ -4763,7 +4763,7 @@
       <argument type="service" id="security.token_storage" on-invalid="null"/>
       <call method="registerListener">
         <argument>main</argument>
-        <argument>app_logout</argument>
+        <argument>logout</argument>
         <argument>logout</argument>
         <argument>_csrf_token</argument>
         <argument>null</argument>
@@ -5205,7 +5205,7 @@
       <argument type="collection">
         <argument key="csrf_parameter">_csrf_token</argument>
         <argument key="csrf_token_id">logout</argument>
-        <argument key="logout_path">app_logout</argument>
+        <argument key="logout_path">logout</argument>
       </argument>
     </service>
     <service id="security.logout.listener.default.main" class="Symfony\Component\Security\Http\EventListener\DefaultLogoutListener">

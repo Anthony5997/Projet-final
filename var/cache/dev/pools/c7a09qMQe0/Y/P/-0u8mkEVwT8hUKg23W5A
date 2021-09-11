@@ -10,8 +10,10 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
             'length' => [
                 255,
             ],
-            'nullable' => [
-                true,
+            'options' => [
+                [
+                    'default' => 'default_profile_picture.jpg',
+                ],
             ],
         ],
     ],

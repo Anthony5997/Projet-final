@@ -1,3 +1,8 @@
+.nav-tabs{
+
+    flex-wrap: nowrap ;
+} 
+
 .profile-picture-profile{
 
     width: 50%;
@@ -35,6 +40,10 @@
     color: grey;
 }
 
+.vehicule-profile{
+    color: black;
+}
+
 .preference-profile-container{
 
     background-color: rgba(173, 216, 230, 0.152);
@@ -44,3 +53,30 @@
     padding-left: 15px;
     padding-right: 15px;
 }
+
+@media (max-width:450px) {
+
+    .main-info-profile{
+        margin-top: 15px;
+        margin-bottom: 20px;
+
+        .existing-file{
+            display: flex;
+
+            >a{
+                display: flex;
+            justify-content: center;
+            }
+        }
+
+        .profile-picture-profile{
+
+            width: 20%;
+            border-radius: 50%;
+            justify-content: center;
+            display: flex;
+        }
+    }
+    
+}
+  

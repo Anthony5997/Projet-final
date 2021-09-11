@@ -60,49 +60,87 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
         ";
         // line 11
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 18
+        // line 21
         echo "
     </head>
     
     <body>
 
       ";
-        // line 143
+        // line 146
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 146, $this->source); })()), "user", [], "any", false, false, false, 146));
         echo "
-<nav class=\"row\">
-    <div class=\"d-flex justify-content-around\">
-        <div class=\"d-flex justify-content-start\">
-            X
-        </div>
-        <div class=\"d-flex\">
-           <a class=\"d-flex justify-content-center\" href=\"";
-        // line 150
+<header>
+
+    <input type=\"checkbox\" name=\"\" id=\"toggler\">
+    <span class=\"d-flex\"><label class=\"far fa-user\"></label><label for=\"toggler\" class=\"far fa-angle-right\"></label></span>
+    <a href=\"";
+        // line 151
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
-        echo "\"><img class=\"navbar-profile-picture\"src=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/uploads/profilePicture/backpack-613b257dbf531.jpg"), "html", null, true);
-        echo "\"/></a>
-        </div>
-        <div class=\"d-flex justify-content-end\">
-            <a class=\"d-flex justify-content-end\" href=\"";
-        // line 153
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
-        echo "\"> <img class=\"navbar-profile-picture\"src=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/uploads/profilePicture/default_profile_picture.jpg"), "html", null, true);
-        echo "\"/></a>
-        </div>
-    </div>
-</nav>
+        echo "\" class=\"logo\">Accueil</a>
+
+    <nav class=\"navbar\">
+    ";
+        // line 154
+        if ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 154, $this->source); })()), "user", [], "any", false, false, false, 154), null))) {
+            // line 155
+            echo "        <a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+            echo "\">home</a>
+        <a href=\"";
+            // line 156
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_edit", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 156, $this->source); })()), "user", [], "any", false, false, false, 156), "id", [], "any", false, false, false, 156)]), "html", null, true);
+            echo "\">Mon Profil</a>
+        <a href=\"#products\">products</a>
+     ";
+        } else {
+            // line 159
+            echo "       <a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("login");
+            echo "\">Ce connecter</a>
+       <a href=\"";
+            // line 160
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("register");
+            echo "\">S'inscrire</a>
+    
+    ";
+        }
+        // line 163
+        echo "    </nav>
+    <div class=\"icons d-flex justify-content-center\">
+        <a href=\"#\" class=\"far fa-plus-circle\"></a>
+        <a href=\"#\" class=\"fas fa-search\"></a>
+      ";
+        // line 167
+        if ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 167, $this->source); })()), "user", [], "any", false, false, false, 167), null))) {
+            // line 168
+            echo "        <a class=\"user-icon-profile\" href=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_edit", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 168, $this->source); })()), "user", [], "any", false, false, false, 168), "id", [], "any", false, false, false, 168)]), "html", null, true);
+            echo "\"><img class=\"navbar-profile-picture\" src=\"";
+            echo twig_escape_filter($this->env, ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/uploads/profilePicture/") . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 168, $this->source); })()), "user", [], "any", false, false, false, 168), "profile_picture", [], "any", false, false, false, 168)), "html", null, true);
+            echo "\"/></a>
+        ";
+        } else {
+            // line 170
+            echo "       <a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("login");
+            echo "\" class=\"far fa-user-plus user-icon-profile\" ></a>
+      ";
+        }
+        // line 172
+        echo "    </div>
+</header>
 
 
     ";
-        // line 159
+        // line 176
         $this->displayBlock('body', $context, $blocks);
-        // line 163
+        // line 180
         echo "
         ";
-        // line 164
+        // line 181
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 171
+        // line 203
         echo "    </body>
 </html>
 
@@ -154,6 +192,9 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/main.css"), "html", null, true);
         echo "\">
             <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css\" integrity=\"sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\" />
+            <link href=\"https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\" rel=\"stylesheet\">
+            <link rel=\"stylesheet\" href=\"https://pro.fontawesome.com/releases/v5.10.0/css/all.css\">
+            <link rel=\"stylesheet\" href=\"style.css\">
         ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -163,7 +204,7 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
 
     }
 
-    // line 159
+    // line 176
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -173,7 +214,7 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 160
+        // line 177
         echo "    
     
     ";
@@ -185,7 +226,7 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
 
     }
 
-    // line 164
+    // line 181
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -195,12 +236,27 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 165
+        // line 182
         echo "            <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ\" crossorigin=\"anonymous\"></script>
             <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>
             <script src=\"https://code.jquery.com/jquery-3.4.1.min.js\"></script>
             <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.0.8/popper.min.js\"></script>
             <script src=\"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js\"></script>
+            <script>
+                    \$(document).ready(function(){
+                    \$('.fa-angle-right').click(function(){
+                    \$('.fa-angle-right').toggleClass('fa-times')
+                    })
+                \$(window).scroll(function(){
+                if (\$(window).scrollTop() >= 20)
+                {
+                    \$('header').addClass('active')
+                } else {
+                    \$('header').removeClass('active')
+                }
+                    });})
+  
+            </script>
         ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -222,7 +278,7 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
 
     public function getDebugInfo()
     {
-        return array (  199 => 165,  189 => 164,  177 => 160,  167 => 159,  154 => 15,  149 => 12,  139 => 11,  120 => 9,  106 => 171,  104 => 164,  101 => 163,  99 => 159,  88 => 153,  80 => 150,  71 => 143,  64 => 18,  62 => 11,  57 => 9,  47 => 1,);
+        return array (  240 => 182,  230 => 181,  218 => 177,  208 => 176,  192 => 15,  187 => 12,  177 => 11,  158 => 9,  144 => 203,  142 => 181,  139 => 180,  137 => 176,  131 => 172,  125 => 170,  117 => 168,  115 => 167,  109 => 163,  103 => 160,  98 => 159,  92 => 156,  87 => 155,  85 => 154,  79 => 151,  71 => 146,  64 => 21,  62 => 11,  57 => 9,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -243,6 +299,9 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
             <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css\">
             <link rel=\"stylesheet\" href=\"{{ asset('assets/css/main.css') }}\">
             <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css\" integrity=\"sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\" />
+            <link href=\"https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\" rel=\"stylesheet\">
+            <link rel=\"stylesheet\" href=\"https://pro.fontawesome.com/releases/v5.10.0/css/all.css\">
+            <link rel=\"stylesheet\" href=\"style.css\">
         {% endblock %}
 
     </head>
@@ -369,20 +428,34 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
                 </div>
             </div>
         </header> #}
+{{dump(app.user)}}
+<header>
 
-<nav class=\"row\">
-    <div class=\"d-flex justify-content-around\">
-        <div class=\"d-flex justify-content-start\">
-            X
-        </div>
-        <div class=\"d-flex\">
-           <a class=\"d-flex justify-content-center\" href=\"{{path('home')}}\"><img class=\"navbar-profile-picture\"src=\"{{ asset('assets/uploads/profilePicture/backpack-613b257dbf531.jpg') }}\"/></a>
-        </div>
-        <div class=\"d-flex justify-content-end\">
-            <a class=\"d-flex justify-content-end\" href=\"{{path('home')}}\"> <img class=\"navbar-profile-picture\"src=\"{{ asset('assets/uploads/profilePicture/default_profile_picture.jpg') }}\"/></a>
-        </div>
+    <input type=\"checkbox\" name=\"\" id=\"toggler\">
+    <span class=\"d-flex\"><label class=\"far fa-user\"></label><label for=\"toggler\" class=\"far fa-angle-right\"></label></span>
+    <a href=\"{{path('home')}}\" class=\"logo\">Accueil</a>
+
+    <nav class=\"navbar\">
+    {% if app.user != null %}
+        <a href=\"{{path('home')}}\">home</a>
+        <a href=\"{{ path ('user_edit', {'id': app.user.id})}}\">Mon Profil</a>
+        <a href=\"#products\">products</a>
+     {% else %}
+       <a href=\"{{ path ('login')}}\">Ce connecter</a>
+       <a href=\"{{ path ('register')}}\">S'inscrire</a>
+    
+    {% endif %}
+    </nav>
+    <div class=\"icons d-flex justify-content-center\">
+        <a href=\"#\" class=\"far fa-plus-circle\"></a>
+        <a href=\"#\" class=\"fas fa-search\"></a>
+      {% if app.user != null %}
+        <a class=\"user-icon-profile\" href=\"{{ path ('user_edit', {'id': app.user.id})}}\"><img class=\"navbar-profile-picture\" src=\"{{asset('assets/uploads/profilePicture/') ~ app.user.profile_picture}}\"/></a>
+        {% else %}
+       <a href=\"{{ path ('login')}}\" class=\"far fa-user-plus user-icon-profile\" ></a>
+      {% endif %}
     </div>
-</nav>
+</header>
 
 
     {% block body %}
@@ -396,6 +469,21 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
             <script src=\"https://code.jquery.com/jquery-3.4.1.min.js\"></script>
             <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.0.8/popper.min.js\"></script>
             <script src=\"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js\"></script>
+            <script>
+                    \$(document).ready(function(){
+                    \$('.fa-angle-right').click(function(){
+                    \$('.fa-angle-right').toggleClass('fa-times')
+                    })
+                \$(window).scroll(function(){
+                if (\$(window).scrollTop() >= 20)
+                {
+                    \$('header').addClass('active')
+                } else {
+                    \$('header').removeClass('active')
+                }
+                    });})
+  
+            </script>
         {% endblock %}
     </body>
 </html>

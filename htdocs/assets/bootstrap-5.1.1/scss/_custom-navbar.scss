@@ -1,6 +1,184 @@
 
+// *{
+//     margin:0; padding:0;
+//     box-sizing: border-box;
+//     font-family: Verdana, Geneva, Tahoma, sans-serif;
+//     outline: none; border:none;
+//     text-decoration: none;
+//     text-transform: capitalize;
+//     transition: .2s linear;
+// }
+
+// html{
+//     font-size: 58%;
+//     scroll-behavior: smooth;
+//     scroll-padding-top: 6rem;
+//     overflow-x: hidden;
+// }
+
+
+header{
+
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+    width: 100%;
+    position: relative;
+    background:#fff;
+    padding:2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+header .navbar{
+   display: none;
+}
+
+header .logo{
+    font-size: 3rem;
+    color:#333;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+header .logo span{
+    color:var(--mainColor);
+}
+
+header .navbar a{
+    font-size: 2rem;
+    padding:0 1.5rem;
+    color:#666;
+}
+
+header .navbar a:hover{
+    color:var(--mainColor);
+}
+
+header .icons a{
+    font-size: 3rem;
+    color: #333;
+    margin-left: 1.5rem;
+    text-decoration: none;
+    font-weight: 500;
+
+}
+
+header .icons a:hover{
+    color:var(--mainColor);
+}
+
+header #toggler{
+    display: none;
+}
+header.active{
+    padding:1.3rem 9%;
+}
+
+header .fa-angle-right{
+    font-size: 3rem;
+    color:#333;
+    border-radius: .5rem;
+    padding:.5rem 1.5rem;
+    cursor: pointer;
+
+    display: none;
+   
+ 
+}
+
+header .fa-user{
+    font-size: 3rem;
+    color:#333;
+    border-radius: .5rem;
+    cursor: pointer;
+
+    display: none;
+}
+
+.fa-times{
+    transform: rotate(90deg);
+    transition: .2s linear;
+}
+
+.user-icon-profile{
+    display: block;
+}
+
 .navbar-profile-picture{
     width: 10%;
     border-radius: 50%;
+    border: 1px rgba(128, 128, 128, 0.261) solid;
+    cursor: pointer;
+}
 
+
+/* media queries  */
+@media (max-width:991px){
+    
+    html{
+        font-size: 55%;
+    }
+
+    header{
+        padding:2rem;
+    }
+
+
+}
+
+@media (max-width:768px){
+
+    header .fa-user{
+        display: block;
+    }
+
+    header .fa-angle-right{
+        display: block;
+    }
+
+    header .navbar{
+        display: block;
+        position:absolute;
+        width: 80%;
+        top:100%; left:0; right:0;
+        background:#eee;
+        border-top: .1rem solid rgba(0,0,0,.1);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    header #toggler:checked ~ .navbar{
+        clip-path:polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    header .navbar a{
+        margin:1.5rem;
+        padding:1.5rem;
+        background:#fff;
+        border:.1rem solid rgba(0,0,0,.1);
+        display: block;
+    }
+
+    .icons{
+
+    .user-icon-profile{
+        display: none;
+    }
+
+    .fa-user-plus{
+        display: none;
+    }
+}
+
+
+}
+
+@media (max-width:450px){
+    
+    html{
+        font-size: 50%;
+    }
 }
