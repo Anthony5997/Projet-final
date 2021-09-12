@@ -1,0 +1,42 @@
+ <section class="section-padding gray-bg">
+    <div class="container">
+        <div class="row">
+            <h3 class="text-extrabold">Your K-Yachting account</h3>
+            {{form_start(formReset)}}
+            <div class="col-xs-12 col-sm-3">
+                <div class="form-group">
+                    {{ form_label(formReset.email, 'Email') }}
+                    {{ form_widget(formReset.email) }}
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <div class="form-group">
+                    {{ form_label(formReset.password, 'Current Password') }}
+                    {{ form_widget(formReset.password) }}
+                    <i class="fa fa-eye show-password"></i>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <div class="form-group">
+                    {{ form_label(formReset.newPassword.first) }}
+                    {{ form_widget(formReset.newPassword.first) }}
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <div class="form-group">
+                    {{ form_label(formReset.newPassword.second) }}  
+                    {{ form_widget(formReset.newPassword.second) }}
+                </div>
+            </div>    
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-4">
+                    <button type="submit" class="btn btn-block btn-lg gradient secondary waves-effect waves-light">
+                        <span><strong>UPDATE</strong> NOW</span>
+                    </button>
+                </div>
+            </div>  
+            {{form_end(formReset)}}
+        </div>
+    </div>
+</section>

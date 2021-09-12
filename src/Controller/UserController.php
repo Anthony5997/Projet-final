@@ -52,9 +52,11 @@ class UserController extends AbstractController
 
         $form = $this->createForm(UserType::class, $user);
         $form2 = $this->createForm(TravelPreferencesType::class, $travelPreferences);
+        $formReset = $this->createForm(UserType::class, $user);
         $formVehicule = $this->createForm(VehiculeType::class, $vehicule);
         $form->handleRequest($request);
         $form2->handleRequest($request);
+        $formReset->handleRequest($request);
         $formVehicule->handleRequest($request);
 
        // dd($userRepository->findUserTravelPreferences($user->getId()));
@@ -113,6 +115,7 @@ class UserController extends AbstractController
             'form' => $form->createView(),
             'userPref' => $form2->createView(),
             'vehicule' => $formVehicule->createView(),
+            'formReset' => $formReset->createView(),
         ]);
     }
 

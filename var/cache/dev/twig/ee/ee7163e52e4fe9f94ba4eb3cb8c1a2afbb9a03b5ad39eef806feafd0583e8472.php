@@ -195,40 +195,40 @@ class __TwigTemplate_564d9db4a8728797de8d48a9587a8e831b0203c9c84338c8efb2199f550
                             <div class=\"input-profile-apropos\">
                                 ";
         // line 65
-        if ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 65, $this->source); })()), "profile_picture", [], "any", false, false, false, 65), ""))) {
+        if ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 65, $this->source); })()), "bio", [], "any", false, false, false, 65), ""))) {
             // line 66
-            echo "                                    <button class=\"profile-button\">
-                                            modifier ma photo de profile <i class=\"fas fa-plus\"></i>
-                                        </button>
-                                    ";
-        } else {
-            // line 70
-            echo "                                        <button class=\"profile-button\">
-                                            ajouter une photo de profile <i class=\"fas fa-plus\"></i>
-                                        </button>
-                                ";
-        }
-        // line 74
-        echo "                            </div>
-                            <div class=\"input-profile-apropos\">
-                            ";
-        // line 76
-        if ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 76, $this->source); })()), "bio", [], "any", false, false, false, 76), ""))) {
-            // line 77
-            echo "                                <p>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 77, $this->source); })()), "bio", [], "any", false, false, false, 77), "html", null, true);
+            echo "                                    <p>";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 66, $this->source); })()), "bio", [], "any", false, false, false, 66), "html", null, true);
             echo "</p>
+                                        ";
+        } else {
+            // line 68
+            echo "                                            <button class=\"profile-button\">
+                                                ajouter une biographie <i class=\"fas fa-plus\"></i>
+                                            </button>
                                     ";
+        }
+        // line 72
+        echo "                                </div>
+                                <div class=\"input-profile-apropos\">
+                                    ";
+        // line 74
+        if ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 74, $this->source); })()), "profile_picture", [], "any", false, false, false, 74), ""))) {
+            // line 75
+            echo "                                        <button class=\"profile-button\">
+                                                modifier ma photo de profile <i class=\"fas fa-plus\"></i>
+                                            </button>
+                                        ";
         } else {
             // line 79
-            echo "                                        <button class=\"profile-button\">
-                                            ajouter une biographie <i class=\"fas fa-plus\"></i>
-                                        </button>
-                                ";
+            echo "                                            <button class=\"profile-button\">
+                                                ajouter une photo de profile <i class=\"fas fa-plus\"></i>
+                                            </button>
+                                    ";
         }
         // line 83
-        echo "                            </div>
-                        </div>
+        echo "                                </div>
+                            </div>
                         <div class=\"d-flex justify-content-center\"><span class=\"profile-separator\"></div>
                     </div>
                     <div class=\"main-info-profile\">
@@ -324,7 +324,15 @@ class __TwigTemplate_564d9db4a8728797de8d48a9587a8e831b0203c9c84338c8efb2199f550
             </div>
              <div class=\"tab-pane\" id=\"tabs-5\" role=\"tabpanel\">
                 <div class=\"container\">
-                 Info Compte
+                 FORM MODIFICATION COMPTE ICI
+                    <div class=\"col-xs-12 col-sm-6 col-md-4 col-md-offset-4\">
+                        ";
+        // line 145
+        echo "                        ";
+        echo twig_include($this->env, $context, "user/_delete_form.html.twig");
+        echo "
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -354,7 +362,7 @@ class __TwigTemplate_564d9db4a8728797de8d48a9587a8e831b0203c9c84338c8efb2199f550
 
     public function getDebugInfo()
     {
-        return array (  321 => 137,  313 => 132,  304 => 126,  287 => 114,  281 => 111,  277 => 110,  273 => 109,  261 => 100,  256 => 98,  251 => 96,  246 => 94,  241 => 92,  230 => 83,  224 => 79,  218 => 77,  216 => 76,  212 => 74,  206 => 70,  200 => 66,  198 => 65,  190 => 59,  182 => 56,  179 => 55,  171 => 52,  168 => 51,  166 => 50,  158 => 45,  154 => 44,  127 => 19,  118 => 16,  115 => 15,  110 => 14,  101 => 11,  98 => 10,  94 => 9,  91 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  331 => 145,  321 => 137,  313 => 132,  304 => 126,  287 => 114,  281 => 111,  277 => 110,  273 => 109,  261 => 100,  256 => 98,  251 => 96,  246 => 94,  241 => 92,  230 => 83,  224 => 79,  218 => 75,  216 => 74,  212 => 72,  206 => 68,  200 => 66,  198 => 65,  190 => 59,  182 => 56,  179 => 55,  171 => 52,  168 => 51,  166 => 50,  158 => 45,  154 => 44,  127 => 19,  118 => 16,  115 => 15,  110 => 14,  101 => 11,  98 => 10,  94 => 9,  91 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -423,26 +431,26 @@ class __TwigTemplate_564d9db4a8728797de8d48a9587a8e831b0203c9c84338c8efb2199f550
                     <div class=\"main-info-profile\">
                         <div class=\"row\">
                             <div class=\"input-profile-apropos\">
-                                {% if user.profile_picture != '' %}
-                                    <button class=\"profile-button\">
-                                            modifier ma photo de profile <i class=\"fas fa-plus\"></i>
-                                        </button>
-                                    {% else %}
+                                {% if user.bio != '' %}
+                                    <p>{{user.bio}}</p>
+                                        {% else %}
+                                            <button class=\"profile-button\">
+                                                ajouter une biographie <i class=\"fas fa-plus\"></i>
+                                            </button>
+                                    {% endif %}
+                                </div>
+                                <div class=\"input-profile-apropos\">
+                                    {% if user.profile_picture != '' %}
                                         <button class=\"profile-button\">
-                                            ajouter une photo de profile <i class=\"fas fa-plus\"></i>
-                                        </button>
-                                {% endif %}
+                                                modifier ma photo de profile <i class=\"fas fa-plus\"></i>
+                                            </button>
+                                        {% else %}
+                                            <button class=\"profile-button\">
+                                                ajouter une photo de profile <i class=\"fas fa-plus\"></i>
+                                            </button>
+                                    {% endif %}
+                                </div>
                             </div>
-                            <div class=\"input-profile-apropos\">
-                            {% if user.bio != '' %}
-                                <p>{{user.bio}}</p>
-                                    {% else %}
-                                        <button class=\"profile-button\">
-                                            ajouter une biographie <i class=\"fas fa-plus\"></i>
-                                        </button>
-                                {% endif %}
-                            </div>
-                        </div>
                         <div class=\"d-flex justify-content-center\"><span class=\"profile-separator\"></div>
                     </div>
                     <div class=\"main-info-profile\">
@@ -500,7 +508,12 @@ class __TwigTemplate_564d9db4a8728797de8d48a9587a8e831b0203c9c84338c8efb2199f550
             </div>
              <div class=\"tab-pane\" id=\"tabs-5\" role=\"tabpanel\">
                 <div class=\"container\">
-                 Info Compte
+                 FORM MODIFICATION COMPTE ICI
+                    <div class=\"col-xs-12 col-sm-6 col-md-4 col-md-offset-4\">
+                        {# {{ include('user/_form-reset.html.twig') }} #}
+                        {{ include('user/_delete_form.html.twig') }}
+                    </div>
+
                 </div>
             </div>
         </div>

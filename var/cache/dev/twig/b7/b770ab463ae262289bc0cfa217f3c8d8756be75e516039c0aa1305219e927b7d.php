@@ -47,7 +47,7 @@ class __TwigTemplate_b071abef34124e371e3b485fa33af4d9ee5beb2f314f20a89b8239eb393
         // line 2
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 2, $this->source); })()), "id", [], "any", false, false, false, 2))), "html", null, true);
         echo "\">
-    <button onclick=\"return prompt('Please Type \\'Delete my account\\' to delete your account:') == 'Delete my account'\" class=\"btn btn-block btn-lg waves-effect waves-light red\"><i class=\"material-icons\">&#xE872;</i> Delete my account</button>
+    <button onclick=\"return prompt('Please Type \\'Delete my account\\' to delete your account:') == 'Delete my account'\" class=\"btn btn-danger\"><i class=\"material-icons\">&#xE872;</i> Delete my account</button>
 </form>
 ";
         
@@ -77,7 +77,7 @@ class __TwigTemplate_b071abef34124e371e3b485fa33af4d9ee5beb2f314f20a89b8239eb393
     {
         return new Source("<form method=\"post\" action=\"{{ path('user_delete', {'id': user.id}) }}\">
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ user.id) }}\">
-    <button onclick=\"return prompt('Please Type \\'Delete my account\\' to delete your account:') == 'Delete my account'\" class=\"btn btn-block btn-lg waves-effect waves-light red\"><i class=\"material-icons\">&#xE872;</i> Delete my account</button>
+    <button onclick=\"return prompt('Please Type \\'Delete my account\\' to delete your account:') == 'Delete my account'\" class=\"btn btn-danger\"><i class=\"material-icons\">&#xE872;</i> Delete my account</button>
 </form>
 ", "user/_delete_form.html.twig", "/shared/httpd/Projet-Final/templates/user/_delete_form.html.twig");
     }
