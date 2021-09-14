@@ -6,6 +6,7 @@ use App\Entity\User;
 use App\Form\UserType;
 use App\Form\TravelPreferencesType;
 use App\Form\VehiculeType;
+use App\Form\UserResetType;
 use App\Repository\TravelPreferencesRepository;
 use App\Repository\UserRepository;
 use App\Repository\VehiculeRepository;
@@ -14,14 +15,16 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use \App\Traits\CustomFiles;
+use \App\Traits\CustomResetPassword;
 
 /**
  * @Route("/user")
  */
 class UserController extends AbstractController
 {
-    use CustomFiles;
+    use CustomFiles, CustomResetPassword;
     /**
      * @Route("/", name="user_index", methods={"GET"})
      */
@@ -45,14 +48,15 @@ class UserController extends AbstractController
     /**
      * @Route("/{id}/edit", name="user_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, User $user, TravelPreferencesController $travelPreferencesController, VehiculeType $vehiculeType, VehiculeController $vehiculeController, VehiculeRepository $vehiculeRepository, TravelPreferencesRepository $travelPreferencesRepository, SluggerInterface $slugger): Response
+    public function edit(Request $request, User $user, TravelPreferencesController $travelPreferencesController, VehiculeController $vehiculeController, VehiculeRepository $vehiculeRepository, TravelPreferencesRepository $travelPreferencesRepository, SluggerInterface $slugger, UserPasswordEncoderInterface $passwordEncoder): Response
     {
+        $userEmail = $user->getEmail();
         $travelPreferences = $travelPreferencesRepository->findOneBy(['id'=> $user->getTravelPreferences()]);
         $vehicule = $vehiculeRepository->findOneBy(['id'=> $user->getVehicule()]);
 
         $form = $this->createForm(UserType::class, $user);
         $form2 = $this->createForm(TravelPreferencesType::class, $travelPreferences);
-        $formReset = $this->createForm(UserType::class, $user);
+        $formReset = $this->createForm(UserResetType::class, $user);
         $formVehicule = $this->createForm(VehiculeType::class, $vehicule);
         $form->handleRequest($request);
         $form2->handleRequest($request);
@@ -109,6 +113,15 @@ class UserController extends AbstractController
                 'id'=>$user->getId()
             ]);
         }
+
+        if ($formReset->isSubmitted() && $formReset->isValid()) {
+    
+            $oldPassword = $formReset->get('password')->getData();
+            $newPassword = $formReset->get('newPassword')->getData();
+            $email = $formReset->get('email')->getData();
+            $this->verifications($user, $userEmail, $email, $passwordEncoder,$oldPassword, $newPassword);  
+    
+            }
 
         return $this->render('user/edit.html.twig', [
             'user' => $user,

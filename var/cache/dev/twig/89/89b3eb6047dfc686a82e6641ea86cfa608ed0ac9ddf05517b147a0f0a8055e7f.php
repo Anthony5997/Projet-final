@@ -65,10 +65,8 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
     </head>
     <body>
         ";
-        // line 24
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 24, $this->source); })()), "user", [], "any", false, false, false, 24));
-        echo "
-        <header>
+        // line 25
+        echo "        <header>
             <input type=\"checkbox\" name=\"\" id=\"toggler\">
             <span class=\"d-flex\"><label class=\"far fa-user\"></label><label for=\"toggler\" class=\"far fa-angle-right\"></label></span>
             <div class=\"titleHeader\">
@@ -125,8 +123,11 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
         // line 45
         echo "            </nav>
             <div class=\"icons\">
-                <a class=\"icon-custom far fa-plus-circle\" href=\"#\"></a>
                 <a class=\"icon-custom fas fa-search\" href=\"#\"></a>
+                <a class=\"icon-custom far fa-plus-circle\" href=\"";
+        // line 48
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("trip_new");
+        echo "\"></a>
             ";
         // line 49
         if ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 49, $this->source); })()), "user", [], "any", false, false, false, 49), null))) {
@@ -157,7 +158,7 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
         ";
         // line 62
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 71
+        // line 72
         echo "    </body>
 </html>
 
@@ -266,6 +267,10 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
         // line 69
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/navbarScript.js"), "html", null, true);
         echo "\"></script>
+            <script src=\"";
+        // line 70
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/guessPlaces.js"), "html", null, true);
+        echo "\"></script>
         ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -287,7 +292,7 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
 
     public function getDebugInfo()
     {
-        return array (  267 => 69,  263 => 68,  256 => 63,  246 => 62,  235 => 59,  225 => 58,  209 => 15,  204 => 12,  194 => 11,  175 => 9,  161 => 71,  159 => 62,  156 => 61,  154 => 58,  150 => 56,  144 => 54,  141 => 53,  137 => 51,  134 => 50,  132 => 49,  126 => 45,  121 => 43,  116 => 42,  111 => 40,  107 => 39,  103 => 38,  99 => 37,  95 => 36,  91 => 35,  86 => 34,  84 => 33,  77 => 29,  69 => 24,  64 => 21,  62 => 11,  57 => 9,  47 => 1,);
+        return array (  272 => 70,  268 => 69,  264 => 68,  257 => 63,  247 => 62,  236 => 59,  226 => 58,  210 => 15,  205 => 12,  195 => 11,  176 => 9,  162 => 72,  160 => 62,  157 => 61,  155 => 58,  151 => 56,  145 => 54,  142 => 53,  138 => 51,  135 => 50,  133 => 49,  129 => 48,  124 => 45,  119 => 43,  114 => 42,  109 => 40,  105 => 39,  101 => 38,  97 => 37,  93 => 36,  89 => 35,  84 => 34,  82 => 33,  75 => 29,  69 => 25,  64 => 21,  62 => 11,  57 => 9,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -315,7 +320,7 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
 
     </head>
     <body>
-        {{dump(app.user)}}
+        {# {{dump(app.user)}} #}
         <header>
             <input type=\"checkbox\" name=\"\" id=\"toggler\">
             <span class=\"d-flex\"><label class=\"far fa-user\"></label><label for=\"toggler\" class=\"far fa-angle-right\"></label></span>
@@ -338,8 +343,8 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
             {% endif %}
             </nav>
             <div class=\"icons\">
-                <a class=\"icon-custom far fa-plus-circle\" href=\"#\"></a>
                 <a class=\"icon-custom fas fa-search\" href=\"#\"></a>
+                <a class=\"icon-custom far fa-plus-circle\" href=\"{{path('trip_new')}}\"></a>
             {% if app.user != null %}
               <input type=\"checkbox\" name=\"\" id=\"toggler\">
             <img class=\"navbar-profile-picture\" src=\"{{asset('assets/uploads/profilePicture/') ~ app.user.profile_picture}}\"/><label class=\"label-right-icon\" for=\"toggler\"><i class=\"fas fa-arrow-down\"></i></label>
@@ -361,6 +366,7 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
             <script src=\"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js\"></script>
             <script src=\"{{asset('assets/js/tabLink.js')}}\"></script>
             <script src=\"{{asset('assets/js/navbarScript.js')}}\"></script>
+            <script src=\"{{asset('assets/js/guessPlaces.js')}}\"></script>
         {% endblock %}
     </body>
 </html>

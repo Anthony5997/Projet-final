@@ -40,60 +40,59 @@ class __TwigTemplate_afd4f3a139eb7a269521ab83469fc2bf30afb999af47b8570ad656fd595
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "user/_form-reset.html.twig"));
 
         // line 1
-        echo " <section class=\"section-padding gray-bg\">
+        echo " <section class=\"section-padding\">
     <div class=\"container\">
         <div class=\"row\">
-            <h3 class=\"text-extrabold\">Your K-Yachting account</h3>
             ";
-        // line 5
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form2"]) || array_key_exists("form2", $context) ? $context["form2"] : (function () { throw new RuntimeError('Variable "form2" does not exist.', 5, $this->source); })()), 'form_start');
+        // line 4
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formReset"]) || array_key_exists("formReset", $context) ? $context["formReset"] : (function () { throw new RuntimeError('Variable "formReset" does not exist.', 4, $this->source); })()), 'form_start');
         echo "
-            <div class=\"col-xs-12 col-sm-3\">
+            <div class=\"col-xs-12 col-sm-6 col-md-6\">
                 <div class=\"form-group\">
                     ";
-        // line 8
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form2"]) || array_key_exists("form2", $context) ? $context["form2"] : (function () { throw new RuntimeError('Variable "form2" does not exist.', 8, $this->source); })()), "email", [], "any", false, false, false, 8), 'label', ["label" => "Email"]);
+        // line 7
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formReset"]) || array_key_exists("formReset", $context) ? $context["formReset"] : (function () { throw new RuntimeError('Variable "formReset" does not exist.', 7, $this->source); })()), "email", [], "any", false, false, false, 7), 'label', ["label" => "Email"]);
         echo "
                     ";
-        // line 9
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form2"]) || array_key_exists("form2", $context) ? $context["form2"] : (function () { throw new RuntimeError('Variable "form2" does not exist.', 9, $this->source); })()), "email", [], "any", false, false, false, 9), 'widget');
+        // line 8
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formReset"]) || array_key_exists("formReset", $context) ? $context["formReset"] : (function () { throw new RuntimeError('Variable "formReset" does not exist.', 8, $this->source); })()), "email", [], "any", false, false, false, 8), 'widget');
         echo "
                 </div>
             </div>
-            <div class=\"col-xs-12 col-sm-3\">
+            <div class=\"col-xs-12 col-sm-6 col-md-6\">
                 <div class=\"form-group\">
+                    <span>";
+        // line 13
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formReset"]) || array_key_exists("formReset", $context) ? $context["formReset"] : (function () { throw new RuntimeError('Variable "formReset" does not exist.', 13, $this->source); })()), "password", [], "any", false, false, false, 13), 'label', ["label" => "Mot de passe actuel"]);
+        echo "</span>
                     ";
         // line 14
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form2"]) || array_key_exists("form2", $context) ? $context["form2"] : (function () { throw new RuntimeError('Variable "form2" does not exist.', 14, $this->source); })()), "password", [], "any", false, false, false, 14), 'label', ["label" => "Current Password"]);
-        echo "
-                    ";
-        // line 15
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form2"]) || array_key_exists("form2", $context) ? $context["form2"] : (function () { throw new RuntimeError('Variable "form2" does not exist.', 15, $this->source); })()), "password", [], "any", false, false, false, 15), 'widget');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formReset"]) || array_key_exists("formReset", $context) ? $context["formReset"] : (function () { throw new RuntimeError('Variable "formReset" does not exist.', 14, $this->source); })()), "password", [], "any", false, false, false, 14), 'widget');
         echo "
                     <i class=\"fa fa-eye show-password\"></i>
                 </div>
             </div>
-            <div class=\"col-xs-12 col-sm-3\">
+            <div class=\"col-xs-12 col-sm-6 col-md-6\">
                 <div class=\"form-group\">
                     ";
-        // line 21
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form2"]) || array_key_exists("form2", $context) ? $context["form2"] : (function () { throw new RuntimeError('Variable "form2" does not exist.', 21, $this->source); })()), "newPassword", [], "any", false, false, false, 21), "first", [], "any", false, false, false, 21), 'label');
+        // line 20
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["formReset"]) || array_key_exists("formReset", $context) ? $context["formReset"] : (function () { throw new RuntimeError('Variable "formReset" does not exist.', 20, $this->source); })()), "newPassword", [], "any", false, false, false, 20), "first", [], "any", false, false, false, 20), 'label');
         echo "
                     ";
-        // line 22
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form2"]) || array_key_exists("form2", $context) ? $context["form2"] : (function () { throw new RuntimeError('Variable "form2" does not exist.', 22, $this->source); })()), "newPassword", [], "any", false, false, false, 22), "first", [], "any", false, false, false, 22), 'widget');
+        // line 21
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["formReset"]) || array_key_exists("formReset", $context) ? $context["formReset"] : (function () { throw new RuntimeError('Variable "formReset" does not exist.', 21, $this->source); })()), "newPassword", [], "any", false, false, false, 21), "first", [], "any", false, false, false, 21), 'widget');
         echo "
                 </div>
             </div>
-            <div class=\"col-xs-12 col-sm-3\">
+            <div class=\"col-xs-12 col-sm-4 col-md-6\">
                 <div class=\"form-group\">
                     ";
-        // line 27
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form2"]) || array_key_exists("form2", $context) ? $context["form2"] : (function () { throw new RuntimeError('Variable "form2" does not exist.', 27, $this->source); })()), "newPassword", [], "any", false, false, false, 27), "second", [], "any", false, false, false, 27), 'label');
+        // line 26
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["formReset"]) || array_key_exists("formReset", $context) ? $context["formReset"] : (function () { throw new RuntimeError('Variable "formReset" does not exist.', 26, $this->source); })()), "newPassword", [], "any", false, false, false, 26), "second", [], "any", false, false, false, 26), 'label');
         echo "  
                     ";
-        // line 28
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form2"]) || array_key_exists("form2", $context) ? $context["form2"] : (function () { throw new RuntimeError('Variable "form2" does not exist.', 28, $this->source); })()), "newPassword", [], "any", false, false, false, 28), "second", [], "any", false, false, false, 28), 'widget');
+        // line 27
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["formReset"]) || array_key_exists("formReset", $context) ? $context["formReset"] : (function () { throw new RuntimeError('Variable "formReset" does not exist.', 27, $this->source); })()), "newPassword", [], "any", false, false, false, 27), "second", [], "any", false, false, false, 27), 'widget');
         echo "
                 </div>
             </div>    
@@ -101,13 +100,13 @@ class __TwigTemplate_afd4f3a139eb7a269521ab83469fc2bf30afb999af47b8570ad656fd595
             <div class=\"row\">
                 <div class=\"col-xs-12 col-sm-6 col-md-4 col-md-offset-4\">
                     <button type=\"submit\" class=\"btn btn-block btn-lg gradient secondary waves-effect waves-light\">
-                        <span><strong>UPDATE</strong> NOW</span>
+                        <span>Mettre à jour mes informations</span>
                     </button>
                 </div>
             </div>  
             ";
-        // line 39
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form2"]) || array_key_exists("form2", $context) ? $context["form2"] : (function () { throw new RuntimeError('Variable "form2" does not exist.', 39, $this->source); })()), 'form_end');
+        // line 38
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formReset"]) || array_key_exists("formReset", $context) ? $context["formReset"] : (function () { throw new RuntimeError('Variable "formReset" does not exist.', 38, $this->source); })()), 'form_end');
         echo "
         </div>
     </div>
@@ -132,50 +131,49 @@ class __TwigTemplate_afd4f3a139eb7a269521ab83469fc2bf30afb999af47b8570ad656fd595
 
     public function getDebugInfo()
     {
-        return array (  110 => 39,  96 => 28,  92 => 27,  84 => 22,  80 => 21,  71 => 15,  67 => 14,  59 => 9,  55 => 8,  49 => 5,  43 => 1,);
+        return array (  109 => 38,  95 => 27,  91 => 26,  83 => 21,  79 => 20,  70 => 14,  66 => 13,  58 => 8,  54 => 7,  48 => 4,  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source(" <section class=\"section-padding gray-bg\">
+        return new Source(" <section class=\"section-padding\">
     <div class=\"container\">
         <div class=\"row\">
-            <h3 class=\"text-extrabold\">Your K-Yachting account</h3>
-            {{form_start(form2)}}
-            <div class=\"col-xs-12 col-sm-3\">
+            {{form_start(formReset)}}
+            <div class=\"col-xs-12 col-sm-6 col-md-6\">
                 <div class=\"form-group\">
-                    {{ form_label(form2.email, 'Email') }}
-                    {{ form_widget(form2.email) }}
+                    {{ form_label(formReset.email, 'Email') }}
+                    {{ form_widget(formReset.email) }}
                 </div>
             </div>
-            <div class=\"col-xs-12 col-sm-3\">
+            <div class=\"col-xs-12 col-sm-6 col-md-6\">
                 <div class=\"form-group\">
-                    {{ form_label(form2.password, 'Current Password') }}
-                    {{ form_widget(form2.password) }}
+                    <span>{{ form_label(formReset.password, 'Mot de passe actuel') }}</span>
+                    {{ form_widget(formReset.password) }}
                     <i class=\"fa fa-eye show-password\"></i>
                 </div>
             </div>
-            <div class=\"col-xs-12 col-sm-3\">
+            <div class=\"col-xs-12 col-sm-6 col-md-6\">
                 <div class=\"form-group\">
-                    {{ form_label(form2.newPassword.first) }}
-                    {{ form_widget(form2.newPassword.first) }}
+                    {{ form_label(formReset.newPassword.first) }}
+                    {{ form_widget(formReset.newPassword.first) }}
                 </div>
             </div>
-            <div class=\"col-xs-12 col-sm-3\">
+            <div class=\"col-xs-12 col-sm-4 col-md-6\">
                 <div class=\"form-group\">
-                    {{ form_label(form2.newPassword.second) }}  
-                    {{ form_widget(form2.newPassword.second) }}
+                    {{ form_label(formReset.newPassword.second) }}  
+                    {{ form_widget(formReset.newPassword.second) }}
                 </div>
             </div>    
 
             <div class=\"row\">
                 <div class=\"col-xs-12 col-sm-6 col-md-4 col-md-offset-4\">
                     <button type=\"submit\" class=\"btn btn-block btn-lg gradient secondary waves-effect waves-light\">
-                        <span><strong>UPDATE</strong> NOW</span>
+                        <span>Mettre à jour mes informations</span>
                     </button>
                 </div>
             </div>  
-            {{form_end(form2)}}
+            {{form_end(formReset)}}
         </div>
     </div>
 </section>", "user/_form-reset.html.twig", "/shared/httpd/Projet-Final/templates/user/_form-reset.html.twig");

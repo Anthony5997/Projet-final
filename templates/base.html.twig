@@ -21,7 +21,7 @@
 
     </head>
     <body>
-        {{dump(app.user)}}
+        {# {{dump(app.user)}} #}
         <header>
             <input type="checkbox" name="" id="toggler">
             <span class="d-flex"><label class="far fa-user"></label><label for="toggler" class="far fa-angle-right"></label></span>
@@ -44,8 +44,8 @@
             {% endif %}
             </nav>
             <div class="icons">
-                <a class="icon-custom far fa-plus-circle" href="#"></a>
                 <a class="icon-custom fas fa-search" href="#"></a>
+                <a class="icon-custom far fa-plus-circle" href="{{path('trip_new')}}"></a>
             {% if app.user != null %}
               <input type="checkbox" name="" id="toggler">
             <img class="navbar-profile-picture" src="{{asset('assets/uploads/profilePicture/') ~ app.user.profile_picture}}"/><label class="label-right-icon" for="toggler"><i class="fas fa-arrow-down"></i></label>
@@ -67,6 +67,7 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
             <script src="{{asset('assets/js/tabLink.js')}}"></script>
             <script src="{{asset('assets/js/navbarScript.js')}}"></script>
+            <script src="{{asset('assets/js/guessPlaces.js')}}"></script>
         {% endblock %}
     </body>
 </html>

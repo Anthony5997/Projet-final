@@ -9,14 +9,7 @@
 </style>
 <div class="home">
       {# {{dump(app.user)}} #}
-  <div class="container">
-      <h3>Hello</h3>
-      {% if app.user != null %}
-        <li><a target="_self" href="{{ path ('user_edit', {'id': app.user.id})}}">Profile</a></li>
-      {% endif %}
-        <li><a target="_self" href="{{ path ('login')}}">Ce connecter</a></li>
-        <li><a target="_self" href="{{ path ('register')}}">S'inscrire</a></li>
-  </div>
+
 </div>
 
 {% endblock %}

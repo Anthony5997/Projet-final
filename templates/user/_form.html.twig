@@ -3,7 +3,6 @@
                 
                     <div class="row">
                     {{ form_start(form) }}
-                        <h3 class="text-extrabold">Informations Personnelle</h3>
                         <div class="clearfix visible-sm"></div>
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-md-4">
@@ -88,7 +87,7 @@
                             </div>
                         </div>
                     <h3 class="text-extrabold">Your professional profile</h3>
-                    <div class="row mt-40">
+                    <div class="row mt-4">
                         <div class="col-xs-12 col-sm-6">
                             <div class="card card-panel passport"> 
                                 <div class='red-text'>{{ form_errors(form.id_card_file)}}</div>
@@ -101,7 +100,6 @@
                                         'type' : 'file',
                                         'class': 'form-control'
                                         }}) }}
-                                        <span><i class="material-icons">&#xE24D;</i> ID CARD</span>
                                     </div>
                                     {% if user.id_card_file != '' %}
                                         <div class="existing-file">
@@ -112,7 +110,7 @@
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12">
-                            <div class="form-group">
+                            <div class="form-group mt-5">
                                 {{ form_label(form.bio, 'Short description for your profile, as well as more personnal informations (e.g. your hobbies/interests ).') }}
                                 {{ form_widget(form.bio, { 'attr': {
                                         'cols' : "20",
