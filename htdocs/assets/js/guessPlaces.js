@@ -16,46 +16,47 @@ divDepartureGuess.addEventListener("input", (e)=> {
     currentSearch = e.target.value;
 
     divDepartureGuess.innerHTML = ''
+    if(currentSearch.length > 2){
+        fetch('http://projet-final.loc/trip/test/'+currentSearch)
+        .then((response)=>{
+            return response.json();
+        }).then((results)=>{
+            let before = null
+            return(
 
-    fetch('http://projet-final.loc/trip/test/'+currentSearch)
-    .then((response)=>{
-        return response.json();
-    }).then((results)=>{
-        console.log("RESULT : ", results)
-        let before = null
-        return(
-
-               results.predictions.map((result) => {
-                   if (before !== null && result.description !== before) {
-                       departure.innerHTML += `<option value="${result.description}">${result.description}</option>`
-                    }
-                 before = results.description
-            }) 
-        )
-    })
+                results.predictions.map((result) => {
+                    if (before !== null && result.description !== before) {
+                        departure.innerHTML += `<option value="${result.description}">${result.description}</option>`
+                        }
+                        before = results.description
+                }) 
+            )
+        })
+    }
 })
 
 
 divArrivalGuess.addEventListener("input", (e)=> {
 
     currentSearch = e.target.value;
-
+console.log(currentSearch);
     divArrivalGuess.innerHTML = ''
+    if(currentSearch.length > 2){
+        fetch('http://projet-final.loc/trip/test/'+currentSearch)
+        .then((response)=>{
+            return response.json();
+        }).then((results)=>{
+            console.log("RESULT : ", results)
+            let before = null
+            return(
 
-    fetch('http://projet-final.loc/trip/test/'+currentSearch)
-    .then((response)=>{
-        return response.json();
-    }).then((results)=>{
-        console.log("RESULT : ", results)
-        let before = null
-        return(
-
-               results.predictions.map((result) => {
-                   if (before !== null && result.description !== before) {
-                    arrival.innerHTML += `<option value="${result.description}">${result.description}</option>`
-                    }
-                 before = results.description
-            }) 
-        )
-    })
+                results.predictions.map((result) => {
+                    if (before !== null && result.description !== before) {
+                        arrival.innerHTML += `<option value="${result.description}">${result.description}</option>`
+                        }
+                    before = results.description
+                }) 
+            )
+        })
+    }
 })

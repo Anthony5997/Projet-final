@@ -41,12 +41,12 @@ class Trip
     private $passengers;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", options={"default" : 0})
      */
     private $trip_full;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", options={"default" : 0})
      */
     private $trip_completed;
 
@@ -55,6 +55,17 @@ class Trip
      * @ORM\JoinColumn(nullable=false)
      */
     private $driver;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $duration;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $distance;
+ 
 
     public function getId(): ?string
     {
@@ -141,6 +152,30 @@ class Trip
     public function setDriver(?User $driver): self
     {
         $this->driver = $driver;
+
+        return $this;
+    }
+
+    public function getDuration(): ?string
+    {
+        return $this->duration;
+    }
+
+    public function setDuration(string $duration): self
+    {
+        $this->duration = $duration;
+
+        return $this;
+    }
+
+    public function getDistance(): ?string
+    {
+        return $this->distance;
+    }
+
+    public function setDistance(string $distance): self
+    {
+        $this->distance = $distance;
 
         return $this;
     }

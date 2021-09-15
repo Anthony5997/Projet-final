@@ -44,7 +44,7 @@
             {% endif %}
             </nav>
             <div class="icons">
-                <a class="icon-custom fas fa-search" href="#"></a>
+                <a class="icon-custom fas fa-search" href="{{path('trip_search')}}"></a>
                 <a class="icon-custom far fa-plus-circle" href="{{path('trip_new')}}"></a>
             {% if app.user != null %}
               <input type="checkbox" name="" id="toggler">
@@ -55,6 +55,16 @@
             {% endif %}
             </div>
         </header>
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success text-white">
+                {{ message }}
+            </div>
+        {% endfor %}
+        {% for message in app.flashes('error') %}
+            <div class="alert alert-error text-white">
+                {{ message }}
+            </div>
+        {% endfor %}
     {% block body %}
     
     {% endblock %}
@@ -68,6 +78,7 @@
             <script src="{{asset('assets/js/tabLink.js')}}"></script>
             <script src="{{asset('assets/js/navbarScript.js')}}"></script>
             <script src="{{asset('assets/js/guessPlaces.js')}}"></script>
+            <script src="{{asset('assets/js/routeRequest.js')}}"></script>
         {% endblock %}
     </body>
 </html>

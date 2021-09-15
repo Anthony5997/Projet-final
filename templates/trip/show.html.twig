@@ -3,44 +3,25 @@
 {% block title %}Trip{% endblock %}
 
 {% block body %}
-    <h1>Trip</h1>
-
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ trip.id }}</td>
-            </tr>
-            <tr>
-                <th>Departure</th>
-                <td>{{ trip.departure }}</td>
-            </tr>
-            <tr>
-                <th>Arrival</th>
-                <td>{{ trip.arrival }}</td>
-            </tr>
-            <tr>
-                <th>Date_of_trip</th>
-                <td>{{ trip.dateOfTrip ? trip.dateOfTrip|date('Y-m-d') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Passengers</th>
-                <td>{{ trip.passengers }}</td>
-            </tr>
-            <tr>
-                <th>Trip_full</th>
-                <td>{{ trip.tripFull ? 'Yes' : 'No' }}</td>
-            </tr>
-            <tr>
-                <th>Trip_completed</th>
-                <td>{{ trip.tripCompleted ? 'Yes' : 'No' }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <a href="{{ path('trip_index') }}">back to list</a>
-
-    <a href="{{ path('trip_edit', {'id': trip.id}) }}">edit</a>
-
-    {{ include('trip/_delete_form.html.twig') }}
+    <input name="idTripFetch" id="idTripFetch" type="hidden" value="{{ trip.id }}">
+       <div class="container">
+       <h4 class="text-center">Bravo ! </h4>
+            <div class="card-custom">
+                <div class="d-flex justify-content-center">
+                  <img src="../assets/uploads/custom-pic/custom-car.png" alt="music image" />
+                </div>
+                <div class="text_content">
+                  <h2>{{trip.departure}} -> {{trip.arrival}}</h2>
+                  <p class=" text-center">
+                    Votre trajet a bien été créé ! 
+                  </p>
+                </div>
+          
+                <div class="plan">
+                  <div id="card-travel"></div>
+                </div>
+                <a class="PTP" href="{{path ('user_edit', {'id': app.user.id})}}"> Retourner sur mon profil</a>
+                {{ include('trip/_delete_form.html.twig') }}
+             </div>
+        </div>
 {% endblock %}

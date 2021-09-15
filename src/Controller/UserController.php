@@ -72,11 +72,11 @@ class UserController extends AbstractController
             if($id_card_file !== null){
                 $user->setId_Card_File($this->uploadFiles($id_card_file, 'id_card_directory', $slugger));
                 $user->setIdCard(true);
-                $this->addFlash('success', 'The ID Card was updated');
+                $this->addFlash('success', 'La carte d\'identité a été ajouté');
             }
             if($profile_picture !== null){
                 $user->setProfile_Picture($this->uploadFiles($profile_picture, 'profile_picture_directory', $slugger));
-                $this->addFlash('success', 'The photo was updated');
+                $this->addFlash('success', 'La photo a été mis à jour');
             }
 
             $this->getDoctrine()->getManager()->flush();
@@ -102,7 +102,7 @@ class UserController extends AbstractController
 
             if($vehicule_picture !== null){
                 $vehicule->setVehiculePicture($this->uploadFiles($vehicule_picture, 'vehicule_picture_directory', $slugger));
-                $this->addFlash('success', 'The photo was updated');
+                $this->addFlash('success', 'La photo a été mis à jour');
             }
 
             $entityManager = $vehiculeController->getDoctrine()->getManager();

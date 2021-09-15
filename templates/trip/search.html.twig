@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rechercher un trajet{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>rechercher un trajet</h1>
+    <form>
+        <div class="form-row">
+            <div class="col">
+            <input name="departureSearch" type="text" class="form-control" placeholder="Départ">
+            </div>
+            <div class="col">
+            <input name="arrivalSearch" type="text" class="form-control" placeholder="Arrivé">
+            </div>
+            <div class="col">
+            <input name="dateSearch" type="date" class="form-control" placeholder="Arrivé">
+            </div>
+            <button class="btn btn-info" type="submit">Rechercher</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
