@@ -6,6 +6,7 @@ use App\Entity\Trip;
 use App\Form\SearchTravelType;
 use App\Form\TripType;
 use App\Repository\TripRepository;
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -80,7 +81,8 @@ class TripController extends AbstractController
     public function treatment(Request $request, Trip $trip)
     {
 
-        if($trip->getArrival() === null && $trip->getDeparture() === null){
+        if($trip->getDuration() === null && $trip->getDistance() === null){
+
 
             if ($request->get('duration') && $request->get('distance') ) {
     
@@ -135,7 +137,7 @@ class TripController extends AbstractController
        /**
      * @Route("/search", name="trip_search", methods={"GET"}, priority=4)
      */
-    public function search(Request $request, TripRepository $tripRepository): Response
+    public function search(Request $request, TripRepository $tripRepository, UserRepository $userRepository): Response
     {
         $arrivalSearch = $request->get('arrivalSearch');
         $departureSearch = $request->get('departureSearch');
@@ -144,10 +146,25 @@ class TripController extends AbstractController
         if ( $arrivalSearch && $departureSearch && $dateSearch ) {
 
             $result = $tripRepository->findOnTripWithDate($arrivalSearch, $departureSearch, $dateSearch);
+            
+            if($result !== []){
+                
+                $user = $userRepository->findOneBy(['id' => $result[0]->getDriver()]);
+                $result[0]->setDriver($user);
+          
+                return $this->render('trip/trip_found.html.twig', [
+                    'tripFound' => $result,
+                ]);
+            }
 
-            dd("result ", $result);
-        
-            return $this->redirectToRoute('trip_index');
+            return $this->render('trip/trip_found.html.twig', []);
+
+        }elseif($arrivalSearch && $departureSearch && $dateSearch === null){
+
+
+            return $this->render('trip/trip_found.html.twig', [
+                'tripFound' => 'nope',
+            ]);
         }
 
         return $this->render('trip/search.html.twig', [

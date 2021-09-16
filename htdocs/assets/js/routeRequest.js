@@ -21,7 +21,7 @@
           console.log("DURATION : ", duration);
           console.log("DISTANCE : ", distance);
           formInfo.append('duration', duration);
-          // formInfo.append('distance', distance);
+          formInfo.append('distance', distance);
           fetch('http://projet-final.loc/trip/treatment/'+currentId, {
               method:'post',
               body: formInfo

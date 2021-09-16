@@ -78,7 +78,7 @@ class __TwigTemplate_c3c6ee57a025454099d852a352554b1dc2a225b1c21f18bd3c6d3c341c0
         echo "
                     ";
         // line 31
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 31, $this->source); })()), "date_of_trip", [], "any", false, false, false, 31), 'widget');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 31, $this->source); })()), "date_of_trip", [], "any", false, false, false, 31), 'widget', ["attr" => ["class" => "form-control"]]);
         echo "
                 </div>
             </div>
@@ -166,7 +166,7 @@ class __TwigTemplate_c3c6ee57a025454099d852a352554b1dc2a225b1c21f18bd3c6d3c341c0
             <div class=\"col-xs-12 col-sm-6 col-md-6\">
                 <div class=\"form-group d-flex flex-column justify-content-center\">
                     {{ form_label(form.date_of_trip, 'Date du trajet') }}
-                    {{ form_widget(form.date_of_trip) }}
+                    {{ form_widget(form.date_of_trip,  { 'attr': {'class': 'form-control'} }) }}
                 </div>
             </div>
              <div class=\"col-xs-12 col-sm-2 col-md-2\"></div>

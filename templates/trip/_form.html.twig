@@ -28,7 +28,7 @@
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="form-group d-flex flex-column justify-content-center">
                     {{ form_label(form.date_of_trip, 'Date du trajet') }}
-                    {{ form_widget(form.date_of_trip) }}
+                    {{ form_widget(form.date_of_trip,  { 'attr': {'class': 'form-control'} }) }}
                 </div>
             </div>
              <div class="col-xs-12 col-sm-2 col-md-2"></div>

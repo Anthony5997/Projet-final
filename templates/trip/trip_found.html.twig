@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Trajet trouvé{% endblock %}
+
+{% block body %}
+<h1 class="text-center m-5"> Trajet trouvé</h1>
+
+
+{% if tripFound is defined %}
+
+    {% for trip in tripFound %}
+
+        <div class="card-custom-found">
+            <div class="plan-found">
+                <div class="timeline">
+                    <div class="d-flex justify-content-end"><p>{{trip.duration}}</p></div>
+                    <div class="row">
+                        <div class="col-3 d-flex align-items-end flex-column justify-content-around p-3">
+                            <p>Heure</p>
+                            <p class="d-flex justify-content-center font-control">{{trip.distance}} </p>
+                            <p>heure</p>
+                        </div>
+                        <div class="col-9">
+                            <div class="line">
+                                <div class="line-content">
+                                    <div class="content">
+                                        <h1>{{trip.departure}}</h1>
+                                        {# <p>Departed</p> #}
+                                    </div>
+                                    <div class="content">
+                                        <h1> {{trip.arrival}}</h1>
+                                        {# <p>Shipment</p> #}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <span class="custom-separator"></span>
+                <div class="row card-found-profile">
+                    <div class="col">
+                        <a href="{{path('user_view_profile', {'id': trip.driver.id})}}" ><img class="img-card"src="{{asset('assets/uploads/profilePicture/') ~ trip.driver.profile_picture}}"/></a>
+                    </div>
+                      <div class="col d-flex  flex-column justify-content-center">
+                        <p class="font-control">{{trip.driver.firstName}}</p>
+                        {% if trip.driver.globalRating %}
+                            <p class="font-control"><i class="fas fa-star"></i>{{trip.driver.globalRating}}</p>
+                        {% else %}
+                            <p class="font-control-rating"><i class="fas fa-star"></i> Premier trajet</p>
+                        {% endif %}
+                    </div>
+                    <div class="col d-flex justify-content-start align-items-center font-control fas fa-chevron-right"></div>
+                    <div class="col"></div>
+                    <div class="col d-flex align-items-center flex-column justify-content-center "><strong>{{trip.passengers}}</strong><i class="fas fa-user-friends"></i></div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+
+
+
+
+
+
+
+
+{% else %}
+        <div class="container">
+           <h2 class="mt-5 text-center red-text"> Désolé ! Aucun voyage n'a été trouver </h2>
+        </div>
+{% endif %}
+
+{% endblock %}

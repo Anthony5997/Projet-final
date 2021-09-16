@@ -40,6 +40,7 @@ return [
     'type_of_vehicule_delete' => [['id'], ['_controller' => 'App\\Controller\\TypeOfVehiculeController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/type/of/vehicule']], [], []],
     'user_index' => [[], ['_controller' => 'App\\Controller\\UserController::index'], [], [['text', '/user/']], [], []],
     'user_show' => [['id'], ['_controller' => 'App\\Controller\\UserController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/user']], [], []],
+    'user_view_profile' => [['id'], ['_controller' => 'App\\Controller\\UserController::viewProfile'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/user/profile']], [], []],
     'user_edit' => [['id'], ['_controller' => 'App\\Controller\\UserController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/user']], [], []],
     'user_delete' => [['id'], ['_controller' => 'App\\Controller\\UserController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/user']], [], []],
     'vehicule_index' => [[], ['_controller' => 'App\\Controller\\VehiculeController::index'], [], [['text', '/vehicule/']], [], []],
