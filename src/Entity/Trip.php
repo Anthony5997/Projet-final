@@ -65,6 +65,11 @@ class Trip
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $distance;
+
+    /**
+     * @ORM\Column(type="time", nullable=true)
+     */
+    private $startTime;
  
 
     public function getId(): ?string
@@ -176,6 +181,18 @@ class Trip
     public function setDistance(string $distance): self
     {
         $this->distance = $distance;
+
+        return $this;
+    }
+
+    public function getStartTime(): ?\DateTimeInterface
+    {
+        return $this->startTime;
+    }
+
+    public function setStartTime(?\DateTimeInterface $startTime): self
+    {
+        $this->startTime = $startTime;
 
         return $this;
     }

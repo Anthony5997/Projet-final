@@ -6,6 +6,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&display=swap");
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -6795,7 +6796,7 @@ header .fa-user {
 }
 
 /*# sourceMappingURL=main.css.map */
-@media (max-width: 991px) {
+@media (max-width: 1180px) {
   .line .content h1, .line .content .h1 {
     font-size: 16px;
   }
@@ -6814,6 +6815,307 @@ header .fa-user {
 
   .font-control-rating {
     font-size: 8px;
+  }
+
+  .card-custom-found {
+    width: 75%;
+  }
+}
+@media (max-width: 780px) {
+  .line .content h1, .line .content .h1 {
+    font-size: 16px;
+  }
+
+  .line .content p {
+    font-size: 10px;
+  }
+
+  .timeline {
+    font-size: 12px;
+  }
+
+  .font-control {
+    font-size: 10px;
+  }
+
+  .font-control-rating {
+    font-size: 8px;
+  }
+
+  .line .content::before {
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    background-color: #82b6e8;
+    content: "";
+    left: -9px;
+    border-radius: 50%;
+  }
+
+  .line::before {
+    position: absolute;
+    top: 7px;
+    width: 2px;
+    height: 87%;
+    background-color: #82b6e8;
+    content: "";
+    left: -4px;
+  }
+
+  .plan-found {
+    background-color: rgba(227, 230, 238, 0.33);
+    border-radius: 15px;
+    /* margin: 13px 30px 13px 30px; */
+    padding: 23px;
+    width: 100%;
+  }
+
+  .line .content {
+    position: relative;
+    padding-left: 30px;
+  }
+  .line .content .line .content h1, .line .content .line .content .h1 {
+    font-size: 10px;
+  }
+
+  .card-custom-found {
+    width: 90%;
+  }
+
+  .card-found-profile {
+    padding-left: 0px;
+  }
+  .card-found-profile a {
+    width: 100%;
+  }
+  .card-found-profile a .img-card {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+}
+.card-custom-detail {
+  width: 65%;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  padding: 20px 10px 10px 20px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.timeline-detail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 12px 30px 0px 30px;
+  background-color: #fff;
+  border-radius: 15px 15px 0px 0px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-size: 16px;
+}
+
+.line-detail {
+  position: relative;
+}
+
+.line-detail::before {
+  position: absolute;
+  top: 12px;
+  width: 2px;
+  height: 88%;
+  background-color: #82b6e8;
+  content: "";
+}
+
+.line-detail .content {
+  position: relative;
+  padding-left: 30px;
+}
+
+.line-detail .content + .content {
+  margin-top: 80px;
+}
+
+.line-detail .content h1, .line-detail .content .h1 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+
+.line-detail .content p {
+  font-size: 14px;
+}
+
+.line-detail .content::before {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #82b6e8;
+  content: "";
+  left: -9px;
+  border-radius: 50%;
+}
+
+.plan-detail {
+  background-color: rgba(227, 230, 238, 0.33);
+  border-radius: 15px;
+  /* margin: 13px 30px 13px 30px; */
+  padding: 23px;
+  width: 100%;
+}
+.plan-detail .custom-separator {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #82b6e8;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 35px;
+  margin-bottom: 15px;
+}
+
+.card-detail-profile {
+  padding-left: 35px;
+  padding-right: 20px;
+  padding-bottom: 15px;
+  margin: 0px;
+  background-color: #fff;
+  border-radius: 0px 0px 15px 15px;
+}
+.card-detail-profile a {
+  width: 100%;
+}
+.card-detail-profile a .img-card {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.card-detail-profile .contact-button {
+  font-size: 22px;
+  color: #82b6e8;
+  border: 1px solid #82b6e8;
+  padding: 12px;
+  border-radius: 20px;
+  width: auto;
+  text-decoration: none;
+}
+.card-detail-profile .contact-button:hover {
+  font-size: 22px;
+  padding: 16px;
+  transform: scale(1.05);
+  transition: 500ms;
+}
+
+.font-control {
+  font-size: 14px;
+}
+
+.font-control-rating {
+  font-size: 14px;
+}
+
+.info-detail {
+  font-size: 18px;
+}
+
+/*# sourceMappingURL=main.css.map */
+@media (max-width: 1180px) {
+  .line-detail .content h1, .line-detail .content .h1 {
+    font-size: 16px;
+  }
+
+  .line-detail .content p {
+    font-size: 10px;
+  }
+
+  .timeline-detail {
+    font-size: 12px;
+  }
+
+  .font-control {
+    font-size: 10px;
+  }
+
+  .font-control-rating {
+    font-size: 8px;
+  }
+
+  .card-custom-detail {
+    width: 75%;
+  }
+}
+@media (max-width: 780px) {
+  .line-detail .content h1, .line-detail .content .h1 {
+    font-size: 16px;
+  }
+
+  .line-detail .content p {
+    font-size: 10px;
+  }
+
+  .timeline {
+    font-size: 12px;
+  }
+
+  .font-control {
+    font-size: 10px;
+  }
+
+  .font-control-rating {
+    font-size: 8px;
+  }
+
+  .line-detail .content::before {
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    background-color: #82b6e8;
+    content: "";
+    left: -9px;
+    border-radius: 50%;
+  }
+
+  .line-detail::before {
+    position: absolute;
+    top: 7px;
+    width: 2px;
+    height: 87%;
+    background-color: #82b6e8;
+    content: "";
+    left: -4px;
+  }
+
+  .plan-detail {
+    background-color: rgba(227, 230, 238, 0.33);
+    border-radius: 15px;
+    /* margin: 13px 30px 13px 30px; */
+    padding: 23px;
+    width: 100%;
+  }
+
+  .line-detail .content {
+    position: relative;
+    padding-left: 30px;
+  }
+  .line-detail .content .line-detail .content h1, .line-detail .content .line-detail .content .h1 {
+    font-size: 10px;
+  }
+
+  .card-custom-detail {
+    width: 90%;
+  }
+
+  .card-detail-profile {
+    padding-left: 0px;
+  }
+  .card-detail-profile a {
+    width: 100%;
+  }
+  .card-detail-profile a .img-card {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
   }
 }
 .clearfix::after {

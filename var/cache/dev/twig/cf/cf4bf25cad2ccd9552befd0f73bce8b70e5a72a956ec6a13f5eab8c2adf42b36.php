@@ -82,16 +82,28 @@ class __TwigTemplate_c3c6ee57a025454099d852a352554b1dc2a225b1c21f18bd3c6d3c341c0
         echo "
                 </div>
             </div>
+            <div class=\"col-xs-12 col-sm-6 col-md-6\">
+                <div class=\"form-group d-flex flex-column justify-content-center\">
+                    ";
+        // line 36
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 36, $this->source); })()), "startTime", [], "any", false, false, false, 36), 'label', ["label" => "heure de départ estimé"]);
+        echo "
+                    ";
+        // line 37
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 37, $this->source); })()), "startTime", [], "any", false, false, false, 37), 'widget', ["attr" => ["class" => "form-control"]]);
+        echo "
+                </div>
+            </div>
              <div class=\"col-xs-12 col-sm-2 col-md-2\"></div>
             <div class=\"col-xs-12 col-sm-6 col-md-3\">
                 <div class=\"form-group d-flex flex-column justify-content-center\">
                     ";
-        // line 37
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 37, $this->source); })()), "passengers", [], "any", false, false, false, 37), 'label', ["label" => "Nombre de passager"]);
+        // line 43
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 43, $this->source); })()), "passengers", [], "any", false, false, false, 43), 'label', ["label" => "Nombre de passager"]);
         echo "  
                     ";
-        // line 38
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 38, $this->source); })()), "passengers", [], "any", false, false, false, 38), 'widget');
+        // line 44
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 44, $this->source); })()), "passengers", [], "any", false, false, false, 44), 'widget');
         echo "
                 </div>
             </div>    
@@ -105,8 +117,8 @@ class __TwigTemplate_c3c6ee57a025454099d852a352554b1dc2a225b1c21f18bd3c6d3c341c0
             </div>  
         </div>
         ";
-        // line 50
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 50, $this->source); })()), 'form_end');
+        // line 56
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 56, $this->source); })()), 'form_end');
         echo "
     </div>
 </section>
@@ -131,7 +143,7 @@ class __TwigTemplate_c3c6ee57a025454099d852a352554b1dc2a225b1c21f18bd3c6d3c341c0
 
     public function getDebugInfo()
     {
-        return array (  109 => 50,  94 => 38,  90 => 37,  81 => 31,  77 => 30,  47 => 3,  43 => 1,);
+        return array (  121 => 56,  106 => 44,  102 => 43,  93 => 37,  89 => 36,  81 => 31,  77 => 30,  47 => 3,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -167,6 +179,12 @@ class __TwigTemplate_c3c6ee57a025454099d852a352554b1dc2a225b1c21f18bd3c6d3c341c0
                 <div class=\"form-group d-flex flex-column justify-content-center\">
                     {{ form_label(form.date_of_trip, 'Date du trajet') }}
                     {{ form_widget(form.date_of_trip,  { 'attr': {'class': 'form-control'} }) }}
+                </div>
+            </div>
+            <div class=\"col-xs-12 col-sm-6 col-md-6\">
+                <div class=\"form-group d-flex flex-column justify-content-center\">
+                    {{ form_label(form.startTime, 'heure de départ estimé') }}
+                    {{ form_widget(form.startTime,  { 'attr': {'class': 'form-control'} }) }}
                 </div>
             </div>
              <div class=\"col-xs-12 col-sm-2 col-md-2\"></div>

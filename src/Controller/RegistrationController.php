@@ -43,6 +43,7 @@ class RegistrationController extends AbstractController
             );
             $user->setRoles(['ROLE_USER']);
             $user->setProfileCompleted(false);
+            $user->setIdCard(false);
             $user->setTripsMade(0);
             $user->setCreatedAt($date);
             $user->setUserExperience($experience);

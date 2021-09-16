@@ -5712,6 +5712,16 @@
         <argument key="trip" type="service_closure" id=".errored..service_locator.ndWfguk.App\Entity\Trip"/>
       </argument>
     </service>
+    <service id=".service_locator.Y_Qvayl" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="travelPreferencesRepository" type="service_closure" id="App\Repository\TravelPreferencesRepository"/>
+        <argument key="trip" type="service_closure" id=".errored..service_locator.Y_Qvayl.App\Entity\Trip"/>
+        <argument key="userExperienceLevelRepository" type="service_closure" id="App\Repository\UserExperienceLevelRepository"/>
+        <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
+        <argument key="vehiculeRepository" type="service_closure" id="App\Repository\VehiculeRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.npyimLp" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5767,7 +5777,7 @@
         <argument key="vehicule" type="service_closure" id=".errored..service_locator.0J1782j.App\Entity\Vehicule"/>
       </argument>
     </service>
-    <service id=".service_locator.ScsZRK2" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.MlpK7rQ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AuthenticatorController::login" type="service_closure" id=".service_locator.UDgw6Ol"/>
@@ -5777,6 +5787,7 @@
         <argument key="App\Controller\TravelPreferencesController::index" type="service_closure" id=".service_locator.Q9j70tw"/>
         <argument key="App\Controller\TravelPreferencesController::show" type="service_closure" id=".service_locator.JUZyQIf"/>
         <argument key="App\Controller\TripController::delete" type="service_closure" id=".service_locator.ndWfguk"/>
+        <argument key="App\Controller\TripController::details" type="service_closure" id=".service_locator.Y_Qvayl"/>
         <argument key="App\Controller\TripController::edit" type="service_closure" id=".service_locator.ndWfguk"/>
         <argument key="App\Controller\TripController::index" type="service_closure" id=".service_locator.PFPujJk"/>
         <argument key="App\Controller\TripController::routeRequest" type="service_closure" id=".service_locator.ndWfguk"/>
@@ -5809,6 +5820,7 @@
         <argument key="App\Controller\TravelPreferencesController:index" type="service_closure" id=".service_locator.Q9j70tw"/>
         <argument key="App\Controller\TravelPreferencesController:show" type="service_closure" id=".service_locator.JUZyQIf"/>
         <argument key="App\Controller\TripController:delete" type="service_closure" id=".service_locator.ndWfguk"/>
+        <argument key="App\Controller\TripController:details" type="service_closure" id=".service_locator.Y_Qvayl"/>
         <argument key="App\Controller\TripController:edit" type="service_closure" id=".service_locator.ndWfguk"/>
         <argument key="App\Controller\TripController:index" type="service_closure" id=".service_locator.PFPujJk"/>
         <argument key="App\Controller\TripController:routeRequest" type="service_closure" id=".service_locator.ndWfguk"/>
@@ -6359,12 +6371,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.ScsZRK2"/>
+      <argument type="service" id=".service_locator.MlpK7rQ"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.ScsZRK2"/>
+      <argument type="service" id=".service_locator.MlpK7rQ"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -6384,6 +6396,7 @@
     <service id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
     <service id=".errored..service_locator.JUZyQIf.App\Entity\TravelPreferences" class="App\Entity\TravelPreferences"/>
     <service id=".errored..service_locator.ndWfguk.App\Entity\Trip" class="App\Entity\Trip"/>
+    <service id=".errored..service_locator.Y_Qvayl.App\Entity\Trip" class="App\Entity\Trip"/>
     <service id=".errored..service_locator.W8c9CE7.App\Entity\TypeOfVehicule" class="App\Entity\TypeOfVehicule"/>
     <service id=".errored..service_locator.ch4Jgvl.App\Entity\User" class="App\Entity\User"/>
     <service id=".errored..service_locator.5YGgH5O.App\Entity\User" class="App\Entity\User"/>
@@ -6786,7 +6799,7 @@
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.Kbr2i2X" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.ScsZRK2"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.MlpK7rQ"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

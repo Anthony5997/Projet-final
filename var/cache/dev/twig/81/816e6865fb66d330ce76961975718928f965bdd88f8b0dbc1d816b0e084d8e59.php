@@ -145,7 +145,7 @@ class __TwigTemplate_d3b9aa262a544627e12b233611ef5d25efcb01a23da6b092c92afb0c064
                     <div class=\"col\">
                         <a href=\"";
                 // line 42
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_view_profile", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["trip"], "driver", [], "any", false, false, false, 42), "id", [], "any", false, false, false, 42)]), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("trip_details", ["id" => twig_get_attribute($this->env, $this->source, $context["trip"], "id", [], "any", false, false, false, 42)]), "html", null, true);
                 echo "\" ><img class=\"img-card\"src=\"";
                 echo twig_escape_filter($this->env, ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/uploads/profilePicture/") . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["trip"], "driver", [], "any", false, false, false, 42), "profile_picture", [], "any", false, false, false, 42)), "html", null, true);
                 echo "\"/></a>
@@ -171,10 +171,9 @@ class __TwigTemplate_d3b9aa262a544627e12b233611ef5d25efcb01a23da6b092c92afb0c064
                 // line 51
                 echo "                    </div>
                     <div class=\"col d-flex justify-content-start align-items-center font-control fas fa-chevron-right\"></div>
-                    <div class=\"col\"></div>
                     <div class=\"col d-flex align-items-center flex-column justify-content-center \"><strong>";
-                // line 54
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "passengers", [], "any", false, false, false, 54), "html", null, true);
+                // line 53
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "passengers", [], "any", false, false, false, 53), "html", null, true);
                 echo "</strong><i class=\"fas fa-user-friends\"></i></div>
                 </div>
             </div>
@@ -184,7 +183,7 @@ class __TwigTemplate_d3b9aa262a544627e12b233611ef5d25efcb01a23da6b092c92afb0c064
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['trip'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 59
+            // line 58
             echo "
 
 
@@ -196,13 +195,13 @@ class __TwigTemplate_d3b9aa262a544627e12b233611ef5d25efcb01a23da6b092c92afb0c064
 
 ";
         } else {
-            // line 69
+            // line 68
             echo "        <div class=\"container\">
            <h2 class=\"mt-5 text-center red-text\"> Désolé ! Aucun voyage n'a été trouver </h2>
         </div>
 ";
         }
-        // line 73
+        // line 72
         echo "
 ";
         
@@ -225,7 +224,7 @@ class __TwigTemplate_d3b9aa262a544627e12b233611ef5d25efcb01a23da6b092c92afb0c064
 
     public function getDebugInfo()
     {
-        return array (  206 => 73,  200 => 69,  188 => 59,  177 => 54,  172 => 51,  168 => 49,  162 => 47,  160 => 46,  156 => 45,  148 => 42,  137 => 33,  133 => 31,  129 => 29,  125 => 27,  115 => 20,  108 => 16,  102 => 12,  98 => 11,  95 => 10,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  205 => 72,  199 => 68,  187 => 58,  176 => 53,  172 => 51,  168 => 49,  162 => 47,  160 => 46,  156 => 45,  148 => 42,  137 => 33,  133 => 31,  129 => 29,  125 => 27,  115 => 20,  108 => 16,  102 => 12,  98 => 11,  95 => 10,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -271,7 +270,7 @@ class __TwigTemplate_d3b9aa262a544627e12b233611ef5d25efcb01a23da6b092c92afb0c064
                     <span class=\"custom-separator\"></span>
                 <div class=\"row card-found-profile\">
                     <div class=\"col\">
-                        <a href=\"{{path('user_view_profile', {'id': trip.driver.id})}}\" ><img class=\"img-card\"src=\"{{asset('assets/uploads/profilePicture/') ~ trip.driver.profile_picture}}\"/></a>
+                        <a href=\"{{path('trip_details', {'id': trip.id})}}\" ><img class=\"img-card\"src=\"{{asset('assets/uploads/profilePicture/') ~ trip.driver.profile_picture}}\"/></a>
                     </div>
                       <div class=\"col d-flex  flex-column justify-content-center\">
                         <p class=\"font-control\">{{trip.driver.firstName}}</p>
@@ -282,7 +281,6 @@ class __TwigTemplate_d3b9aa262a544627e12b233611ef5d25efcb01a23da6b092c92afb0c064
                         {% endif %}
                     </div>
                     <div class=\"col d-flex justify-content-start align-items-center font-control fas fa-chevron-right\"></div>
-                    <div class=\"col\"></div>
                     <div class=\"col d-flex align-items-center flex-column justify-content-center \"><strong>{{trip.passengers}}</strong><i class=\"fas fa-user-friends\"></i></div>
                 </div>
             </div>

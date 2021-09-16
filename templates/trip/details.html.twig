@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Trip{% endblock %}
+
+{% block body %}
+{{dump(trip)}}
+       <div class="container">
+          <h4 class="text-center">Détails du voyage</h4>
+            <div class="card-custom-detail">
+              <div class="plan-detail">
+              <h1>{{trip.dateOfTrip|date()}}</h1>
+                <div class="timeline-detail">
+
+                    <div class="d-flex justify-content-end"><p>{{trip.duration}}</p></div>
+                    <div class="row">
+                          <div class="col-3 d-flex align-items-end flex-column justify-content-around p-3">
+                              <p>Heure</p>
+                              <p class="d-flex justify-content-center font-control">{{trip.distance}} </p>
+                              <p>heure</p>
+                          </div>
+                          <div class="col-9">
+                              <div class="line-detail">
+                                  <div class="line-content">
+                                      <div class="content">
+                                          <h1>{{trip.departure}}</h1>
+                                          {# <p>Departed</p> #}
+                                      </div>
+                                      <div class="content">
+                                          <h1> {{trip.arrival}}</h1>
+                                          {# <p>Shipment</p> #}
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  <span class="custom-separator"></span>
+                  </div>
+                  <div class="row card-detail-profile">
+                      <div class="col">
+                          <a href="{{path('user_view_profile', {'id': trip.driver.id})}}" ><img class="img-card"src="{{asset('assets/uploads/profilePicture/') ~ trip.driver.profile_picture}}"/></a>
+                      </div>
+                        <div class="col d-flex  flex-column justify-content-center">
+                          <p class="font-control">{{trip.driver.firstName}}</p>
+                          {% if trip.driver.globalRating %}
+                              <p class="font-control"><i class="fas fa-star"></i>{{trip.driver.globalRating}}</p>
+                          {% else %}
+                              <p class="font-control-rating"><i class="fas fa-star"></i> Premier trajet</p>
+                          {% endif %}
+                      </div>
+                      <div class="col d-flex justify-content-start align-items-center font-control fas fa-chevron-right"></div>
+                      <div class="row">
+                          {% if trip.driver.idCard %}
+                              <p class="info-detail"><i style="color:green;" class="far fa-check-circle"></i> Pièce d'identité vérifiée</p>
+                          {% endif %}
+                          <a href="" class="contact-button"><i style="color:#82b6e8;" class="far fa-comments"></i> Contacter {{trip.driver.firstName}}</a>
+                      </div>
+                      <span class="custom-separator"></span>
+                  </div>
+              </div>
+          </div>
+        </div>
+{% endblock %}

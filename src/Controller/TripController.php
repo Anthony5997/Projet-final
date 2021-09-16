@@ -5,8 +5,11 @@ namespace App\Controller;
 use App\Entity\Trip;
 use App\Form\SearchTravelType;
 use App\Form\TripType;
+use App\Repository\TravelPreferencesRepository;
 use App\Repository\TripRepository;
+use App\Repository\UserExperienceLevelRepository;
 use App\Repository\UserRepository;
+use App\Repository\VehiculeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -70,6 +73,25 @@ class TripController extends AbstractController
     public function show(Trip $trip): Response
     {
         return $this->render('trip/show.html.twig', [
+            'trip' => $trip,
+        ]);
+    }
+
+
+      /**
+     * @Route("/details/{id}", name="trip_details", methods={"GET"})
+     */
+    public function details(Trip $trip, UserRepository $userRepository, TravelPreferencesRepository $travelPreferencesRepository, UserExperienceLevelRepository $userExperienceLevelRepository, VehiculeRepository $vehiculeRepository): Response
+    {
+        $user = $userRepository->findOneBy(['id' => $trip->getDriver()]);
+        $travelPreferences = $travelPreferencesRepository->findOneBy(['id' => $user->getTravelPreferences()]);
+        $experienceLevel = $userExperienceLevelRepository->findOneBy(['id' => $user->getUserExperience()]);
+        $vehicule = $vehiculeRepository->findOneBy(['id' => $user->getVehicule()]);
+        $user->setTravelPreferences($travelPreferences);
+        $user->setUserExperience($experienceLevel);
+        $user->setVehicule($vehicule);
+        $trip->setDriver($user);
+        return $this->render('trip/details.html.twig', [
             'trip' => $trip,
         ]);
     }
@@ -150,6 +172,7 @@ class TripController extends AbstractController
             if($result !== []){
                 
                 $user = $userRepository->findOneBy(['id' => $result[0]->getDriver()]);
+              
                 $result[0]->setDriver($user);
           
                 return $this->render('trip/trip_found.html.twig', [
