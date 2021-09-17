@@ -34,7 +34,6 @@ class RegistrationController extends AbstractController
        // dd("experience register : ", $experience);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // encode the plain password
             $user->setPassword(
                 $passwordEncoder->encodePassword(
                     $user,
@@ -47,6 +46,7 @@ class RegistrationController extends AbstractController
             $user->setTripsMade(0);
             $user->setCreatedAt($date);
             $user->setUserExperience($experience);
+            $user->setProfile_Picture("default_profile_picture.jpg");
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($travelPreferences, $vehicule);
             $user->setTravelPreferences($travelPreferences);

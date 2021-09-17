@@ -340,6 +340,13 @@
         <argument type="service" id=".service_locator.5nX7ca3.App\Controller\AuthenticatorController"/>
       </call>
     </service>
+    <service id="App\Controller\BookingController" class="App\Controller\BookingController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.5nX7ca3.App\Controller\BookingController"/>
+      </call>
+    </service>
     <service id="App\Controller\HomeController" class="App\Controller\HomeController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -388,6 +395,9 @@
       <call method="setContainer">
         <argument type="service" id=".service_locator.5nX7ca3.App\Controller\VehiculeController"/>
       </call>
+    </service>
+    <service id="App\Form\BookingType" class="App\Form\BookingType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
     </service>
     <service id="App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
@@ -925,6 +935,7 @@
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\BookingType</argument>
         <argument>App\Form\RegistrationFormType</argument>
         <argument>App\Form\TravelPreferencesType</argument>
         <argument>App\Form\TripType</argument>
@@ -1289,7 +1300,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.WrJ3GU9"/>
+      <argument type="service" id=".service_locator.iILi7Hb"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -5306,6 +5317,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AuthenticatorController" class="App\Controller\AuthenticatorController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AuthenticatorController" class="App\Controller\AuthenticatorController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\AuthenticatorController" class="App\Controller\AuthenticatorController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\BookingController" class="App\Controller\BookingController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\BookingController" class="App\Controller\BookingController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\BookingController" class="App\Controller\BookingController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5327,6 +5341,8 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\VehiculeController" class="App\Controller\VehiculeController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\VehiculeController" class="App\Controller\VehiculeController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\VehiculeController" class="App\Controller\VehiculeController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\BookingType" class="App\Form\BookingType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\BookingType" class="App\Form\BookingType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\TravelPreferencesType" class="App\Form\TravelPreferencesType" autowire="true" abstract="true"/>
@@ -5679,6 +5695,25 @@
         <argument key="authenticationUtils" type="service_closure" id="security.authentication_utils"/>
       </argument>
     </service>
+    <service id=".service_locator.ENco2Qi" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="bookingRepository" type="service_closure" id="App\Repository\BookingRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.DpceKts" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="bookingRepository" type="service_closure" id="App\Repository\BookingRepository"/>
+        <argument key="trip" type="service_closure" id=".errored..service_locator.DpceKts.App\Entity\Trip"/>
+      </argument>
+    </service>
+    <service id=".service_locator.v3bldx6" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="booking" type="service_closure" id=".errored..service_locator.v3bldx6.App\Entity\Booking"/>
+      </argument>
+    </service>
     <service id=".service_locator.rmBpKAE" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5712,15 +5747,12 @@
         <argument key="trip" type="service_closure" id=".errored..service_locator.ndWfguk.App\Entity\Trip"/>
       </argument>
     </service>
-    <service id=".service_locator.GKEdSHe" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.UQ292Y5" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="travelPreferencesRepository" type="service_closure" id="App\Repository\TravelPreferencesRepository"/>
-        <argument key="trip" type="service_closure" id=".errored..service_locator.GKEdSHe.App\Entity\Trip"/>
+        <argument key="bookingRepository" type="service_closure" id="App\Repository\BookingRepository"/>
+        <argument key="trip" type="service_closure" id=".errored..service_locator.UQ292Y5.App\Entity\Trip"/>
         <argument key="tripRepository" type="service_closure" id="App\Repository\TripRepository"/>
-        <argument key="userExperienceLevelRepository" type="service_closure" id="App\Repository\UserExperienceLevelRepository"/>
-        <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
-        <argument key="vehiculeRepository" type="service_closure" id="App\Repository\VehiculeRepository"/>
       </argument>
     </service>
     <service id=".service_locator.npyimLp" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -5785,17 +5817,20 @@
         <argument key="vehicule" type="service_closure" id=".errored..service_locator.0J1782j.App\Entity\Vehicule"/>
       </argument>
     </service>
-    <service id=".service_locator.wp0ipOl" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.f5NMAcm" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AuthenticatorController::login" type="service_closure" id=".service_locator.UDgw6Ol"/>
+        <argument key="App\Controller\BookingController::delete" type="service_closure" id=".service_locator.v3bldx6"/>
+        <argument key="App\Controller\BookingController::index" type="service_closure" id=".service_locator.ENco2Qi"/>
+        <argument key="App\Controller\BookingController::new" type="service_closure" id=".service_locator.DpceKts"/>
         <argument key="App\Controller\RegistrationController::register" type="service_closure" id=".service_locator.rmBpKAE"/>
         <argument key="App\Controller\TravelPreferencesController::delete" type="service_closure" id=".service_locator.JUZyQIf"/>
         <argument key="App\Controller\TravelPreferencesController::edit" type="service_closure" id=".service_locator.JUZyQIf"/>
         <argument key="App\Controller\TravelPreferencesController::index" type="service_closure" id=".service_locator.Q9j70tw"/>
         <argument key="App\Controller\TravelPreferencesController::show" type="service_closure" id=".service_locator.JUZyQIf"/>
         <argument key="App\Controller\TripController::delete" type="service_closure" id=".service_locator.ndWfguk"/>
-        <argument key="App\Controller\TripController::details" type="service_closure" id=".service_locator.GKEdSHe"/>
+        <argument key="App\Controller\TripController::details" type="service_closure" id=".service_locator.UQ292Y5"/>
         <argument key="App\Controller\TripController::edit" type="service_closure" id=".service_locator.ndWfguk"/>
         <argument key="App\Controller\TripController::index" type="service_closure" id=".service_locator.PFPujJk"/>
         <argument key="App\Controller\TripController::routeRequest" type="service_closure" id=".service_locator.ndWfguk"/>
@@ -5822,13 +5857,16 @@
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::terminate" type="service_closure" id=".service_locator.KfwZsne"/>
         <argument key="App\Controller\AuthenticatorController:login" type="service_closure" id=".service_locator.UDgw6Ol"/>
+        <argument key="App\Controller\BookingController:delete" type="service_closure" id=".service_locator.v3bldx6"/>
+        <argument key="App\Controller\BookingController:index" type="service_closure" id=".service_locator.ENco2Qi"/>
+        <argument key="App\Controller\BookingController:new" type="service_closure" id=".service_locator.DpceKts"/>
         <argument key="App\Controller\RegistrationController:register" type="service_closure" id=".service_locator.rmBpKAE"/>
         <argument key="App\Controller\TravelPreferencesController:delete" type="service_closure" id=".service_locator.JUZyQIf"/>
         <argument key="App\Controller\TravelPreferencesController:edit" type="service_closure" id=".service_locator.JUZyQIf"/>
         <argument key="App\Controller\TravelPreferencesController:index" type="service_closure" id=".service_locator.Q9j70tw"/>
         <argument key="App\Controller\TravelPreferencesController:show" type="service_closure" id=".service_locator.JUZyQIf"/>
         <argument key="App\Controller\TripController:delete" type="service_closure" id=".service_locator.ndWfguk"/>
-        <argument key="App\Controller\TripController:details" type="service_closure" id=".service_locator.GKEdSHe"/>
+        <argument key="App\Controller\TripController:details" type="service_closure" id=".service_locator.UQ292Y5"/>
         <argument key="App\Controller\TripController:edit" type="service_closure" id=".service_locator.ndWfguk"/>
         <argument key="App\Controller\TripController:index" type="service_closure" id=".service_locator.PFPujJk"/>
         <argument key="App\Controller\TripController:routeRequest" type="service_closure" id=".service_locator.ndWfguk"/>
@@ -5912,9 +5950,10 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.WrJ3GU9" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.iILi7Hb" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\BookingType" type="service_closure" id="App\Form\BookingType"/>
         <argument key="App\Form\RegistrationFormType" type="service_closure" id="App\Form\RegistrationFormType"/>
         <argument key="App\Form\TravelPreferencesType" type="service_closure" id="App\Form\TravelPreferencesType"/>
         <argument key="App\Form\TripType" type="service_closure" id="App\Form\TripType"/>
@@ -6172,6 +6211,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.5nX7ca3" method="withContext"/>
     </service>
+    <service id=".service_locator.5nX7ca3.App\Controller\BookingController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\BookingController"/>
+      <argument>App\Controller\BookingController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.5nX7ca3" method="withContext"/>
+    </service>
     <service id=".service_locator.5nX7ca3.App\Controller\HomeController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\HomeController"/>
       <argument>App\Controller\HomeController</argument>
@@ -6379,12 +6424,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.wp0ipOl"/>
+      <argument type="service" id=".service_locator.f5NMAcm"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.wp0ipOl"/>
+      <argument type="service" id=".service_locator.f5NMAcm"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -6402,9 +6447,11 @@
     </service>
     <service id=".errored..service_locator.KfwZsne.Symfony\Component\HttpFoundation\Response" class="Symfony\Component\HttpFoundation\Response"/>
     <service id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
+    <service id=".errored..service_locator.DpceKts.App\Entity\Trip" class="App\Entity\Trip"/>
+    <service id=".errored..service_locator.v3bldx6.App\Entity\Booking" class="App\Entity\Booking"/>
     <service id=".errored..service_locator.JUZyQIf.App\Entity\TravelPreferences" class="App\Entity\TravelPreferences"/>
     <service id=".errored..service_locator.ndWfguk.App\Entity\Trip" class="App\Entity\Trip"/>
-    <service id=".errored..service_locator.GKEdSHe.App\Entity\Trip" class="App\Entity\Trip"/>
+    <service id=".errored..service_locator.UQ292Y5.App\Entity\Trip" class="App\Entity\Trip"/>
     <service id=".errored..service_locator.W8c9CE7.App\Entity\TypeOfVehicule" class="App\Entity\TypeOfVehicule"/>
     <service id=".errored..service_locator.4MF6DUv.App\Entity\User" class="App\Entity\User"/>
     <service id=".errored..service_locator.ch4Jgvl.App\Entity\User" class="App\Entity\User"/>
@@ -6808,7 +6855,7 @@
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.Kbr2i2X" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.wp0ipOl"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.f5NMAcm"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

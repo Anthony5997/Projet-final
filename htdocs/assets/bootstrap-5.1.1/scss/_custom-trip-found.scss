@@ -122,14 +122,16 @@
     }
 
 }
+    a{
+        .font-control{
+            font-size: 16px;
+        }
 
-.font-control{
-    font-size: 14px;
-}
+        .font-control-rating{
+            font-size: 13px;
+        }
+    }
 
-.font-control-rating{
-    font-size: 14px;
-}
 /*# sourceMappingURL=main.css.map */
 
 @media (max-width:1180px){

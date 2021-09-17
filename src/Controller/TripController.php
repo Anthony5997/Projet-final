@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Trip;
 use App\Form\SearchTravelType;
 use App\Form\TripType;
+use App\Repository\BookingRepository;
 use App\Repository\TravelPreferencesRepository;
 use App\Repository\TripRepository;
 use App\Repository\UserExperienceLevelRepository;
@@ -81,7 +82,7 @@ class TripController extends AbstractController
       /**
      * @Route("/details/{id}", name="trip_details", methods={"GET"})
      */
-    public function details(Trip $trip, TripRepository $tripRepository, UserRepository $userRepository, TravelPreferencesRepository $travelPreferencesRepository, UserExperienceLevelRepository $userExperienceLevelRepository, VehiculeRepository $vehiculeRepository): Response
+    public function details(Trip $trip, TripRepository $tripRepository, BookingRepository $bookingRepository): Response
     {
         // $user = $userRepository->findOneBy(['id' => $trip->getDriver()]);
         // $travelPreferences = $travelPreferencesRepository->findOneBy(['id' => $user->getTravelPreferences()]);
@@ -91,9 +92,20 @@ class TripController extends AbstractController
         // $user->setUserExperience($experienceLevel);
         // $user->setVehicule($vehicule);
         // $trip->setDriver($user);
+        $user = $this->getUser();
+        $checkBooking = $bookingRepository->bookingExist($user->getId(), $trip->getId());
+
+        if($checkBooking){
+            if($checkBooking->getTrip()->getDriver()->getId() === $user->getId()){
+
+                $checkBooking = "my";
+            }
+        }
+
         $trip = $tripRepository->findUserInfoByTrip($trip);
         return $this->render('trip/details.html.twig', [
             'trip' => $trip,
+            'checkBooking' => $checkBooking,
         ]);
     }
 

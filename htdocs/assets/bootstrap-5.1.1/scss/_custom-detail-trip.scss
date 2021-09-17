@@ -131,6 +131,25 @@
         transition: 500ms;
     }
 
+    .contact-button-cancel{
+
+        margin-top: 15px;
+        font-size: 22px;
+        color: rgba(204, 10, 10, 0.508);
+        border: 1px solid rgba(204, 10, 10, 0.508);
+        padding: 12px;
+        border-radius: 20px;
+        width: auto;
+        text-decoration: none;
+    }
+
+    .contact-button-cancel:hover{
+        font-size: 20px;
+        padding: 16px;
+        transform: scale(1.05);
+        transition: 500ms;
+    }
+
 }
 
 .font-control{
@@ -163,7 +182,6 @@
         
     }
 }
-
 
 /*# sourceMappingURL=main.css.map */
 
@@ -277,7 +295,6 @@
 
         width: 90%;
     }
-
 
     .card-detail-profile{
 

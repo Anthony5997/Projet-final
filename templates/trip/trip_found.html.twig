@@ -16,7 +16,7 @@
                     <div class="d-flex justify-content-end"><p>{{trip.duration}}</p></div>
                     <div class="row">
                         <div class="col-3 d-flex align-items-end flex-column justify-content-around p-3">
-                            <p>Heure</p>
+                            <p><strong>{{trip.startTime|date('H:i')}}</strong></p>
                             <p class="d-flex justify-content-center font-control">{{trip.distance}} </p>
                             <p>heure</p>
                         </div>
@@ -25,11 +25,9 @@
                                 <div class="line-content">
                                     <div class="content">
                                         <h1>{{trip.departure}}</h1>
-                                        {# <p>Departed</p> #}
                                     </div>
                                     <div class="content">
                                         <h1> {{trip.arrival}}</h1>
-                                        {# <p>Shipment</p> #}
                                     </div>
                                 </div>
                             </div>

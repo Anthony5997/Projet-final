@@ -6799,12 +6799,11 @@ header .fa-user {
   border-radius: 50%;
 }
 
-.font-control {
-  font-size: 14px;
+a .font-control {
+  font-size: 16px;
 }
-
-.font-control-rating {
-  font-size: 14px;
+a .font-control-rating {
+  font-size: 13px;
 }
 
 /*# sourceMappingURL=main.css.map */
@@ -7019,6 +7018,22 @@ header .fa-user {
   text-decoration: none;
 }
 .card-detail-profile .contact-button:hover {
+  font-size: 20px;
+  padding: 16px;
+  transform: scale(1.05);
+  transition: 500ms;
+}
+.card-detail-profile .contact-button-cancel {
+  margin-top: 15px;
+  font-size: 22px;
+  color: rgba(204, 10, 10, 0.508);
+  border: 1px solid rgba(204, 10, 10, 0.508);
+  padding: 12px;
+  border-radius: 20px;
+  width: auto;
+  text-decoration: none;
+}
+.card-detail-profile .contact-button-cancel:hover {
   font-size: 20px;
   padding: 16px;
   transform: scale(1.05);

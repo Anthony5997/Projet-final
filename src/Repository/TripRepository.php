@@ -33,8 +33,8 @@ class TripRepository extends ServiceEntityRepository
             ->setParameter('arrival', $arrival)
             ->andWhere('trip.date_of_trip = :date')
             ->setParameter('date', $date)
-            ->orderBy('trip.date_of_trip', 'ASC')
-            ->setMaxResults(10)
+            ->orderBy('trip.startTime', 'ASC')
+            ->setMaxResults(20)
             ->getQuery()
             ->getResult()
         ;

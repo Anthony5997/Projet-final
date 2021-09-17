@@ -84,7 +84,7 @@ class User implements UserInterface
     private $bio;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=false, options={"default":"default_profile_picture.jpg"})
+     * @ORM\Column(type="string", length=255, nullable=true, options={"default":"default_profile_picture.jpg"})
      */
     private $profile_picture;
 

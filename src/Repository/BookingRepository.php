@@ -19,6 +19,36 @@ class BookingRepository extends ServiceEntityRepository
         parent::__construct($registry, Booking::class);
     }
 
+    public function bookingExist($user, $trip){
+
+       
+        return $this->createQueryBuilder('booking')
+        ->where('booking.trip = :trip')
+        ->setParameter('trip', $trip)
+        ->andWhere('booking.user = :user')
+        ->setParameter('user', $user)
+        ->getQuery()
+        ->getOneOrNullResult()
+    ;
+
+    }
+
+
+    public function bookingRemove($user, $trip){
+
+       
+        return $this->createQueryBuilder('booking')
+        ->delete()
+        ->where('booking.trip = :trip')
+        ->setParameter('trip', $trip)
+        ->andWhere('booking.user = :user')
+        ->setParameter('user', $user)
+        ->getQuery()
+        ->getResult()
+    ;
+
+    }
+
     // /**
     //  * @return Booking[] Returns an array of Booking objects
     //  */

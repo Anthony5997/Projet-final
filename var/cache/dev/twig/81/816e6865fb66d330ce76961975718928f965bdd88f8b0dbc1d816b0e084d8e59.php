@@ -112,7 +112,10 @@ class __TwigTemplate_d3b9aa262a544627e12b233611ef5d25efcb01a23da6b092c92afb0c064
                 echo "</p></div>
                     <div class=\"row\">
                         <div class=\"col-3 d-flex align-items-end flex-column justify-content-around p-3\">
-                            <p>Heure</p>
+                            <p><strong>";
+                // line 19
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "startTime", [], "any", false, false, false, 19), "H:i"), "html", null, true);
+                echo "</strong></p>
                             <p class=\"d-flex justify-content-center font-control\">";
                 // line 20
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "distance", [], "any", false, false, false, 20), "html", null, true);
@@ -127,17 +130,13 @@ class __TwigTemplate_d3b9aa262a544627e12b233611ef5d25efcb01a23da6b092c92afb0c064
                 // line 27
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "departure", [], "any", false, false, false, 27), "html", null, true);
                 echo "</h1>
-                                        ";
-                // line 29
-                echo "                                    </div>
+                                    </div>
                                     <div class=\"content\">
                                         <h1> ";
-                // line 31
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "arrival", [], "any", false, false, false, 31), "html", null, true);
+                // line 30
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "arrival", [], "any", false, false, false, 30), "html", null, true);
                 echo "</h1>
-                                        ";
-                // line 33
-                echo "                                    </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -147,34 +146,34 @@ class __TwigTemplate_d3b9aa262a544627e12b233611ef5d25efcb01a23da6b092c92afb0c064
                 <div class=\"row card-found-profile\">
                     <div class=\"col\">
                        <img class=\"img-card\"src=\"";
-                // line 42
-                echo twig_escape_filter($this->env, ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/uploads/profilePicture/") . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["trip"], "driver", [], "any", false, false, false, 42), "profile_picture", [], "any", false, false, false, 42)), "html", null, true);
+                // line 40
+                echo twig_escape_filter($this->env, ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/uploads/profilePicture/") . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["trip"], "driver", [], "any", false, false, false, 40), "profile_picture", [], "any", false, false, false, 40)), "html", null, true);
                 echo "\"/>
                     </div>
                       <div class=\"col d-flex  flex-column justify-content-center\">
                         <p class=\"font-control\">";
-                // line 45
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["trip"], "driver", [], "any", false, false, false, 45), "firstName", [], "any", false, false, false, 45), "html", null, true);
+                // line 43
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["trip"], "driver", [], "any", false, false, false, 43), "firstName", [], "any", false, false, false, 43), "html", null, true);
                 echo "</p>
                         ";
-                // line 46
-                if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["trip"], "driver", [], "any", false, false, false, 46), "globalRating", [], "any", false, false, false, 46)) {
-                    // line 47
+                // line 44
+                if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["trip"], "driver", [], "any", false, false, false, 44), "globalRating", [], "any", false, false, false, 44)) {
+                    // line 45
                     echo "                            <p class=\"font-control\"><i class=\"fas fa-star\"></i>";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["trip"], "driver", [], "any", false, false, false, 47), "globalRating", [], "any", false, false, false, 47), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["trip"], "driver", [], "any", false, false, false, 45), "globalRating", [], "any", false, false, false, 45), "html", null, true);
                     echo "</p>
                         ";
                 } else {
-                    // line 49
+                    // line 47
                     echo "                            <p class=\"font-control-rating\"><i class=\"fas fa-star\"></i> Premier trajet</p>
                         ";
                 }
-                // line 51
+                // line 49
                 echo "                    </div>
                     <div class=\"col d-flex justify-content-start align-items-center font-control fas fa-chevron-right\"></div>
                     <div class=\"col d-flex align-items-center flex-column justify-content-center \"><strong>";
-                // line 53
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "passengers", [], "any", false, false, false, 53), "html", null, true);
+                // line 51
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "passengers", [], "any", false, false, false, 51), "html", null, true);
                 echo "</strong><i class=\"fas fa-user-friends\"></i></div>
                 </div>
             </div>
@@ -186,7 +185,7 @@ class __TwigTemplate_d3b9aa262a544627e12b233611ef5d25efcb01a23da6b092c92afb0c064
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['trip'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 60
+            // line 58
             echo "
 
 
@@ -198,13 +197,13 @@ class __TwigTemplate_d3b9aa262a544627e12b233611ef5d25efcb01a23da6b092c92afb0c064
 
 ";
         } else {
-            // line 70
+            // line 68
             echo "        <div class=\"container\">
            <h2 class=\"mt-5 text-center red-text\"> Désolé ! Aucun voyage n'a été trouver </h2>
         </div>
 ";
         }
-        // line 74
+        // line 72
         echo "
 ";
         
@@ -227,7 +226,7 @@ class __TwigTemplate_d3b9aa262a544627e12b233611ef5d25efcb01a23da6b092c92afb0c064
 
     public function getDebugInfo()
     {
-        return array (  208 => 74,  202 => 70,  190 => 60,  177 => 53,  173 => 51,  169 => 49,  163 => 47,  161 => 46,  157 => 45,  151 => 42,  140 => 33,  136 => 31,  132 => 29,  128 => 27,  118 => 20,  111 => 16,  105 => 13,  102 => 12,  98 => 11,  95 => 10,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  207 => 72,  201 => 68,  189 => 58,  176 => 51,  172 => 49,  168 => 47,  162 => 45,  160 => 44,  156 => 43,  150 => 40,  137 => 30,  131 => 27,  121 => 20,  117 => 19,  111 => 16,  105 => 13,  102 => 12,  98 => 11,  95 => 10,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -250,7 +249,7 @@ class __TwigTemplate_d3b9aa262a544627e12b233611ef5d25efcb01a23da6b092c92afb0c064
                     <div class=\"d-flex justify-content-end\"><p>{{trip.duration}}</p></div>
                     <div class=\"row\">
                         <div class=\"col-3 d-flex align-items-end flex-column justify-content-around p-3\">
-                            <p>Heure</p>
+                            <p><strong>{{trip.startTime|date('H:i')}}</strong></p>
                             <p class=\"d-flex justify-content-center font-control\">{{trip.distance}} </p>
                             <p>heure</p>
                         </div>
@@ -259,11 +258,9 @@ class __TwigTemplate_d3b9aa262a544627e12b233611ef5d25efcb01a23da6b092c92afb0c064
                                 <div class=\"line-content\">
                                     <div class=\"content\">
                                         <h1>{{trip.departure}}</h1>
-                                        {# <p>Departed</p> #}
                                     </div>
                                     <div class=\"content\">
                                         <h1> {{trip.arrival}}</h1>
-                                        {# <p>Shipment</p> #}
                                     </div>
                                 </div>
                             </div>

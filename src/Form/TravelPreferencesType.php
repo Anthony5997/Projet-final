@@ -43,7 +43,7 @@ class TravelPreferencesType extends AbstractType
             ])
             ->add('health_pass', ChoiceType::class, [
                 'choices'  => [
-                    'Si besoin, j\'accepte e montrer un pass sanitaire au départ' => 'Si besoin, j\'accepte e montrer un pass sanitaire au départ',
+                    'Si besoin, j\'accepte de montrer un pass sanitaire au départ' => 'Si besoin, j\'accepte de montrer un pass sanitaire au départ',
                     'Je ne veux pas présenter de pass sanitaire au départ' => 'Je ne veux pas présenter de pass sanitaire au départ',
                 ],
             ])
