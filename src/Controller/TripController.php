@@ -81,16 +81,17 @@ class TripController extends AbstractController
       /**
      * @Route("/details/{id}", name="trip_details", methods={"GET"})
      */
-    public function details(Trip $trip, UserRepository $userRepository, TravelPreferencesRepository $travelPreferencesRepository, UserExperienceLevelRepository $userExperienceLevelRepository, VehiculeRepository $vehiculeRepository): Response
+    public function details(Trip $trip, TripRepository $tripRepository, UserRepository $userRepository, TravelPreferencesRepository $travelPreferencesRepository, UserExperienceLevelRepository $userExperienceLevelRepository, VehiculeRepository $vehiculeRepository): Response
     {
-        $user = $userRepository->findOneBy(['id' => $trip->getDriver()]);
-        $travelPreferences = $travelPreferencesRepository->findOneBy(['id' => $user->getTravelPreferences()]);
-        $experienceLevel = $userExperienceLevelRepository->findOneBy(['id' => $user->getUserExperience()]);
-        $vehicule = $vehiculeRepository->findOneBy(['id' => $user->getVehicule()]);
-        $user->setTravelPreferences($travelPreferences);
-        $user->setUserExperience($experienceLevel);
-        $user->setVehicule($vehicule);
-        $trip->setDriver($user);
+        // $user = $userRepository->findOneBy(['id' => $trip->getDriver()]);
+        // $travelPreferences = $travelPreferencesRepository->findOneBy(['id' => $user->getTravelPreferences()]);
+        // $experienceLevel = $userExperienceLevelRepository->findOneBy(['id' => $user->getUserExperience()]);
+        // $vehicule = $vehiculeRepository->findOneBy(['id' => $user->getVehicule()]);
+        // $user->setTravelPreferences($travelPreferences);
+        // $user->setUserExperience($experienceLevel);
+        // $user->setVehicule($vehicule);
+        // $trip->setDriver($user);
+        $trip = $tripRepository->findUserInfoByTrip($trip);
         return $this->render('trip/details.html.twig', [
             'trip' => $trip,
         ]);

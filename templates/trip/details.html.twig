@@ -8,7 +8,7 @@
           <h4 class="text-center">Détails du voyage</h4>
             <div class="card-custom-detail">
               <div class="plan-detail">
-              <h1>{{trip.dateOfTrip|date()}}</h1>
+              <h3>{{trip.dateOfTrip|date()}}</h3>
                 <div class="timeline-detail">
 
                     <div class="d-flex justify-content-end"><p>{{trip.duration}}</p></div>
@@ -48,13 +48,47 @@
                           {% endif %}
                       </div>
                       <div class="col d-flex justify-content-start align-items-center font-control fas fa-chevron-right"></div>
-                      <div class="row">
+                      <div class="row d-flex justify-content-center">
                           {% if trip.driver.idCard %}
                               <p class="info-detail"><i style="color:green;" class="far fa-check-circle"></i> Pièce d'identité vérifiée</p>
+                          {% endif %}
+                            {% if trip.driver.phone %}
+                              <p class="info-detail"><i style="color:green;" class="far fa-check-circle"></i> Numéro de téléphone</p>
                           {% endif %}
                           <a href="" class="contact-button"><i style="color:#82b6e8;" class="far fa-comments"></i> Contacter {{trip.driver.firstName}}</a>
                       </div>
                       <span class="custom-separator"></span>
+                       <div class="row d-flex justify-content-center">
+                          {% if trip.driver.travelPreferences.discussion %}
+                              <p class="info-detail"><i class="far fa-comments mx-2"></i>  {{trip.driver.travelPreferences.discussion}}</p>
+                          {% endif %}
+                          {% if trip.driver.travelPreferences.music %}
+                              <p class="info-detail"><i class="fas fa-music mx-2"></i>  {{trip.driver.travelPreferences.music}}</p>
+                          {% endif %}
+                          {% if trip.driver.travelPreferences.smoking %}
+                              <p class="info-detail"><i class="fas fa-smoking mx-2"></i>  {{trip.driver.travelPreferences.smoking}}</p>
+                          {% endif %}
+                          {% if trip.driver.travelPreferences.animals %}
+                              <p class="info-detail"><i class="fas fa-paw mx-2"></i>  {{trip.driver.travelPreferences.animals}}</p>
+                          {% endif %}
+                          {% if trip.driver.travelPreferences.healthPass %}
+                              <p class="info-detail"><i class="fas fa-file-medical mx-2"></i>  {{trip.driver.travelPreferences.healthPass}}</p>
+                          {% endif %}
+                           
+                        </div>
+                      <div class="row">
+                        <div class="card-detail-vehicule">
+                            <div class="col d-flex  flex-column justify-content-center">
+                                {% if trip.driver.vehicule.brand %}
+                                    <p class="font-control">{{trip.driver.vehicule.brand}} - {{trip.driver.vehicule.model}} </p>
+                                {% endif %}
+                            </div>
+                            <div class="col d-flex  justify-content-end">
+                                {% if trip.driver.vehicule.vehiculePicture %}
+                                    <img class="img-card-vehicule"src="{{asset('assets/uploads/vehiculePicture/') ~ trip.driver.vehicule.vehiculePicture}}"/>
+                                {% endif %}
+                            </div>
+                      </div>
                   </div>
               </div>
           </div>

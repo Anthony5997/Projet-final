@@ -1,6 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&display=swap");
 
 
+*{
+    max-height: none!important;
+}
+
+.container {
+    max-height: none;
+}
 
 .card-custom-detail{
 
@@ -107,6 +114,7 @@
     }
 
     .contact-button{
+        margin-top: 15px;
         font-size: 22px;
         color: #82b6e8;
         border: 1px solid #82b6e8;
@@ -117,7 +125,7 @@
     }
 
     .contact-button:hover{
-        font-size: 22px;
+        font-size: 20px;
         padding: 16px;
         transform: scale(1.05);
         transition: 500ms;
@@ -126,7 +134,7 @@
 }
 
 .font-control{
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .font-control-rating{
@@ -135,6 +143,25 @@
 
 .info-detail{
     font-size: 18px;
+}
+
+.card-detail-vehicule{
+
+    
+    display:flex;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 15px;
+    background-color: rgba(130, 183, 232, 0.323);
+    padding-left: 20px;
+
+    .img-card-vehicule{
+
+        width: 60%;
+        height: 100%;
+        border-radius: 50%;
+        
+    }
 }
 
 
@@ -166,6 +193,21 @@
     .card-custom-detail{
 
         width: 75%;
+    }
+
+    .info-detail{
+        font-size: 13px;
+    }
+
+    .card-detail-profile{
+
+        .contact-button{
+            font-size: 16px;
+        }
+
+        .contact-button:hover{
+            font-size: 18px;
+        }
     }
 
 }
@@ -249,7 +291,57 @@
                 border-radius: 50%;
             }
         }
+
+        .contact-button{
+            font-size: 12px;
+            padding: 9px;
+        }
+    
+        .contact-button:hover{
+            font-size: 14px;
+            padding: 12px;
+        }
     
     }
+
+
+    .card-detail-vehicule{
+
+    
+        display:flex;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-radius: 15px;
+        margin-left: 17px;
+        background-color: rgba(130, 183, 232, 0.323);
+        padding-left: 20px;
+    
+        .img-card-vehicule{
+    
+            width: 70%;
+            height: 100%;
+            border-radius: 50%;
+            
+        }
+    }
+
+
+    .info-detail{
+        font-size: 10px;
+    }
+
+    .container {
+        max-height: none;
+    }
+
+}
+
+@media (max-width:450px){
+    
+    
+    .info-detail{
+        font-size: 8px;
+    }
+
 
 }

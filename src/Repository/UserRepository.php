@@ -51,6 +51,27 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         ->getResult();  
         
     }
+
+
+        // /**
+    //  * @return Trip[] Returns an array of Trip objects
+    //  */
+
+    public function findAllUserInfo($idUser)
+    {
+        return $this->createQueryBuilder('user')
+        ->addSelect('travel_preferences')    
+        ->join('user.travel_preferences', 'travel_preferences', 'WITH', 'travel_preferences = user.travel_preferences')
+        ->addSelect('vehicule')    
+        ->join('user.vehicule', 'vehicule', 'WITH', 'vehicule = user.vehicule')
+        ->addSelect('user_experience')    
+        ->join('user.user_experience', 'user_experience', 'WITH', 'user_experience = user.user_experience')
+            ->where('user.id = :idUser')
+            ->setParameter('idUser', $idUser)
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+    } 
   
 
     /*

@@ -41,6 +41,30 @@ class TripRepository extends ServiceEntityRepository
     } 
     
 
+
+        // /**
+    //  * @return Trip[] Returns an array of Trip objects
+    //  */
+
+    public function findUserInfoByTrip($trip)
+    {
+       return $this->createQueryBuilder('trip')
+       ->addSelect('driver')    
+       ->join('trip.driver', 'driver', 'WITH', 'driver = trip.driver')
+
+        ->addSelect('travel_preferences')    
+        ->join('driver.travel_preferences', 'travel_preferences', 'WITH', 'travel_preferences = driver.travel_preferences')
+        ->addSelect('vehicule')    
+        ->join('driver.vehicule', 'vehicule', 'WITH', 'vehicule = driver.vehicule')
+        ->addSelect('user_experience')    
+        ->join('driver.user_experience', 'user_experience', 'WITH', 'user_experience = driver.user_experience')
+            ->where('trip.id = :idTrip')
+            ->setParameter('idTrip', $trip->getId())
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+    } 
+
     /*
     public function findOneBySomeField($value): ?Trip
     {
@@ -52,4 +76,6 @@ class TripRepository extends ServiceEntityRepository
         ;
     }
     */
+
+
 }

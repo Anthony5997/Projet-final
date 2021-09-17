@@ -91,10 +91,10 @@ class __TwigTemplate_585911d82a50853ce1084333d03f95bb5605e2396e4719700e20b548b5d
           <h4 class=\"text-center\">Détails du voyage</h4>
             <div class=\"card-custom-detail\">
               <div class=\"plan-detail\">
-              <h1>";
+              <h3>";
         // line 11
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["trip"]) || array_key_exists("trip", $context) ? $context["trip"] : (function () { throw new RuntimeError('Variable "trip" does not exist.', 11, $this->source); })()), "dateOfTrip", [], "any", false, false, false, 11)), "html", null, true);
-        echo "</h1>
+        echo "</h3>
                 <div class=\"timeline-detail\">
 
                     <div class=\"d-flex justify-content-end\"><p>";
@@ -165,7 +165,7 @@ class __TwigTemplate_585911d82a50853ce1084333d03f95bb5605e2396e4719700e20b548b5d
         // line 49
         echo "                      </div>
                       <div class=\"col d-flex justify-content-start align-items-center font-control fas fa-chevron-right\"></div>
-                      <div class=\"row\">
+                      <div class=\"row d-flex justify-content-center\">
                           ";
         // line 52
         if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["trip"]) || array_key_exists("trip", $context) ? $context["trip"] : (function () { throw new RuntimeError('Variable "trip" does not exist.', 52, $this->source); })()), "driver", [], "any", false, false, false, 52), "idCard", [], "any", false, false, false, 52)) {
@@ -174,11 +174,96 @@ class __TwigTemplate_585911d82a50853ce1084333d03f95bb5605e2396e4719700e20b548b5d
                           ";
         }
         // line 55
+        echo "                            ";
+        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["trip"]) || array_key_exists("trip", $context) ? $context["trip"] : (function () { throw new RuntimeError('Variable "trip" does not exist.', 55, $this->source); })()), "driver", [], "any", false, false, false, 55), "phone", [], "any", false, false, false, 55)) {
+            // line 56
+            echo "                              <p class=\"info-detail\"><i style=\"color:green;\" class=\"far fa-check-circle\"></i> Numéro de téléphone</p>
+                          ";
+        }
+        // line 58
         echo "                          <a href=\"\" class=\"contact-button\"><i style=\"color:#82b6e8;\" class=\"far fa-comments\"></i> Contacter ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["trip"]) || array_key_exists("trip", $context) ? $context["trip"] : (function () { throw new RuntimeError('Variable "trip" does not exist.', 55, $this->source); })()), "driver", [], "any", false, false, false, 55), "firstName", [], "any", false, false, false, 55), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["trip"]) || array_key_exists("trip", $context) ? $context["trip"] : (function () { throw new RuntimeError('Variable "trip" does not exist.', 58, $this->source); })()), "driver", [], "any", false, false, false, 58), "firstName", [], "any", false, false, false, 58), "html", null, true);
         echo "</a>
                       </div>
                       <span class=\"custom-separator\"></span>
+                       <div class=\"row d-flex justify-content-center\">
+                          ";
+        // line 62
+        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["trip"]) || array_key_exists("trip", $context) ? $context["trip"] : (function () { throw new RuntimeError('Variable "trip" does not exist.', 62, $this->source); })()), "driver", [], "any", false, false, false, 62), "travelPreferences", [], "any", false, false, false, 62), "discussion", [], "any", false, false, false, 62)) {
+            // line 63
+            echo "                              <p class=\"info-detail\"><i class=\"far fa-comments mx-2\"></i>  ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["trip"]) || array_key_exists("trip", $context) ? $context["trip"] : (function () { throw new RuntimeError('Variable "trip" does not exist.', 63, $this->source); })()), "driver", [], "any", false, false, false, 63), "travelPreferences", [], "any", false, false, false, 63), "discussion", [], "any", false, false, false, 63), "html", null, true);
+            echo "</p>
+                          ";
+        }
+        // line 65
+        echo "                          ";
+        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["trip"]) || array_key_exists("trip", $context) ? $context["trip"] : (function () { throw new RuntimeError('Variable "trip" does not exist.', 65, $this->source); })()), "driver", [], "any", false, false, false, 65), "travelPreferences", [], "any", false, false, false, 65), "music", [], "any", false, false, false, 65)) {
+            // line 66
+            echo "                              <p class=\"info-detail\"><i class=\"fas fa-music mx-2\"></i>  ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["trip"]) || array_key_exists("trip", $context) ? $context["trip"] : (function () { throw new RuntimeError('Variable "trip" does not exist.', 66, $this->source); })()), "driver", [], "any", false, false, false, 66), "travelPreferences", [], "any", false, false, false, 66), "music", [], "any", false, false, false, 66), "html", null, true);
+            echo "</p>
+                          ";
+        }
+        // line 68
+        echo "                          ";
+        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["trip"]) || array_key_exists("trip", $context) ? $context["trip"] : (function () { throw new RuntimeError('Variable "trip" does not exist.', 68, $this->source); })()), "driver", [], "any", false, false, false, 68), "travelPreferences", [], "any", false, false, false, 68), "smoking", [], "any", false, false, false, 68)) {
+            // line 69
+            echo "                              <p class=\"info-detail\"><i class=\"fas fa-smoking mx-2\"></i>  ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["trip"]) || array_key_exists("trip", $context) ? $context["trip"] : (function () { throw new RuntimeError('Variable "trip" does not exist.', 69, $this->source); })()), "driver", [], "any", false, false, false, 69), "travelPreferences", [], "any", false, false, false, 69), "smoking", [], "any", false, false, false, 69), "html", null, true);
+            echo "</p>
+                          ";
+        }
+        // line 71
+        echo "                          ";
+        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["trip"]) || array_key_exists("trip", $context) ? $context["trip"] : (function () { throw new RuntimeError('Variable "trip" does not exist.', 71, $this->source); })()), "driver", [], "any", false, false, false, 71), "travelPreferences", [], "any", false, false, false, 71), "animals", [], "any", false, false, false, 71)) {
+            // line 72
+            echo "                              <p class=\"info-detail\"><i class=\"fas fa-paw mx-2\"></i>  ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["trip"]) || array_key_exists("trip", $context) ? $context["trip"] : (function () { throw new RuntimeError('Variable "trip" does not exist.', 72, $this->source); })()), "driver", [], "any", false, false, false, 72), "travelPreferences", [], "any", false, false, false, 72), "animals", [], "any", false, false, false, 72), "html", null, true);
+            echo "</p>
+                          ";
+        }
+        // line 74
+        echo "                          ";
+        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["trip"]) || array_key_exists("trip", $context) ? $context["trip"] : (function () { throw new RuntimeError('Variable "trip" does not exist.', 74, $this->source); })()), "driver", [], "any", false, false, false, 74), "travelPreferences", [], "any", false, false, false, 74), "healthPass", [], "any", false, false, false, 74)) {
+            // line 75
+            echo "                              <p class=\"info-detail\"><i class=\"fas fa-file-medical mx-2\"></i>  ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["trip"]) || array_key_exists("trip", $context) ? $context["trip"] : (function () { throw new RuntimeError('Variable "trip" does not exist.', 75, $this->source); })()), "driver", [], "any", false, false, false, 75), "travelPreferences", [], "any", false, false, false, 75), "healthPass", [], "any", false, false, false, 75), "html", null, true);
+            echo "</p>
+                          ";
+        }
+        // line 77
+        echo "                           
+                        </div>
+                      <div class=\"row\">
+                        <div class=\"card-detail-vehicule\">
+                            <div class=\"col d-flex  flex-column justify-content-center\">
+                                ";
+        // line 82
+        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["trip"]) || array_key_exists("trip", $context) ? $context["trip"] : (function () { throw new RuntimeError('Variable "trip" does not exist.', 82, $this->source); })()), "driver", [], "any", false, false, false, 82), "vehicule", [], "any", false, false, false, 82), "brand", [], "any", false, false, false, 82)) {
+            // line 83
+            echo "                                    <p class=\"font-control\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["trip"]) || array_key_exists("trip", $context) ? $context["trip"] : (function () { throw new RuntimeError('Variable "trip" does not exist.', 83, $this->source); })()), "driver", [], "any", false, false, false, 83), "vehicule", [], "any", false, false, false, 83), "brand", [], "any", false, false, false, 83), "html", null, true);
+            echo " - ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["trip"]) || array_key_exists("trip", $context) ? $context["trip"] : (function () { throw new RuntimeError('Variable "trip" does not exist.', 83, $this->source); })()), "driver", [], "any", false, false, false, 83), "vehicule", [], "any", false, false, false, 83), "model", [], "any", false, false, false, 83), "html", null, true);
+            echo " </p>
+                                ";
+        }
+        // line 85
+        echo "                            </div>
+                            <div class=\"col d-flex  justify-content-end\">
+                                ";
+        // line 87
+        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["trip"]) || array_key_exists("trip", $context) ? $context["trip"] : (function () { throw new RuntimeError('Variable "trip" does not exist.', 87, $this->source); })()), "driver", [], "any", false, false, false, 87), "vehicule", [], "any", false, false, false, 87), "vehiculePicture", [], "any", false, false, false, 87)) {
+            // line 88
+            echo "                                    <img class=\"img-card-vehicule\"src=\"";
+            echo twig_escape_filter($this->env, ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/uploads/vehiculePicture/") . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["trip"]) || array_key_exists("trip", $context) ? $context["trip"] : (function () { throw new RuntimeError('Variable "trip" does not exist.', 88, $this->source); })()), "driver", [], "any", false, false, false, 88), "vehicule", [], "any", false, false, false, 88), "vehiculePicture", [], "any", false, false, false, 88)), "html", null, true);
+            echo "\"/>
+                                ";
+        }
+        // line 90
+        echo "                            </div>
+                      </div>
                   </div>
               </div>
           </div>
@@ -204,7 +289,7 @@ class __TwigTemplate_585911d82a50853ce1084333d03f95bb5605e2396e4719700e20b548b5d
 
     public function getDebugInfo()
     {
-        return array (  177 => 55,  173 => 53,  171 => 52,  166 => 49,  162 => 47,  156 => 45,  154 => 44,  150 => 43,  142 => 40,  131 => 31,  127 => 29,  123 => 27,  119 => 25,  109 => 18,  102 => 14,  96 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  265 => 90,  259 => 88,  257 => 87,  253 => 85,  245 => 83,  243 => 82,  236 => 77,  230 => 75,  227 => 74,  221 => 72,  218 => 71,  212 => 69,  209 => 68,  203 => 66,  200 => 65,  194 => 63,  192 => 62,  184 => 58,  180 => 56,  177 => 55,  173 => 53,  171 => 52,  166 => 49,  162 => 47,  156 => 45,  154 => 44,  150 => 43,  142 => 40,  131 => 31,  127 => 29,  123 => 27,  119 => 25,  109 => 18,  102 => 14,  96 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -219,7 +304,7 @@ class __TwigTemplate_585911d82a50853ce1084333d03f95bb5605e2396e4719700e20b548b5d
           <h4 class=\"text-center\">Détails du voyage</h4>
             <div class=\"card-custom-detail\">
               <div class=\"plan-detail\">
-              <h1>{{trip.dateOfTrip|date()}}</h1>
+              <h3>{{trip.dateOfTrip|date()}}</h3>
                 <div class=\"timeline-detail\">
 
                     <div class=\"d-flex justify-content-end\"><p>{{trip.duration}}</p></div>
@@ -259,13 +344,47 @@ class __TwigTemplate_585911d82a50853ce1084333d03f95bb5605e2396e4719700e20b548b5d
                           {% endif %}
                       </div>
                       <div class=\"col d-flex justify-content-start align-items-center font-control fas fa-chevron-right\"></div>
-                      <div class=\"row\">
+                      <div class=\"row d-flex justify-content-center\">
                           {% if trip.driver.idCard %}
                               <p class=\"info-detail\"><i style=\"color:green;\" class=\"far fa-check-circle\"></i> Pièce d'identité vérifiée</p>
+                          {% endif %}
+                            {% if trip.driver.phone %}
+                              <p class=\"info-detail\"><i style=\"color:green;\" class=\"far fa-check-circle\"></i> Numéro de téléphone</p>
                           {% endif %}
                           <a href=\"\" class=\"contact-button\"><i style=\"color:#82b6e8;\" class=\"far fa-comments\"></i> Contacter {{trip.driver.firstName}}</a>
                       </div>
                       <span class=\"custom-separator\"></span>
+                       <div class=\"row d-flex justify-content-center\">
+                          {% if trip.driver.travelPreferences.discussion %}
+                              <p class=\"info-detail\"><i class=\"far fa-comments mx-2\"></i>  {{trip.driver.travelPreferences.discussion}}</p>
+                          {% endif %}
+                          {% if trip.driver.travelPreferences.music %}
+                              <p class=\"info-detail\"><i class=\"fas fa-music mx-2\"></i>  {{trip.driver.travelPreferences.music}}</p>
+                          {% endif %}
+                          {% if trip.driver.travelPreferences.smoking %}
+                              <p class=\"info-detail\"><i class=\"fas fa-smoking mx-2\"></i>  {{trip.driver.travelPreferences.smoking}}</p>
+                          {% endif %}
+                          {% if trip.driver.travelPreferences.animals %}
+                              <p class=\"info-detail\"><i class=\"fas fa-paw mx-2\"></i>  {{trip.driver.travelPreferences.animals}}</p>
+                          {% endif %}
+                          {% if trip.driver.travelPreferences.healthPass %}
+                              <p class=\"info-detail\"><i class=\"fas fa-file-medical mx-2\"></i>  {{trip.driver.travelPreferences.healthPass}}</p>
+                          {% endif %}
+                           
+                        </div>
+                      <div class=\"row\">
+                        <div class=\"card-detail-vehicule\">
+                            <div class=\"col d-flex  flex-column justify-content-center\">
+                                {% if trip.driver.vehicule.brand %}
+                                    <p class=\"font-control\">{{trip.driver.vehicule.brand}} - {{trip.driver.vehicule.model}} </p>
+                                {% endif %}
+                            </div>
+                            <div class=\"col d-flex  justify-content-end\">
+                                {% if trip.driver.vehicule.vehiculePicture %}
+                                    <img class=\"img-card-vehicule\"src=\"{{asset('assets/uploads/vehiculePicture/') ~ trip.driver.vehicule.vehiculePicture}}\"/>
+                                {% endif %}
+                            </div>
+                      </div>
                   </div>
               </div>
           </div>

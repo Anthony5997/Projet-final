@@ -99,8 +99,11 @@ class __TwigTemplate_d3b9aa262a544627e12b233611ef5d25efcb01a23da6b092c92afb0c064
             $context['_seq'] = twig_ensure_traversable((isset($context["tripFound"]) || array_key_exists("tripFound", $context) ? $context["tripFound"] : (function () { throw new RuntimeError('Variable "tripFound" does not exist.', 11, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["trip"]) {
                 // line 12
-                echo "
-        <div class=\"card-custom-found\">
+                echo "        <div class=\"card-custom-found\">
+        <a class=\"global-card-found\" href=\"";
+                // line 13
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("trip_details", ["id" => twig_get_attribute($this->env, $this->source, $context["trip"], "id", [], "any", false, false, false, 13)]), "html", null, true);
+                echo "\">
             <div class=\"plan-found\">
                 <div class=\"timeline\">
                     <div class=\"d-flex justify-content-end\"><p>";
@@ -143,12 +146,10 @@ class __TwigTemplate_d3b9aa262a544627e12b233611ef5d25efcb01a23da6b092c92afb0c064
                     <span class=\"custom-separator\"></span>
                 <div class=\"row card-found-profile\">
                     <div class=\"col\">
-                        <a href=\"";
+                       <img class=\"img-card\"src=\"";
                 // line 42
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("trip_details", ["id" => twig_get_attribute($this->env, $this->source, $context["trip"], "id", [], "any", false, false, false, 42)]), "html", null, true);
-                echo "\" ><img class=\"img-card\"src=\"";
                 echo twig_escape_filter($this->env, ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/uploads/profilePicture/") . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["trip"], "driver", [], "any", false, false, false, 42), "profile_picture", [], "any", false, false, false, 42)), "html", null, true);
-                echo "\"/></a>
+                echo "\"/>
                     </div>
                       <div class=\"col d-flex  flex-column justify-content-center\">
                         <p class=\"font-control\">";
@@ -177,13 +178,15 @@ class __TwigTemplate_d3b9aa262a544627e12b233611ef5d25efcb01a23da6b092c92afb0c064
                 echo "</strong><i class=\"fas fa-user-friends\"></i></div>
                 </div>
             </div>
+        </a>
         </div>
+
     ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['trip'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 58
+            // line 60
             echo "
 
 
@@ -195,13 +198,13 @@ class __TwigTemplate_d3b9aa262a544627e12b233611ef5d25efcb01a23da6b092c92afb0c064
 
 ";
         } else {
-            // line 68
+            // line 70
             echo "        <div class=\"container\">
            <h2 class=\"mt-5 text-center red-text\"> Désolé ! Aucun voyage n'a été trouver </h2>
         </div>
 ";
         }
-        // line 72
+        // line 74
         echo "
 ";
         
@@ -224,7 +227,7 @@ class __TwigTemplate_d3b9aa262a544627e12b233611ef5d25efcb01a23da6b092c92afb0c064
 
     public function getDebugInfo()
     {
-        return array (  205 => 72,  199 => 68,  187 => 58,  176 => 53,  172 => 51,  168 => 49,  162 => 47,  160 => 46,  156 => 45,  148 => 42,  137 => 33,  133 => 31,  129 => 29,  125 => 27,  115 => 20,  108 => 16,  102 => 12,  98 => 11,  95 => 10,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  208 => 74,  202 => 70,  190 => 60,  177 => 53,  173 => 51,  169 => 49,  163 => 47,  161 => 46,  157 => 45,  151 => 42,  140 => 33,  136 => 31,  132 => 29,  128 => 27,  118 => 20,  111 => 16,  105 => 13,  102 => 12,  98 => 11,  95 => 10,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -240,8 +243,8 @@ class __TwigTemplate_d3b9aa262a544627e12b233611ef5d25efcb01a23da6b092c92afb0c064
 {% if tripFound is defined %}
 
     {% for trip in tripFound %}
-
         <div class=\"card-custom-found\">
+        <a class=\"global-card-found\" href=\"{{path('trip_details', {'id': trip.id})}}\">
             <div class=\"plan-found\">
                 <div class=\"timeline\">
                     <div class=\"d-flex justify-content-end\"><p>{{trip.duration}}</p></div>
@@ -270,7 +273,7 @@ class __TwigTemplate_d3b9aa262a544627e12b233611ef5d25efcb01a23da6b092c92afb0c064
                     <span class=\"custom-separator\"></span>
                 <div class=\"row card-found-profile\">
                     <div class=\"col\">
-                        <a href=\"{{path('trip_details', {'id': trip.id})}}\" ><img class=\"img-card\"src=\"{{asset('assets/uploads/profilePicture/') ~ trip.driver.profile_picture}}\"/></a>
+                       <img class=\"img-card\"src=\"{{asset('assets/uploads/profilePicture/') ~ trip.driver.profile_picture}}\"/>
                     </div>
                       <div class=\"col d-flex  flex-column justify-content-center\">
                         <p class=\"font-control\">{{trip.driver.firstName}}</p>
@@ -284,7 +287,9 @@ class __TwigTemplate_d3b9aa262a544627e12b233611ef5d25efcb01a23da6b092c92afb0c064
                     <div class=\"col d-flex align-items-center flex-column justify-content-center \"><strong>{{trip.passengers}}</strong><i class=\"fas fa-user-friends\"></i></div>
                 </div>
             </div>
+        </a>
         </div>
+
     {% endfor %}
 
 
