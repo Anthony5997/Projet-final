@@ -33,6 +33,8 @@ return [
     'trip_index' => [[], ['_controller' => 'App\\Controller\\TripController::index'], [], [['text', '/trip/']], [], []],
     'trip_new' => [[], ['_controller' => 'App\\Controller\\TripController::new'], [], [['text', '/trip/new']], [], []],
     'trip_show' => [['id'], ['_controller' => 'App\\Controller\\TripController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/trip']], [], []],
+    'trip_finish' => [['id'], ['_controller' => 'App\\Controller\\TripController::finish'], [], [['text', '/finish'], ['variable', '/', '[^/]++', 'id', true], ['text', '/trip']], [], []],
+    'trip_start' => [['id'], ['_controller' => 'App\\Controller\\TripController::start'], [], [['text', '/start'], ['variable', '/', '[^/]++', 'id', true], ['text', '/trip']], [], []],
     'trip_details' => [['id'], ['_controller' => 'App\\Controller\\TripController::details'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/trip/details']], [], []],
     'trip_edit' => [['id'], ['_controller' => 'App\\Controller\\TripController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/trip']], [], []],
     'trip_delete' => [['id'], ['_controller' => 'App\\Controller\\TripController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/trip/delete']], [], []],

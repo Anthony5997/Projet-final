@@ -66,25 +66,30 @@
                           {% endif %}
                           <a href="" class="contact-button"><i style="color:#82b6e8;" class="far fa-comments"></i> Contacter {{trip.driver.firstName}}</a>
                       </div>
-                      <span class="custom-separator"></span>
-                       <div class="row d-flex justify-content-center">
-                          {% if trip.driver.travelPreferences.discussion %}
-                              <p class="info-detail"><i class="far fa-comments mx-2"></i>  {{trip.driver.travelPreferences.discussion}}</p>
-                          {% endif %}
-                          {% if trip.driver.travelPreferences.music %}
-                              <p class="info-detail"><i class="fas fa-music mx-2"></i>  {{trip.driver.travelPreferences.music}}</p>
-                          {% endif %}
-                          {% if trip.driver.travelPreferences.smoking %}
-                              <p class="info-detail"><i class="fas fa-smoking mx-2"></i>  {{trip.driver.travelPreferences.smoking}}</p>
-                          {% endif %}
-                          {% if trip.driver.travelPreferences.animals %}
-                              <p class="info-detail"><i class="fas fa-paw mx-2"></i>  {{trip.driver.travelPreferences.animals}}</p>
-                          {% endif %}
-                          {% if trip.driver.travelPreferences.healthPass %}
-                              <p class="info-detail"><i class="fas fa-file-medical mx-2"></i>  {{trip.driver.travelPreferences.healthPass}}</p>
-                          {% endif %}
+                      {% if trip.driver.travelPreferences.discussion == null and trip.driver.travelPreferences.music == null and trip.driver.travelPreferences.smoking == null and trip.driver.travelPreferences.animals == null and trip.driver.travelPreferences.healthPass == null %}
+                      {% else %}
+                        <span class="custom-separator"></span>
+                        <div class="row d-flex justify-content-center">
+                            {% if trip.driver.travelPreferences.discussion %}
+                                <p class="info-detail"><i class="far fa-comments mx-2"></i>  {{trip.driver.travelPreferences.discussion}}</p>
+                            {% endif %}
+                            {% if trip.driver.travelPreferences.music %}
+                                <p class="info-detail"><i class="fas fa-music mx-2"></i>  {{trip.driver.travelPreferences.music}}</p>
+                            {% endif %}
+                            {% if trip.driver.travelPreferences.smoking %}
+                                <p class="info-detail"><i class="fas fa-smoking mx-2"></i>  {{trip.driver.travelPreferences.smoking}}</p>
+                            {% endif %}
+                            {% if trip.driver.travelPreferences.animals %}
+                                <p class="info-detail"><i class="fas fa-paw mx-2"></i>  {{trip.driver.travelPreferences.animals}}</p>
+                            {% endif %}
+                            {% if trip.driver.travelPreferences.healthPass %}
+                                <p class="info-detail"><i class="fas fa-file-medical mx-2"></i>  {{trip.driver.travelPreferences.healthPass}}</p>
+                            {% endif %}
                            
                         </div>
+                        {% endif %}
+                        {% if trip.driver.vehicule.brand == null and trip.driver.vehicule.model == null and trip.driver.vehicule.vehiculePicture == null %}
+                        {% else %}
                       <div class="row">
                         <div class="card-detail-vehicule">
                             <div class="col d-flex  flex-column justify-content-center">
@@ -98,10 +103,15 @@
                                 {% endif %}
                             </div>
                       </div>
+                      {% endif %}
                       <div class="col d-flex  justify-content-center">
                     {% if checkBooking != "my" %}
                         {% if checkBooking == null %}
-                            <a href="{{ path ('booking_new', {'id': trip.id})}}" type="submit" class="contact-button"><i class="fas fa-user-check"></i> Réserver ce trajet</a>
+                            {% if trip.tripFull == true %}
+                                <p class="contact-button-cancel"><i class="fas fa-users-slash"></i> Trajet Complet !</p>
+                            {% else %}
+                                <a href="{{ path ('booking_new', {'id': trip.id})}}" type="submit" class="contact-button"><i class="fas fa-user-check"></i> Réserver ce trajet</a>
+                            {% endif %}
                         {% else %}
                             <a href="{{ path ('booking_new', {'id': trip.id})}}" type="submit" class="contact-button-cancel"><i class="far fa-times-circle"></i> Annuler ma réservation</a>
                         {% endif %}

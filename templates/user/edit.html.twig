@@ -15,7 +15,7 @@
                 {{ message }}
             </div>
         {% endfor %}
-
+{{dump(app.user)}}
         <ul class="nav nav-tabs" role="tablist">
           <li class="nav-item">
                 <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">A Propos</a>
@@ -29,8 +29,11 @@
             <li class="nav-item">
                 <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab">Véhicule Personnel</a>
             </li>
+                <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tabs-5" role="tab">Mes trajets</a>
+            </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#tabs-5" role="tab">Mon compte</a>
+                <a class="nav-link" data-toggle="tab" href="#tabs-6" role="tab">Mon compte</a>
             </li>
         </ul>
 
@@ -41,7 +44,7 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-4 col-md-4 d-flex flex-column align-items-center justify-content-center">
                                 <p class="">{{user.firstName}}</p>
-                                <p class="experience-profile">{{user.lastName}}</p>
+                                <p class="experience-profile">{{user.userExperience.experienceLevel}}</p>
                             </div>
                             <div class="col-xs-12 col-sm-4 col-md-4">
                             </div>
@@ -138,7 +141,37 @@
                  {{ include('vehicule/_form.html.twig', {'button_label': 'Update'}) }}
                 </div>
             </div>
-             <div class="tab-pane" id="tabs-5" role="tabpanel">
+                <div class="tab-pane" id="tabs-5" role="tabpanel">
+                <div class="container profile-section">
+                {{dump(trips)}}
+                <h3>Mes trajets</h3>
+                <div class="row">
+                    <div class="col d-flex justify-content-center">Identifiant</div>
+                    <div class="col d-flex justify-content-center">Trajet</div>
+                    <div class="col d-flex justify-content-center">Date</div>
+                    <div class="col d-flex justify-content-center"></div>
+                </div>
+
+                {% for trip in trips %}
+                 <div class="row mt-4 line-trip-profile">
+                    <div class="col">{{trip.id}}</div>
+                    <div class="col">{{trip.departure}} -> {{trip.arrival}}</div>
+                    <div class="col d-flex justify-content-center">{{trip.dateOfTrip|date("d M")}}</div>
+                    {% if trip.tripStarted != true and trip.tripCompleted != true %}
+                        <div class="col d-flex flex-column align-items-center"><a href="{{ path ('trip_start', {'id': trip.id})}}" onclick="return prompt('Voulez vous commencer le trajet ? Taper \'Oui\' pour commencer') == 'Oui'" href="" class="btn btn-primary">Commencer</a></div>
+                    {% elseif trip.tripCompleted == true %}
+                        <div class="col d-flex flex-column align-items-center"><a class="btn btn-success">Trajet terminé</a></div>
+                    {% else %}
+
+                        <div class="col d-flex flex-column align-items-center">
+                        <div class="row d-flex ">Trajet en cours</div><a href="{{ path ('trip_finish', {'id': trip.id})}}" class="btn btn-info">Terminer le trajet</a></div>
+                        </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+             
+            </div>
+             <div class="tab-pane" id="tabs-6" role="tabpanel">
                 <div class="container profile-section">
                 <h3>Mon compte</h3>
                     <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-4">

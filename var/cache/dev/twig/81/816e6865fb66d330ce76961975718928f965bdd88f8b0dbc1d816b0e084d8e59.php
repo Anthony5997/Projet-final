@@ -99,26 +99,37 @@ class __TwigTemplate_d3b9aa262a544627e12b233611ef5d25efcb01a23da6b092c92afb0c064
             $context['_seq'] = twig_ensure_traversable((isset($context["tripFound"]) || array_key_exists("tripFound", $context) ? $context["tripFound"] : (function () { throw new RuntimeError('Variable "tripFound" does not exist.', 11, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["trip"]) {
                 // line 12
-                echo "        <div class=\"card-custom-found\">
-        <a class=\"global-card-found\" href=\"";
-                // line 13
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("trip_details", ["id" => twig_get_attribute($this->env, $this->source, $context["trip"], "id", [], "any", false, false, false, 13)]), "html", null, true);
-                echo "\">
-            <div class=\"plan-found\">
+                echo "        ";
+                if (twig_get_attribute($this->env, $this->source, $context["trip"], "tripFull", [], "any", false, false, false, 12)) {
+                    // line 13
+                    echo "            <div class=\"card-custom-found disabled\">
+            <a class=\"global-card-found \" href=\"\">
+        ";
+                } else {
+                    // line 16
+                    echo "             <div class=\"card-custom-found\">
+            <a class=\"global-card-found\" href=\"";
+                    // line 17
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("trip_details", ["id" => twig_get_attribute($this->env, $this->source, $context["trip"], "id", [], "any", false, false, false, 17)]), "html", null, true);
+                    echo "\">
+        ";
+                }
+                // line 19
+                echo "            <div class=\"plan-found\">
                 <div class=\"timeline\">
                     <div class=\"d-flex justify-content-end\"><p>";
-                // line 16
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "duration", [], "any", false, false, false, 16), "html", null, true);
+                // line 21
+                ((twig_get_attribute($this->env, $this->source, $context["trip"], "tripFull", [], "any", false, false, false, 21)) ? (print ("Complet")) : (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "duration", [], "any", false, false, false, 21), "html", null, true))));
                 echo "</p></div>
                     <div class=\"row\">
                         <div class=\"col-3 d-flex align-items-end flex-column justify-content-around p-3\">
                             <p><strong>";
-                // line 19
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "startTime", [], "any", false, false, false, 19), "H:i"), "html", null, true);
+                // line 24
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "startTime", [], "any", false, false, false, 24), "H:i"), "html", null, true);
                 echo "</strong></p>
                             <p class=\"d-flex justify-content-center font-control\">";
-                // line 20
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "distance", [], "any", false, false, false, 20), "html", null, true);
+                // line 25
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "distance", [], "any", false, false, false, 25), "html", null, true);
                 echo " </p>
                             <p>heure</p>
                         </div>
@@ -127,14 +138,14 @@ class __TwigTemplate_d3b9aa262a544627e12b233611ef5d25efcb01a23da6b092c92afb0c064
                                 <div class=\"line-content\">
                                     <div class=\"content\">
                                         <h1>";
-                // line 27
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "departure", [], "any", false, false, false, 27), "html", null, true);
+                // line 32
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "departure", [], "any", false, false, false, 32), "html", null, true);
                 echo "</h1>
                                     </div>
                                     <div class=\"content\">
                                         <h1> ";
-                // line 30
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "arrival", [], "any", false, false, false, 30), "html", null, true);
+                // line 35
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "arrival", [], "any", false, false, false, 35), "html", null, true);
                 echo "</h1>
                                     </div>
                                 </div>
@@ -146,34 +157,34 @@ class __TwigTemplate_d3b9aa262a544627e12b233611ef5d25efcb01a23da6b092c92afb0c064
                 <div class=\"row card-found-profile\">
                     <div class=\"col\">
                        <img class=\"img-card\"src=\"";
-                // line 40
-                echo twig_escape_filter($this->env, ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/uploads/profilePicture/") . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["trip"], "driver", [], "any", false, false, false, 40), "profile_picture", [], "any", false, false, false, 40)), "html", null, true);
+                // line 45
+                echo twig_escape_filter($this->env, ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/uploads/profilePicture/") . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["trip"], "driver", [], "any", false, false, false, 45), "profile_picture", [], "any", false, false, false, 45)), "html", null, true);
                 echo "\"/>
                     </div>
                       <div class=\"col d-flex  flex-column justify-content-center\">
                         <p class=\"font-control\">";
-                // line 43
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["trip"], "driver", [], "any", false, false, false, 43), "firstName", [], "any", false, false, false, 43), "html", null, true);
+                // line 48
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["trip"], "driver", [], "any", false, false, false, 48), "firstName", [], "any", false, false, false, 48), "html", null, true);
                 echo "</p>
                         ";
-                // line 44
-                if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["trip"], "driver", [], "any", false, false, false, 44), "globalRating", [], "any", false, false, false, 44)) {
-                    // line 45
+                // line 49
+                if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["trip"], "driver", [], "any", false, false, false, 49), "globalRating", [], "any", false, false, false, 49)) {
+                    // line 50
                     echo "                            <p class=\"font-control\"><i class=\"fas fa-star\"></i>";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["trip"], "driver", [], "any", false, false, false, 45), "globalRating", [], "any", false, false, false, 45), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["trip"], "driver", [], "any", false, false, false, 50), "globalRating", [], "any", false, false, false, 50), "html", null, true);
                     echo "</p>
                         ";
                 } else {
-                    // line 47
+                    // line 52
                     echo "                            <p class=\"font-control-rating\"><i class=\"fas fa-star\"></i> Premier trajet</p>
                         ";
                 }
-                // line 49
+                // line 54
                 echo "                    </div>
                     <div class=\"col d-flex justify-content-start align-items-center font-control fas fa-chevron-right\"></div>
                     <div class=\"col d-flex align-items-center flex-column justify-content-center \"><strong>";
-                // line 51
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "passengers", [], "any", false, false, false, 51), "html", null, true);
+                // line 56
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "passengers", [], "any", false, false, false, 56), "html", null, true);
                 echo "</strong><i class=\"fas fa-user-friends\"></i></div>
                 </div>
             </div>
@@ -185,7 +196,7 @@ class __TwigTemplate_d3b9aa262a544627e12b233611ef5d25efcb01a23da6b092c92afb0c064
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['trip'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 58
+            // line 63
             echo "
 
 
@@ -197,13 +208,13 @@ class __TwigTemplate_d3b9aa262a544627e12b233611ef5d25efcb01a23da6b092c92afb0c064
 
 ";
         } else {
-            // line 68
+            // line 73
             echo "        <div class=\"container\">
            <h2 class=\"mt-5 text-center red-text\"> Désolé ! Aucun voyage n'a été trouver </h2>
         </div>
 ";
         }
-        // line 72
+        // line 77
         echo "
 ";
         
@@ -226,7 +237,7 @@ class __TwigTemplate_d3b9aa262a544627e12b233611ef5d25efcb01a23da6b092c92afb0c064
 
     public function getDebugInfo()
     {
-        return array (  207 => 72,  201 => 68,  189 => 58,  176 => 51,  172 => 49,  168 => 47,  162 => 45,  160 => 44,  156 => 43,  150 => 40,  137 => 30,  131 => 27,  121 => 20,  117 => 19,  111 => 16,  105 => 13,  102 => 12,  98 => 11,  95 => 10,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  218 => 77,  212 => 73,  200 => 63,  187 => 56,  183 => 54,  179 => 52,  173 => 50,  171 => 49,  167 => 48,  161 => 45,  148 => 35,  142 => 32,  132 => 25,  128 => 24,  122 => 21,  118 => 19,  113 => 17,  110 => 16,  105 => 13,  102 => 12,  98 => 11,  95 => 10,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -242,11 +253,16 @@ class __TwigTemplate_d3b9aa262a544627e12b233611ef5d25efcb01a23da6b092c92afb0c064
 {% if tripFound is defined %}
 
     {% for trip in tripFound %}
-        <div class=\"card-custom-found\">
-        <a class=\"global-card-found\" href=\"{{path('trip_details', {'id': trip.id})}}\">
+        {% if trip.tripFull %}
+            <div class=\"card-custom-found disabled\">
+            <a class=\"global-card-found \" href=\"\">
+        {% else %}
+             <div class=\"card-custom-found\">
+            <a class=\"global-card-found\" href=\"{{path('trip_details', {'id': trip.id})}}\">
+        {% endif %}
             <div class=\"plan-found\">
                 <div class=\"timeline\">
-                    <div class=\"d-flex justify-content-end\"><p>{{trip.duration}}</p></div>
+                    <div class=\"d-flex justify-content-end\"><p>{{trip.tripFull ? \"Complet\" : trip.duration}}</p></div>
                     <div class=\"row\">
                         <div class=\"col-3 d-flex align-items-end flex-column justify-content-around p-3\">
                             <p><strong>{{trip.startTime|date('H:i')}}</strong></p>

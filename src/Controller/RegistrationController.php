@@ -31,7 +31,6 @@ class RegistrationController extends AbstractController
         $form->handleRequest($request);
         $date = new \DateTime();
         $experience = $userExperienceLevelRepository->findOneBy(array('experience_level' => "Débutant"));
-       // dd("experience register : ", $experience);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $user->setPassword(

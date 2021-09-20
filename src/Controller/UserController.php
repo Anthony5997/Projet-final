@@ -8,6 +8,7 @@ use App\Form\TravelPreferencesType;
 use App\Form\VehiculeType;
 use App\Form\UserResetType;
 use App\Repository\TravelPreferencesRepository;
+use App\Repository\TripRepository;
 use App\Repository\UserRepository;
 use App\Repository\VehiculeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -61,11 +62,12 @@ class UserController extends AbstractController
     /**
      * @Route("/{id}/edit", name="user_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, User $user, TravelPreferencesController $travelPreferencesController, VehiculeController $vehiculeController, VehiculeRepository $vehiculeRepository, TravelPreferencesRepository $travelPreferencesRepository, SluggerInterface $slugger, UserPasswordEncoderInterface $passwordEncoder): Response
+    public function edit(Request $request, User $user, TravelPreferencesController $travelPreferencesController, VehiculeController $vehiculeController, VehiculeRepository $vehiculeRepository, TravelPreferencesRepository $travelPreferencesRepository, TripRepository $tripRepository, SluggerInterface $slugger, UserPasswordEncoderInterface $passwordEncoder): Response
     {
         $userEmail = $user->getEmail();
         $travelPreferences = $travelPreferencesRepository->findOneBy(['id'=> $user->getTravelPreferences()]);
         $vehicule = $vehiculeRepository->findOneBy(['id'=> $user->getVehicule()]);
+        $allTrip = $tripRepository->getAllTripByUser($user);
 
         $form = $this->createForm(UserType::class, $user);
         $form2 = $this->createForm(TravelPreferencesType::class, $travelPreferences);
@@ -142,6 +144,7 @@ class UserController extends AbstractController
             'userPref' => $form2->createView(),
             'vehicule' => $formVehicule->createView(),
             'formReset' => $formReset->createView(),
+            'trips' => $allTrip,
         ]);
     }
 

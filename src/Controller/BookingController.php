@@ -34,12 +34,13 @@ class BookingController extends AbstractController
         $user = $this->getUser();
         $result = $bookingRepository->bookingExist($user->getId(), $trip->getId());
         if($result === null){
-            if($trip->getPassengers() !== 0){
+            if($trip->getPassengers() === 1){
 
                 $date = new \DateTime();
                 $booking = new Booking();
                 $booking->setTrip($trip);
                 $booking->setUser($user);
+                $trip->setTripFull(true);
                 $booking->setCreatedAt($date);
                 $trip->setPassengers($trip->getPassengers() - 1);
                 $entityManager = $this->getDoctrine()->getManager();
@@ -50,6 +51,26 @@ class BookingController extends AbstractController
                 return $this->redirectToRoute('trip_details', [
                      'id' => $trip->getId(),
                     ]);
+            }elseif($trip->getPassengers() !== 0) {
+
+
+                $date = new \DateTime();
+                $booking = new Booking();
+                $booking->setTrip($trip);
+                $booking->setUser($user);
+                $trip->setTripFull(true);
+                $booking->setCreatedAt($date);
+                $trip->setPassengers($trip->getPassengers() - 1);
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->persist($booking, $trip);
+                $entityManager->flush();
+                $this->addFlash('success', 'La réservation à été prise en compte');
+    
+                return $this->redirectToRoute('trip_details', [
+                     'id' => $trip->getId(),
+                ]);
+            
+            
             }else{
 
                 $this->addFlash('error', 'Désolé ce trajet est déjà complet');
@@ -58,6 +79,7 @@ class BookingController extends AbstractController
 
         }else{
             $trip->setPassengers($trip->getPassengers() + 1);
+            $trip->setTripFull(false);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($trip);
             $entityManager->flush();

@@ -39,6 +39,22 @@ class TripRepository extends ServiceEntityRepository
             ->getResult()
         ;
     } 
+
+        // /**
+    //  * @return Trip[] Returns an array of Trip objects
+    //  */
+
+    public function getAllTripByUser($user)
+    {
+        return $this->createQueryBuilder('trip')
+            ->where('trip.driver = :driver')
+            ->setParameter('driver', $user->getId())
+            ->orderBy('trip.date_of_trip', 'DESC')
+            ->setMaxResults(20)
+            ->getQuery()
+            ->getResult()
+        ;
+    } 
     
 
 

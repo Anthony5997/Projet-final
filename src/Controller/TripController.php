@@ -48,12 +48,15 @@ class TripController extends AbstractController
        
        if ($form->isSubmitted()) {
             
+            $date = new \DateTime();
             $formatDeparture = explode(",", $request->get('trip')['departure']);
             $formatArrival = explode(",", $request->get('trip')['arrival']);
             $trip->setArrival($formatArrival[0]);
             $trip->setDeparture($formatDeparture[0]);
+            $trip->setCreatedAt($date);
             $trip->setTripCompleted(false);
             $trip->setTripFull(false);
+            $trip->setTripStarted(false);
             $trip->setDriver($this->getUser());
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($trip);
@@ -78,6 +81,34 @@ class TripController extends AbstractController
         ]);
     }
 
+      /**
+     * @Route("/{id}/finish", name="trip_finish", methods={"GET", "POST"})
+     */
+    public function finish(Trip $trip): Response
+    {
+
+        $trip->setTripCompleted(true);
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($trip);
+        $entityManager->flush();
+        $this->addFlash('success', 'Votre trajet est terminé ! ');
+        return $this->redirectToRoute('user_edit', ['id' => $this->getUser()->getId()]);
+    }
+
+          /**
+     * @Route("/{id}/start", name="trip_start", methods={"GET", "POST"})
+     */
+    public function start(Trip $trip): Response
+    {
+
+        $trip->setTripStarted(true);
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($trip);
+        $entityManager->flush();
+        $this->addFlash('success', 'Votre trajet commence ! Bonne Route !');
+        return $this->redirectToRoute('user_edit', ['id' => $this->getUser()->getId()]);
+    }
+
 
       /**
      * @Route("/details/{id}", name="trip_details", methods={"GET"})
@@ -95,12 +126,11 @@ class TripController extends AbstractController
         $user = $this->getUser();
         $checkBooking = $bookingRepository->bookingExist($user->getId(), $trip->getId());
 
-        if($checkBooking){
-            if($checkBooking->getTrip()->getDriver()->getId() === $user->getId()){
+  
+            if($trip->getDriver()->getId() === $user->getId()){
 
                 $checkBooking = "my";
             }
-        }
 
         $trip = $tripRepository->findUserInfoByTrip($trip);
         return $this->render('trip/details.html.twig', [

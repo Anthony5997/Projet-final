@@ -70,6 +70,16 @@ class Trip
      * @ORM\Column(type="time", nullable=true)
      */
     private $startTime;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $tripStarted;
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $created_at;
  
 
     public function getId(): ?string
@@ -193,6 +203,30 @@ class Trip
     public function setStartTime(?\DateTimeInterface $startTime): self
     {
         $this->startTime = $startTime;
+
+        return $this;
+    }
+
+    public function getTripStarted(): ?bool
+    {
+        return $this->tripStarted;
+    }
+
+    public function setTripStarted(?bool $tripStarted): self
+    {
+        $this->tripStarted = $tripStarted;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->created_at;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $created_at): self
+    {
+        $this->created_at = $created_at;
 
         return $this;
     }

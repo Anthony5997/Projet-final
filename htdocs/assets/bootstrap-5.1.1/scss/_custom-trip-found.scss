@@ -6,12 +6,15 @@
 
     text-decoration: none;
     color: black;
+
 }
 
 .global-card-found:hover{
    
     text-decoration: none;
     color: black;
+
+
 }
 
 .card-custom-found{
@@ -22,15 +25,29 @@
     margin: 0 auto;
     margin-bottom: 30px;
 
+    
 }
 
 .card-custom-found:hover{
-
 
     transform: scale(1.05);
     transition: 400ms;
 
 }
+.disabled {
+    pointer-events: none;
+    cursor: default;
+    background-color: rgba(7, 7, 7, 0.104);
+    z-index: 10;
+  }
+
+.disabled:hover{
+    pointer-events: none;
+    cursor: default;
+    transform: none;
+    transition: none;
+  }
+
 
 .timeline {
   display: -webkit-box;

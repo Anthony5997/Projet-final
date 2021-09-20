@@ -9,11 +9,16 @@
 {% if tripFound is defined %}
 
     {% for trip in tripFound %}
-        <div class="card-custom-found">
-        <a class="global-card-found" href="{{path('trip_details', {'id': trip.id})}}">
+        {% if trip.tripFull %}
+            <div class="card-custom-found disabled">
+            <a class="global-card-found " href="">
+        {% else %}
+             <div class="card-custom-found">
+            <a class="global-card-found" href="{{path('trip_details', {'id': trip.id})}}">
+        {% endif %}
             <div class="plan-found">
                 <div class="timeline">
-                    <div class="d-flex justify-content-end"><p>{{trip.duration}}</p></div>
+                    <div class="d-flex justify-content-end"><p>{{trip.tripFull ? "Complet" : trip.duration}}</p></div>
                     <div class="row">
                         <div class="col-3 d-flex align-items-end flex-column justify-content-around p-3">
                             <p><strong>{{trip.startTime|date('H:i')}}</strong></p>
