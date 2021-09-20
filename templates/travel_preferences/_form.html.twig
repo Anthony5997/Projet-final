@@ -29,7 +29,9 @@
                                 </div> 
                                 <div class='red-text'>{{ form_errors(userPref.health_pass)}}</div>
                             </div>
-                            <button class="btn">{{ button_label|default('Sauvegarder mes préférences') }}</button>
+                             <div class="col-xs-12 col-sm-12 col-md-12 mb-4 d-flex justify-content-center">
+                                <button  type='submit' class="col-md-6 button-update-profile">Sauvegarder mes préférences</button>
+                            </div>
                         {{ form_end(userPref) }}
                     </div>
                 </div>

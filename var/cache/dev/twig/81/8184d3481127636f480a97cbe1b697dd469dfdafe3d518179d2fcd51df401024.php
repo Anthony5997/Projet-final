@@ -270,14 +270,12 @@ class __TwigTemplate_190bba3e03b6b7d7488f896b9f138fee49897ee217018d5e51ad2716751
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 120, $this->source); })()), "bio", [], "any", false, false, false, 120), 'errors');
         echo "</div>
                         </div>
-                        <div class=\"col-xs-12 col-sm-12 center\">
-                            <button  type='submit' class=\"btn btn-secondaryt\">
-                                <span><strong>UPDATE</strong> NOW</span>
-                            </button>
+                        <div class=\"col-xs-12 col-sm-12 col-md-12 mb-4 d-flex justify-content-center\">
+                            <button  type='submit' class=\"col-md-6 button-update-profile\">Mettre à jour</button>
                         </div>
                         ";
-        // line 127
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 127, $this->source); })()), 'form_end');
+        // line 125
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 125, $this->source); })()), 'form_end');
         echo "
                     </div>
                 </div>
@@ -303,7 +301,7 @@ class __TwigTemplate_190bba3e03b6b7d7488f896b9f138fee49897ee217018d5e51ad2716751
 
     public function getDebugInfo()
     {
-        return array (  280 => 127,  270 => 120,  266 => 118,  264 => 115,  260 => 114,  253 => 109,  247 => 106,  244 => 105,  242 => 104,  238 => 102,  236 => 97,  232 => 96,  226 => 93,  216 => 86,  211 => 84,  207 => 83,  200 => 79,  195 => 77,  191 => 76,  182 => 70,  177 => 68,  173 => 67,  166 => 63,  161 => 61,  157 => 60,  150 => 56,  145 => 54,  141 => 53,  132 => 46,  126 => 43,  123 => 42,  121 => 41,  117 => 39,  114 => 37,  112 => 32,  108 => 31,  102 => 28,  94 => 23,  89 => 21,  85 => 20,  80 => 18,  75 => 16,  71 => 15,  66 => 13,  61 => 11,  57 => 10,  49 => 5,  43 => 1,);
+        return array (  278 => 125,  270 => 120,  266 => 118,  264 => 115,  260 => 114,  253 => 109,  247 => 106,  244 => 105,  242 => 104,  238 => 102,  236 => 97,  232 => 96,  226 => 93,  216 => 86,  211 => 84,  207 => 83,  200 => 79,  195 => 77,  191 => 76,  182 => 70,  177 => 68,  173 => 67,  166 => 63,  161 => 61,  157 => 60,  150 => 56,  145 => 54,  141 => 53,  132 => 46,  126 => 43,  123 => 42,  121 => 41,  117 => 39,  114 => 37,  112 => 32,  108 => 31,  102 => 28,  94 => 23,  89 => 21,  85 => 20,  80 => 18,  75 => 16,  71 => 15,  66 => 13,  61 => 11,  57 => 10,  49 => 5,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -429,10 +427,8 @@ class __TwigTemplate_190bba3e03b6b7d7488f896b9f138fee49897ee217018d5e51ad2716751
                             </div>
                             <div class='red-text'>{{ form_errors(form.bio)}}</div>
                         </div>
-                        <div class=\"col-xs-12 col-sm-12 center\">
-                            <button  type='submit' class=\"btn btn-secondaryt\">
-                                <span><strong>UPDATE</strong> NOW</span>
-                            </button>
+                        <div class=\"col-xs-12 col-sm-12 col-md-12 mb-4 d-flex justify-content-center\">
+                            <button  type='submit' class=\"col-md-6 button-update-profile\">Mettre à jour</button>
                         </div>
                         {{ form_end(form) }}
                     </div>

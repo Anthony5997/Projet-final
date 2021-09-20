@@ -109,16 +109,14 @@ class __TwigTemplate_c3c6ee57a025454099d852a352554b1dc2a225b1c21f18bd3c6d3c341c0
             </div>    
    
             <div class=\"row\">
-                <div class=\"col-xs-12 col-sm-6 col-md-4 col-md-offset-4\">
-                    <button type=\"submit\" class=\"btn btn-block btn-lg gradient secondary waves-effect waves-light\">
-                        <span>Créé mon trajet</span>
-                    </button>
+                <div class=\"col-xs-12 col-sm-12 col-md-12 mb-4 mt-4 d-flex justify-content-center\">
+                    <button  type='submit' class=\"col-md-6 button-update-profile\">Créé mon trajet</button>
                 </div>
             </div>  
         </div>
         ";
-        // line 56
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 56, $this->source); })()), 'form_end');
+        // line 54
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 54, $this->source); })()), 'form_end');
         echo "
     </div>
 </section>
@@ -143,7 +141,7 @@ class __TwigTemplate_c3c6ee57a025454099d852a352554b1dc2a225b1c21f18bd3c6d3c341c0
 
     public function getDebugInfo()
     {
-        return array (  121 => 56,  106 => 44,  102 => 43,  93 => 37,  89 => 36,  81 => 31,  77 => 30,  47 => 3,  43 => 1,);
+        return array (  119 => 54,  106 => 44,  102 => 43,  93 => 37,  89 => 36,  81 => 31,  77 => 30,  47 => 3,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -196,10 +194,8 @@ class __TwigTemplate_c3c6ee57a025454099d852a352554b1dc2a225b1c21f18bd3c6d3c341c0
             </div>    
    
             <div class=\"row\">
-                <div class=\"col-xs-12 col-sm-6 col-md-4 col-md-offset-4\">
-                    <button type=\"submit\" class=\"btn btn-block btn-lg gradient secondary waves-effect waves-light\">
-                        <span>Créé mon trajet</span>
-                    </button>
+                <div class=\"col-xs-12 col-sm-12 col-md-12 mb-4 mt-4 d-flex justify-content-center\">
+                    <button  type='submit' class=\"col-md-6 button-update-profile\">Créé mon trajet</button>
                 </div>
             </div>  
         </div>

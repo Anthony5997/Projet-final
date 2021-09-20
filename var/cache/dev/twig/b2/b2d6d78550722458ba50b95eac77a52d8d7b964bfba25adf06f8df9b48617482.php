@@ -69,44 +69,41 @@ class __TwigTemplate_afd4f3a139eb7a269521ab83469fc2bf30afb999af47b8570ad656fd595
         // line 14
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formReset"]) || array_key_exists("formReset", $context) ? $context["formReset"] : (function () { throw new RuntimeError('Variable "formReset" does not exist.', 14, $this->source); })()), "password", [], "any", false, false, false, 14), 'widget');
         echo "
-                    <i class=\"fa fa-eye show-password\"></i>
                 </div>
             </div>
             <div class=\"col-xs-12 col-sm-6 col-md-6\">
                 <div class=\"form-group\">
                     ";
-        // line 20
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["formReset"]) || array_key_exists("formReset", $context) ? $context["formReset"] : (function () { throw new RuntimeError('Variable "formReset" does not exist.', 20, $this->source); })()), "newPassword", [], "any", false, false, false, 20), "first", [], "any", false, false, false, 20), 'label');
+        // line 19
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["formReset"]) || array_key_exists("formReset", $context) ? $context["formReset"] : (function () { throw new RuntimeError('Variable "formReset" does not exist.', 19, $this->source); })()), "newPassword", [], "any", false, false, false, 19), "first", [], "any", false, false, false, 19), 'label');
         echo "
                     ";
-        // line 21
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["formReset"]) || array_key_exists("formReset", $context) ? $context["formReset"] : (function () { throw new RuntimeError('Variable "formReset" does not exist.', 21, $this->source); })()), "newPassword", [], "any", false, false, false, 21), "first", [], "any", false, false, false, 21), 'widget');
+        // line 20
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["formReset"]) || array_key_exists("formReset", $context) ? $context["formReset"] : (function () { throw new RuntimeError('Variable "formReset" does not exist.', 20, $this->source); })()), "newPassword", [], "any", false, false, false, 20), "first", [], "any", false, false, false, 20), 'widget');
         echo "
                 </div>
             </div>
             <div class=\"col-xs-12 col-sm-4 col-md-6\">
                 <div class=\"form-group\">
                     ";
-        // line 26
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["formReset"]) || array_key_exists("formReset", $context) ? $context["formReset"] : (function () { throw new RuntimeError('Variable "formReset" does not exist.', 26, $this->source); })()), "newPassword", [], "any", false, false, false, 26), "second", [], "any", false, false, false, 26), 'label');
+        // line 25
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["formReset"]) || array_key_exists("formReset", $context) ? $context["formReset"] : (function () { throw new RuntimeError('Variable "formReset" does not exist.', 25, $this->source); })()), "newPassword", [], "any", false, false, false, 25), "second", [], "any", false, false, false, 25), 'label');
         echo "  
                     ";
-        // line 27
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["formReset"]) || array_key_exists("formReset", $context) ? $context["formReset"] : (function () { throw new RuntimeError('Variable "formReset" does not exist.', 27, $this->source); })()), "newPassword", [], "any", false, false, false, 27), "second", [], "any", false, false, false, 27), 'widget');
+        // line 26
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["formReset"]) || array_key_exists("formReset", $context) ? $context["formReset"] : (function () { throw new RuntimeError('Variable "formReset" does not exist.', 26, $this->source); })()), "newPassword", [], "any", false, false, false, 26), "second", [], "any", false, false, false, 26), 'widget');
         echo "
                 </div>
             </div>    
 
             <div class=\"row\">
-                <div class=\"col-xs-12 col-sm-6 col-md-4 col-md-offset-4\">
-                    <button type=\"submit\" class=\"btn btn-block btn-lg gradient secondary waves-effect waves-light\">
-                        <span>Mettre à jour mes informations</span>
-                    </button>
+                <div class=\"col-xs-12 col-sm-12 col-md-12 mb-4 mt-4 d-flex justify-content-start\">
+                    <button  type='submit' class=\"col-md-6 button-update-profile\">Mettre à jour</button>
                 </div>
             </div>  
             ";
-        // line 38
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formReset"]) || array_key_exists("formReset", $context) ? $context["formReset"] : (function () { throw new RuntimeError('Variable "formReset" does not exist.', 38, $this->source); })()), 'form_end');
+        // line 35
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formReset"]) || array_key_exists("formReset", $context) ? $context["formReset"] : (function () { throw new RuntimeError('Variable "formReset" does not exist.', 35, $this->source); })()), 'form_end');
         echo "
         </div>
     </div>
@@ -131,7 +128,7 @@ class __TwigTemplate_afd4f3a139eb7a269521ab83469fc2bf30afb999af47b8570ad656fd595
 
     public function getDebugInfo()
     {
-        return array (  109 => 38,  95 => 27,  91 => 26,  83 => 21,  79 => 20,  70 => 14,  66 => 13,  58 => 8,  54 => 7,  48 => 4,  43 => 1,);
+        return array (  106 => 35,  94 => 26,  90 => 25,  82 => 20,  78 => 19,  70 => 14,  66 => 13,  58 => 8,  54 => 7,  48 => 4,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -150,7 +147,6 @@ class __TwigTemplate_afd4f3a139eb7a269521ab83469fc2bf30afb999af47b8570ad656fd595
                 <div class=\"form-group\">
                     <span>{{ form_label(formReset.password, 'Mot de passe actuel') }}</span>
                     {{ form_widget(formReset.password) }}
-                    <i class=\"fa fa-eye show-password\"></i>
                 </div>
             </div>
             <div class=\"col-xs-12 col-sm-6 col-md-6\">
@@ -167,10 +163,8 @@ class __TwigTemplate_afd4f3a139eb7a269521ab83469fc2bf30afb999af47b8570ad656fd595
             </div>    
 
             <div class=\"row\">
-                <div class=\"col-xs-12 col-sm-6 col-md-4 col-md-offset-4\">
-                    <button type=\"submit\" class=\"btn btn-block btn-lg gradient secondary waves-effect waves-light\">
-                        <span>Mettre à jour mes informations</span>
-                    </button>
+                <div class=\"col-xs-12 col-sm-12 col-md-12 mb-4 mt-4 d-flex justify-content-start\">
+                    <button  type='submit' class=\"col-md-6 button-update-profile\">Mettre à jour</button>
                 </div>
             </div>  
             {{form_end(formReset)}}

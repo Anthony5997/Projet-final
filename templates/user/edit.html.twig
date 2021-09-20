@@ -127,19 +127,19 @@
             <div class="tab-pane" id="tabs-2" role="tabpanel">
                 <div class="container profile-section">
                         <h3>Informations Personnelle</h3>
-                    {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
+                    {{ include('user/_form.html.twig') }}
                 </div>
             </div>
             <div class="tab-pane" id="tabs-3" role="tabpanel">
                 <div class="container profile-section">
                 <h3>Mes préférences</h3>
-                    {{ include('travel_preferences/_form.html.twig', {'button_label': 'Update'}) }}
+                    {{ include('travel_preferences/_form.html.twig') }}
                 </div>
             </div>
             <div class="tab-pane" id="tabs-4" role="tabpanel">
                 <div class="container profile-section">
                 <h3>Mon véhicule</h3>
-                 {{ include('vehicule/_form.html.twig', {'button_label': 'Update'}) }}
+                 {{ include('vehicule/_form.html.twig') }}
                 </div>
             </div>
                 <div class="tab-pane" id="tabs-5" role="tabpanel">
@@ -148,7 +148,7 @@
                 <div class="row">
                     <div class="col d-flex justify-content-center">Identifiant</div>
                     <div class="col d-flex justify-content-end">Trajet</div>
-                    <div class="col d-flex justify-content-center">Date</div>
+                    <div class="col d-flex justify-content-around">Date</div>
                     <div class="col d-flex justify-content-center">Status</div>
                     <div class="col d-flex justify-content-end">Détails</div>
                 </div>
@@ -164,10 +164,8 @@
                     {% elseif trip.tripCompleted == true %}
                         <div class="col d-flex flex-column align-items-center"><a class="btn btn-success">Trajet terminé</a></div>
                     {% else %}
-
                         <div class="col d-flex flex-column align-items-center">
                         <div class="row d-flex ">Trajet en cours</div><a href="{{ path ('trip_finish', {'id': trip.id})}}" class="btn btn-info">Terminer le trajet</a></div>
-                        </div>
                     {% endif %}
                     <div class="col d-flex  justify-content-end align-items-center">
                         <a href="{{ path ('trip_details', {'id': trip.id})}}" class="btn btn-info"><i class="far fa-eye"></i></a></div>
@@ -179,7 +177,7 @@
              <div class="tab-pane" id="tabs-6" role="tabpanel">
                 <div class="container profile-section">
                 <h3>Mon compte</h3>
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-4">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-md-offset-4">
                         {{ include('user/_form-reset.html.twig') }}
                         {{ include('user/_delete_form.html.twig') }}
                     </div>

@@ -6482,6 +6482,9 @@ header .fa-user {
 .nav-tabs {
   flex-wrap: nowrap;
 }
+.nav-tabs a {
+  color: black;
+}
 
 .profile-picture-profile {
   width: 50%;
@@ -6533,6 +6536,22 @@ header .fa-user {
 .profile-section {
   padding-top: 30px;
   padding-bottom: 30px;
+}
+
+.button-update-profile {
+  border-radius: 5px;
+  background-color: #597de9;
+  border: 1px solid aliceblue;
+  color: aliceblue;
+  padding: 10px 5px 10px 5px;
+}
+
+.button-update-profile:hover {
+  background-color: rgba(99, 126, 208, 0.734);
+  color: aliceblue;
+  padding: 12px 7px 12px 7px;
+  transform: scale(1.05);
+  transition: 400ms;
 }
 
 @media (max-width: 450px) {

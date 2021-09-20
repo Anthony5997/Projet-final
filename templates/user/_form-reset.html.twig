@@ -12,7 +12,6 @@
                 <div class="form-group">
                     <span>{{ form_label(formReset.password, 'Mot de passe actuel') }}</span>
                     {{ form_widget(formReset.password) }}
-                    <i class="fa fa-eye show-password"></i>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6">
@@ -29,10 +28,8 @@
             </div>    
 
             <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-4">
-                    <button type="submit" class="btn btn-block btn-lg gradient secondary waves-effect waves-light">
-                        <span>Mettre à jour mes informations</span>
-                    </button>
+                <div class="col-xs-12 col-sm-12 col-md-12 mb-4 mt-4 d-flex justify-content-start">
+                    <button  type='submit' class="col-md-6 button-update-profile">Mettre à jour</button>
                 </div>
             </div>  
             {{form_end(formReset)}}

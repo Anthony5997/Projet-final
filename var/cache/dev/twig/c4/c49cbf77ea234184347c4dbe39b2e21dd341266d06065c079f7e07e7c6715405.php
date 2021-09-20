@@ -119,13 +119,12 @@ class __TwigTemplate_13636a7fb029de0233df1a9764891f00810b3bb0acf8b7407cac69bd5b7
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["userPref"]) || array_key_exists("userPref", $context) ? $context["userPref"] : (function () { throw new RuntimeError('Variable "userPref" does not exist.', 30, $this->source); })()), "health_pass", [], "any", false, false, false, 30), 'errors');
         echo "</div>
                             </div>
-                            <button class=\"btn\">";
-        // line 32
-        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 32, $this->source); })()), "Sauvegarder mes préférences")) : ("Sauvegarder mes préférences")), "html", null, true);
-        echo "</button>
+                             <div class=\"col-xs-12 col-sm-12 col-md-12 mb-4 d-flex justify-content-center\">
+                                <button  type='submit' class=\"col-md-6 button-update-profile\">Sauvegarder mes préférences</button>
+                            </div>
                         ";
-        // line 33
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["userPref"]) || array_key_exists("userPref", $context) ? $context["userPref"] : (function () { throw new RuntimeError('Variable "userPref" does not exist.', 33, $this->source); })()), 'form_end');
+        // line 35
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["userPref"]) || array_key_exists("userPref", $context) ? $context["userPref"] : (function () { throw new RuntimeError('Variable "userPref" does not exist.', 35, $this->source); })()), 'form_end');
         echo "
                     </div>
                 </div>
@@ -150,7 +149,7 @@ class __TwigTemplate_13636a7fb029de0233df1a9764891f00810b3bb0acf8b7407cac69bd5b7
 
     public function getDebugInfo()
     {
-        return array (  128 => 33,  124 => 32,  119 => 30,  114 => 28,  110 => 27,  105 => 25,  100 => 23,  96 => 22,  91 => 20,  86 => 18,  82 => 17,  77 => 15,  72 => 13,  68 => 12,  63 => 10,  58 => 8,  54 => 7,  48 => 4,  43 => 1,);
+        return array (  127 => 35,  119 => 30,  114 => 28,  110 => 27,  105 => 25,  100 => 23,  96 => 22,  91 => 20,  86 => 18,  82 => 17,  77 => 15,  72 => 13,  68 => 12,  63 => 10,  58 => 8,  54 => 7,  48 => 4,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -186,7 +185,9 @@ class __TwigTemplate_13636a7fb029de0233df1a9764891f00810b3bb0acf8b7407cac69bd5b7
                                 </div> 
                                 <div class='red-text'>{{ form_errors(userPref.health_pass)}}</div>
                             </div>
-                            <button class=\"btn\">{{ button_label|default('Sauvegarder mes préférences') }}</button>
+                             <div class=\"col-xs-12 col-sm-12 col-md-12 mb-4 d-flex justify-content-center\">
+                                <button  type='submit' class=\"col-md-6 button-update-profile\">Sauvegarder mes préférences</button>
+                            </div>
                         {{ form_end(userPref) }}
                     </div>
                 </div>

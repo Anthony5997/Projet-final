@@ -163,13 +163,12 @@ class __TwigTemplate_35d2c1671031fcae1aab9081e27c6080cede350d722801aa9a8fe0e4a39
         echo "</div>
                                 </div>
                             </div>
-                            <button class=\"btn\">";
-        // line 49
-        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 49, $this->source); })()), "Sauvegarder mon véhicule")) : ("Sauvegarder mon véhicule")), "html", null, true);
-        echo "</button>
+                             <div class=\"col-xs-12 col-sm-12 col-md-12 mb-4 mt-4 d-flex justify-content-center\">
+                                <button  type='submit' class=\"col-md-6 button-update-profile\">Sauvegarder mon véhicule</button>
+                            </div>
                         ";
-        // line 50
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["vehicule"]) || array_key_exists("vehicule", $context) ? $context["vehicule"] : (function () { throw new RuntimeError('Variable "vehicule" does not exist.', 50, $this->source); })()), 'form_end');
+        // line 52
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["vehicule"]) || array_key_exists("vehicule", $context) ? $context["vehicule"] : (function () { throw new RuntimeError('Variable "vehicule" does not exist.', 52, $this->source); })()), 'form_end');
         echo "
                     </div>
                 </div>
@@ -194,7 +193,7 @@ class __TwigTemplate_35d2c1671031fcae1aab9081e27c6080cede350d722801aa9a8fe0e4a39
 
     public function getDebugInfo()
     {
-        return array (  172 => 50,  168 => 49,  162 => 46,  157 => 44,  153 => 43,  147 => 40,  142 => 38,  138 => 37,  133 => 35,  128 => 33,  124 => 32,  119 => 30,  114 => 28,  110 => 27,  105 => 25,  100 => 23,  96 => 22,  91 => 20,  86 => 18,  82 => 17,  77 => 15,  72 => 13,  68 => 12,  63 => 10,  58 => 8,  54 => 7,  48 => 4,  43 => 1,);
+        return array (  171 => 52,  162 => 46,  157 => 44,  153 => 43,  147 => 40,  142 => 38,  138 => 37,  133 => 35,  128 => 33,  124 => 32,  119 => 30,  114 => 28,  110 => 27,  105 => 25,  100 => 23,  96 => 22,  91 => 20,  86 => 18,  82 => 17,  77 => 15,  72 => 13,  68 => 12,  63 => 10,  58 => 8,  54 => 7,  48 => 4,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -247,7 +246,9 @@ class __TwigTemplate_35d2c1671031fcae1aab9081e27c6080cede350d722801aa9a8fe0e4a39
                                     <div class='red-text'>{{ form_errors(vehicule.typeOfVehicule)}}</div>
                                 </div>
                             </div>
-                            <button class=\"btn\">{{ button_label|default('Sauvegarder mon véhicule') }}</button>
+                             <div class=\"col-xs-12 col-sm-12 col-md-12 mb-4 mt-4 d-flex justify-content-center\">
+                                <button  type='submit' class=\"col-md-6 button-update-profile\">Sauvegarder mon véhicule</button>
+                            </div>
                         {{ form_end(vehicule) }}
                     </div>
                 </div>
