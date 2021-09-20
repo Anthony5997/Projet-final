@@ -58,7 +58,6 @@ class BookingController extends AbstractController
                 $booking = new Booking();
                 $booking->setTrip($trip);
                 $booking->setUser($user);
-                $trip->setTripFull(true);
                 $booking->setCreatedAt($date);
                 $trip->setPassengers($trip->getPassengers() - 1);
                 $entityManager = $this->getDoctrine()->getManager();

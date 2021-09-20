@@ -14,12 +14,17 @@
                 {{ message }}
             </div>
         {% endfor %}
-
+        {{dump(trip)}}
        <div class="container mt-5">
           <h4 class="text-center">Détails du voyage</h4>
             <div class="card-custom-detail mt-5">
               <div class="plan-detail">
-              <h3>{{trip.dateOfTrip|date("d M")}}</h3>
+              <div class="d-flex justify-content-between mb-2">
+                <h3>{{trip.dateOfTrip|date("d M")}}</h3>
+                {% if trip.tripFull == true %}
+                <h3>Complet</h3>
+                {% endif %}
+              </div>
                 <div class="timeline-detail">
 
                     <div class="d-flex justify-content-end"><p>{{trip.duration}}</p></div>
@@ -45,8 +50,10 @@
                   <span class="custom-separator"></span>
                   </div>
                   <div class="row card-detail-profile">
+                    <a href="{{path('user_view_profile', {'id': trip.driver.id})}}" >
+                    <div class="row">
                       <div class="col">
-                          <a href="{{path('user_view_profile', {'id': trip.driver.id})}}" ><img class="img-card"src="{{asset('assets/uploads/profilePicture/') ~ trip.driver.profile_picture}}"/></a>
+                        <img class="img-card"src="{{asset('assets/uploads/profilePicture/') ~ trip.driver.profile_picture}}"/>
                       </div>
                         <div class="col d-flex  flex-column justify-content-center">
                           <p class="font-control">{{trip.driver.firstName}}</p>
@@ -56,7 +63,9 @@
                               <p class="font-control-rating"><i class="fas fa-star"></i> Premier trajet</p>
                           {% endif %}
                       </div>
-                      <div class="col d-flex justify-content-start align-items-center font-control fas fa-chevron-right"></div>
+                      <div class="col d-flex justify-content-end align-items-center font-control fas fa-chevron-right"></div>
+                    </div>
+                    </a>
                       <div class="row d-flex justify-content-center">
                           {% if trip.driver.idCard %}
                               <p class="info-detail"><i style="color:green;" class="far fa-check-circle"></i> Pièce d'identité vérifiée</p>
@@ -64,7 +73,9 @@
                             {% if trip.driver.phone %}
                               <p class="info-detail"><i style="color:green;" class="far fa-check-circle"></i> Numéro de téléphone</p>
                           {% endif %}
-                          <a href="" class="contact-button"><i style="color:#82b6e8;" class="far fa-comments"></i> Contacter {{trip.driver.firstName}}</a>
+                            {% if checkBooking != "my" %}
+                                <a href="" class="contact-button"><i style="color:#82b6e8;" class="far fa-comments"></i> Contacter {{trip.driver.firstName}}</a>
+                            {% endif %}
                       </div>
                       {% if trip.driver.travelPreferences.discussion == null and trip.driver.travelPreferences.music == null and trip.driver.travelPreferences.smoking == null and trip.driver.travelPreferences.animals == null and trip.driver.travelPreferences.healthPass == null %}
                       {% else %}
@@ -118,6 +129,26 @@
                     {% endif %}
                       </div>
                   </div>
+                {% if bookers[0].user is defined %}
+                  <span class="custom-separator"></span>
+                    <div class="passenger-booker">
+                        <h4 class="text-center mt-3 mb-3">Déjà à bord </h4>
+                        {% for booker in bookers %}
+                        <div class="row card-detail-profile">
+                        <a class="d-flex" href="{{path('user_view_profile', {'id':  booker.user.id})}}" >
+                                <div class="col d-flex  flex-column justify-content-center">
+                                <p class="font-control"> {{ booker.user.firstName}}</p>
+                            </div>
+                            <div class="col d-flex justify-content-center align-items-center">
+                                <img class="img-card-passenger"src="{{asset('assets/uploads/profilePicture/') ~  booker.user.profile_picture}}"/>
+                            </div>
+                            <div class="col d-flex justify-content-end align-items-center font-control fas fa-chevron-right"></div>
+                        </a>
+                            </div>
+                        
+                        {% endfor %}
+                    </div>
+                {% endif %}
               </div>
           </div>
         </div>

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Trip;
+use App\Entity\User;
 use App\Form\SearchTravelType;
 use App\Form\TripType;
 use App\Repository\BookingRepository;
@@ -86,13 +87,14 @@ class TripController extends AbstractController
      */
     public function finish(Trip $trip): Response
     {
-
+        $user = $this->getUser();
         $trip->setTripCompleted(true);
+        $user->setTripsMade($user->getTripsMade() + 1);
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($trip);
         $entityManager->flush();
         $this->addFlash('success', 'Votre trajet est terminé ! ');
-        return $this->redirectToRoute('user_edit', ['id' => $this->getUser()->getId()]);
+        return $this->redirectToRoute('user_edit', ['id' => $user->getId()]);
     }
 
           /**
@@ -100,13 +102,13 @@ class TripController extends AbstractController
      */
     public function start(Trip $trip): Response
     {
-
+        $user = $this->getUser()->getId();
         $trip->setTripStarted(true);
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($trip);
         $entityManager->flush();
         $this->addFlash('success', 'Votre trajet commence ! Bonne Route !');
-        return $this->redirectToRoute('user_edit', ['id' => $this->getUser()->getId()]);
+        return $this->redirectToRoute('user_edit', ['id' => $user]);
     }
 
 
@@ -124,6 +126,7 @@ class TripController extends AbstractController
         // $user->setVehicule($vehicule);
         // $trip->setDriver($user);
         $user = $this->getUser();
+        $booker = $bookingRepository->getAllBooker($trip);
         $checkBooking = $bookingRepository->bookingExist($user->getId(), $trip->getId());
 
   
@@ -136,6 +139,7 @@ class TripController extends AbstractController
         return $this->render('trip/details.html.twig', [
             'trip' => $trip,
             'checkBooking' => $checkBooking,
+            'bookers' => $booker,
         ]);
     }
 

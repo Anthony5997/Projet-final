@@ -86,7 +86,10 @@ class __TwigTemplate_d3b9aa262a544627e12b233611ef5d25efcb01a23da6b092c92afb0c064
 
         // line 6
         echo "<h1 class=\"text-center m-5\"> Trajet trouvé</h1>
-
+";
+        // line 7
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context, (isset($context["tripFound"]) || array_key_exists("tripFound", $context) ? $context["tripFound"] : (function () { throw new RuntimeError('Variable "tripFound" does not exist.', 7, $this->source); })()));
+        echo "
 
 ";
         // line 9
@@ -237,7 +240,7 @@ class __TwigTemplate_d3b9aa262a544627e12b233611ef5d25efcb01a23da6b092c92afb0c064
 
     public function getDebugInfo()
     {
-        return array (  218 => 77,  212 => 73,  200 => 63,  187 => 56,  183 => 54,  179 => 52,  173 => 50,  171 => 49,  167 => 48,  161 => 45,  148 => 35,  142 => 32,  132 => 25,  128 => 24,  122 => 21,  118 => 19,  113 => 17,  110 => 16,  105 => 13,  102 => 12,  98 => 11,  95 => 10,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  221 => 77,  215 => 73,  203 => 63,  190 => 56,  186 => 54,  182 => 52,  176 => 50,  174 => 49,  170 => 48,  164 => 45,  151 => 35,  145 => 32,  135 => 25,  131 => 24,  125 => 21,  121 => 19,  116 => 17,  113 => 16,  108 => 13,  105 => 12,  101 => 11,  98 => 10,  96 => 9,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -248,7 +251,7 @@ class __TwigTemplate_d3b9aa262a544627e12b233611ef5d25efcb01a23da6b092c92afb0c064
 
 {% block body %}
 <h1 class=\"text-center m-5\"> Trajet trouvé</h1>
-
+{{dump(tripFound)}}
 
 {% if tripFound is defined %}
 

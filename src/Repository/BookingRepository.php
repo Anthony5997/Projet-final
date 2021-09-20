@@ -49,6 +49,20 @@ class BookingRepository extends ServiceEntityRepository
 
     }
 
+    public function getAllBooker($trip){
+
+       
+        return $this->createQueryBuilder('booking')
+        ->where('booking.trip = :trip')
+        ->setParameter('trip', $trip)
+        // ->addSelect('user')    
+        // ->join('trip.driver', 'user', 'WITH', 'user = trip.driver')
+        ->getQuery()
+        ->getResult()
+    ;
+
+    }
+
     // /**
     //  * @return Booking[] Returns an array of Booking objects
     //  */
