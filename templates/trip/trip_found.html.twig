@@ -4,12 +4,17 @@
 
 {% block body %}
 <h1 class="text-center m-5"> Trajet trouvé</h1>
-{{dump(tripFound)}}
 
 {% if tripFound is defined %}
 
     {% for trip in tripFound %}
         {% if trip.tripFull %}
+            <div class="card-custom-found disabled">
+            <a class="global-card-found " href="">
+        {% elseif trip.tripStarted == true and trip.tripCompleted == false %}
+            <div class="card-custom-found disabled">
+            <a class="global-card-found " href="">
+        {% elseif trip.tripStarted == true and trip.tripCompleted == true %}
             <div class="card-custom-found disabled">
             <a class="global-card-found " href="">
         {% else %}
@@ -18,12 +23,21 @@
         {% endif %}
             <div class="plan-found">
                 <div class="timeline">
+                      {% if trip.tripFull == true and trip.tripStarted == false %}
+                        <div class="d-flex justify-content-end"><h4>Complet</h4></div>
+                        {% elseif trip.tripStarted == true and trip.tripCompleted == false %}
+                        <div class="d-flex justify-content-end"><h4>Trajet en cours</h4></div>
+                        {% elseif trip.tripStarted == true and trip.tripCompleted == true %}
+                        <div class="d-flex justify-content-end"><h4>Terminé</h4></div>
+                        {% else %}
+                    {% endif %}
                     <div class="d-flex justify-content-end"><p>{{trip.tripFull ? "Complet" : trip.duration}}</p></div>
                     <div class="row">
                         <div class="col-3 d-flex align-items-end flex-column justify-content-around p-3">
                             <p><strong>{{trip.startTime|date('H:i')}}</strong></p>
                             <p class="d-flex justify-content-center font-control">{{trip.distance}} </p>
-                            <p>heure</p>
+                            {% set hour = trip.duration|replace({'heure':'hour'})%}
+                            <p class="pt-3"><strong>{{ trip.startTime|date_modify("+" ~ hour)|date('H:i') }}</strong></p>
                         </div>
                         <div class="col-9">
                             <div class="line">

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Message{% endblock %}
+
+{% block body %}
+    <h1>Create new Message</h1>
+
+    {{dump(contact)}}
+    {{dump(currentUser)}}
+
+    <h3> Contacter {{contact.firstName}} </h3>
+
+    {{ include('message/_form.html.twig') }}
+
+{% endblock %}

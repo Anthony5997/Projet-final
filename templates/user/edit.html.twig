@@ -3,7 +3,7 @@
 {% block title %}Edit User{% endblock %}
 
 {% block body %}
-<div class="container mt-5">
+<div class="container-profile">
     {# {{dump(user)}} #}
           {% for message in app.flashes('success') %}
             <div class="alert alert-success text-white">
@@ -146,17 +146,17 @@
                 <div class="container profile-section">
                 <h3 class="col d-flex justify-content-center">Mes trajets</h3>
                 <div class="row">
-                    <div class="col d-flex justify-content-center">Identifiant</div>
-                    <div class="col d-flex justify-content-end">Trajet</div>
+                    {# <div class="col d-flex justify-content-center">Identifiant</div> #}
+                    <div class="col d-flex justify-content-center">Trajet</div>
                     <div class="col d-flex justify-content-around">Date</div>
                     <div class="col d-flex justify-content-center">Status</div>
-                    <div class="col d-flex justify-content-end">Détails</div>
+                    <div class="col d-flex justify-content-center">Détails</div>
                 </div>
 
           
             {% for trip in trips %}
                 <div class="row mt-4 line-trip-profile">
-                    <div class="col">{{trip.id}}</div>
+                    {# <div class="col">{{trip.id}}</div> #}
                     <div class="col d-flex justify-content-center">{{trip.departure}} -> {{trip.arrival}}</div>
                     <div class="col d-flex justify-content-center">{{trip.dateOfTrip|date("d M")}}</div>
                     {% if trip.tripStarted != true and trip.tripCompleted != true %}
@@ -167,7 +167,7 @@
                         <div class="col d-flex flex-column align-items-center">
                         <div class="row d-flex ">Trajet en cours</div><a href="{{ path ('trip_finish', {'id': trip.id})}}" class="btn btn-info">Terminer le trajet</a></div>
                     {% endif %}
-                    <div class="col d-flex  justify-content-end align-items-center">
+                    <div class="col d-flex  justify-content-center align-items-center">
                         <a href="{{ path ('trip_details', {'id': trip.id})}}" class="btn btn-info"><i class="far fa-eye"></i></a></div>
                     </div>
                 {% endfor %}
@@ -179,6 +179,7 @@
                 <h3>Mon compte</h3>
                     <div class="col-xs-12 col-sm-6 col-md-6 col-md-offset-4">
                         {{ include('user/_form-reset.html.twig') }}
+                        <a href="{{path ('logout')}}" class="btn btn-danger mb-4"><i class="fas fa-sign-out-alt"></i> Me déconnecter</a>
                         {{ include('user/_delete_form.html.twig') }}
                     </div>
 

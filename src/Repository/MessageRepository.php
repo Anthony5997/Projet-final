@@ -3,8 +3,8 @@
 namespace App\Repository;
 
 use App\Entity\Message;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @method Message|null find($id, $lockMode = null, $lockVersion = null)
@@ -17,6 +17,27 @@ class MessageRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Message::class);
+    }
+
+    // /**
+    //  * @return Message[] Returns an array of Message objects
+    //  */
+
+    public function getAllDiscussion($user){
+
+       
+        return $this->createQueryBuilder('message')
+        ->addSelect('sender')    
+        ->join('message.sender', 'sender', 'WITH', 'sender = sender.message')
+        ->addSelect('receiver')    
+        ->join('message.receiver', 'receiver', 'WITH', 'receiver = receiver.message')
+        
+        ->where('message.receiver= :user')
+        ->setParameter('user', $user->getId())
+        ->groupBy('sender')
+        ->getQuery()
+        ->getResult()
+    ;
     }
 
     // /**

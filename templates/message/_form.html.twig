@@ -1,0 +1,18 @@
+{{ form_start(form) }}
+
+{{dump(form)}}
+
+      <div class="col-xs-12 col-sm-12">
+        <div class="form-group mt-5">
+            {{ form_label(form.content, 'Votre message ...') }}
+            {{ form_widget(form.content, { 'attr': {
+                    'cols' : "20",
+                    'rows' : "5"
+            }}) }}
+        </div>
+        <div class='red-text'>{{ form_errors(form.content)}}</div>
+    </div>
+        <input type="hidden" name="sender" id="sender" value="{{currentUser.id}}" />
+        <input type="hidden" name="receiver" id="receiver" value="{{contact.id}}" />
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

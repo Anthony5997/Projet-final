@@ -3,15 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\Trip;
-use App\Entity\User;
-use App\Form\SearchTravelType;
 use App\Form\TripType;
 use App\Repository\BookingRepository;
-use App\Repository\TravelPreferencesRepository;
 use App\Repository\TripRepository;
 use App\Repository\UserExperienceLevelRepository;
 use App\Repository\UserRepository;
-use App\Repository\VehiculeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -85,13 +81,34 @@ class TripController extends AbstractController
       /**
      * @Route("/{id}/finish", name="trip_finish", methods={"GET", "POST"})
      */
-    public function finish(Trip $trip): Response
+    public function finish(Trip $trip, UserExperienceLevelRepository $userExperienceLevelRepository): Response
     {
         $user = $this->getUser();
         $trip->setTripCompleted(true);
         $user->setTripsMade($user->getTripsMade() + 1);
+
+        if($user->getTripsMade() > 49){
+            $experience = $userExperienceLevelRepository->findOneBy(['id' => 6]);
+            $user->setUserExperience($experience);
+        }elseif($user->getTripsMade() > 39){
+            $experience = $userExperienceLevelRepository->findOneBy(['id' => 5]);
+            $user->setUserExperience($experience);
+        }elseif($user->getTripsMade() > 29){
+            $experience = $userExperienceLevelRepository->findOneBy(['id' => 4]);
+        }elseif($user->getTripsMade() > 9){
+            $experience = $userExperienceLevelRepository->findOneBy(['id' => 3]);
+            $user->setUserExperience($experience);
+        }elseif($user->getTripsMade() > 1){
+            $experience = $userExperienceLevelRepository->findOneBy(['id' => 2]);
+            $user->setUserExperience($experience);
+        }else{
+            $experience = $userExperienceLevelRepository->findOneBy(['id' => 1]);
+            $user->setUserExperience($experience);
+        }
+
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($trip);
+        $entityManager->persist($user);
         $entityManager->flush();
         $this->addFlash('success', 'Votre trajet est terminé ! ');
         return $this->redirectToRoute('user_edit', ['id' => $user->getId()]);
@@ -160,7 +177,6 @@ class TripController extends AbstractController
                 $entityManager = $this->getDoctrine()->getManager();
                 $entityManager->persist($trip);
                 $entityManager->flush();
-              //  dd("TRIP ", $trip);
     
               return new JsonResponse(
                 [],

@@ -33,6 +33,7 @@
             {% if app.user != null %}
                 <a href="{{path('home')}}">home</a>
                 <a href="{{ path ('user_edit', {'id': app.user.id})}}">Mon Profil</a>
+                <a href="{{ path ('message_discussion', {'id': app.user.id})}}">Boite de réception</a>
                 <a href="{{ path ('user_edit', {'id': app.user.id})}}#tabs-2">Mes informations personnel</a>
                 <a href="{{ path ('user_edit', {'id': app.user.id})}}#tabs-3">Préférence de voyage</a>
                 <a href="{{ path ('user_edit', {'id': app.user.id})}}#tabs-4">Mon véhicule</a>

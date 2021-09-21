@@ -72,7 +72,7 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
             ->getOneOrNullResult()
         ;
     } 
-  
+
 
     /*
     public function findOneBySomeField($value): ?User

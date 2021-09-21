@@ -35,12 +35,11 @@
                                             'type' : 'file',
                                             'class': 'form-control'
                                             }}) }}
-                                        {# <span><i class="material-icons">insert_photo</i> Photo</span> #}
                                     </div>
                             
                                     {% if user.profile_picture != '' %}
                                         <div class="existing-file">
-                                            <a href="{{asset ('/assets/uploads/profilePicture/') ~ user.profile_picture }}" target="_blank"><i class="material-icons">&#xE24D;</i> profil_picture.jpg</a>
+                                            <a href="{{asset ('/assets/uploads/profilePicture/') ~ user.profile_picture }}" target="_blank"></a>
                                         </div>
                                     {% endif %}
                                 </div>

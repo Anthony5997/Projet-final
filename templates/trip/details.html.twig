@@ -20,8 +20,13 @@
               <div class="plan-detail">
               <div class="d-flex justify-content-between mb-2">
                 <h3>{{trip.dateOfTrip|date("d M")}}</h3>
-                {% if trip.tripFull == true %}
-                <h3>Complet</h3>
+                {% if trip.tripFull == true and trip.tripStarted == false %}
+                    <h3>Complet</h3>
+                {% elseif trip.tripStarted == true and trip.tripCompleted == false %}
+                    <h3> Le trajet a commencer</h3>
+                {% elseif trip.tripStarted == true and trip.tripCompleted == true %}
+                    <h3> Trajet terminé </h3>
+                {% else %}
                 {% endif %}
               </div>
                 <div class="timeline-detail">
@@ -29,9 +34,10 @@
                     <div class="d-flex justify-content-end"><p>{{trip.duration}}</p></div>
                     <div class="row">
                           <div class="col-3 d-flex align-items-end flex-column justify-content-around p-3">
-                              <p>{{trip.startTime|date('H:i')}}</p>
+                              <p><strong>{{trip.startTime|date('H:i')}}</strong></p>
                               <p class="d-flex justify-content-center font-control">{{trip.distance}} </p>
-                              <p>heure</p>
+                              {% set hour = trip.duration|replace({'heure':'hour'})%}
+                              <p class="pt-3"><strong>{{ trip.startTime|date_modify("+" ~ hour)|date('H:i') }}</strong></p>
                           </div>
                           <div class="col-9">
                               <div class="line-detail">
@@ -73,7 +79,7 @@
                               <p class="info-detail"><i style="color:green;" class="far fa-check-circle"></i> Numéro de téléphone</p>
                           {% endif %}
                             {% if checkBooking != "my" %}
-                                <a href="" class="contact-button"><i style="color:#82b6e8;" class="far fa-comments"></i> Contacter {{trip.driver.firstName}}</a>
+                                <a href="{{path('message_new', {'id': trip.driver.id})}}" class="contact-button"><i style="color:#82b6e8;" class="far fa-comments"></i> Contacter {{trip.driver.firstName}}</a>
                             {% endif %}
                       </div>
                       {% if trip.driver.travelPreferences.discussion == null and trip.driver.travelPreferences.music == null and trip.driver.travelPreferences.smoking == null and trip.driver.travelPreferences.animals == null and trip.driver.travelPreferences.healthPass == null %}
@@ -102,12 +108,12 @@
                         {% else %}
                       <div class="row">
                         <div class="card-detail-vehicule">
-                            <div class="col d-flex  flex-column justify-content-center">
+                            <div class="col d-flex  flex-column justify-content-center align-items-center">
                                 {% if trip.driver.vehicule.brand %}
                                     <p class="font-control">{{trip.driver.vehicule.brand}} - {{trip.driver.vehicule.model}} </p>
                                 {% endif %}
                             </div>
-                            <div class="col d-flex  justify-content-end">
+                            <div class="col d-flex  justify-content-end align-items-center">
                                 {% if trip.driver.vehicule.vehiculePicture %}
                                     <img class="img-card-vehicule"src="{{asset('assets/uploads/vehiculePicture/') ~ trip.driver.vehicule.vehiculePicture}}"/>
                                 {% endif %}
@@ -123,7 +129,13 @@
                                 <a href="{{ path ('booking_new', {'id': trip.id})}}" type="submit" class="contact-button"><i class="fas fa-user-check"></i> Réserver ce trajet</a>
                             {% endif %}
                         {% else %}
-                            <a href="{{ path ('booking_new', {'id': trip.id})}}" type="submit" class="contact-button-cancel"><i class="far fa-times-circle"></i> Annuler ma réservation</a>
+                            {% if trip.tripStarted == true and trip.tripCompleted == false %}
+                                <p class="contact-button"><i class="fas fa-car-side"></i> Trajet en cours</p>
+                            {% elseif trip.tripStarted == true and trip.tripCompleted == true %}
+                                <a class="contact-button"><i class="fas fa-check"></i> Trajet terminé</a>
+                            {% else %}
+                                <a href="{{ path ('booking_new', {'id': trip.id})}}" type="submit" class="contact-button-cancel"><i class="far fa-times-circle"></i> Annuler ma réservation</a>
+                            {% endif %}
                         {% endif %}
                     {% endif %}
                       </div>

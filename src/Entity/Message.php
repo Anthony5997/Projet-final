@@ -42,7 +42,7 @@ class Message
      */
     private $receiver;
 
-    public function getId(): ?int
+    public function getId(): ?string
     {
         return $this->id;
     }

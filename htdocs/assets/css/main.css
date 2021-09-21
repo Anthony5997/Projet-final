@@ -6484,6 +6484,14 @@ header .fa-user {
 }
 .nav-tabs a {
   color: black;
+  font-size: 14px;
+}
+
+.container-profile {
+  width: 100%;
+  margin-top: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .profile-picture-profile {
@@ -6554,6 +6562,28 @@ header .fa-user {
   transition: 400ms;
 }
 
+.line-trip-profile {
+  font-size: 12px;
+}
+
+@media (max-width: 950px) {
+  .container-profile {
+    max-width: none !important;
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+@media (max-width: 650px) {
+  .nav-tabs {
+    flex-wrap: nowrap;
+  }
+  .nav-tabs a {
+    color: black;
+    font-size: 10px;
+  }
+}
 @media (max-width: 450px) {
   .main-info-profile {
     margin-top: 15px;
@@ -6571,6 +6601,25 @@ header .fa-user {
     border-radius: 50%;
     justify-content: center;
     display: flex;
+  }
+
+  .container-profile {
+    max-width: none !important;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .line-trip-profile {
+    font-size: 8px;
+  }
+
+  .nav-tabs {
+    flex-wrap: nowrap;
+  }
+  .nav-tabs a {
+    color: black;
+    font-size: 8px;
   }
 }
 .home {
@@ -7273,6 +7322,50 @@ a .font-control-rating {
 @media (max-width: 450px) {
   .info-detail {
     font-size: 8px;
+  }
+
+  .card-detail-vehicule {
+    display: flex;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 15px;
+    margin-left: 0px;
+    background-color: rgba(130, 183, 232, 0.323);
+    padding-left: 0px;
+  }
+  .card-detail-vehicule .img-card-vehicule {
+    width: 75%;
+    height: 80%;
+    border-radius: 50%;
+  }
+
+  .plan-detail {
+    background-color: rgba(227, 230, 238, 0.33);
+    border-radius: 15px;
+    padding: 5px;
+    width: 100%;
+  }
+  .plan-detail .font-control {
+    font-size: 8px;
+  }
+  .plan-detail .font-control-rating {
+    font-size: 8px;
+  }
+
+  .card-custom-detail {
+    width: 100%;
+  }
+
+  .card-detail-profile {
+    padding-left: 0px;
+  }
+  .card-detail-profile a {
+    width: 100%;
+  }
+  .card-detail-profile a .img-card {
+    width: 100%;
+    height: 70%;
+    border-radius: 50%;
   }
 }
 .clearfix::after {

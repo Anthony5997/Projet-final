@@ -80,7 +80,7 @@ class Trip
      * @ORM\Column(type="date")
      */
     private $created_at;
- 
+
 
     public function getId(): ?string
     {

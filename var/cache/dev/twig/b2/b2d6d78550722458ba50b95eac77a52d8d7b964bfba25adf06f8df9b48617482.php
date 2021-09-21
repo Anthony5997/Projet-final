@@ -47,7 +47,7 @@ class __TwigTemplate_afd4f3a139eb7a269521ab83469fc2bf30afb999af47b8570ad656fd595
         // line 4
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formReset"]) || array_key_exists("formReset", $context) ? $context["formReset"] : (function () { throw new RuntimeError('Variable "formReset" does not exist.', 4, $this->source); })()), 'form_start');
         echo "
-            <div class=\"col-xs-12 col-sm-6 col-md-6\">
+            <div class=\"col-xs-8 col-sm-8 col-md-6\">
                 <div class=\"form-group\">
                     ";
         // line 7
@@ -59,7 +59,7 @@ class __TwigTemplate_afd4f3a139eb7a269521ab83469fc2bf30afb999af47b8570ad656fd595
         echo "
                 </div>
             </div>
-            <div class=\"col-xs-12 col-sm-6 col-md-6\">
+            <div class=\"col-xs-12 col-sm-12 col-md-6\">
                 <div class=\"form-group\">
                     <span>";
         // line 13
@@ -71,7 +71,7 @@ class __TwigTemplate_afd4f3a139eb7a269521ab83469fc2bf30afb999af47b8570ad656fd595
         echo "
                 </div>
             </div>
-            <div class=\"col-xs-12 col-sm-6 col-md-6\">
+            <div class=\"col-xs-12 col-sm-12 col-md-6\">
                 <div class=\"form-group\">
                     ";
         // line 19
@@ -83,7 +83,7 @@ class __TwigTemplate_afd4f3a139eb7a269521ab83469fc2bf30afb999af47b8570ad656fd595
         echo "
                 </div>
             </div>
-            <div class=\"col-xs-12 col-sm-4 col-md-6\">
+            <div class=\"col-xs-12 col-sm-12 col-md-6\">
                 <div class=\"form-group\">
                     ";
         // line 25
@@ -137,25 +137,25 @@ class __TwigTemplate_afd4f3a139eb7a269521ab83469fc2bf30afb999af47b8570ad656fd595
     <div class=\"container\">
         <div class=\"row\">
             {{form_start(formReset)}}
-            <div class=\"col-xs-12 col-sm-6 col-md-6\">
+            <div class=\"col-xs-8 col-sm-8 col-md-6\">
                 <div class=\"form-group\">
                     {{ form_label(formReset.email, 'Email') }}
                     {{ form_widget(formReset.email) }}
                 </div>
             </div>
-            <div class=\"col-xs-12 col-sm-6 col-md-6\">
+            <div class=\"col-xs-12 col-sm-12 col-md-6\">
                 <div class=\"form-group\">
                     <span>{{ form_label(formReset.password, 'Mot de passe actuel') }}</span>
                     {{ form_widget(formReset.password) }}
                 </div>
             </div>
-            <div class=\"col-xs-12 col-sm-6 col-md-6\">
+            <div class=\"col-xs-12 col-sm-12 col-md-6\">
                 <div class=\"form-group\">
                     {{ form_label(formReset.newPassword.first) }}
                     {{ form_widget(formReset.newPassword.first) }}
                 </div>
             </div>
-            <div class=\"col-xs-12 col-sm-4 col-md-6\">
+            <div class=\"col-xs-12 col-sm-12 col-md-6\">
                 <div class=\"form-group\">
                     {{ form_label(formReset.newPassword.second) }}  
                     {{ form_widget(formReset.newPassword.second) }}
