@@ -85,12 +85,11 @@ class __TwigTemplate_47eb38df3b6e4abad6b5384cd116650b29bd7b4c983003bbef85704df6b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "<div class=\"container\">
+        echo "    <a href=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("message_discussion", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 6, $this->source); })()), "user", [], "any", false, false, false, 6), "id", [], "any", false, false, false, 6)]), "html", null, true);
+        echo "\" class=\"button-comeback\"><i class=\"fas fa-arrow-left\"></i></a>
+<div class=\"container\">
 
-<a href=\"";
-        // line 8
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("message_discussion", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 8, $this->source); })()), "user", [], "any", false, false, false, 8), "id", [], "any", false, false, false, 8)]), "html", null, true);
-        echo "\" class=\"btn btn-info mt-5\"><i class=\"fas fa-arrow-left\"></i></a>
  
     <div class=\"container\">
     <h2 class=\"text-center mt-5\">Discussion avec ";
@@ -213,7 +212,7 @@ class __TwigTemplate_47eb38df3b6e4abad6b5384cd116650b29bd7b4c983003bbef85704df6b
 
     public function getDebugInfo()
     {
-        return array (  189 => 51,  183 => 47,  177 => 46,  171 => 44,  164 => 41,  162 => 40,  152 => 34,  148 => 32,  144 => 30,  142 => 29,  137 => 27,  132 => 26,  128 => 24,  123 => 21,  120 => 20,  116 => 18,  112 => 16,  110 => 15,  107 => 14,  103 => 13,  98 => 11,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  188 => 51,  182 => 47,  176 => 46,  170 => 44,  163 => 41,  161 => 40,  151 => 34,  147 => 32,  143 => 30,  141 => 29,  136 => 27,  131 => 26,  127 => 24,  122 => 21,  119 => 20,  115 => 18,  111 => 16,  109 => 15,  106 => 14,  102 => 13,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -223,9 +222,9 @@ class __TwigTemplate_47eb38df3b6e4abad6b5384cd116650b29bd7b4c983003bbef85704df6b
 {% block title %}Message{% endblock %}
 
 {% block body %}
+    <a href=\"{{path('message_discussion', {'id' : app.user.id})}}\" class=\"button-comeback\"><i class=\"fas fa-arrow-left\"></i></a>
 <div class=\"container\">
 
-<a href=\"{{path('message_discussion', {'id' : app.user.id})}}\" class=\"btn btn-info mt-5\"><i class=\"fas fa-arrow-left\"></i></a>
  
     <div class=\"container\">
     <h2 class=\"text-center mt-5\">Discussion avec {{contact.firstName}}</h2>

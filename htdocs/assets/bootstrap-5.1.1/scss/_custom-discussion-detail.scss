@@ -18,8 +18,8 @@
                                        left bottom,
                                        left top,
                                        color-stop(0.44, rgb(122,153,217)),
-                                       color-stop(0.72, rgb(73,125,189)),
-                                       color-stop(0.86, rgb(40, 77, 187)));
+                                       color-stop(0.72, rgb(130, 173, 225)),
+                                       color-stop(0.86, rgba(113, 142, 228, 0.679)));
 }
 .box-message{
 
@@ -74,17 +74,37 @@
     justify-content: center;
     align-items: center;
     background-color: rgba(114, 143, 228, 0.604);
-    padding: 2%;
+    padding: 30px;
     font-size: 40px;
     color: white;
-    border-radius: 35%;
+    border-radius: 50px;
+    width: auto;
+
+    .far{
+
+        font-weight: 300;
+    }   
 }
 
 .form-send-message{
 
     width: 80%;
-    margin: 0 auto;
+    margin: 40px auto;
 }
+
+@media (max-width:1000px) {
+
+
+    .send-message-button{
+ 
+        padding: 20px;
+        font-size: 40px;
+       
+    }
+
+
+}
+
 
 
 @media (max-width:770px) {
@@ -115,6 +135,34 @@
         }
     }
 
+    .send-message-button{
+ 
+        padding: 10px;
+        font-size: 25px;
+       
+    }
+
+
+}
+
+a.button-comeback{
+
+    padding: 10px;
+    font-size: 30px;
+    margin-top: 50px;
+    color: black;
+    position: relative;
+    top: 25px;
+    left: 30px;
+
+}
+
+a.button-comeback:hover{
+
+   transform: scale(1.1);
+   transition: 300ms;
+   color: rgba(128, 128, 128, 0.357);
+   padding: 15px;
 
 }
 
@@ -159,10 +207,16 @@
 
     .form-send-message{
 
+            width: 80%;
+            margin: 25px auto;
+
         .send-message-button{
-            height: 60%;
-            font-size: 20px;
+ 
+            padding: 5px;
+            font-size: 18px;
+           
         }
+
 
     }
 

@@ -7406,7 +7406,7 @@ a .font-control-rating {
 
 .box-message::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.44, #7a99d9), color-stop(0.72, #497dbd), color-stop(0.86, #284dbb));
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.44, #7a99d9), color-stop(0.72, #82ade1), color-stop(0.86, rgba(113, 142, 228, 0.679)));
 }
 
 .box-message {
@@ -7448,17 +7448,27 @@ a .font-control-rating {
   justify-content: center;
   align-items: center;
   background-color: rgba(114, 143, 228, 0.604);
-  padding: 2%;
+  padding: 30px;
   font-size: 40px;
   color: white;
-  border-radius: 35%;
+  border-radius: 50px;
+  width: auto;
+}
+.send-message-button .far {
+  font-weight: 300;
 }
 
 .form-send-message {
   width: 80%;
-  margin: 0 auto;
+  margin: 40px auto;
 }
 
+@media (max-width: 1000px) {
+  .send-message-button {
+    padding: 20px;
+    font-size: 40px;
+  }
+}
 @media (max-width: 770px) {
   .box-message .profile-picture-message-send {
     width: 50px;
@@ -7478,7 +7488,29 @@ a .font-control-rating {
   .box-message .hour-send {
     font-size: 8px;
   }
+
+  .send-message-button {
+    padding: 10px;
+    font-size: 25px;
+  }
 }
+a.button-comeback {
+  padding: 10px;
+  font-size: 30px;
+  margin-top: 50px;
+  color: black;
+  position: relative;
+  top: 25px;
+  left: 30px;
+}
+
+a.button-comeback:hover {
+  transform: scale(1.1);
+  transition: 300ms;
+  color: rgba(128, 128, 128, 0.357);
+  padding: 15px;
+}
+
 @media (max-width: 450px) {
   .box-message {
     max-height: 625px !important;
@@ -7507,9 +7539,13 @@ a .font-control-rating {
     font-size: 6px;
   }
 
+  .form-send-message {
+    width: 80%;
+    margin: 25px auto;
+  }
   .form-send-message .send-message-button {
-    height: 60%;
-    font-size: 20px;
+    padding: 5px;
+    font-size: 18px;
   }
 }
 .clearfix::after {
