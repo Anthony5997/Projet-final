@@ -3,28 +3,33 @@
 {% block title %}Message{% endblock %}
 
 {% block body %}
-    <h1>Message</h1>
+    <h1>Message Reçu</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ message.id }}</td>
-            </tr>
-            <tr>
-                <th>Content</th>
-                <td>{{ message.content }}</td>
-            </tr>
-            <tr>
-                <th>Send_at</th>
-                <td>{{ message.sendAt ? message.sendAt|date('Y-m-d') : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
+    {{dump(messageReceive)}}
 
-    <a href="{{ path('message_index') }}">back to list</a>
+       {% for message in messageReceive %}
 
-    <a href="{{ path('message_edit', {'id': message.id}) }}">edit</a>
+        <div class="row card-receiver-message">
+            <a href="{{path('message_discussion_details', {'id': message.sender.id})}}">
+            <div class="row">
+                <div class="col d-flex flex-column justify-content-center align-items-center">
+                    <p class="font-control">{{message.sender.firstName}}</p>
+                    <img class="img-card"src="{{asset('assets/uploads/profilePicture/') ~ message.sender.profile_picture}}"/>
+                </div>
+                <div class="col d-flex  flex-column justify-content-center">
+                <span class="d-inline-block message-font-control text-truncate" style="max-width: 150px;">
+                    {{message.content}}
+                </span>
+                </div>
+                <div class="col d-flex justify-content-end align-items-center font-control fas fa-chevron-right message-font-control"></div>
+            </div>
+               <span class="d-inline-block message-font-control d-flex justify-content-between">
+                   <div></div>
+                   <div>  {{message.sendAt|date('d M H i')}} </div>
+                </span>
+            </a>
+        </div>
+         
+        {% endfor %}
 
-    {{ include('message/_delete_form.html.twig') }}
 {% endblock %}

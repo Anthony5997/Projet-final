@@ -42,44 +42,34 @@ class __TwigTemplate_1f7740013817ac962bca4f98311a7cbe99cfc149c2f49a43862b06583ff
         // line 1
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 1, $this->source); })()), 'form_start');
         echo "
-
-";
-        // line 3
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 3, $this->source); })()));
-        echo "
-
-      <div class=\"col-xs-12 col-sm-12\">
-        <div class=\"form-group mt-5\">
+<div class=\"row d-flex justify-content-center align-items-center form-send-message\">
+      <div class=\"col-10 \">
+        <div class=\"form-group\">
             ";
-        // line 7
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 7, $this->source); })()), "content", [], "any", false, false, false, 7), 'label', ["label" => "Votre message ..."]);
-        echo "
-            ";
+        // line 5
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 5, $this->source); })()), "content", [], "any", false, false, false, 5), 'widget', ["attr" => ["cols" => "20", "rows" => "5"]]);
         // line 8
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 8, $this->source); })()), "content", [], "any", false, false, false, 8), 'widget', ["attr" => ["cols" => "20", "rows" => "5"]]);
-        // line 11
         echo "
         </div>
         <div class='red-text'>";
-        // line 13
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 13, $this->source); })()), "content", [], "any", false, false, false, 13), 'errors');
+        // line 10
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 10, $this->source); })()), "content", [], "any", false, false, false, 10), 'errors');
         echo "</div>
     </div>
         <input type=\"hidden\" name=\"sender\" id=\"sender\" value=\"";
-        // line 15
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 15, $this->source); })()), "id", [], "any", false, false, false, 15), "html", null, true);
+        // line 12
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 12, $this->source); })()), "id", [], "any", false, false, false, 12), "html", null, true);
         echo "\" />
         <input type=\"hidden\" name=\"receiver\" id=\"receiver\" value=\"";
-        // line 16
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 16, $this->source); })()), "id", [], "any", false, false, false, 16), "html", null, true);
+        // line 13
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 13, $this->source); })()), "id", [], "any", false, false, false, 13), "html", null, true);
         echo "\" />
-    <button class=\"btn\">";
-        // line 17
-        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 17, $this->source); })()), "Save")) : ("Save")), "html", null, true);
-        echo "</button>
+    <button class=\" col-2 d-flex justify-content-center align-items-center btn send-message-button\"><i class=\"far fa-paper-plane\"></i></button>
+</div>
+
 ";
-        // line 18
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 18, $this->source); })()), 'form_end');
+        // line 17
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 17, $this->source); })()), 'form_end');
         echo "
 ";
         
@@ -102,18 +92,15 @@ class __TwigTemplate_1f7740013817ac962bca4f98311a7cbe99cfc149c2f49a43862b06583ff
 
     public function getDebugInfo()
     {
-        return array (  82 => 18,  78 => 17,  74 => 16,  70 => 15,  65 => 13,  61 => 11,  59 => 8,  55 => 7,  48 => 3,  43 => 1,);
+        return array (  72 => 17,  65 => 13,  61 => 12,  56 => 10,  52 => 8,  50 => 5,  43 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{{ form_start(form) }}
-
-{{dump(form)}}
-
-      <div class=\"col-xs-12 col-sm-12\">
-        <div class=\"form-group mt-5\">
-            {{ form_label(form.content, 'Votre message ...') }}
+<div class=\"row d-flex justify-content-center align-items-center form-send-message\">
+      <div class=\"col-10 \">
+        <div class=\"form-group\">
             {{ form_widget(form.content, { 'attr': {
                     'cols' : \"20\",
                     'rows' : \"5\"
@@ -123,7 +110,9 @@ class __TwigTemplate_1f7740013817ac962bca4f98311a7cbe99cfc149c2f49a43862b06583ff
     </div>
         <input type=\"hidden\" name=\"sender\" id=\"sender\" value=\"{{currentUser.id}}\" />
         <input type=\"hidden\" name=\"receiver\" id=\"receiver\" value=\"{{contact.id}}\" />
-    <button class=\"btn\">{{ button_label|default('Save') }}</button>
+    <button class=\" col-2 d-flex justify-content-center align-items-center btn send-message-button\"><i class=\"far fa-paper-plane\"></i></button>
+</div>
+
 {{ form_end(form) }}
 ", "message/_form.html.twig", "/shared/httpd/Projet-Final/templates/message/_form.html.twig");
     }

@@ -23,22 +23,55 @@ class MessageRepository extends ServiceEntityRepository
     //  * @return Message[] Returns an array of Message objects
     //  */
 
-    public function getAllDiscussion($user){
+    public function getAllReceiver($user){
 
        
         return $this->createQueryBuilder('message')
         ->addSelect('sender')    
-        ->join('message.sender', 'sender', 'WITH', 'sender = sender.message')
+        ->join('message.sender', 'sender', 'WITH', 'sender = message.sender')   
+        ->where('message.receiver= :user')
+        ->setParameter('user', $user->getId())
+        ->groupBy('sender')
+        ->orderBy('message.send_at', 'DESC')
+        ->getQuery()
+        ->getResult()
+    ;
+    }
+
+
+    public function getAllSender($user){
+
+       
+        return $this->createQueryBuilder('message')
+      
         ->addSelect('receiver')    
         ->join('message.receiver', 'receiver', 'WITH', 'receiver = receiver.message')
-        
-        ->where('message.receiver= :user')
+        ->where('message.sender = :user')
         ->setParameter('user', $user->getId())
         ->groupBy('sender')
         ->getQuery()
         ->getResult()
     ;
     }
+
+
+    // public function getOneDiscussion($user, $user2){
+
+       
+    //     return $this->createQueryBuilder('message')
+    //     ->where('message.sender = :user')
+    //     ->andWhere('message.receiver = :user2')
+    //     ->orWhere('message.sender = :user2')
+    //     ->andWhere('message.receiver = :user1')
+    //     ->setParameter('user', $user->getId())
+    //     ->setParameter('user2', $user2->getId())
+    //     ->getQuery()
+    //     ->getResult()
+    // ;
+    // }
+
+
+
 
     // /**
     //  * @return Message[] Returns an array of Message objects

@@ -16,7 +16,8 @@ class MessageType extends AbstractType
             ->add('content', TextareaType::class, [
                 'required' => false,
                 'attr' => [
-                    'class' => 'form-control'
+                    'class' => 'form-control',
+                    'placeholder' => 'Votre message ...'
                 ],
             ])
         ;

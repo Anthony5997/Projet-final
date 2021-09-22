@@ -27,6 +27,7 @@ return [
     'message_index' => [[], ['_controller' => 'App\\Controller\\MessageController::index'], [], [['text', '/message/']], [], []],
     'message_new' => [['id'], ['_controller' => 'App\\Controller\\MessageController::new'], [], [['text', '/new'], ['variable', '/', '[^/]++', 'id', true], ['text', '/message']], [], []],
     'message_discussion' => [['id'], ['_controller' => 'App\\Controller\\MessageController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/message/discussion']], [], []],
+    'message_discussion_details' => [['id'], ['_controller' => 'App\\Controller\\MessageController::detail'], [], [['text', '/details'], ['variable', '/', '[^/]++', 'id', true], ['text', '/message/discussion']], [], []],
     'message_edit' => [['id'], ['_controller' => 'App\\Controller\\MessageController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/message']], [], []],
     'message_delete' => [['id'], ['_controller' => 'App\\Controller\\MessageController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/message']], [], []],
     'register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], []],

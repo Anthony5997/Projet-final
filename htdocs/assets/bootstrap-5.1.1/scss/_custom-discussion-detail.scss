@@ -1,0 +1,171 @@
+.box-message::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+    border-radius: 10px;
+}
+
+.box-message::-webkit-scrollbar
+{
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+.box-message::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    background-image: -webkit-gradient(linear,
+                                       left bottom,
+                                       left top,
+                                       color-stop(0.44, rgb(122,153,217)),
+                                       color-stop(0.72, rgb(73,125,189)),
+                                       color-stop(0.86, rgb(40, 77, 187)));
+}
+.box-message{
+
+    background-color: rgba(255, 255, 255, 0.597);
+    padding: 0px 40px 0px 40px;
+    margin: 10px 0px 10px 0px;
+    max-height: 625px!important;
+    overflow-y: scroll;
+
+
+
+    .sender-row{
+        flex-direction: row-reverse;
+    }
+
+    .receiver-row{
+        flex-direction: row;
+    }
+
+    .font-controll-message{
+        font-size: 11px;
+        background-color: rgba(213, 197, 197, 0.213);
+        
+    }
+
+    .font-controll-message-name{
+        font-size: 9px;
+    }
+
+    .display-lign{
+    }
+
+    .profile-picture-message-send{
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        padding: 8px;
+    }
+
+    .name-user{
+        display: block;
+        font-size: 12px;
+    }
+
+    .hour-send{
+        font-size: 10px;
+    }
+}
+
+.send-message-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(114, 143, 228, 0.604);
+    padding: 2%;
+    font-size: 40px;
+    color: white;
+    border-radius: 35%;
+}
+
+.form-send-message{
+
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+@media (max-width:770px) {
+
+    .box-message{
+
+        .profile-picture-message-send{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            padding: 8px;
+        }
+
+        .font-controll-message{
+            font-size: 10px;
+        }
+
+        .font-controll-message-name{
+            font-size: 8px;
+        }
+
+        .name-user{
+            display: none;
+        }
+
+        .hour-send{
+            font-size: 8px;
+        }
+    }
+
+
+}
+
+
+@media (max-width:450px) {
+    
+    .box-message{
+
+        max-height: 625px!important;
+        overflow-y: scroll;
+    
+
+        .profile-picture-message-send{
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            padding: 8px;
+        }
+
+        padding: 5px 15px 5px 15px;
+
+        .font-controll-message{
+            font-size: 8px;
+        }
+
+        .font-controll-message-name{
+            font-size: 7px;
+        }
+        .profile-picture-message-send{
+            padding: 1px;
+        }
+
+        .name-user{
+            display: none;
+        }
+
+        .hour-send{
+            font-size: 6px;
+        }
+
+    }
+
+    .form-send-message{
+
+        .send-message-button{
+            height: 60%;
+            font-size: 20px;
+        }
+
+    }
+
+
+
+}

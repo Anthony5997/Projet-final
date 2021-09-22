@@ -25,10 +25,6 @@ class Message
      */
     private $content;
 
-    /**
-     * @ORM\Column(type="date")
-     */
-    private $send_at;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class)
@@ -41,6 +37,11 @@ class Message
      * @ORM\JoinColumn(nullable=false)
      */
     private $receiver;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $send_at;
 
     public function getId(): ?string
     {

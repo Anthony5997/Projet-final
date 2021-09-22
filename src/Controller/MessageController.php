@@ -37,9 +37,13 @@ class MessageController extends AbstractController
     {
         $user = $this->getUser();
         $message = new Message();
+        dd("j'suis dans message new !");
         $form = $this->createForm(MessageType::class, $message);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+
+        dd("j'suis dans message new  FORM!");
+
 
             $date = new \DateTime();
             $message->setSendAt($date);
@@ -50,9 +54,9 @@ class MessageController extends AbstractController
             $entityManager->persist($message);
             $entityManager->flush();
 
-            return $this->redirectToRoute('message_discussion', ['id'=> $user->getId()]);
+            return $this->redirectToRoute('message_discussion_details', ['id'=> $user->getId()]);
         }
-        return $this->render('message/new.html.twig', [
+        return $this->render('message/discussion_detail.html.twig', [
             'message' => $message,
             'form' => $form->createView(),
             'id' => $userContacted->getId(),
@@ -66,11 +70,49 @@ class MessageController extends AbstractController
      */
     public function show(User $user, MessageRepository $messageRepository, UserRepository $userRepository): Response
     {
-        // $allDiscussions = $userRepository->getAllDiscussion($user);
-        // dd($allDiscussions);
+        $getAllReceiver = $messageRepository->getAllReceiver($user);
         return $this->render('message/discussions.html.twig', [
-          //  'discussions' => $allDiscussions,
+            'messageReceive' => $getAllReceiver,
         ]);
+    }
+
+
+    /**
+     * @Route("/discussion/{id}/details", name="message_discussion_details", methods={"GET", "POST"})
+     */
+    public function detail(Request $request, User $user, MessageRepository $messageRepository, UserRepository $userRepository): Response
+    {
+
+        $message = new Message();
+        $form = $this->createForm(MessageType::class, $message);
+        $form->handleRequest($request);
+
+        $getAllDiscussion = $messageRepository->findBy(['sender' => [$user, $this->getUser()], 'receiver' => [$this->getUser(), 'receiver' => $user]],  array('send_at' => 'ASC'));
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+
+            $date = new \DateTime();
+            $date->format('Y-m-d H:i:s');
+            $message->setSendAt($date);
+            $message->setReceiver($user);
+            $message->setSender($this->getUser());
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($message);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('message_discussion_details', ['id'=> $user->getId()]);
+        }
+        return $this->render('message/discussion_detail.html.twig', [
+            'messageReceive' => $getAllDiscussion,
+            'form' => $form->createView(),
+            'id' => $user->getId(),
+            'contact' => $user,
+            'currentUser' => $this->getUser(),
+            
+        ]);        
+        
     }
 
     /**

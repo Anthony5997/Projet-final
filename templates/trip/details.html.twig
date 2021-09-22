@@ -79,7 +79,7 @@
                               <p class="info-detail"><i style="color:green;" class="far fa-check-circle"></i> Numéro de téléphone</p>
                           {% endif %}
                             {% if checkBooking != "my" %}
-                                <a href="{{path('message_new', {'id': trip.driver.id})}}" class="contact-button"><i style="color:#82b6e8;" class="far fa-comments"></i> Contacter {{trip.driver.firstName}}</a>
+                                <a href="{{path('message_discussion_details', {'id': trip.driver.id})}}" class="contact-button"><i style="color:#82b6e8;" class="far fa-comments"></i> Contacter {{trip.driver.firstName}}</a>
                             {% endif %}
                       </div>
                       {% if trip.driver.travelPreferences.discussion == null and trip.driver.travelPreferences.music == null and trip.driver.travelPreferences.smoking == null and trip.driver.travelPreferences.animals == null and trip.driver.travelPreferences.healthPass == null %}
