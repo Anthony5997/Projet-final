@@ -92,7 +92,7 @@ class __TwigTemplate_47eb38df3b6e4abad6b5384cd116650b29bd7b4c983003bbef85704df6b
 
  
     <div class=\"container\">
-    <h2 class=\"text-center mt-5\">Discussion avec ";
+    <h2 class=\"text-center my-4\">Discussion avec ";
         // line 11
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 11, $this->source); })()), "firstName", [], "any", false, false, false, 11), "html", null, true);
         echo "</h2>
@@ -227,7 +227,7 @@ class __TwigTemplate_47eb38df3b6e4abad6b5384cd116650b29bd7b4c983003bbef85704df6b
 
  
     <div class=\"container\">
-    <h2 class=\"text-center mt-5\">Discussion avec {{contact.firstName}}</h2>
+    <h2 class=\"text-center my-4\">Discussion avec {{contact.firstName}}</h2>
         <div class=\"box-message\" id=\"box-message\">
         {% for message in messageReceive %}
 
