@@ -42,8 +42,8 @@ header .navbar{
     background: #eee;
     border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
     display: none;
-    padding-top: 0.5rem!important;
-    padding-bottom: 0.5rem!important;
+    padding-top: 0.2rem!important;
+    padding-bottom: 0.2rem!important;
     
     
 }
@@ -60,19 +60,19 @@ header .logo span{
 }
 
 header .navbar a{
-    font-size: 1.2rem;
-    padding:0 1.5rem;
+    font-size: 0.8rem;
     text-decoration: none;
     color:#666;
-    margin: 1.5rem;
-    padding: 1.5rem 1rem 1.5rem 1rem;
+    margin: 1rem;
+    padding: 0.7rem;
     background: #fff;
     border: 0.1rem solid rgba(0, 0, 0, 0.1);
     display: block;
+    border-radius: 8px;
 }
 
 header .navbar a:hover{
-    margin-left: -1.07rem;
+    margin-left: -0.7rem;
 }
 
 header .icons{
@@ -152,6 +152,11 @@ header .fa-user{
     margin-left: 20px;
 }
 
+.navbar{
+    padding: 0.5rem 0.1rem;
+    border-radius: 5px;
+}
+
 
 /* media queries  */
 @media (max-width:991px){
@@ -213,13 +218,14 @@ header .fa-user{
     header .navbar{
         display: block;
         position:absolute;
-        width: 60%;
+        width: 50%;
         left: 0;
         right: 0;
         top:100%; left:0; right:0;
         background:#eee;
         border-top: .1rem solid rgba(0,0,0,.1);
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        
     }
 
     header #toggler:checked ~ .navbar{
@@ -227,11 +233,12 @@ header .fa-user{
     }
 
     header .navbar a{
-        margin:1.5rem;
-        padding:1.5rem;
+        margin:1rem;
+        padding:1rem;
         background:#fff;
         border:.1rem solid rgba(0,0,0,.1);
         display: block;
+        font-size: 0.9rem;
     }
 
     .icons{

@@ -37,12 +37,10 @@ class MessageController extends AbstractController
     {
         $user = $this->getUser();
         $message = new Message();
-        dd("j'suis dans message new !");
         $form = $this->createForm(MessageType::class, $message);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
 
-        dd("j'suis dans message new  FORM!");
 
 
             $date = new \DateTime();

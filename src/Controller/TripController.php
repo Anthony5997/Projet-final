@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Message;
 use App\Entity\Trip;
 use App\Form\TripType;
 use App\Repository\BookingRepository;
@@ -81,7 +82,7 @@ class TripController extends AbstractController
       /**
      * @Route("/{id}/finish", name="trip_finish", methods={"GET", "POST"})
      */
-    public function finish(Trip $trip, UserExperienceLevelRepository $userExperienceLevelRepository): Response
+    public function finish(Trip $trip, UserExperienceLevelRepository $userExperienceLevelRepository, BookingRepository $bookingRepository, UserRepository $userRepository): Response
     {
         $user = $this->getUser();
         $trip->setTripCompleted(true);
@@ -110,6 +111,31 @@ class TripController extends AbstractController
         $entityManager->persist($trip);
         $entityManager->persist($user);
         $entityManager->flush();
+
+
+       $allBooker =  $bookingRepository->getAllBooker($trip->getId());
+       //dd($allBooker);
+       $adSender = $userRepository->findOneBy(['id' => "2684288a03284585a1d9f78382b1c8a6"]);
+       //dd($adSender);
+
+       foreach($allBooker as $booker){
+
+        $path="http://projet-final.loc/review/".$trip->getDriver()->getId()."/new";
+
+        //dd($path);
+           $message = new Message();
+           $date = new \DateTime();
+           $message->setSendAt($date);
+           $message->setSender($adSender);
+           $message->setReceiver($booker->getUser());
+           $message->setContent("Votre trajet avec ".$trip->getDriver()->getFirstName() . " est terminé ! Laisser un avis sur votre expérience de voyage ! <a href=".$path."> Laisser un avis </a>");
+         // dd($message);
+
+           $entityManager = $this->getDoctrine()->getManager();
+           $entityManager->persist($message);
+           $entityManager->flush();
+       }
+
         $this->addFlash('success', 'Votre trajet est terminé ! ');
         return $this->redirectToRoute('user_edit', ['id' => $user->getId()]);
     }

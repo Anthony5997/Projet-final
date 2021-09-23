@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Review{% endblock %}
+
+{% block body %}
+{{dump(currentUser)}}
+{{dump(userRated)}}
+<div class="container">
+    <h1 class="text-center my-5">Laisser votre avis !</h1>
+    <div class="container">
+    {{ include('review/_form.html.twig') }}
+    </div>
+
+</div>
+{% endblock %}

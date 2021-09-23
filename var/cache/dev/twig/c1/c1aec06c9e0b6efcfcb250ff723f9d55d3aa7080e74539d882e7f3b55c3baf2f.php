@@ -149,7 +149,7 @@ class __TwigTemplate_47eb38df3b6e4abad6b5384cd116650b29bd7b4c983003bbef85704df6b
             }
             // line 34
             echo "                            <div>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["message"], "content", [], "any", false, false, false, 34), "html", null, true);
+            echo strip_tags(twig_get_attribute($this->env, $this->source, $context["message"], "content", [], "any", false, false, false, 34), "<a>");
             echo "</div>
                            
                           
@@ -250,7 +250,7 @@ class __TwigTemplate_47eb38df3b6e4abad6b5384cd116650b29bd7b4c983003bbef85704df6b
                         {% else %}
                         <div class=\"col-7 d-flex justify-content-start align-items-center font-controll-message\">
                         {% endif %}
-                            <div>{{message.content}}</div>
+                            <div>{{message.content|striptags('<a>')|raw }}</div>
                            
                           
                         </div>

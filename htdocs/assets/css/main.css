@@ -6292,8 +6292,8 @@ header .navbar {
   background: #eee;
   border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
   display: none;
-  padding-top: 0.5rem !important;
-  padding-bottom: 0.5rem !important;
+  padding-top: 0.2rem !important;
+  padding-bottom: 0.2rem !important;
 }
 
 header .logo {
@@ -6308,19 +6308,19 @@ header .logo span {
 }
 
 header .navbar a {
-  font-size: 1.2rem;
-  padding: 0 1.5rem;
+  font-size: 0.8rem;
   text-decoration: none;
   color: #666;
-  margin: 1.5rem;
-  padding: 1.5rem 1rem 1.5rem 1rem;
+  margin: 1rem;
+  padding: 0.7rem;
   background: #fff;
   border: 0.1rem solid rgba(0, 0, 0, 0.1);
   display: block;
+  border-radius: 8px;
 }
 
 header .navbar a:hover {
-  margin-left: -1.07rem;
+  margin-left: -0.7rem;
 }
 
 header .icons {
@@ -6394,6 +6394,11 @@ header .fa-user {
   margin-left: 20px;
 }
 
+.navbar {
+  padding: 0.5rem 0.1rem;
+  border-radius: 5px;
+}
+
 /* media queries  */
 @media (max-width: 991px) {
   html {
@@ -6441,7 +6446,7 @@ header .fa-user {
   header .navbar {
     display: block;
     position: absolute;
-    width: 60%;
+    width: 50%;
     left: 0;
     right: 0;
     top: 100%;
@@ -6457,11 +6462,12 @@ header .fa-user {
   }
 
   header .navbar a {
-    margin: 1.5rem;
-    padding: 1.5rem;
+    margin: 1rem;
+    padding: 1rem;
     background: #fff;
     border: 0.1rem solid rgba(0, 0, 0, 0.1);
     display: block;
+    font-size: 0.9rem;
   }
 
   .icons .user-icon-profile {
@@ -7548,6 +7554,48 @@ a.button-comeback:hover {
     font-size: 18px;
   }
 }
+:root {
+  --color-gold: #ffc41f;
+  --color-gold-light: #ffd560;
+}
+
+.comment-stars {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-self: center;
+  font-size: 30px;
+}
+.comment-stars .comment-stars-input {
+  display: none;
+}
+.comment-stars .comment-stars-input:checked ~ .comment-stars-view svg {
+  fill: #ffc41f;
+}
+.comment-stars .comment-stars-input:checked ~ .comment-stars-view:hover svg,
+.comment-stars .comment-stars-input:checked ~ .comment-stars-view:hover ~ .comment-stars-view svg {
+  fill: #ffd560;
+}
+.comment-stars .comment-stars-view {
+  cursor: pointer;
+}
+.comment-stars .comment-stars-view svg {
+  fill: #ededef;
+  width: 1.3930664063em;
+  height: 1.5em;
+}
+.comment-stars .comment-stars-view.is-half {
+  transform: translateX(100%);
+  margin-left: -0.6958007813em;
+}
+.comment-stars .comment-stars-view.is-half svg {
+  width: 0.6958007813em;
+}
+.comment-stars .comment-stars-view:hover svg,
+.comment-stars .comment-stars-view:hover ~ .comment-stars-view svg {
+  fill: var(--color-gold-light);
+}
+
 .clearfix::after {
   display: block;
   clear: both;

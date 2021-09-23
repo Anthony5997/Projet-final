@@ -31,7 +31,7 @@
                         {% else %}
                         <div class="col-7 d-flex justify-content-start align-items-center font-controll-message">
                         {% endif %}
-                            <div>{{message.content}}</div>
+                            <div>{{message.content|striptags('<a>')|raw }}</div>
                            
                           
                         </div>
