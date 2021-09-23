@@ -85,20 +85,36 @@ class __TwigTemplate_3622d2f62bd1191eb44e5f453684770da818018f046c674d57daea876b5
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context, (isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 6, $this->source); })()));
-        echo "
-";
-        // line 7
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context, (isset($context["userRated"]) || array_key_exists("userRated", $context) ? $context["userRated"] : (function () { throw new RuntimeError('Variable "userRated" does not exist.', 7, $this->source); })()));
-        echo "
-<div class=\"container\">
-    <h1 class=\"text-center my-5\">Laisser votre avis !</h1>
-    <div class=\"container\">
+        echo "<div class=\"container\">
     ";
-        // line 11
-        echo twig_include($this->env, $context, "review/_form.html.twig");
+        // line 7
+        if ((0 === twig_compare((isset($context["reviewExist"]) || array_key_exists("reviewExist", $context) ? $context["reviewExist"] : (function () { throw new RuntimeError('Variable "reviewExist" does not exist.', 7, $this->source); })()), null))) {
+            // line 8
+            echo "        <h1 class=\"text-center my-5\">Laisser votre avis !</h1>
+        <div class=\"container\">
+            ";
+            // line 10
+            echo twig_include($this->env, $context, "review/_form.html.twig");
+            echo "
+        </div>
+    ";
+        } else {
+            // line 13
+            echo "         <h1 class=\"text-center my-5\">Votre avis à bien été prend en compte</h1>
+        <div class=\"container\">
+        <div class=\"d-flex justify-content-center align-items-center\">
+            <i style=\"font-size: 100px;\" class=\"far fa-thumbs-up\"></i>
+        </div>
+            <a class=\"button-comeback\"href=\"";
+            // line 18
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_edit", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 18, $this->source); })()), "user", [], "any", false, false, false, 18), "id", [], "any", false, false, false, 18)]), "html", null, true);
+            echo "\"><i class=\"fas fa-arrow-left\"></i> Retourné au profil</a>
+        </div>
+
+    ";
+        }
+        // line 22
         echo "
-    </div>
 
 </div>
 ";
@@ -122,7 +138,7 @@ class __TwigTemplate_3622d2f62bd1191eb44e5f453684770da818018f046c674d57daea876b5
 
     public function getDebugInfo()
     {
-        return array (  99 => 11,  92 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  117 => 22,  110 => 18,  103 => 13,  97 => 10,  93 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -132,13 +148,23 @@ class __TwigTemplate_3622d2f62bd1191eb44e5f453684770da818018f046c674d57daea876b5
 {% block title %}New Review{% endblock %}
 
 {% block body %}
-{{dump(currentUser)}}
-{{dump(userRated)}}
 <div class=\"container\">
-    <h1 class=\"text-center my-5\">Laisser votre avis !</h1>
-    <div class=\"container\">
-    {{ include('review/_form.html.twig') }}
-    </div>
+    {% if reviewExist == null %}
+        <h1 class=\"text-center my-5\">Laisser votre avis !</h1>
+        <div class=\"container\">
+            {{ include('review/_form.html.twig') }}
+        </div>
+    {% else %}
+         <h1 class=\"text-center my-5\">Votre avis à bien été prend en compte</h1>
+        <div class=\"container\">
+        <div class=\"d-flex justify-content-center align-items-center\">
+            <i style=\"font-size: 100px;\" class=\"far fa-thumbs-up\"></i>
+        </div>
+            <a class=\"button-comeback\"href=\"{{path('user_edit', { 'id' : app.user.id})}}\"><i class=\"fas fa-arrow-left\"></i> Retourné au profil</a>
+        </div>
+
+    {% endif %}
+
 
 </div>
 {% endblock %}

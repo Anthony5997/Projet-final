@@ -61,9 +61,9 @@
                       <div class="col d-flex  flex-column justify-content-center">
                         <p class="font-control">{{trip.driver.firstName}}</p>
                         {% if trip.driver.globalRating %}
-                            <p class="font-control"><i class="fas fa-star"></i>{{trip.driver.globalRating}}</p>
+                            <p class="font-control"><i class="fas fa-star"></i>{{trip.driver.globalRating|round(1, 'floor')}}</p>
                         {% else %}
-                            <p class="font-control-rating"><i class="fas fa-star"></i> Premier trajet</p>
+                            <p class="font-control-rating"><i class="fas fa-star"></i> Aucun avis utilisateur</p>
                         {% endif %}
                     </div>
                     <div class="col d-flex justify-content-start align-items-center font-control fas fa-chevron-right"></div>

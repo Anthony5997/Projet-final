@@ -49,6 +49,11 @@ class Review
      */
     private $user_rated;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Trip::class, cascade={"persist", "remove"})
+     */
+    private $trip;
+
     public function __construct()
     {
 
@@ -115,6 +120,18 @@ class Review
     public function setUserRated(?User $user_rated): self
     {
         $this->user_rated = $user_rated;
+
+        return $this;
+    }
+
+    public function getTrip(): ?Trip
+    {
+        return $this->trip;
+    }
+
+    public function setTrip(?Trip $trip): self
+    {
+        $this->trip = $trip;
 
         return $this;
     }

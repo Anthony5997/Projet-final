@@ -7,6 +7,7 @@ use App\Form\UserType;
 use App\Form\TravelPreferencesType;
 use App\Form\VehiculeType;
 use App\Form\UserResetType;
+use App\Repository\ReviewRepository;
 use App\Repository\TravelPreferencesRepository;
 use App\Repository\TripRepository;
 use App\Repository\UserRepository;
@@ -62,8 +63,14 @@ class UserController extends AbstractController
     /**
      * @Route("/{id}/edit", name="user_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, User $user, TravelPreferencesController $travelPreferencesController, VehiculeController $vehiculeController, VehiculeRepository $vehiculeRepository, TravelPreferencesRepository $travelPreferencesRepository, TripRepository $tripRepository, SluggerInterface $slugger, UserPasswordEncoderInterface $passwordEncoder): Response
+    public function edit(Request $request, User $user, ReviewRepository $reviewRepository, TravelPreferencesController $travelPreferencesController, VehiculeController $vehiculeController, VehiculeRepository $vehiculeRepository, TravelPreferencesRepository $travelPreferencesRepository, TripRepository $tripRepository, SluggerInterface $slugger, UserPasswordEncoderInterface $passwordEncoder): Response
     {
+
+    //    $allReview = $reviewRepository->getReviewByUser($user);
+          $globalRating = $reviewRepository->getAverageByUser($user);
+    //    dd($globalRating[0]);
+
+       
         $userEmail = $user->getEmail();
         $travelPreferences = $travelPreferencesRepository->findOneBy(['id'=> $user->getTravelPreferences()]);
         $vehicule = $vehiculeRepository->findOneBy(['id'=> $user->getVehicule()]);
@@ -145,6 +152,7 @@ class UserController extends AbstractController
             'vehicule' => $formVehicule->createView(),
             'formReset' => $formReset->createView(),
             'trips' => $allTrip,
+            'globalRating' => $globalRating
         ]);
     }
 

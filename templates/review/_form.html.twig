@@ -32,7 +32,6 @@
                 </svg></label>
         </div>
         <input type="hidden" name="author" id="author" value="{{currentUser.id}}"/>
-        <input type="hidden" name="userRated" id="userRated" value="{{userRated.id}}"/>
     {{ form_widget(form) }}
     <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

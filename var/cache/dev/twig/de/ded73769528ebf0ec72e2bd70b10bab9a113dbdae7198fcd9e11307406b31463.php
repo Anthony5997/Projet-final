@@ -78,21 +78,17 @@ class __TwigTemplate_84b15d006ee2d4be357dd8efc7e80819da00ec9ee837c5f3cffff0c6284
         // line 34
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 34, $this->source); })()), "id", [], "any", false, false, false, 34), "html", null, true);
         echo "\"/>
-        <input type=\"hidden\" name=\"userRated\" id=\"userRated\" value=\"";
-        // line 35
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["userRated"]) || array_key_exists("userRated", $context) ? $context["userRated"] : (function () { throw new RuntimeError('Variable "userRated" does not exist.', 35, $this->source); })()), "id", [], "any", false, false, false, 35), "html", null, true);
-        echo "\"/>
     ";
-        // line 36
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 36, $this->source); })()), 'widget');
+        // line 35
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 35, $this->source); })()), 'widget');
         echo "
     <button class=\"btn\">";
-        // line 37
-        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 37, $this->source); })()), "Save")) : ("Save")), "html", null, true);
+        // line 36
+        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 36, $this->source); })()), "Save")) : ("Save")), "html", null, true);
         echo "</button>
 ";
-        // line 38
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 38, $this->source); })()), 'form_end');
+        // line 37
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 37, $this->source); })()), 'form_end');
         echo "
 ";
         
@@ -115,7 +111,7 @@ class __TwigTemplate_84b15d006ee2d4be357dd8efc7e80819da00ec9ee837c5f3cffff0c6284
 
     public function getDebugInfo()
     {
-        return array (  95 => 38,  91 => 37,  87 => 36,  83 => 35,  79 => 34,  43 => 1,);
+        return array (  91 => 37,  87 => 36,  83 => 35,  79 => 34,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -154,7 +150,6 @@ class __TwigTemplate_84b15d006ee2d4be357dd8efc7e80819da00ec9ee837c5f3cffff0c6284
                 </svg></label>
         </div>
         <input type=\"hidden\" name=\"author\" id=\"author\" value=\"{{currentUser.id}}\"/>
-        <input type=\"hidden\" name=\"userRated\" id=\"userRated\" value=\"{{userRated.id}}\"/>
     {{ form_widget(form) }}
     <button class=\"btn\">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

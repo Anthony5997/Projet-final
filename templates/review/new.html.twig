@@ -3,13 +3,23 @@
 {% block title %}New Review{% endblock %}
 
 {% block body %}
-{{dump(currentUser)}}
-{{dump(userRated)}}
 <div class="container">
-    <h1 class="text-center my-5">Laisser votre avis !</h1>
-    <div class="container">
-    {{ include('review/_form.html.twig') }}
-    </div>
+    {% if reviewExist == null %}
+        <h1 class="text-center my-5">Laisser votre avis !</h1>
+        <div class="container">
+            {{ include('review/_form.html.twig') }}
+        </div>
+    {% else %}
+         <h1 class="text-center my-5">Votre avis à bien été prend en compte</h1>
+        <div class="container">
+        <div class="d-flex justify-content-center align-items-center">
+            <i style="font-size: 100px;" class="far fa-thumbs-up"></i>
+        </div>
+            <a class="button-comeback"href="{{path('user_edit', { 'id' : app.user.id})}}"><i class="fas fa-arrow-left"></i> Retourné au profil</a>
+        </div>
+
+    {% endif %}
+
 
 </div>
 {% endblock %}

@@ -120,7 +120,7 @@ class TripController extends AbstractController
 
        foreach($allBooker as $booker){
 
-        $path="http://projet-final.loc/review/".$trip->getDriver()->getId()."/new";
+        $path="http://projet-final.loc/review/".$trip->getId()."/new";
 
         //dd($path);
            $message = new Message();
@@ -128,7 +128,7 @@ class TripController extends AbstractController
            $message->setSendAt($date);
            $message->setSender($adSender);
            $message->setReceiver($booker->getUser());
-           $message->setContent("Votre trajet avec ".$trip->getDriver()->getFirstName() . " est terminé ! Laisser un avis sur votre expérience de voyage ! <a href=".$path."> Laisser un avis </a>");
+           $message->setContent("Votre trajet avec ".$trip->getDriver()->getFirstName() . " est terminé ! Laisser un avis sur votre expérience de voyage ! <a class='leave-review-button' href=".$path."> Laisser un avis </a>");
          // dd($message);
 
            $entityManager = $this->getDoctrine()->getManager();

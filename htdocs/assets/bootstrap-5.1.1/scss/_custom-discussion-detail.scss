@@ -67,6 +67,24 @@
     .hour-send{
         font-size: 10px;
     }
+
+    .leave-review-button{
+        font-size: 20px;
+        color: royalblue;
+        text-decoration: none;
+        margin: 3px;
+    }
+
+    .leave-review-button:hover{
+        transform: scale(1.1);
+        transition: 300ms;
+        color: rgba(92, 128, 237, 0.7);
+        background-color: rgba(65, 105, 225, 0.261);
+        border-radius: 10px;
+        padding: 3px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
 }
 
 .send-message-button{

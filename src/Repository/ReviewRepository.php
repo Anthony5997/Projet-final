@@ -19,6 +19,43 @@ class ReviewRepository extends ServiceEntityRepository
         parent::__construct($registry, Review::class);
     }
 
+
+    public function checkReviewExist($trip, $author, $userRated)
+    {
+        return $this->createQueryBuilder('review')
+            ->where('review.trip = :trip')
+            ->andWhere('review.author = :author')
+            ->andWhere('review.user_rated = :userRated')
+            ->setParameter('trip', $trip)
+            ->setParameter('author', $author)
+            ->setParameter('userRated', $userRated)
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+    }
+
+    public function getReviewByUser($user)
+    {
+        return $this->createQueryBuilder('review')
+        ->where('review.user_rated = :userRated')
+        ->setParameter('userRated', $user)
+        ->getQuery()
+        ->getResult()
+    ;
+    }
+
+    public function getAverageByUser($userRated)
+    {
+        return $this->createQueryBuilder('review')
+        ->select("avg(review.rating) as rate_avg, count(review.rating) as rate_count")
+        ->where('review.user_rated = :user_rated')
+        ->groupBy('review.user_rated')
+        ->setParameter('user_rated', $userRated)
+        ->getQuery()
+        ->getResult()
+    ;
+    }
+
     // /**
     //  * @return Review[] Returns an array of Review objects
     //  */

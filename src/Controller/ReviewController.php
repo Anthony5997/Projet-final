@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Review;
+use App\Entity\Trip;
 use App\Entity\User;
 use App\Form\ReviewType;
 use App\Repository\ReviewRepository;
@@ -30,37 +31,69 @@ class ReviewController extends AbstractController
     /**
      * @Route("/{id}/new", name="review_new", methods={"GET","POST"})
      */
-    public function new(Request $request, User $userRated, UserRepository $userRepository): Response
+    public function new(Request $request, Trip $trip, UserRepository $userRepository, ReviewRepository $reviewRepository): Response
     {
         $review = new Review();
         $form = $this->createForm(ReviewType::class, $review);
         $form->handleRequest($request);
 
+        $userRated = $userRepository->findOneBy(['id' => $trip->getDriver()->getId()]);
+        $author = $this->getUser();
+        $reviewExist = $reviewRepository->checkReviewExist($trip, $author, $userRated);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        //dd($reviewExist);
+        if($reviewExist === null){
+            if ($form->isSubmitted() && $form->isValid()) {
 
-            $author = $userRepository->findOneBy(['id' => $request->get('author')]);
-            $date = new \DateTime();
-            $request->get('rating');
-            $request->get('userRated');
-            $review->setRating($request->get('rating'));
-            $review->setUserRated( $request->get('userRated'));
-            $review->setAuthor($author);
-            $review->setCreatedAt($date);
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($review);
-            $entityManager->flush();
-            $this->addFlash('success', 'Merci pour votre avis !');
-            return $this->redirectToRoute('user_edit', ['id' => $author->getId()]);
+                $date = new \DateTime();
+                $request->get('rating');
+                $review->setRating($request->get('rating'));
+                $review->setTrip($trip);
+                $review->setUserRated($userRated);
+                $review->setAuthor($author);
+                $review->setCreatedAt($date);
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->persist($review);
+                $entityManager->flush();
+                $newUserRating = $reviewRepository->getAverageByUser($userRated);
+                $userRated->setGlobalRating($newUserRating[0]['rate_avg']);
+               // dd($userRated);
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->persist($userRated);
+                $entityManager->flush();
+
+
+
+                $this->addFlash('success', 'Merci pour votre avis !');
+                return $this->redirectToRoute('user_edit', ['id' => $author->getId()]);
+
+            }else{
+
+                return $this->render('review/new.html.twig', [
+                    'userRated' => $userRated,
+                    'trip' => $trip,
+                    'currentUser' => $this->getUser(),
+                    'review' => $review,
+                    'form' => $form->createView(),
+                    'id' => $trip->getId(),
+                    'reviewExist' => $reviewExist
+
+                ]);
+            }
+
+        }else{
+    
+            return $this->render('review/new.html.twig', [
+                'userRated' => $userRated,
+                'trip' => $trip,
+                'currentUser' => $this->getUser(),
+                'review' => $review,
+                'form' => $form->createView(),
+                'id' => $trip->getId(),
+                'reviewExist' => $reviewExist
+            ]);
+
         }
-
-        return $this->render('review/new.html.twig', [
-            'userRated' => $userRated,
-            'currentUser' => $this->getUser(),
-            'review' => $review,
-            'form' => $form->createView(),
-            'id' => $userRated->getId(),
-        ]);
     }
 
     /**

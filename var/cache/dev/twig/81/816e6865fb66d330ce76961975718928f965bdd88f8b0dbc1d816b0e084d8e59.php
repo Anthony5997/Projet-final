@@ -208,12 +208,12 @@ $context["trip"], "tripStarted", [], "any", false, false, false, 30), true)) && 
                 if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["trip"], "driver", [], "any", false, false, false, 63), "globalRating", [], "any", false, false, false, 63)) {
                     // line 64
                     echo "                            <p class=\"font-control\"><i class=\"fas fa-star\"></i>";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["trip"], "driver", [], "any", false, false, false, 64), "globalRating", [], "any", false, false, false, 64), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_round(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["trip"], "driver", [], "any", false, false, false, 64), "globalRating", [], "any", false, false, false, 64), 1, "floor"), "html", null, true);
                     echo "</p>
                         ";
                 } else {
                     // line 66
-                    echo "                            <p class=\"font-control-rating\"><i class=\"fas fa-star\"></i> Premier trajet</p>
+                    echo "                            <p class=\"font-control-rating\"><i class=\"fas fa-star\"></i> Aucun avis utilisateur</p>
                         ";
                 }
                 // line 68
@@ -342,9 +342,9 @@ $context["trip"], "tripStarted", [], "any", false, false, false, 30), true)) && 
                       <div class=\"col d-flex  flex-column justify-content-center\">
                         <p class=\"font-control\">{{trip.driver.firstName}}</p>
                         {% if trip.driver.globalRating %}
-                            <p class=\"font-control\"><i class=\"fas fa-star\"></i>{{trip.driver.globalRating}}</p>
+                            <p class=\"font-control\"><i class=\"fas fa-star\"></i>{{trip.driver.globalRating|round(1, 'floor')}}</p>
                         {% else %}
-                            <p class=\"font-control-rating\"><i class=\"fas fa-star\"></i> Premier trajet</p>
+                            <p class=\"font-control-rating\"><i class=\"fas fa-star\"></i> Aucun avis utilisateur</p>
                         {% endif %}
                     </div>
                     <div class=\"col d-flex justify-content-start align-items-center font-control fas fa-chevron-right\"></div>

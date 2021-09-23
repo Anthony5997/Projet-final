@@ -4,8 +4,7 @@
 
 {% block body %}
 <div class="container-profile">
-    {# {{dump(user)}} #}
-          {% for message in app.flashes('success') %}
+        {% for message in app.flashes('success') %}
             <div class="alert alert-success text-white">
                 {{ message }}
             </div>
