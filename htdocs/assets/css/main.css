@@ -7612,6 +7612,98 @@ a.button-comeback:hover {
   fill: var(--color-gold-light);
 }
 
+.tags-wrapper {
+  max-height: 130px;
+  margin: 35px;
+}
+.tags-wrapper .tags-header {
+  color: #ffffff;
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+.tags-wrapper .tags-container .tag {
+  display: inline-flex;
+  background: #1d1c2d;
+  color: #8c8aa7;
+  border-radius: 5px;
+  padding: 12px;
+  margin: 10px 3px;
+  cursor: pointer;
+}
+.tags-wrapper .tags-container .selected {
+  background: #8780f8;
+  color: #ffffff;
+}
+
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 30px;
+}
+.reviews-list .review-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 450px;
+  height: 250px;
+  background: #2c2b3f;
+  border-radius: 10px;
+  margin: 10px 0px;
+}
+.reviews-list .review-card .review-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 20px;
+}
+.reviews-list .review-card .review-header .name-group {
+  display: flex;
+  align-items: center;
+}
+.reviews-list .review-card .review-header .name-group .initials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  margin-right: 12px;
+  border-radius: 50%;
+  background: #d56a6a;
+}
+.reviews-list .review-card .review-header .name-group .initials .img-review {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+.reviews-list .review-card .review-header .rating i {
+  color: #f3d779;
+}
+.reviews-list .review-card .review-description {
+  color: #ffffff;
+  font-weight: 400;
+  margin: 0px 45px;
+}
+.reviews-list .review-card .review-details {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 45px;
+  align-items: center;
+  color: #8c8aa7;
+}
+.reviews-list .review-card .review-details .share-group {
+  display: flex;
+  padding: 8px;
+  border: 1px solid #1f1e2d;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.reviews-list .review-card .review-details .share-group i {
+  margin-right: 10px;
+}
+
 .clearfix::after {
   display: block;
   clear: both;

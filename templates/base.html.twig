@@ -31,6 +31,7 @@
 
             <nav class="navbar">
             {% if app.user != null %}
+            
                 <a href="{{path('home')}}">home</a>
                 <a href="{{ path ('user_edit', {'id': app.user.id})}}">Mon Profil</a>
                 <a href="{{ path ('message_discussion', {'id': app.user.id})}}">Boite de réception</a>
@@ -38,6 +39,7 @@
                 <a href="{{ path ('user_edit', {'id': app.user.id})}}#tabs-3">Préférence de voyage</a>
                 <a href="{{ path ('user_edit', {'id': app.user.id})}}#tabs-4">Mon véhicule</a>
                 <a href="{{ path ('user_edit', {'id': app.user.id})}}#tabs-5">Mes trajets</a>
+                <a href="{{ path ('review_show', {'id': app.user.id})}}">Mes Avis</a>
                 <a href="{{ path ('user_edit', {'id': app.user.id})}}#tabs-6">Mon compte</a>
                 <a href="{{ path ('logout')}}">Déconnexion</a>
             {% else %}

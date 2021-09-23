@@ -37,12 +37,25 @@ class ReviewRepository extends ServiceEntityRepository
     public function getReviewByUser($user)
     {
         return $this->createQueryBuilder('review')
+        ->addSelect('author')    
+        ->join('review.author', 'author', 'WITH', 'author = review.author')
         ->where('review.user_rated = :userRated')
         ->setParameter('userRated', $user)
         ->getQuery()
         ->getResult()
     ;
     }
+
+    public function getReviewLeaveByUser($user)
+    {
+        return $this->createQueryBuilder('review')
+        ->where('review.author = :userAuthor')
+        ->setParameter('userAuthor', $user)
+        ->getQuery()
+        ->getResult()
+    ;
+    }
+
 
     public function getAverageByUser($userRated)
     {

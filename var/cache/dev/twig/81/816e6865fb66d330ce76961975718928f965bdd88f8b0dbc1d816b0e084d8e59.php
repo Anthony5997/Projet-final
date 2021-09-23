@@ -235,23 +235,15 @@ $context["trip"], "tripStarted", [], "any", false, false, false, 30), true)) && 
             $context = array_intersect_key($context, $_parent) + $_parent;
             // line 77
             echo "
-
-
-
-
-
-
-
-
 ";
         } else {
-            // line 87
+            // line 79
             echo "        <div class=\"container\">
            <h2 class=\"mt-5 text-center red-text\"> Désolé ! Aucun voyage n'a été trouver </h2>
         </div>
 ";
         }
-        // line 91
+        // line 83
         echo "
 ";
         
@@ -274,7 +266,7 @@ $context["trip"], "tripStarted", [], "any", false, false, false, 30), true)) && 
 
     public function getDebugInfo()
     {
-        return array (  255 => 91,  249 => 87,  237 => 77,  224 => 70,  220 => 68,  216 => 66,  210 => 64,  208 => 63,  204 => 62,  198 => 59,  185 => 49,  179 => 46,  169 => 40,  167 => 39,  163 => 38,  159 => 37,  152 => 34,  149 => 33,  145 => 31,  143 => 30,  140 => 29,  138 => 28,  135 => 27,  133 => 26,  129 => 24,  124 => 22,  121 => 21,  116 => 18,  114 => 17,  110 => 15,  108 => 14,  104 => 12,  101 => 11,  97 => 10,  94 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  247 => 83,  241 => 79,  237 => 77,  224 => 70,  220 => 68,  216 => 66,  210 => 64,  208 => 63,  204 => 62,  198 => 59,  185 => 49,  179 => 46,  169 => 40,  167 => 39,  163 => 38,  159 => 37,  152 => 34,  149 => 33,  145 => 31,  143 => 30,  140 => 29,  138 => 28,  135 => 27,  133 => 26,  129 => 24,  124 => 22,  121 => 21,  116 => 18,  114 => 17,  110 => 15,  108 => 14,  104 => 12,  101 => 11,  97 => 10,  94 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -355,14 +347,6 @@ $context["trip"], "tripStarted", [], "any", false, false, false, 30), true)) && 
         </div>
 
     {% endfor %}
-
-
-
-
-
-
-
-
 
 {% else %}
         <div class=\"container\">

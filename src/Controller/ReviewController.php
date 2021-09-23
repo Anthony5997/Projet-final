@@ -41,7 +41,6 @@ class ReviewController extends AbstractController
         $author = $this->getUser();
         $reviewExist = $reviewRepository->checkReviewExist($trip, $author, $userRated);
 
-        //dd($reviewExist);
         if($reviewExist === null){
             if ($form->isSubmitted() && $form->isValid()) {
 
@@ -99,10 +98,14 @@ class ReviewController extends AbstractController
     /**
      * @Route("/{id}", name="review_show", methods={"GET"})
      */
-    public function show(Review $review): Response
+    public function show(User $user, ReviewRepository $reviewRepository): Response
     {
+
+        $reviewReceived = $reviewRepository->getReviewByUser($user);
+        $reviewLeaved = $reviewRepository->getReviewLeaveByUser($user);
         return $this->render('review/show.html.twig', [
-            'review' => $review,
+            'reviewReceived' => $reviewReceived,
+            'reviewLeaved' => $reviewLeaved,
         ]);
     }
 

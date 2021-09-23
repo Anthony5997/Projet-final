@@ -5795,6 +5795,13 @@
         <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
     </service>
+    <service id=".service_locator.wO8uHED" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="reviewRepository" type="service_closure" id="App\Repository\ReviewRepository"/>
+        <argument key="user" type="service_closure" id=".errored..service_locator.wO8uHED.App\Entity\User"/>
+      </argument>
+    </service>
     <service id=".service_locator.Z7x75EX" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5906,7 +5913,7 @@
         <argument key="vehicule" type="service_closure" id=".errored..service_locator.0J1782j.App\Entity\Vehicule"/>
       </argument>
     </service>
-    <service id=".service_locator.JYcciVS" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.RfxN9xB" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AuthenticatorController::login" type="service_closure" id=".service_locator.UDgw6Ol"/>
@@ -5924,7 +5931,7 @@
         <argument key="App\Controller\ReviewController::edit" type="service_closure" id=".service_locator.Z7x75EX"/>
         <argument key="App\Controller\ReviewController::index" type="service_closure" id=".service_locator.OEREEZh"/>
         <argument key="App\Controller\ReviewController::new" type="service_closure" id=".service_locator.j1p1qTp"/>
-        <argument key="App\Controller\ReviewController::show" type="service_closure" id=".service_locator.Z7x75EX"/>
+        <argument key="App\Controller\ReviewController::show" type="service_closure" id=".service_locator.wO8uHED"/>
         <argument key="App\Controller\TravelPreferencesController::delete" type="service_closure" id=".service_locator.JUZyQIf"/>
         <argument key="App\Controller\TravelPreferencesController::edit" type="service_closure" id=".service_locator.JUZyQIf"/>
         <argument key="App\Controller\TravelPreferencesController::index" type="service_closure" id=".service_locator.Q9j70tw"/>
@@ -5973,7 +5980,7 @@
         <argument key="App\Controller\ReviewController:edit" type="service_closure" id=".service_locator.Z7x75EX"/>
         <argument key="App\Controller\ReviewController:index" type="service_closure" id=".service_locator.OEREEZh"/>
         <argument key="App\Controller\ReviewController:new" type="service_closure" id=".service_locator.j1p1qTp"/>
-        <argument key="App\Controller\ReviewController:show" type="service_closure" id=".service_locator.Z7x75EX"/>
+        <argument key="App\Controller\ReviewController:show" type="service_closure" id=".service_locator.wO8uHED"/>
         <argument key="App\Controller\TravelPreferencesController:delete" type="service_closure" id=".service_locator.JUZyQIf"/>
         <argument key="App\Controller\TravelPreferencesController:edit" type="service_closure" id=".service_locator.JUZyQIf"/>
         <argument key="App\Controller\TravelPreferencesController:index" type="service_closure" id=".service_locator.Q9j70tw"/>
@@ -6553,12 +6560,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.JYcciVS"/>
+      <argument type="service" id=".service_locator.RfxN9xB"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.JYcciVS"/>
+      <argument type="service" id=".service_locator.RfxN9xB"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -6582,6 +6589,7 @@
     <service id=".errored..service_locator.8omtK4t.App\Entity\User" class="App\Entity\User"/>
     <service id=".errored..service_locator.N8sf8v1.App\Entity\Message" class="App\Entity\Message"/>
     <service id=".errored..service_locator.j1p1qTp.App\Entity\Trip" class="App\Entity\Trip"/>
+    <service id=".errored..service_locator.wO8uHED.App\Entity\User" class="App\Entity\User"/>
     <service id=".errored..service_locator.Z7x75EX.App\Entity\Review" class="App\Entity\Review"/>
     <service id=".errored..service_locator.JUZyQIf.App\Entity\TravelPreferences" class="App\Entity\TravelPreferences"/>
     <service id=".errored..service_locator.ndWfguk.App\Entity\Trip" class="App\Entity\Trip"/>
@@ -6990,7 +6998,7 @@
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.Kbr2i2X" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.JYcciVS"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.RfxN9xB"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

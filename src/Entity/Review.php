@@ -33,7 +33,7 @@ class Review
     private $rating;
 
     /**
-     * @ORM\Column(type="date", nullable=true)
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $created_at;
 
