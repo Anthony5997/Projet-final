@@ -186,7 +186,6 @@ class TripController extends AbstractController
         ]);
     }
 
-
     /**
      * @Route("/treatment/{id}", name="trip_treatment", methods={"GET", "POST"}, priority=3)
      */

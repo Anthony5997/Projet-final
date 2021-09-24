@@ -57,6 +57,17 @@
     color: black;
 }
 
+.preference-input{
+
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid rgba(171, 175, 175, 0.755);
+    border-radius: 15px;
+    background-color: rgba(204, 211, 211, 0.755);
+    width: 60%;
+
+}
+
 .preference-profile-container{
 
     background-color: rgba(173, 216, 230, 0.152);
@@ -95,6 +106,27 @@
     font-size: 12px;
 }
 
+    .contact-button-profile{
+        margin-top: 15px;
+        font-size: 22px;
+        color: #82b6e8;
+        border: 1px solid #82b6e8;
+        padding: 12px;
+        border-radius: 20px;
+        width: auto;
+        text-decoration: none;
+    }
+
+    .contact-button-profile:hover{
+        font-size: 20px;
+        text-decoration: none;
+        color: #82b6e8;
+        padding: 16px;
+        transform: scale(1.1);
+        transition: 500ms;
+    }
+
+
 @media (max-width:950px) {
 
     .container-profile{
@@ -119,6 +151,48 @@
             font-size: 10px;
         }    
     } 
+
+
+    .main-info-profile{
+        margin-top: 15px;
+        margin-bottom: 20px;
+
+        .existing-file{
+            display: flex;
+            justify-content: center;
+
+            a{
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        .profile-picture-profile{
+
+            width: 40%;
+            border-radius: 50%;
+            justify-content: center;
+            display: flex;
+        }
+    }
+
+    .input-profile-apropos{
+        margin-top: 10px;
+        padding-left: 0px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .preference-input{
+
+        margin: 20px auto;
+        padding: 10px;
+        border: 1px solid rgba(171, 175, 175, 0.755);
+        border-radius: 15px;
+        background-color: rgba(204, 211, 211, 0.755);
+        width: 60%;
+    
+    }
 }
 
 
@@ -166,6 +240,26 @@
             font-size: 8px;
         }    
     } 
+
+    .preference-input{
+
+        margin: 20px 0px;
+        padding: 10px;
+        border: 1px solid rgba(171, 175, 175, 0.755);
+        border-radius: 15px;
+        background-color: rgba(204, 211, 211, 0.755);
+        width: 100%;
+        font-size: 12px;
+    
+    }
+
+    .input-profile-apropos{
+        margin-top: 10px;
+        padding-left: 0px;
+        display: flex;
+        justify-content: center;
+    }
+    
     
     
 }

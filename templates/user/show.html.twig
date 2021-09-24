@@ -1,94 +1,72 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}User{% endblock %}
+{% block title %}Profil utilisateur{% endblock %}
 
 {% block body %}
-    <h1>User</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ user.id }}</td>
-            </tr>
-            <tr>
-                <th>Email</th>
-                <td>{{ user.email }}</td>
-            </tr>
-            <tr>
-                <th>Roles</th>
-                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-            </tr>
-            <tr>
-                <th>Password</th>
-                <td>{{ user.password }}</td>
-            </tr>
-            <tr>
-                <th>First_name</th>
-                <td>{{ user.firstName }}</td>
-            </tr>
-            <tr>
-                <th>Last_name</th>
-                <td>{{ user.lastName }}</td>
-            </tr>
-            <tr>
-                <th>Date_of_birth</th>
-                <td>{{ user.dateOfBirth ? user.dateOfBirth|date('Y-m-d') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Phone</th>
-                <td>{{ user.phone }}</td>
-            </tr>
-            <tr>
-                <th>Adress</th>
-                <td>{{ user.adress }}</td>
-            </tr>
-            <tr>
-                <th>Country</th>
-                <td>{{ user.country }}</td>
-            </tr>
-            <tr>
-                <th>City</th>
-                <td>{{ user.city }}</td>
-            </tr>
-            <tr>
-                <th>Bio</th>
-                <td>{{ user.bio }}</td>
-            </tr>
-            <tr>
-                <th>Profile_picture</th>
-                <td>{{ user.profile_Picture }}</td>
-            </tr>
-            <tr>
-                <th>Id_card</th>
-                <td>{{ user.idCard ? 'Yes' : 'No' }}</td>
-            </tr>
-            <tr>
-                <th>Id_card_file</th>
-                <td>{{ user.id_Card_File }}</td>
-            </tr>
-            <tr>
-                <th>Created_at</th>
-                <td>{{ user.createdAt ? user.createdAt|date('Y-m-d') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Profile_completed</th>
-                <td>{{ user.profileCompleted ? 'Yes' : 'No' }}</td>
-            </tr>
-            <tr>
-                <th>Trips_made</th>
-                <td>{{ user.tripsMade }}</td>
-            </tr>
-            <tr>
-                <th>Global_rating</th>
-                <td>{{ user.globalRating }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="container">
+        <div class="main-info-profile">
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 col-md-4 d-flex flex-column align-items-center justify-content-center">
+                    <p class="">{{user.firstName}}</p>
+                    <p class="experience-profile">{{user.userExperience.experienceLevel}}</p>
+                    <p class="experience-profile d-flex flex-column align-items-center justify-content-center"> Trajets effectué</p>
+                    <p class="experience-profile d-flex flex-column align-items-center justify-content-center"><strong>{{user.tripsMade}}</strong></p>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 d-flex justify-content-center align-items-center flex-column">
+                    {% if user.profile_picture != '' %}
+                        <div class="existing-file d-flex justify-content-center align-items-center">
+                            <a class="d-flex justify-content-center align-items-center" href="{{asset ('/assets/uploads/profilePicture/') ~ user.profile_picture }}" target="_blank"><img class="profile-picture-profile" src="{{asset ('/assets/uploads/profilePicture/') ~ user.profile_picture }}"/></a>
+                        </div>
+                        {% else %}
+                            <div class="existing-file d-flex justify-content-center align-items-center">
+                            <a class="d-flex justify-content-center align-items-center" href="{{asset ('/assets/uploads/profilePicture/default_profile_picture.jpg')}}" target="_blank"><img class="profile-picture-profile" src="{{asset ('/assets/uploads/profilePicture/default_profile_picture.jpg')}}"/></a>
+                        </div>
+                    {% endif %}
+                    <p class="mt-4 text-center"><i style="color: gold;"class="fas fa-star"></i>{{user.globalRating ?  user.globalRating : 'Aucune note pour l\'instant'}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="main-info-profile">
+            <div class="row">
+                <div class="input-profile-apropos">
+                    {% if user.bio != '' %}
+                        <p>{{user.bio}}</p>
+                    {% endif %}
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <a href="{{path('message_discussion_details', {'id': user.id})}}" class="contact-button-profile"><i style="color:#82b6e8;" class="far fa-comments"></i> Contacter {{user.firstName}}</a>
+                </div>
+            <div class="d-flex justify-content-center"><span class="profile-separator"></div>
+        </div>
+        <div class="main-info-profile">
+            <div class="row">
+                <div class="preference-profile-container col-xs-12 col-sm-12 col-md-12">
+       
+                    <p class="preference-input"><i class="far fa-comments mr-2"></i> {{user.travelPreferences.discussion}}</p>
+                    <p class="preference-input"><i class="fas fa-smoking mr-2"></i> {{user.travelPreferences.smoking}}</p>
+                    <p class="preference-input"><i class="fas fa-music mr-2"></i> {{user.travelPreferences.music}}</p>
+                    <p class="preference-input"><i class="fas fa-paw mr-2"></i> {{user.travelPreferences.animals}}</p>
+                    <p class="preference-input"><i class="fas fa-file-medical mr-2"></i> {{user.travelPreferences.healthPass}}</p>
+                </div>
+                <div class=" col-xs-12 col-sm-12 col-md-12">
+                <div class="row  preference-profile-container">
+                        <div class="col-xs-12 col-sm-6 col-md-6 d-flex flex-column pl-5 justify-content-center">
+                        <p class="vehicule-profile">Marque : {{user.vehicule.brand}}</p>
+                        <p class="vehicule-profile">Modèle : {{user.vehicule.model}}</p>
+                        <p class="vehicule-profile">Couleur : {{user.vehicule.color}}</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <a class="d-flex justify-content-center" href="{{asset ('/assets/uploads/vehiculePicture/') ~ user.vehicule.vehiculePicture }}" target="_blank"><img class="profile-picture-profile" src="{{asset ('/assets/uploads/vehiculePicture/' ~ user.vehicule.vehiculePicture )}}"/></a>
+                    </div>
+                </div>
+                
 
-    <a href="{{ path('user_index') }}">back to list</a>
-
-    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
-
-    {{ include('user/_delete_form.html.twig') }}
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

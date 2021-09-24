@@ -86,19 +86,19 @@ class __TwigTemplate_4e169d7155bfcd58ac170e8e988238415172b114660ee15b6519b228b25
 
         // line 6
         echo "<div class=\"container\">
-    <h1>rechercher un trajet</h1>
+    <h2 class=\"text-center my-5\" >rechercher un trajet</h2>
     <form>
         <div class=\"form-row\">
-            <div class=\"col\">
+            <div class=\"col-md-3 col-sm-6 mt-3\">
             <input name=\"departureSearch\" type=\"text\" class=\"form-control\" placeholder=\"Départ\">
             </div>
-            <div class=\"col\">
+            <div class=\"col-md-3 col-sm-6 mt-3\">
             <input name=\"arrivalSearch\" type=\"text\" class=\"form-control\" placeholder=\"Arrivé\">
             </div>
-            <div class=\"col\">
+            <div class=\"col-md-3 col-sm-6 mt-3\">
             <input name=\"dateSearch\" type=\"date\" class=\"form-control\" placeholder=\"Arrivé\">
             </div>
-            <button class=\"btn btn-info\" type=\"submit\">Rechercher</button>
+            <button class=\"btn btn-info col-md-3 col-sm-6 mt-3\" type=\"submit\">Rechercher</button>
         </div>
     </form>
 </div>
@@ -134,19 +134,19 @@ class __TwigTemplate_4e169d7155bfcd58ac170e8e988238415172b114660ee15b6519b228b25
 
 {% block body %}
 <div class=\"container\">
-    <h1>rechercher un trajet</h1>
+    <h2 class=\"text-center my-5\" >rechercher un trajet</h2>
     <form>
         <div class=\"form-row\">
-            <div class=\"col\">
+            <div class=\"col-md-3 col-sm-6 mt-3\">
             <input name=\"departureSearch\" type=\"text\" class=\"form-control\" placeholder=\"Départ\">
             </div>
-            <div class=\"col\">
+            <div class=\"col-md-3 col-sm-6 mt-3\">
             <input name=\"arrivalSearch\" type=\"text\" class=\"form-control\" placeholder=\"Arrivé\">
             </div>
-            <div class=\"col\">
+            <div class=\"col-md-3 col-sm-6 mt-3\">
             <input name=\"dateSearch\" type=\"date\" class=\"form-control\" placeholder=\"Arrivé\">
             </div>
-            <button class=\"btn btn-info\" type=\"submit\">Rechercher</button>
+            <button class=\"btn btn-info col-md-3 col-sm-6 mt-3\" type=\"submit\">Rechercher</button>
         </div>
     </form>
 </div>

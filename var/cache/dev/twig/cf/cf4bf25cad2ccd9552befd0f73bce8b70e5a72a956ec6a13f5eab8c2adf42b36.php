@@ -50,7 +50,7 @@ class __TwigTemplate_c3c6ee57a025454099d852a352554b1dc2a225b1c21f18bd3c6d3c341c0
             <div class=\"col-xs-12 col-sm-5 col-md-5\">
                 <div class=\"form-group d-flex flex-column justify-content-center\">
                     <label for=\"departureInput\">Départ</label>
-                        <input id=\"departureInput\" list=\"departureCityGuessData\" name=\"trip[departure]\" />
+                        <input id=\"departureInput\" list=\"departureCityGuessData\" name=\"trip[departure]\" class=\"form-control\" />
                         <datalist id=\"departureCityGuessData\" name=\"dataDepart\">
                         </datalist>
                      <div class=\"col-xs-12 col-sm-12 col-md-12\" id=\"departure-list\">
@@ -61,7 +61,7 @@ class __TwigTemplate_c3c6ee57a025454099d852a352554b1dc2a225b1c21f18bd3c6d3c341c0
             <div class=\"col-xs-12 col-sm-5 col-md-5\">
                 <div class=\"form-group d-flex flex-column justify-content-center\">
                     <label for=\"arrivalInput\">Arrivé</label>
-                    <input id=\"arrivalInput\" list=\"arrivalCityGuessData\" name=\"trip[arrival]\" />
+                    <input id=\"arrivalInput\" list=\"arrivalCityGuessData\" name=\"trip[arrival]\" class=\"form-control\" />
                     <datalist id=\"arrivalCityGuessData\">
                     </datalist>
                     <div class=\"col-xs-12 col-sm-12 col-md-12\" id=\"arrival-list\">
@@ -70,7 +70,7 @@ class __TwigTemplate_c3c6ee57a025454099d852a352554b1dc2a225b1c21f18bd3c6d3c341c0
             </div>
         </div>
      
-            <div class=\"col-xs-12 col-sm-6 col-md-6\">
+            <div class=\"col-xs-12 col-sm-5 col-md-5\">
                 <div class=\"form-group d-flex flex-column justify-content-center\">
                     ";
         // line 30
@@ -82,15 +82,16 @@ class __TwigTemplate_c3c6ee57a025454099d852a352554b1dc2a225b1c21f18bd3c6d3c341c0
         echo "
                 </div>
             </div>
-            <div class=\"col-xs-12 col-sm-6 col-md-6\">
+            <div class=\"col-xs-12 col-sm-2 col-md-2\"></div>
+            <div class=\"col-xs-12 col-sm-5 col-md-5\">
                 <div class=\"form-group d-flex flex-column justify-content-center\">
                     ";
-        // line 36
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 36, $this->source); })()), "startTime", [], "any", false, false, false, 36), 'label', ["label" => "heure de départ estimé"]);
+        // line 37
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 37, $this->source); })()), "startTime", [], "any", false, false, false, 37), 'label', ["label" => "heure de départ estimé"]);
         echo "
                     ";
-        // line 37
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 37, $this->source); })()), "startTime", [], "any", false, false, false, 37), 'widget', ["attr" => ["class" => "form-control"]]);
+        // line 38
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 38, $this->source); })()), "startTime", [], "any", false, false, false, 38), 'widget', ["attr" => ["class" => "form-control"]]);
         echo "
                 </div>
             </div>
@@ -98,12 +99,12 @@ class __TwigTemplate_c3c6ee57a025454099d852a352554b1dc2a225b1c21f18bd3c6d3c341c0
             <div class=\"col-xs-12 col-sm-6 col-md-3\">
                 <div class=\"form-group d-flex flex-column justify-content-center\">
                     ";
-        // line 43
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 43, $this->source); })()), "passengers", [], "any", false, false, false, 43), 'label', ["label" => "Nombre de passager"]);
+        // line 44
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 44, $this->source); })()), "passengers", [], "any", false, false, false, 44), 'label', ["label" => "Nombre de passager"]);
         echo "  
                     ";
-        // line 44
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 44, $this->source); })()), "passengers", [], "any", false, false, false, 44), 'widget');
+        // line 45
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 45, $this->source); })()), "passengers", [], "any", false, false, false, 45), 'widget', ["attr" => ["class" => "form-control"]]);
         echo "
                 </div>
             </div>    
@@ -115,8 +116,8 @@ class __TwigTemplate_c3c6ee57a025454099d852a352554b1dc2a225b1c21f18bd3c6d3c341c0
             </div>  
         </div>
         ";
-        // line 54
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 54, $this->source); })()), 'form_end');
+        // line 55
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 55, $this->source); })()), 'form_end');
         echo "
     </div>
 </section>
@@ -141,7 +142,7 @@ class __TwigTemplate_c3c6ee57a025454099d852a352554b1dc2a225b1c21f18bd3c6d3c341c0
 
     public function getDebugInfo()
     {
-        return array (  119 => 54,  106 => 44,  102 => 43,  93 => 37,  89 => 36,  81 => 31,  77 => 30,  47 => 3,  43 => 1,);
+        return array (  120 => 55,  107 => 45,  103 => 44,  94 => 38,  90 => 37,  81 => 31,  77 => 30,  47 => 3,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -153,7 +154,7 @@ class __TwigTemplate_c3c6ee57a025454099d852a352554b1dc2a225b1c21f18bd3c6d3c341c0
             <div class=\"col-xs-12 col-sm-5 col-md-5\">
                 <div class=\"form-group d-flex flex-column justify-content-center\">
                     <label for=\"departureInput\">Départ</label>
-                        <input id=\"departureInput\" list=\"departureCityGuessData\" name=\"trip[departure]\" />
+                        <input id=\"departureInput\" list=\"departureCityGuessData\" name=\"trip[departure]\" class=\"form-control\" />
                         <datalist id=\"departureCityGuessData\" name=\"dataDepart\">
                         </datalist>
                      <div class=\"col-xs-12 col-sm-12 col-md-12\" id=\"departure-list\">
@@ -164,7 +165,7 @@ class __TwigTemplate_c3c6ee57a025454099d852a352554b1dc2a225b1c21f18bd3c6d3c341c0
             <div class=\"col-xs-12 col-sm-5 col-md-5\">
                 <div class=\"form-group d-flex flex-column justify-content-center\">
                     <label for=\"arrivalInput\">Arrivé</label>
-                    <input id=\"arrivalInput\" list=\"arrivalCityGuessData\" name=\"trip[arrival]\" />
+                    <input id=\"arrivalInput\" list=\"arrivalCityGuessData\" name=\"trip[arrival]\" class=\"form-control\" />
                     <datalist id=\"arrivalCityGuessData\">
                     </datalist>
                     <div class=\"col-xs-12 col-sm-12 col-md-12\" id=\"arrival-list\">
@@ -173,13 +174,14 @@ class __TwigTemplate_c3c6ee57a025454099d852a352554b1dc2a225b1c21f18bd3c6d3c341c0
             </div>
         </div>
      
-            <div class=\"col-xs-12 col-sm-6 col-md-6\">
+            <div class=\"col-xs-12 col-sm-5 col-md-5\">
                 <div class=\"form-group d-flex flex-column justify-content-center\">
                     {{ form_label(form.date_of_trip, 'Date du trajet') }}
                     {{ form_widget(form.date_of_trip,  { 'attr': {'class': 'form-control'} }) }}
                 </div>
             </div>
-            <div class=\"col-xs-12 col-sm-6 col-md-6\">
+            <div class=\"col-xs-12 col-sm-2 col-md-2\"></div>
+            <div class=\"col-xs-12 col-sm-5 col-md-5\">
                 <div class=\"form-group d-flex flex-column justify-content-center\">
                     {{ form_label(form.startTime, 'heure de départ estimé') }}
                     {{ form_widget(form.startTime,  { 'attr': {'class': 'form-control'} }) }}
@@ -189,7 +191,7 @@ class __TwigTemplate_c3c6ee57a025454099d852a352554b1dc2a225b1c21f18bd3c6d3c341c0
             <div class=\"col-xs-12 col-sm-6 col-md-3\">
                 <div class=\"form-group d-flex flex-column justify-content-center\">
                     {{ form_label(form.passengers, \"Nombre de passager\") }}  
-                    {{ form_widget(form.passengers) }}
+                    {{ form_widget(form.passengers,  { 'attr': {'class': 'form-control'} }) }}
                 </div>
             </div>    
    

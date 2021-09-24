@@ -6538,6 +6538,15 @@ header .fa-user {
   color: black;
 }
 
+.preference-input {
+  margin: 20px auto;
+  padding: 15px;
+  border: 1px solid rgba(171, 175, 175, 0.755);
+  border-radius: 15px;
+  background-color: rgba(204, 211, 211, 0.755);
+  width: 60%;
+}
+
 .preference-profile-container {
   background-color: rgba(173, 216, 230, 0.152);
   border-radius: 10px;
@@ -6572,6 +6581,26 @@ header .fa-user {
   font-size: 12px;
 }
 
+.contact-button-profile {
+  margin-top: 15px;
+  font-size: 22px;
+  color: #82b6e8;
+  border: 1px solid #82b6e8;
+  padding: 12px;
+  border-radius: 20px;
+  width: auto;
+  text-decoration: none;
+}
+
+.contact-button-profile:hover {
+  font-size: 20px;
+  text-decoration: none;
+  color: #82b6e8;
+  padding: 16px;
+  transform: scale(1.1);
+  transition: 500ms;
+}
+
 @media (max-width: 950px) {
   .container-profile {
     max-width: none !important;
@@ -6588,6 +6617,41 @@ header .fa-user {
   .nav-tabs a {
     color: black;
     font-size: 10px;
+  }
+
+  .main-info-profile {
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
+  .main-info-profile .existing-file {
+    display: flex;
+    justify-content: center;
+  }
+  .main-info-profile .existing-file a {
+    display: flex;
+    justify-content: center;
+  }
+  .main-info-profile .profile-picture-profile {
+    width: 40%;
+    border-radius: 50%;
+    justify-content: center;
+    display: flex;
+  }
+
+  .input-profile-apropos {
+    margin-top: 10px;
+    padding-left: 0px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .preference-input {
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid rgba(171, 175, 175, 0.755);
+    border-radius: 15px;
+    background-color: rgba(204, 211, 211, 0.755);
+    width: 60%;
   }
 }
 @media (max-width: 450px) {
@@ -6626,6 +6690,23 @@ header .fa-user {
   .nav-tabs a {
     color: black;
     font-size: 8px;
+  }
+
+  .preference-input {
+    margin: 20px 0px;
+    padding: 10px;
+    border: 1px solid rgba(171, 175, 175, 0.755);
+    border-radius: 15px;
+    background-color: rgba(204, 211, 211, 0.755);
+    width: 100%;
+    font-size: 12px;
+  }
+
+  .input-profile-apropos {
+    margin-top: 10px;
+    padding-left: 0px;
+    display: flex;
+    justify-content: center;
   }
 }
 .home {
@@ -7596,7 +7677,7 @@ a.button-comeback:hover {
   cursor: pointer;
 }
 .comment-stars .comment-stars-view svg {
-  fill: #ededef;
+  fill: #b8b8ba;
   width: 1.3930664063em;
   height: 1.5em;
 }
@@ -7645,22 +7726,34 @@ a.button-comeback:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 450px;
-  height: 250px;
-  background: #2c2b3f;
+  width: 80%;
+  height: 200px;
+  background: #ffffff;
   border-radius: 10px;
   margin: 10px 0px;
+  border: 4px solid lightblue;
 }
 .reviews-list .review-card .review-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #ffffff;
+  color: #000000;
   font-weight: bold;
   padding: 20px;
 }
 .reviews-list .review-card .review-header .name-group {
   display: flex;
+  align-items: center;
+}
+.reviews-list .review-card .review-header .name-group a {
+  text-decoration: none;
+  color: black;
+}
+.reviews-list .review-card .review-header .name-group a:hover {
+  text-decoration: none;
+  color: black;
+  transform: scale(1.1);
+  transition: 300ms;
   align-items: center;
 }
 .reviews-list .review-card .review-header .name-group .initials {
@@ -7682,7 +7775,7 @@ a.button-comeback:hover {
   color: #f3d779;
 }
 .reviews-list .review-card .review-description {
-  color: #ffffff;
+  color: #000000;
   font-weight: 400;
   margin: 0px 45px;
 }
@@ -7693,17 +7786,18 @@ a.button-comeback:hover {
   align-items: center;
   color: #8c8aa7;
 }
-.reviews-list .review-card .review-details .share-group {
-  display: flex;
-  padding: 8px;
-  border: 1px solid #1f1e2d;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.reviews-list .review-card .review-details .share-group i {
-  margin-right: 10px;
+.reviews-list .review-card .review-details .review-date {
+  color: #79769e;
 }
 
+@media (max-width: 450px) {
+  .reviews-list {
+    padding-left: 0px;
+  }
+  .reviews-list .review-card {
+    width: 100%;
+  }
+}
 .clearfix::after {
   display: block;
   clear: both;

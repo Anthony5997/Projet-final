@@ -5,8 +5,8 @@
 {% block body %}
 
 <div class="container mt-5">
-{{dump(reviewReceived)}}
-{{dump(reviewLeaved)}}
+
+<h2 class="text-center"> Avis</h2>
 
     <ul class="nav nav-tabs" role="tablist">
         <li class="nav-item">
@@ -26,8 +26,12 @@
                                     <div class="review-card">
                                         <div class="review-header">
                                             <div class="name-group">
-                                                <div class="initials"><img  class="img-review" src="{{asset ('/assets/uploads/profilePicture/') ~ reviewReceive.author.profile_picture }}"></div>
-                                                <p>{{reviewReceive.author.firstName}}</p>
+                                                <a class="d-flex" href="{{path('user_show', {'id' : reviewReceive.author.id })}}" >
+                                                    <div class="initials">
+                                                        <img  class="img-review" src="{{asset ('/assets/uploads/profilePicture/') ~ reviewReceive.author.profile_picture }}">
+                                                    </div>
+                                                    <p class="d-flex align-items-center m-0">{{reviewReceive.author.firstName}}</p>
+                                                </a>
                                             </div>
                                             <div class="rating">
                                             {% set items = reviewReceive.rating %}
@@ -40,7 +44,7 @@
                                         {{ reviewReceive.content }}
                                         </div>
                                         <div class="review-details">
-                                            <div class="review-date">{{reviewReceive.createdAt|date("d M, Y H:i")}}</div>
+                                            <div class="review-date">{{reviewReceive.createdAt|date("H:i d M, Y")}}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -71,7 +75,7 @@
                                     {{ reviewLeave.content }}
                                     </div>
                                     <div class="review-details">
-                                        <div class="review-date">{{reviewLeave.createdAt|date("d M, Y H:i")}}</div>
+                                        <div class="review-date">{{reviewLeave.createdAt|date("H:i d M, Y")}}</div>
                                     </div>
                                 </div>
                             </div>
