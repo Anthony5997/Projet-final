@@ -4,11 +4,12 @@ namespace App\Entity;
 
 use App\Repository\MessageRepository;
 use Doctrine\ORM\Mapping as ORM;
+use JsonSerializable;
 
 /**
  * @ORM\Entity(repositoryClass=MessageRepository::class)
  */
-class Message
+class Message implements JsonSerializable
 {
     /**
      * @var string
@@ -94,5 +95,15 @@ class Message
         $this->receiver = $receiver;
 
         return $this;
+    }
+    
+    public function jsonSerialize() {
+        return [
+            'id' => $this->getId(),
+            'sender' => $this->getSender(),
+            'receiver' => $this->getReceiver(),
+            'sendAt' => $this->getSendAt(),
+            'content'=>$this->getContent()
+        ];
     }
 }

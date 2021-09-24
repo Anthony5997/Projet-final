@@ -1,17 +1,12 @@
-{{ form_start(form) }}
+
 <div class="row d-flex justify-content-center align-items-center form-send-message">
       <div class="col-10 ">
         <div class="form-group">
-            {{ form_widget(form.content, { 'attr': {
-                    'cols' : "20",
-                    'rows' : "5"
-            }}) }}
+            <textarea name="content" id="content" class="form-control" rows="3" cols="20" ></textarea>
         </div>
-        <div class='red-text'>{{ form_errors(form.content)}}</div>
     </div>
         <input type="hidden" name="sender" id="sender" value="{{currentUser.id}}" />
         <input type="hidden" name="receiver" id="receiver" value="{{contact.id}}" />
-    <button class=" col-2 d-flex justify-content-center align-items-center btn send-message-button"><i class="far fa-paper-plane"></i></button>
+    <button onclick="send()" class=" col-2 d-flex justify-content-center align-items-center btn send-message-button"><i class="far fa-paper-plane"></i></button>
 </div>
 
-{{ form_end(form) }}

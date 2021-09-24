@@ -12,6 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * @Route("/message")
@@ -33,34 +34,52 @@ class MessageController extends AbstractController
     /**
      * @Route("/{id}/new", name="message_new", methods={"GET","POST"})
      */
-    public function new(Request $request, User $userContacted): Response
+    public function new(Request $request, User $userContacted, MessageRepository $messageRepository): Response
     {
         $user = $this->getUser();
         $message = new Message();
         $form = $this->createForm(MessageType::class, $message);
         $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-
-
+        if (isset($_POST['content'] )) {
+         if ($_POST['content'] && $_POST['receiver'] && $_POST['sender']) {
 
             $date = new \DateTime();
             $message->setSendAt($date);
             $message->setReceiver($userContacted);
             $message->setSender($user);
+            $message->setContent($_POST['content']);
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($message);
             $entityManager->flush();
 
-            return $this->redirectToRoute('message_discussion_details', ['id'=> $user->getId()]);
+
+            $message->setReceiver($userContacted);
+            $getAllDiscussion = $messageRepository->findBy(['sender' => [$user, $userContacted], 'receiver' => [$userContacted, 'receiver' => $user]],  array('send_at' => 'ASC'));
+            // dd(json_encode($getAllDiscussion[0]));
+            $response = new Response(json_encode($getAllDiscussion));
+            $response->headers->set("Content-Type", "application/json");
+            return $response;
+
+         }
+        }else{
+
+            $getAllDiscussion = $messageRepository->findBy(['sender' => [$user, $userContacted], 'receiver' => [$userContacted, 'receiver' => $user]],  array('send_at' => 'ASC'));
+            $response = new Response(json_encode($getAllDiscussion));
+            return $response;
+
         }
-        return $this->render('message/discussion_detail.html.twig', [
-            'message' => $message,
-            'form' => $form->createView(),
-            'id' => $userContacted->getId(),
-            'contact' => $userContacted,
-            'currentUser' => $user,
-        ]);
+        
+
+        //     return $this->redirectToRoute('message_discussion_details', ['id'=> $user->getId()]);
+        // }
+        // return $this->render('message/discussion_detail.html.twig', [
+        //     'message' => $message,
+        //     'form' => $form->createView(),
+        //     'id' => $userContacted->getId(),
+        //     'contact' => $userContacted,
+        //     'currentUser' => $user,
+        // ]);
     }
 
     /**
@@ -73,7 +92,6 @@ class MessageController extends AbstractController
             'messageReceive' => $getAllReceiver,
         ]);
     }
-
 
     /**
      * @Route("/discussion/{id}/details", name="message_discussion_details", methods={"GET", "POST"})

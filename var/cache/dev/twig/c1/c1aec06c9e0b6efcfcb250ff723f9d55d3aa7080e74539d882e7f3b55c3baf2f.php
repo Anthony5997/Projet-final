@@ -99,10 +99,8 @@ class __TwigTemplate_47eb38df3b6e4abad6b5384cd116650b29bd7b4c983003bbef85704df6b
         echo "</h2>
         <div class=\"box-message\" id=\"box-message\">
             ";
-        // line 13
-        echo twig_include($this->env, $context, "message/async-discussion.html.twig");
-        echo "
-        </div>
+        // line 14
+        echo "        </div>
     </div>
     <hr>
             <div class=\"container\">
@@ -161,7 +159,7 @@ class __TwigTemplate_47eb38df3b6e4abad6b5384cd116650b29bd7b4c983003bbef85704df6b
 
     public function getDebugInfo()
     {
-        return array (  140 => 27,  137 => 26,  127 => 25,  111 => 18,  103 => 13,  98 => 11,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  138 => 27,  135 => 26,  125 => 25,  109 => 18,  103 => 14,  98 => 11,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -178,7 +176,7 @@ class __TwigTemplate_47eb38df3b6e4abad6b5384cd116650b29bd7b4c983003bbef85704df6b
     <div class=\"container\">
     <h2 class=\"text-center my-4\">Discussion avec {{contact.firstName}}</h2>
         <div class=\"box-message\" id=\"box-message\">
-            {{ include('message/async-discussion.html.twig') }}
+            {# {{ include('message/async-discussion.html.twig') }} #}
         </div>
     </div>
     <hr>

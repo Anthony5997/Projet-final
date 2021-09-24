@@ -224,7 +224,7 @@ class __TwigTemplate_585911d82a50853ce1084333d03f95bb5605e2396e4719700e20b548b5d
                           ";
         } else {
             // line 68
-            echo "                              <p class=\"font-control-rating\"><i class=\"fas fa-star\"></i> Premier trajet</p>
+            echo "                              <p class=\"font-control-rating\"><i class=\"fas fa-star\"></i> Pas de note</p>
                           ";
         }
         // line 70
@@ -548,7 +548,7 @@ class __TwigTemplate_585911d82a50853ce1084333d03f95bb5605e2396e4719700e20b548b5d
                           {% if trip.driver.globalRating %}
                               <p class=\"font-control\"><i class=\"fas fa-star\"></i>{{trip.driver.globalRating}}</p>
                           {% else %}
-                              <p class=\"font-control-rating\"><i class=\"fas fa-star\"></i> Premier trajet</p>
+                              <p class=\"font-control-rating\"><i class=\"fas fa-star\"></i> Pas de note</p>
                           {% endif %}
                       </div>
                       <div class=\"col d-flex justify-content-end align-items-center font-control fas fa-chevron-right\"></div>

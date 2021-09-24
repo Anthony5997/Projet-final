@@ -686,4 +686,15 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
         return parent::setVehicule($vehicule);
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function jsonSerialize()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'jsonSerialize', []);
+
+        return parent::jsonSerialize();
+    }
+
 }
