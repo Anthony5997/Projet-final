@@ -6302,6 +6302,9 @@ header .logo {
   font-weight: bolder;
   text-decoration: none;
 }
+header .logo .logo-navbar {
+  width: 25%;
+}
 
 header .logo span {
   color: var(--mainColor);

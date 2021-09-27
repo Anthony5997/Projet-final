@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '6e771c20714ef09e7e96e90b92649ef46e9ef735',
+    'reference' => '1e3c692d17eeb9ea01550bf249ebb8debd96ed6c',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '6e771c20714ef09e7e96e90b92649ef46e9ef735',
+      'reference' => '1e3c692d17eeb9ea01550bf249ebb8debd96ed6c',
     ),
     'brick/math' => 
     array (
@@ -428,6 +428,15 @@
       array (
       ),
       'reference' => '430d14c01836b77c28092883d195a43ce413ee32',
+    ),
+    'symfony/apache-pack' => 
+    array (
+      'pretty_version' => 'v1.0.1',
+      'version' => '1.0.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '3aa5818d73ad2551281fc58a75afd9ca82622e6c',
     ),
     'symfony/asset' => 
     array (

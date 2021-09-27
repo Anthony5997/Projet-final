@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <title>{% block title %}Sample Symfony{% endblock %}</title>
+        <title>{% block title %}Car Trip{% endblock %}</title>
 
         {% block stylesheets %}
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -25,8 +25,8 @@
         <header>
             <input type="checkbox" name="" id="toggler">
             <span class="d-flex"><label class="far fa-user"></label><label for="toggler" class="far fa-angle-right"></label></span>
-            <div class="titleHeader">
-                <a href="{{path('home')}}" class="logo">Accueil</a>
+            <div class="titleHeader d-flex">
+                <a href="{{path('home')}}" class="logo d-flex justify-content-center"><img  class="logo-navbar" src="{{asset('assets/uploads/custom-pic/logo-navbar.png')}}"/></a>
             </div>
 
             <nav class="navbar">

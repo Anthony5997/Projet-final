@@ -69,11 +69,13 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
         echo "        <header>
             <input type=\"checkbox\" name=\"\" id=\"toggler\">
             <span class=\"d-flex\"><label class=\"far fa-user\"></label><label for=\"toggler\" class=\"far fa-angle-right\"></label></span>
-            <div class=\"titleHeader\">
+            <div class=\"titleHeader d-flex\">
                 <a href=\"";
         // line 29
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
-        echo "\" class=\"logo\">Accueil</a>
+        echo "\" class=\"logo d-flex justify-content-center\"><img  class=\"logo-navbar\" src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/uploads/custom-pic/logo-navbar.png"), "html", null, true);
+        echo "\"/></a>
             </div>
 
             <nav class=\"navbar\">
@@ -231,7 +233,7 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Sample Symfony";
+        echo "Car Trip";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -345,7 +347,7 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
 
     public function getDebugInfo()
     {
-        return array (  325 => 86,  321 => 85,  317 => 84,  313 => 83,  306 => 78,  296 => 77,  285 => 74,  275 => 73,  259 => 15,  254 => 12,  244 => 11,  225 => 9,  214 => 88,  212 => 77,  209 => 76,  206 => 73,  197 => 70,  194 => 69,  189 => 68,  180 => 65,  177 => 64,  173 => 63,  169 => 61,  164 => 58,  159 => 56,  155 => 55,  152 => 54,  150 => 53,  146 => 52,  142 => 51,  138 => 49,  133 => 47,  128 => 46,  123 => 44,  119 => 43,  115 => 42,  111 => 41,  107 => 40,  103 => 39,  99 => 38,  95 => 37,  91 => 36,  87 => 35,  84 => 34,  82 => 33,  75 => 29,  69 => 25,  64 => 21,  62 => 11,  57 => 9,  47 => 1,);
+        return array (  327 => 86,  323 => 85,  319 => 84,  315 => 83,  308 => 78,  298 => 77,  287 => 74,  277 => 73,  261 => 15,  256 => 12,  246 => 11,  227 => 9,  216 => 88,  214 => 77,  211 => 76,  208 => 73,  199 => 70,  196 => 69,  191 => 68,  182 => 65,  179 => 64,  175 => 63,  171 => 61,  166 => 58,  161 => 56,  157 => 55,  154 => 54,  152 => 53,  148 => 52,  144 => 51,  140 => 49,  135 => 47,  130 => 46,  125 => 44,  121 => 43,  117 => 42,  113 => 41,  109 => 40,  105 => 39,  101 => 38,  97 => 37,  93 => 36,  89 => 35,  86 => 34,  84 => 33,  75 => 29,  69 => 25,  64 => 21,  62 => 11,  57 => 9,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -358,7 +360,7 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
           content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\">
         <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">
 
-        <title>{% block title %}Sample Symfony{% endblock %}</title>
+        <title>{% block title %}Car Trip{% endblock %}</title>
 
         {% block stylesheets %}
             <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
@@ -377,8 +379,8 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
         <header>
             <input type=\"checkbox\" name=\"\" id=\"toggler\">
             <span class=\"d-flex\"><label class=\"far fa-user\"></label><label for=\"toggler\" class=\"far fa-angle-right\"></label></span>
-            <div class=\"titleHeader\">
-                <a href=\"{{path('home')}}\" class=\"logo\">Accueil</a>
+            <div class=\"titleHeader d-flex\">
+                <a href=\"{{path('home')}}\" class=\"logo d-flex justify-content-center\"><img  class=\"logo-navbar\" src=\"{{asset('assets/uploads/custom-pic/logo-navbar.png')}}\"/></a>
             </div>
 
             <nav class=\"navbar\">
