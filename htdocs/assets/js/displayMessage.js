@@ -13,7 +13,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
         }).then((data)=>{
             data.forEach((message)=>{
                 if (message.sender.id == sender.value) {
-                    console.log(message.sendAt);
                     boxMessage.innerHTML += `
                     <div class="row sender-row display-lign font-controll-message-name">
                     <div class="col-3 d-flex justify-content-end align-items-center">
@@ -70,7 +69,6 @@ function send(){
             content.value=""; 
             boxMessage.innerHTML ="";
             data.forEach((message)=>{
-                console.log("message", message);
                 if (message.sender.id == sender.value) {
                     let dt = new Date(message.sendAt)
                     boxMessage.innerHTML += `

@@ -16322,3 +16322,16 @@ c4a9c1,172.16.238.1,GET,http://projet-final.loc/message/discussion/3d9efcc3cc6c4
 cf28c8,172.16.238.1,GET,http://projet-final.loc/message/discussion/3d9efcc3cc6c4c5eaac6ebd3b8f495b7/style.css,1632747450,,404
 50c910,172.16.238.1,POST,http://projet-final.loc/message/3d9efcc3cc6c4c5eaac6ebd3b8f495b7/new,1632747451,,200
 683a56,172.16.238.1,POST,http://projet-final.loc/message/3d9efcc3cc6c4c5eaac6ebd3b8f495b7/new,1632747458,,200
+b654a0,172.16.238.1,GET,http://projet-final.loc/message/discussion/3d9efcc3cc6c4c5eaac6ebd3b8f495b7/details,1632747528,,200
+fe2606,172.16.238.1,GET,http://projet-final.loc/message/discussion/3d9efcc3cc6c4c5eaac6ebd3b8f495b7/style.css,1632747529,8f7efb,404
+8f7efb,172.16.238.1,GET,http://projet-final.loc/message/discussion/3d9efcc3cc6c4c5eaac6ebd3b8f495b7/style.css,1632747529,,404
+bf1df4,172.16.238.1,POST,http://projet-final.loc/message/3d9efcc3cc6c4c5eaac6ebd3b8f495b7/new,1632747530,,200
+d52d94,172.16.238.1,POST,http://projet-final.loc/message/3d9efcc3cc6c4c5eaac6ebd3b8f495b7/new,1632747535,,200
+22149b,172.16.238.1,GET,http://projet-final.loc/message/discussion/3d9efcc3cc6c4c5eaac6ebd3b8f495b7/details,1632747688,,200
+c1e590,172.16.238.1,GET,http://projet-final.loc/message/discussion/3d9efcc3cc6c4c5eaac6ebd3b8f495b7/style.css,1632747688,ad21ad,404
+ad21ad,172.16.238.1,GET,http://projet-final.loc/message/discussion/3d9efcc3cc6c4c5eaac6ebd3b8f495b7/style.css,1632747688,,404
+5f1cd5,172.16.238.1,POST,http://projet-final.loc/message/3d9efcc3cc6c4c5eaac6ebd3b8f495b7/new,1632747689,,200
+d798d5,172.16.238.1,GET,http://projet-final.loc/message/discussion/3d9efcc3cc6c4c5eaac6ebd3b8f495b7/details,1632747696,,200
+d1b1ec,172.16.238.1,GET,http://projet-final.loc/message/discussion/3d9efcc3cc6c4c5eaac6ebd3b8f495b7/style.css,1632747696,207dd5,404
+207dd5,172.16.238.1,GET,http://projet-final.loc/message/discussion/3d9efcc3cc6c4c5eaac6ebd3b8f495b7/style.css,1632747696,,404
+e261dc,172.16.238.1,POST,http://projet-final.loc/message/3d9efcc3cc6c4c5eaac6ebd3b8f495b7/new,1632747697,,200
