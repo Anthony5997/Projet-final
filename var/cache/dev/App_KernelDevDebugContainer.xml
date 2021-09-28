@@ -229,7 +229,7 @@
     <parameter key="doctrine.migrations.preferred_em">null</parameter>
     <parameter key="doctrine.migrations.preferred_connection">null</parameter>
     <parameter key="security.role_hierarchy.roles" type="collection"/>
-    <parameter key="security.access.denied_url">null</parameter>
+    <parameter key="security.access.denied_url">/</parameter>
     <parameter key="security.authentication.manager.erase_credentials">true</parameter>
     <parameter key="security.authentication.session_strategy.strategy">migrate</parameter>
     <parameter key="security.access.always_authenticate_before_granting">false</parameter>
@@ -332,6 +332,13 @@
     <service id="kernel" class="App\Kernel" public="true" synthetic="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
+    </service>
+    <service id="App\Controller\AdminController" class="App\Controller\AdminController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.5nX7ca3.App\Controller\AdminController"/>
+      </call>
     </service>
     <service id="App\Controller\AuthenticatorController" class="App\Controller\AuthenticatorController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
@@ -4879,7 +4886,23 @@
       <argument type="service" id="security.authentication.retry_entry_point"/>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
     </service>
-    <service id="security.access_map" class="Symfony\Component\Security\Http\AccessMap"/>
+    <service id="security.access_map" class="Symfony\Component\Security\Http\AccessMap">
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.5dJADCx"/>
+        <argument type="collection">
+          <argument>ROLE_ADMIN</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.Pn7yvdV"/>
+        <argument type="collection">
+          <argument>ROLE_USER</argument>
+          <argument>ROLE_ADMIN</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+    </service>
     <service id="security.context_listener" class="Symfony\Component\Security\Http\Firewall\ContextListener">
       <tag name="monolog.logger" channel="security"/>
       <argument type="service" id="security.untracked_token_storage"/>
@@ -5026,7 +5049,7 @@
       <argument type="service" id="security.http_utils"/>
       <argument type="abstract">Provider-shared Key</argument>
       <argument type="service" id="security.authentication.entry_point" on-invalid="null"/>
-      <argument>null</argument>
+      <argument>/</argument>
       <argument type="service" id="security.access.denied_handler" on-invalid="null"/>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument>false</argument>
@@ -5299,7 +5322,7 @@
       <argument type="service" id="security.http_utils"/>
       <argument>main</argument>
       <argument type="service" id="App\Security\Authenticator"/>
-      <argument>null</argument>
+      <argument>/</argument>
       <argument>null</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument>false</argument>
@@ -5324,6 +5347,12 @@
         <argument key="security.firewall.map.context.main" type="service_closure" id="security.firewall.map.context.main"/>
       </argument>
     </service>
+    <service id=".security.request_matcher.5dJADCx" class="Symfony\Component\HttpFoundation\RequestMatcher">
+      <argument>^/admin</argument>
+    </service>
+    <service id=".security.request_matcher.Pn7yvdV" class="Symfony\Component\HttpFoundation\RequestMatcher">
+      <argument>^/profile</argument>
+    </service>
     <service id="security.command.user_password_encoder" class="Symfony\Bundle\SecurityBundle\Command\UserPasswordEncoderCommand">
       <tag name="console.command" command="security:encode-password"/>
       <tag name="container.no_preload"/>
@@ -5336,6 +5365,9 @@
       </call>
     </service>
     <service id="twig.missing_extension_suggestor" class="Twig\Extra\TwigExtraBundle\MissingExtensionSuggestor"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AuthenticatorController" class="App\Controller\AuthenticatorController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AuthenticatorController" class="App\Controller\AuthenticatorController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\AuthenticatorController" class="App\Controller\AuthenticatorController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5721,6 +5753,13 @@
         <argument key="loader" type="service_closure" id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface"/>
       </argument>
     </service>
+    <service id=".service_locator.npyimLp" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="tripRepository" type="service_closure" id="App\Repository\TripRepository"/>
+        <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.UDgw6Ol" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5850,13 +5889,6 @@
         <argument key="tripRepository" type="service_closure" id="App\Repository\TripRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.npyimLp" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="tripRepository" type="service_closure" id="App\Repository\TripRepository"/>
-        <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
-      </argument>
-    </service>
     <service id=".service_locator.6rc6rfL" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5914,9 +5946,10 @@
         <argument key="vehicule" type="service_closure" id=".errored..service_locator.0J1782j.App\Entity\Vehicule"/>
       </argument>
     </service>
-    <service id=".service_locator.jn5JleJ" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.zQtyOKS" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Controller\AdminController::index" type="service_closure" id=".service_locator.npyimLp"/>
         <argument key="App\Controller\AuthenticatorController::login" type="service_closure" id=".service_locator.UDgw6Ol"/>
         <argument key="App\Controller\BookingController::delete" type="service_closure" id=".service_locator.v3bldx6"/>
         <argument key="App\Controller\BookingController::index" type="service_closure" id=".service_locator.ENco2Qi"/>
@@ -5966,6 +5999,7 @@
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::terminate" type="service_closure" id=".service_locator.KfwZsne"/>
+        <argument key="App\Controller\AdminController:index" type="service_closure" id=".service_locator.npyimLp"/>
         <argument key="App\Controller\AuthenticatorController:login" type="service_closure" id=".service_locator.UDgw6Ol"/>
         <argument key="App\Controller\BookingController:delete" type="service_closure" id=".service_locator.v3bldx6"/>
         <argument key="App\Controller\BookingController:index" type="service_closure" id=".service_locator.ENco2Qi"/>
@@ -6330,6 +6364,12 @@
         <argument key="twig" type="service_closure" id="twig" on-invalid="ignore"/>
       </argument>
     </service>
+    <service id=".service_locator.5nX7ca3.App\Controller\AdminController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\AdminController"/>
+      <argument>App\Controller\AdminController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.5nX7ca3" method="withContext"/>
+    </service>
     <service id=".service_locator.5nX7ca3.App\Controller\AuthenticatorController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\AuthenticatorController"/>
       <argument>App\Controller\AuthenticatorController</argument>
@@ -6561,12 +6601,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.jn5JleJ"/>
+      <argument type="service" id=".service_locator.zQtyOKS"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.jn5JleJ"/>
+      <argument type="service" id=".service_locator.zQtyOKS"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -6999,7 +7039,7 @@
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.Kbr2i2X" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.jn5JleJ"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.zQtyOKS"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

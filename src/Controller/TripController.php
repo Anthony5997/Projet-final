@@ -38,6 +38,9 @@ class TripController extends AbstractController
     public function new(Request $request): Response
     {
 
+        $userConnected = $this->getUser();
+        if($userConnected){
+
         $trip = new Trip();
         $form = $this->createForm(TripType::class, $trip);
         $form->handleRequest($request);
@@ -67,6 +70,12 @@ class TripController extends AbstractController
             'trip' => $trip,
             'form' => $form->createView(),
         ]);
+        
+    }else{
+
+        $this->addFlash('success', 'Veuillez vous connecté pour poster un trajet');
+        return $this->redirectToRoute('login');
+        }
     }
 
     /**
@@ -168,7 +177,12 @@ class TripController extends AbstractController
         // $user->setUserExperience($experienceLevel);
         // $user->setVehicule($vehicule);
         // $trip->setDriver($user);
+
         $user = $this->getUser();
+
+        if($user){
+
+
         $booker = $bookingRepository->getAllBooker($trip);
         $checkBooking = $bookingRepository->bookingExist($user->getId(), $trip->getId());
 
@@ -184,6 +198,12 @@ class TripController extends AbstractController
             'checkBooking' => $checkBooking,
             'bookers' => $booker,
         ]);
+        }else{
+
+        $this->addFlash('success', 'Veuillez vous connecté pour consulté et réserver un trajet');
+        return $this->redirectToRoute('login');
+        }
+
     }
 
     /**
@@ -281,6 +301,7 @@ class TripController extends AbstractController
         return $this->render('trip/search.html.twig', [
 
         ]);
+
     }
 
 

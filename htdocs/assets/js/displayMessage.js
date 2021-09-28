@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
                     boxMessage.innerHTML += `
                     <div class="row sender-row display-lign font-controll-message-name">
                     <div class="col-3 d-flex justify-content-end align-items-center">
-                        <a href="http://projet-final.loc/user/${message.sender.id}"><img class="profile-picture-message-send d-flex justify-content-center align-items-center" src="/assets/uploads/profilePicture/${message.sender.profile_picture}"/></a>
+                        <a href="http://projet-final.loc/user/${message.sender.id}/edit"><img class="profile-picture-message-send d-flex justify-content-center align-items-center" src="/assets/uploads/profilePicture/${message.sender.profile_picture}"/></a>
                         <div class="name-user">${message.sender.firstName}</div>
                         </div>
                         <div class="col-7 d-flex justify-content-end align-items-center font-controll-message">
@@ -70,11 +70,10 @@ function send(){
             boxMessage.innerHTML ="";
             data.forEach((message)=>{
                 if (message.sender.id == sender.value) {
-                    let dt = new Date(message.sendAt)
                     boxMessage.innerHTML += `
                     <div class="row sender-row display-lign font-controll-message-name">
                     <div class="col-3 d-flex justify-content-end align-items-center">
-                        <a href="http://projet-final.loc/user/${message.sender.id}"><img class="profile-picture-message-send d-flex justify-content-center align-items-center" src="/assets/uploads/profilePicture/${message.sender.profile_picture}"/></a>
+                        <a href="http://projet-final.loc/user/${message.sender.id}/edit"><img class="profile-picture-message-send d-flex justify-content-center align-items-center" src="/assets/uploads/profilePicture/${message.sender.profile_picture}"/></a>
                         <div class="name-user">${message.sender.firstName}</div>
                         </div>
                         <div class="col-7 d-flex justify-content-end align-items-center font-controll-message">

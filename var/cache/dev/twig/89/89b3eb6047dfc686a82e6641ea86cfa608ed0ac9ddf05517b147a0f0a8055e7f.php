@@ -87,43 +87,43 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
                 <a href=\"";
             // line 35
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
-            echo "\">home</a>
+            echo "\"><i class=\"fas fa-home\"></i> Accueil</a>
                 <a href=\"";
             // line 36
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_edit", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 36, $this->source); })()), "user", [], "any", false, false, false, 36), "id", [], "any", false, false, false, 36)]), "html", null, true);
-            echo "\">Mon Profil</a>
+            echo "\"><i class=\"fas fa-house-user\"></i> Mon Profil</a>
                 <a href=\"";
             // line 37
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("message_discussion", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 37, $this->source); })()), "user", [], "any", false, false, false, 37), "id", [], "any", false, false, false, 37)]), "html", null, true);
-            echo "\">Boite de réception</a>
+            echo "\"><i class=\"far fa-envelope\"></i> Boite de réception</a>
                 <a href=\"";
             // line 38
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_edit", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 38, $this->source); })()), "user", [], "any", false, false, false, 38), "id", [], "any", false, false, false, 38)]), "html", null, true);
-            echo "#tabs-2\">Mes informations personnel</a>
+            echo "#tabs-2\"><i class=\"fas fa-file-alt\"></i> Mes informations personnel</a>
                 <a href=\"";
             // line 39
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_edit", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 39, $this->source); })()), "user", [], "any", false, false, false, 39), "id", [], "any", false, false, false, 39)]), "html", null, true);
-            echo "#tabs-3\">Préférence de voyage</a>
+            echo "#tabs-3\"><i class=\"fas fa-info-circle\"></i> Préférence de voyage</a>
                 <a href=\"";
             // line 40
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_edit", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 40, $this->source); })()), "user", [], "any", false, false, false, 40), "id", [], "any", false, false, false, 40)]), "html", null, true);
-            echo "#tabs-4\">Mon véhicule</a>
+            echo "#tabs-4\"><i class=\"fas fa-car-side\"></i> Mon véhicule</a>
                 <a href=\"";
             // line 41
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_edit", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 41, $this->source); })()), "user", [], "any", false, false, false, 41), "id", [], "any", false, false, false, 41)]), "html", null, true);
-            echo "#tabs-5\">Mes trajets</a>
+            echo "#tabs-5\"><i class=\"fas fa-road\"></i> Mes trajets</a>
                 <a href=\"";
             // line 42
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("review_show", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 42, $this->source); })()), "user", [], "any", false, false, false, 42), "id", [], "any", false, false, false, 42)]), "html", null, true);
-            echo "\">Mes Avis</a>
+            echo "\"><i class=\"far fa-comment-alt\"></i> Mes Avis</a>
                 <a href=\"";
             // line 43
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_edit", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 43, $this->source); })()), "user", [], "any", false, false, false, 43), "id", [], "any", false, false, false, 43)]), "html", null, true);
-            echo "#tabs-6\">Mon compte</a>
+            echo "#tabs-6\"><i class=\"far fa-user-circle\"></i> Mon compte</a>
                 <a href=\"";
             // line 44
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("logout");
-            echo "\">Déconnexion</a>
+            echo "\"><i class=\"fas fa-sign-out-alt\"></i> Déconnexion</a>
             ";
         } else {
             // line 46
@@ -386,16 +386,16 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
             <nav class=\"navbar\">
             {% if app.user != null %}
             
-                <a href=\"{{path('home')}}\">home</a>
-                <a href=\"{{ path ('user_edit', {'id': app.user.id})}}\">Mon Profil</a>
-                <a href=\"{{ path ('message_discussion', {'id': app.user.id})}}\">Boite de réception</a>
-                <a href=\"{{ path ('user_edit', {'id': app.user.id})}}#tabs-2\">Mes informations personnel</a>
-                <a href=\"{{ path ('user_edit', {'id': app.user.id})}}#tabs-3\">Préférence de voyage</a>
-                <a href=\"{{ path ('user_edit', {'id': app.user.id})}}#tabs-4\">Mon véhicule</a>
-                <a href=\"{{ path ('user_edit', {'id': app.user.id})}}#tabs-5\">Mes trajets</a>
-                <a href=\"{{ path ('review_show', {'id': app.user.id})}}\">Mes Avis</a>
-                <a href=\"{{ path ('user_edit', {'id': app.user.id})}}#tabs-6\">Mon compte</a>
-                <a href=\"{{ path ('logout')}}\">Déconnexion</a>
+                <a href=\"{{path('home')}}\"><i class=\"fas fa-home\"></i> Accueil</a>
+                <a href=\"{{ path ('user_edit', {'id': app.user.id})}}\"><i class=\"fas fa-house-user\"></i> Mon Profil</a>
+                <a href=\"{{ path ('message_discussion', {'id': app.user.id})}}\"><i class=\"far fa-envelope\"></i> Boite de réception</a>
+                <a href=\"{{ path ('user_edit', {'id': app.user.id})}}#tabs-2\"><i class=\"fas fa-file-alt\"></i> Mes informations personnel</a>
+                <a href=\"{{ path ('user_edit', {'id': app.user.id})}}#tabs-3\"><i class=\"fas fa-info-circle\"></i> Préférence de voyage</a>
+                <a href=\"{{ path ('user_edit', {'id': app.user.id})}}#tabs-4\"><i class=\"fas fa-car-side\"></i> Mon véhicule</a>
+                <a href=\"{{ path ('user_edit', {'id': app.user.id})}}#tabs-5\"><i class=\"fas fa-road\"></i> Mes trajets</a>
+                <a href=\"{{ path ('review_show', {'id': app.user.id})}}\"><i class=\"far fa-comment-alt\"></i> Mes Avis</a>
+                <a href=\"{{ path ('user_edit', {'id': app.user.id})}}#tabs-6\"><i class=\"far fa-user-circle\"></i> Mon compte</a>
+                <a href=\"{{ path ('logout')}}\"><i class=\"fas fa-sign-out-alt\"></i> Déconnexion</a>
             {% else %}
                 <a href=\"{{ path ('login')}}\">Ce connecter</a>
                 <a href=\"{{ path ('register')}}\">S'inscrire</a>

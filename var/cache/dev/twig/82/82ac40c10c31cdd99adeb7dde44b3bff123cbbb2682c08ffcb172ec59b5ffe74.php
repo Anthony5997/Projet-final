@@ -65,7 +65,7 @@ class __TwigTemplate_93a4719728c36b2659256272a43424c23836accf747eb6edda27542d013
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Hello HomeController!";
+        echo "Accueil";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -90,9 +90,49 @@ class __TwigTemplate_93a4719728c36b2659256272a43424c23836accf747eb6edda27542d013
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 <div class=\"home\">
-      ";
-        // line 12
-        echo "
+        <div class=\"container\">
+        <div class=\"hero\">
+            <div class=\"title\">Voyager</div>
+
+            <div class=\"button\">
+                Rechercher un trajet
+            </div>
+        </div>
+
+        <div class=\"main\">
+            <form action=\"";
+        // line 21
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("trip_search");
+        echo "\">
+                <div class=\"form-row my-5\">
+                    <div class=\"col-md-3 col-sm-6 mt-3\">
+                    <input name=\"departureSearch\" type=\"text\" class=\"form-control\" placeholder=\"Départ\">
+                    </div>
+                    <div class=\"col-md-3 col-sm-6 mt-3\">
+                    <input name=\"arrivalSearch\" type=\"text\" class=\"form-control\" placeholder=\"Arrivé\">
+                    </div>
+                    <div class=\"col-md-3 col-sm-6 mt-3\">
+                    <input name=\"dateSearch\" type=\"date\" class=\"form-control\" placeholder=\"Arrivé\">
+                    </div>
+                    <button class=\"btn btn-info col-md-3 col-sm-6 mt-3\" type=\"submit\">Rechercher</button>
+                </div>
+            </form>
+        </div>
+        <div class=\"main-about\">
+            <div class=\"about-section\">
+                <div class=\"inner-container\">
+                    <h1>About Us</h1>
+                    <p class=\"text\">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus velit ducimus, enim inventore earum, eligendi nostrum pariatur necessitatibus eius dicta a voluptates sit deleniti autem error eos totam nisi neque voluptates sit deleniti autem error eos totam nisi neque.
+                    </p>
+                    <div class=\"skills\">
+                    <span>Web Design</span>
+                    <span>Photoshop & Illustrator</span>
+                    <span>Coding</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 </div>
 
 ";
@@ -116,14 +156,14 @@ class __TwigTemplate_93a4719728c36b2659256272a43424c23836accf747eb6edda27542d013
 
     public function getDebugInfo()
     {
-        return array (  95 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  105 => 21,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Accueil{% endblock %}
 
 {% block body %}
 <style>
@@ -131,8 +171,46 @@ class __TwigTemplate_93a4719728c36b2659256272a43424c23836accf747eb6edda27542d013
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 <div class=\"home\">
-      {# {{dump(app.user)}} #}
+        <div class=\"container\">
+        <div class=\"hero\">
+            <div class=\"title\">Voyager</div>
 
+            <div class=\"button\">
+                Rechercher un trajet
+            </div>
+        </div>
+
+        <div class=\"main\">
+            <form action=\"{{path('trip_search')}}\">
+                <div class=\"form-row my-5\">
+                    <div class=\"col-md-3 col-sm-6 mt-3\">
+                    <input name=\"departureSearch\" type=\"text\" class=\"form-control\" placeholder=\"Départ\">
+                    </div>
+                    <div class=\"col-md-3 col-sm-6 mt-3\">
+                    <input name=\"arrivalSearch\" type=\"text\" class=\"form-control\" placeholder=\"Arrivé\">
+                    </div>
+                    <div class=\"col-md-3 col-sm-6 mt-3\">
+                    <input name=\"dateSearch\" type=\"date\" class=\"form-control\" placeholder=\"Arrivé\">
+                    </div>
+                    <button class=\"btn btn-info col-md-3 col-sm-6 mt-3\" type=\"submit\">Rechercher</button>
+                </div>
+            </form>
+        </div>
+        <div class=\"main-about\">
+            <div class=\"about-section\">
+                <div class=\"inner-container\">
+                    <h1>About Us</h1>
+                    <p class=\"text\">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus velit ducimus, enim inventore earum, eligendi nostrum pariatur necessitatibus eius dicta a voluptates sit deleniti autem error eos totam nisi neque voluptates sit deleniti autem error eos totam nisi neque.
+                    </p>
+                    <div class=\"skills\">
+                    <span>Web Design</span>
+                    <span>Photoshop & Illustrator</span>
+                    <span>Coding</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 </div>
 
 {% endblock %}

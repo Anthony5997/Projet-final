@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}S'enregister{% endblock %}
 
 {% block body %}
     {% for flashError in app.flashes('verify_email_error') %}
@@ -12,10 +12,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 class="white-text">Register</h2>
-                        <ol class="breadcrumb">
-                            <li><a href="/">Home</a></li>
-                        </ol>
+                        <h2 class="white-text my-3">S'enregistrer</h2>
                     </div>
                 </div>
             </div>
@@ -27,7 +24,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-sm-offset-3 card card-panel">
-                        <h3 class="text-extrabold">Create a new account</h3>
+                        <h3 class="text-extrabold my-2">Créé un nouveau compte</h3>
                         <form id="register-form" role="form" method="post" accept-char="UTF-8" autocomplete="off" data-parsley-validate>
                              {{ form_start(registrationForm) }}
         
@@ -35,50 +32,49 @@
 
                             <div class="input-field">
                             {{ form_widget(registrationForm.email, { 'attr': {
+                             'class': 'form-control',
                             'data-parsley-trigger' : "change",
-                            'data-parsley-error-message' : "A valid email address is required."
+                            'data-parsley-error-message' : "Une adresse mail valide est nécessaire."
                             } }) }}
-                            {{ form_label(registrationForm.email, 'Email')}}
-                                <span class="help-block">Type your email address.</span>
+                            {{ form_label(registrationForm.email, 'Votre Email')}}
                                 <div class='red-text'>{{ form_errors(registrationForm.email)}}</div>
                             </div>
 
                             <div class="input-field">
                              {{ form_widget(registrationForm.password.first, { 'attr': {
+                            'class': 'form-control',
                             'data-parsley-trigger' : "change",
                             'data-parsley-minlength' : "6",
-                            'data-parsley-error-message' : "The password must be at least 6 characters"
+                            'data-parsley-error-message' : "Le mot de passe doit contenir au moins 6 caractères."
                             } }) }}
-                            {{ form_label(registrationForm.password.first, 'Password')}}
+                            {{ form_label(registrationForm.password.first, 'Mot de passe')}}
                                 <i class="fa fa-eye show-password"></i>
-                                <span class="help-block">Type your password.</span>
                                 <div class='red-text'>{{ form_errors(registrationForm.password.first) }}</div>
                             </div>
 
                              <div class="input-field">
                              {{ form_widget(registrationForm.password.second, { 'attr': {
+                            'class': 'form-control',
                             'data-parsley-trigger' : "change",
                             'data-parsley-equalto' :"#password",
-                            'data-parsley-error-message' : "Password does not match"
+                            'data-parsley-error-message' : "Les mots de passes ne correspondent pas."
                             } }) }}
-                            {{ form_label(registrationForm.password.second, 'Confirm Password')}}
+                            {{ form_label(registrationForm.password.second, 'Confirmez votre mot de passe.')}}
                                 <i class="fa fa-eye show-password"></i>
-                                 <span class="help-block">Confirm your password.</span>
                                  <div class='red-text'>{{ form_errors(registrationForm.password.second)}}</div>
                             </div>
                             
                             <div class="checkbox">
 
-                            {{ form_widget(registrationForm.agreeTerms, { 'attr' :{'oninvalid' : 'alert("You should agree to our terms")'}  }) }}
-                            {# {{ form_label(registrationForm.agreeTerms) }} #}   
-                                <label for="registration_form_agreeTerms">I have read and I accept the <a href="#!" target="_blank">Terms Of Use</a></label>
+                            {{ form_widget(registrationForm.agreeTerms, { 'attr' :{'oninvalid' : 'alert("Vous devez accepter les conditions d\'utilisation")'}  }) }}
+                                <label for="registration_form_agreeTerms">J'ai lu et accepte les <a href="#!" target="_blank">Conditions d'utilisation</a></label>
                                 <div class='red-text'>{{ form_errors(registrationForm.agreeTerms) }}</div>
                             </div>
 
-                            <button type="submit" class="btn btn-lg gradient secondary btn-block waves-effect waves-light mt-20 mb-20">Create an account</button>
+                            <button type="submit" class="btn btn-primary my-3">Crée mon compte</button>
                                {{ form_end(registrationForm) }}
                                <div class="links">
-                                <a href="{{ path('login') }}">Already have an account? Click here</a>
+                                <a href="{{ path('login') }}">Vous avez déjà un compte? Cliquer ici! </a>
                             </div>
                         </form>
                     </div>

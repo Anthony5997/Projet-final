@@ -65,7 +65,7 @@ class __TwigTemplate_11f42f7c4b3c79e863ae9cb3e312bb8461cba2c6ec22c71e237be4d8a71
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Log in!";
+        echo "Connexion";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -86,40 +86,76 @@ class __TwigTemplate_11f42f7c4b3c79e863ae9cb3e312bb8461cba2c6ec22c71e237be4d8a71
 
         // line 6
         echo "
+   ";
+        // line 7
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 7, $this->source); })()), "flashes", [0 => "success"], "method", false, false, false, 7));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+            // line 8
+            echo "            <div class=\"alert alert-success text-white\">
+                ";
+            // line 9
+            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+            echo "
+            </div>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 12
+        echo "        ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 12, $this->source); })()), "flashes", [0 => "error"], "method", false, false, false, 12));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+            // line 13
+            echo "            <div class=\"alert alert-danger text-white\">
+                ";
+            // line 14
+            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+            echo "
+            </div>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 17
+        echo "
         <section class=\"section-padding gray-bg log-section\">
             <div class=\"container\">
                 <div class=\"row\">
 
                     <div class=\"col-xs-12 col-sm-6 col-md-4\">
-                        <div class=\"card card-panel\">
-                            <h3 class=\"text-extrabold\">Log in to your account</h3>
+                        <div class=\"card card-panel p-2 mt-3\">
+                            <h3 class=\"text-extrabold\">Connectez vous</h3>
                            <form  method=\"post\">
                             ";
-        // line 15
-        if ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 15, $this->source); })())) {
-            // line 16
+        // line 26
+        if ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 26, $this->source); })())) {
+            // line 27
             echo "                                <div class=\"alert alert-danger\">";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 16, $this->source); })()), "messageKey", [], "any", false, false, false, 16), twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 16, $this->source); })()), "messageData", [], "any", false, false, false, 16), "security"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 27, $this->source); })()), "messageKey", [], "any", false, false, false, 27), twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 27, $this->source); })()), "messageData", [], "any", false, false, false, 27), "security"), "html", null, true);
             echo "</div>
                             ";
         }
-        // line 18
+        // line 29
         echo "
                             ";
-        // line 19
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 19, $this->source); })()), "user", [], "any", false, false, false, 19)) {
-            // line 20
+        // line 30
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 30, $this->source); })()), "user", [], "any", false, false, false, 30)) {
+            // line 31
             echo "                                <div class=\"red-text\">
-                                    You are logged in as ";
-            // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 21, $this->source); })()), "user", [], "any", false, false, false, 21), "username", [], "any", false, false, false, 21), "html", null, true);
+                                    Vous êtes connecté en tant que ";
+            // line 32
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 32, $this->source); })()), "user", [], "any", false, false, false, 32), "username", [], "any", false, false, false, 32), "html", null, true);
             echo ", <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">Logout</a>
                                 </div>
                             ";
         }
-        // line 23
+        // line 34
         echo " 
 
                                 <input type=\"hidden\" name=\"_token\" value=\"\">
@@ -127,16 +163,15 @@ class __TwigTemplate_11f42f7c4b3c79e863ae9cb3e312bb8461cba2c6ec22c71e237be4d8a71
                                 <div class=\"input-field\"> 
                                 
                                     <input type=\"email\" value=\"";
-        // line 29
-        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 29, $this->source); })()), "html", null, true);
+        // line 40
+        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 40, $this->source); })()), "html", null, true);
         echo "\" name=\"email\" id=\"inputEmail\" class=\"form-control\" autocomplete=\"email\" 
                                             autofocus
                                            required
                                            autofocus
                                            data-parsley-trigger=\"change\"
-                                           data-parsley-error-message=\"A valid email address is required.\">
-                                    <label for=\"inputEmail\">Email</label>
-                                    <span class=\"help-block\">Type your email address.</span>
+                                           data-parsley-error-message=\"Une addresse valide est nécessaire.\">
+                                    <label for=\"inputEmail\">Votre Email</label>
                                 </div>
                                 <div class=\"input-field\">
                                
@@ -144,25 +179,27 @@ class __TwigTemplate_11f42f7c4b3c79e863ae9cb3e312bb8461cba2c6ec22c71e237be4d8a71
                                 <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" autocomplete=\"current-password\" 
                                             required
                                            data-parsley-trigger=\"change\"
-                                           data-parsley-error-message=\"The password must be at least 6 characters.\">
-                                     <label for=\"inputPassword\">Password</label>
+                                           data-parsley-error-message=\"Le mot de passe doit contenir au moins 6 caractères.\">
+                                     <label for=\"inputPassword\">Votre mot de passe</label>
                                     <i class=\"fa fa-eye show-password\"></i>
-                                    <span class=\"help-block\">Type your password.</span>
                                     <input type=\"hidden\" name=\"_csrf_token\" value=\"";
-        // line 48
+        // line 57
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("authenticate"), "html", null, true);
         echo "\">
                                     </div>
                                 <div class=\"checkbox\">         
                                         <input type=\"checkbox\" name=\"_remember_me\" id=\"_remember_me\">
-                                        <label for=\"_remember_me\">Keep me logged in
+                                        <label for=\"_remember_me\">Je souhaite rester connecté
                                         </label>
                                 </div>
-                                <button type=\"submit\" class=\"btn btn-lg gradient secondary btn-block waves-effect waves-light mt-20 mb-20\">Login</button>
+                                <button type=\"submit\" class=\"btn btn-primary my-3\">Ce connecter</button>
                             </form>
 
                                 <div class=\"links\">
-                                    <a href=\"#!\">Forgot your password?</a>
+                                    <a href=\"";
+        // line 68
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("register");
+        echo "\">Vous n'êtes pas encore inscrit ?</a>
                                 </div>
                             
                         </div>
@@ -192,24 +229,35 @@ class __TwigTemplate_11f42f7c4b3c79e863ae9cb3e312bb8461cba2c6ec22c71e237be4d8a71
 
     public function getDebugInfo()
     {
-        return array (  153 => 48,  131 => 29,  123 => 23,  115 => 21,  112 => 20,  110 => 19,  107 => 18,  101 => 16,  99 => 15,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  201 => 68,  187 => 57,  167 => 40,  159 => 34,  151 => 32,  148 => 31,  146 => 30,  143 => 29,  137 => 27,  135 => 26,  124 => 17,  115 => 14,  112 => 13,  107 => 12,  98 => 9,  95 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}Connexion{% endblock %}
 
 {% block body %}
+
+   {% for message in app.flashes('success') %}
+            <div class=\"alert alert-success text-white\">
+                {{ message }}
+            </div>
+        {% endfor %}
+        {% for message in app.flashes('error') %}
+            <div class=\"alert alert-danger text-white\">
+                {{ message }}
+            </div>
+        {% endfor %}
 
         <section class=\"section-padding gray-bg log-section\">
             <div class=\"container\">
                 <div class=\"row\">
 
                     <div class=\"col-xs-12 col-sm-6 col-md-4\">
-                        <div class=\"card card-panel\">
-                            <h3 class=\"text-extrabold\">Log in to your account</h3>
+                        <div class=\"card card-panel p-2 mt-3\">
+                            <h3 class=\"text-extrabold\">Connectez vous</h3>
                            <form  method=\"post\">
                             {% if error %}
                                 <div class=\"alert alert-danger\">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -217,7 +265,7 @@ class __TwigTemplate_11f42f7c4b3c79e863ae9cb3e312bb8461cba2c6ec22c71e237be4d8a71
 
                             {% if app.user %}
                                 <div class=\"red-text\">
-                                    You are logged in as {{ app.user.username }}, <a href=\"{{ path('app_logout') }}\">Logout</a>
+                                    Vous êtes connecté en tant que {{ app.user.username }}, <a href=\"{{ path('app_logout') }}\">Logout</a>
                                 </div>
                             {% endif %} 
 
@@ -230,9 +278,8 @@ class __TwigTemplate_11f42f7c4b3c79e863ae9cb3e312bb8461cba2c6ec22c71e237be4d8a71
                                            required
                                            autofocus
                                            data-parsley-trigger=\"change\"
-                                           data-parsley-error-message=\"A valid email address is required.\">
-                                    <label for=\"inputEmail\">Email</label>
-                                    <span class=\"help-block\">Type your email address.</span>
+                                           data-parsley-error-message=\"Une addresse valide est nécessaire.\">
+                                    <label for=\"inputEmail\">Votre Email</label>
                                 </div>
                                 <div class=\"input-field\">
                                
@@ -240,22 +287,21 @@ class __TwigTemplate_11f42f7c4b3c79e863ae9cb3e312bb8461cba2c6ec22c71e237be4d8a71
                                 <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" autocomplete=\"current-password\" 
                                             required
                                            data-parsley-trigger=\"change\"
-                                           data-parsley-error-message=\"The password must be at least 6 characters.\">
-                                     <label for=\"inputPassword\">Password</label>
+                                           data-parsley-error-message=\"Le mot de passe doit contenir au moins 6 caractères.\">
+                                     <label for=\"inputPassword\">Votre mot de passe</label>
                                     <i class=\"fa fa-eye show-password\"></i>
-                                    <span class=\"help-block\">Type your password.</span>
                                     <input type=\"hidden\" name=\"_csrf_token\" value=\"{{ csrf_token('authenticate') }}\">
                                     </div>
                                 <div class=\"checkbox\">         
                                         <input type=\"checkbox\" name=\"_remember_me\" id=\"_remember_me\">
-                                        <label for=\"_remember_me\">Keep me logged in
+                                        <label for=\"_remember_me\">Je souhaite rester connecté
                                         </label>
                                 </div>
-                                <button type=\"submit\" class=\"btn btn-lg gradient secondary btn-block waves-effect waves-light mt-20 mb-20\">Login</button>
+                                <button type=\"submit\" class=\"btn btn-primary my-3\">Ce connecter</button>
                             </form>
 
                                 <div class=\"links\">
-                                    <a href=\"#!\">Forgot your password?</a>
+                                    <a href=\"{{path('register')}}\">Vous n'êtes pas encore inscrit ?</a>
                                 </div>
                             
                         </div>
