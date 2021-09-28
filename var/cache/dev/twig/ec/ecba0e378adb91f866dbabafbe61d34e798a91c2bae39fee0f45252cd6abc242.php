@@ -86,21 +86,38 @@ class __TwigTemplate_4e169d7155bfcd58ac170e8e988238415172b114660ee15b6519b228b25
 
         // line 6
         echo "<div class=\"container\">
-    <h2 class=\"text-center my-5\" >rechercher un trajet</h2>
-    <form>
-        <div class=\"form-row\">
-            <div class=\"col-md-3 col-sm-6 mt-3\">
-            <input name=\"departureSearch\" type=\"text\" class=\"form-control\" placeholder=\"Départ\">
+    <div class=\"row search-section\">
+    <div class=\"col-8 mt-5\">
+        <form>
+            <div class=\"form-row\">
+             <div class=\"col-12 mt-3\">
+                <h2 class=\"text-center my-5\" >Rechercher un trajet</h2>
+             </div>
+                <div class=\"col-md-3 col-sm-6 mt-3\">
+                <input name=\"departureSearch\" type=\"text\" class=\"form-control\" placeholder=\"Départ\">
+                </div>
+                <div class=\"col-md-3 col-sm-6 mt-3\">
+                <input name=\"arrivalSearch\" type=\"text\" class=\"form-control\" placeholder=\"Arrivé\">
+                </div>
+                <div class=\"col-md-3 col-sm-6 mt-3\">
+                <input name=\"dateSearch\" type=\"date\" class=\"form-control\" placeholder=\"Arrivé\">
+                </div>
+                 <div class=\"col-md-3 col-sm-6\">
+                    <button class=\"mt-3 button-search\" type=\"submit\"><i style=\"font-weight: 400; font-size: 28px;\"class=\"text-white fas fa-search-location\"></i></button>
+                </div>
             </div>
-            <div class=\"col-md-3 col-sm-6 mt-3\">
-            <input name=\"arrivalSearch\" type=\"text\" class=\"form-control\" placeholder=\"Arrivé\">
-            </div>
-            <div class=\"col-md-3 col-sm-6 mt-3\">
-            <input name=\"dateSearch\" type=\"date\" class=\"form-control\" placeholder=\"Arrivé\">
-            </div>
-            <button class=\"btn btn-info col-md-3 col-sm-6 mt-3\" type=\"submit\">Rechercher</button>
+            </form>
+    </div>
+    <div class=\"col-3\">
+          <div class=\" d-flex justify-content-center\">
+            <img class=\"\"src=\"";
+        // line 31
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/uploads/custom-pic/search.png"), "html", null, true);
+        echo "\">
         </div>
-    </form>
+    </div>
+    </div>
+
 </div>
 ";
         
@@ -123,7 +140,7 @@ class __TwigTemplate_4e169d7155bfcd58ac170e8e988238415172b114660ee15b6519b228b25
 
     public function getDebugInfo()
     {
-        return array (  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  115 => 31,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -134,21 +151,35 @@ class __TwigTemplate_4e169d7155bfcd58ac170e8e988238415172b114660ee15b6519b228b25
 
 {% block body %}
 <div class=\"container\">
-    <h2 class=\"text-center my-5\" >rechercher un trajet</h2>
-    <form>
-        <div class=\"form-row\">
-            <div class=\"col-md-3 col-sm-6 mt-3\">
-            <input name=\"departureSearch\" type=\"text\" class=\"form-control\" placeholder=\"Départ\">
+    <div class=\"row search-section\">
+    <div class=\"col-8 mt-5\">
+        <form>
+            <div class=\"form-row\">
+             <div class=\"col-12 mt-3\">
+                <h2 class=\"text-center my-5\" >Rechercher un trajet</h2>
+             </div>
+                <div class=\"col-md-3 col-sm-6 mt-3\">
+                <input name=\"departureSearch\" type=\"text\" class=\"form-control\" placeholder=\"Départ\">
+                </div>
+                <div class=\"col-md-3 col-sm-6 mt-3\">
+                <input name=\"arrivalSearch\" type=\"text\" class=\"form-control\" placeholder=\"Arrivé\">
+                </div>
+                <div class=\"col-md-3 col-sm-6 mt-3\">
+                <input name=\"dateSearch\" type=\"date\" class=\"form-control\" placeholder=\"Arrivé\">
+                </div>
+                 <div class=\"col-md-3 col-sm-6\">
+                    <button class=\"mt-3 button-search\" type=\"submit\"><i style=\"font-weight: 400; font-size: 28px;\"class=\"text-white fas fa-search-location\"></i></button>
+                </div>
             </div>
-            <div class=\"col-md-3 col-sm-6 mt-3\">
-            <input name=\"arrivalSearch\" type=\"text\" class=\"form-control\" placeholder=\"Arrivé\">
-            </div>
-            <div class=\"col-md-3 col-sm-6 mt-3\">
-            <input name=\"dateSearch\" type=\"date\" class=\"form-control\" placeholder=\"Arrivé\">
-            </div>
-            <button class=\"btn btn-info col-md-3 col-sm-6 mt-3\" type=\"submit\">Rechercher</button>
+            </form>
+    </div>
+    <div class=\"col-3\">
+          <div class=\" d-flex justify-content-center\">
+            <img class=\"\"src=\"{{asset('assets/uploads/custom-pic/search.png')}}\">
         </div>
-    </form>
+    </div>
+    </div>
+
 </div>
 {% endblock %}", "trip/search.html.twig", "/shared/httpd/Projet-Final/templates/trip/search.html.twig");
     }

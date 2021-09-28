@@ -482,6 +482,6 @@ class __TwigTemplate_4494a7ce2020b959875b1eab9a94f474ecc2754731fdb8ad8175c6ecf70
         {% endfor %}
     </table>
 {% endmacro %}
-", "@WebProfiler/Collector/events.html.twig", "/home/simplon/devilbox/data/www/Projet-Final/vendor/symfony/web-profiler-bundle/Resources/views/Collector/events.html.twig");
+", "@WebProfiler/Collector/events.html.twig", "/shared/httpd/Projet-Final/vendor/symfony/web-profiler-bundle/Resources/views/Collector/events.html.twig");
     }
 }

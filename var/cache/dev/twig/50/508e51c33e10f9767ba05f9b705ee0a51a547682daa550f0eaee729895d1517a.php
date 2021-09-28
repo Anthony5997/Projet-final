@@ -155,6 +155,6 @@ class __TwigTemplate_585c5bc7b0b30ccb9c8c160351d131992a55af3dd6fc3a3d7768c93146d
 {% block panel %}
     {{ render(controller('web_profiler.controller.router::panelAction', { token: token })) }}
 {% endblock %}
-", "@WebProfiler/Collector/router.html.twig", "/home/simplon/devilbox/data/www/Projet-Final/vendor/symfony/web-profiler-bundle/Resources/views/Collector/router.html.twig");
+", "@WebProfiler/Collector/router.html.twig", "/shared/httpd/Projet-Final/vendor/symfony/web-profiler-bundle/Resources/views/Collector/router.html.twig");
     }
 }

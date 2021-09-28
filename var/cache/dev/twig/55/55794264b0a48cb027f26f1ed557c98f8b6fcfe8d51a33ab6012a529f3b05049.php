@@ -227,6 +227,6 @@ class __TwigTemplate_2658421c5c8a98b73009a212efe34345023681626f88955882834db9b78
         </div>
     {% endif %}
 {% endblock %}
-", "@WebProfiler/Collector/exception.html.twig", "/home/simplon/devilbox/data/www/Projet-Final/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.html.twig");
+", "@WebProfiler/Collector/exception.html.twig", "/shared/httpd/Projet-Final/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.html.twig");
     }
 }

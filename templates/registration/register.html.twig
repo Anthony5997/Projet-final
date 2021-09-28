@@ -7,7 +7,6 @@
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
     {% endfor %}
 
-        <!-- Page Header-->
         <section class="page-title page-title-bg fixed-bg overlay dark-5 padding-top-160 padding-bottom-80">
             <div class="container">
                 <div class="row">
@@ -18,8 +17,6 @@
             </div>
         </section>
 
-
-        <!-- Page Content-->
         <section class="section-padding gray-bg log-section">
             <div class="container">
                 <div class="row">
@@ -27,9 +24,6 @@
                         <h3 class="text-extrabold my-2">Créé un nouveau compte</h3>
                         <form id="register-form" role="form" method="post" accept-char="UTF-8" autocomplete="off" data-parsley-validate>
                              {{ form_start(registrationForm) }}
-        
-       
-
                             <div class="input-field">
                             {{ form_widget(registrationForm.email, { 'attr': {
                              'class': 'form-control',
@@ -63,7 +57,6 @@
                                 <i class="fa fa-eye show-password"></i>
                                  <div class='red-text'>{{ form_errors(registrationForm.password.second)}}</div>
                             </div>
-                            
                             <div class="checkbox">
 
                             {{ form_widget(registrationForm.agreeTerms, { 'attr' :{'oninvalid' : 'alert("Vous devez accepter les conditions d\'utilisation")'}  }) }}
@@ -82,5 +75,4 @@
                 </div>
             </div>
         </section>
- 
 {% endblock %}

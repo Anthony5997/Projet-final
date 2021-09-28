@@ -1,0 +1,158 @@
+<?php //%255B6ecd07247f042b9839955182019e9607%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Query\\ParserResult'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ParserResult')),
+        clone ($p['Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor')),
+        clone ($p['Doctrine\\ORM\\Query\\ResultSetMapping'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ResultSetMapping')),
+    ],
+    null,
+    [
+        'Doctrine\\ORM\\Query\\ParserResult' => [
+            '_sqlExecutor' => [
+                $o[1],
+            ],
+            '_resultSetMapping' => [
+                $o[2],
+            ],
+            '_parameterMappings' => [
+                [
+                    'user' => [
+                        0,
+                    ],
+                ],
+            ],
+        ],
+        'Doctrine\\ORM\\Query\\Exec\\AbstractSqlExecutor' => [
+            '_sqlStatements' => [
+                1 => 'SELECT m0_.id AS id_0, m0_.content AS content_1, m0_.send_at AS send_at_2, u1_.id AS id_3, u1_.email AS email_4, u1_.roles AS roles_5, u1_.password AS password_6, u1_.first_name AS first_name_7, u1_.last_name AS last_name_8, u1_.date_of_birth AS date_of_birth_9, u1_.phone AS phone_10, u1_.adress AS adress_11, u1_.country AS country_12, u1_.city AS city_13, u1_.bio AS bio_14, u1_.profile_picture AS profile_picture_15, u1_.id_card AS id_card_16, u1_.id_card_file AS id_card_file_17, u1_.created_at AS created_at_18, u1_.profile_completed AS profile_completed_19, u1_.trips_made AS trips_made_20, u1_.global_rating AS global_rating_21, m0_.sender_id AS sender_id_22, m0_.receiver_id AS receiver_id_23, u1_.user_experience_id AS user_experience_id_24, u1_.travel_preferences_id AS travel_preferences_id_25, u1_.vehicule_id AS vehicule_id_26 FROM message m0_ INNER JOIN user u1_ ON m0_.sender_id = u1_.id AND (u1_.id = m0_.sender_id) WHERE m0_.receiver_id = ? GROUP BY u1_.id, u1_.email, u1_.roles, u1_.password, u1_.first_name, u1_.last_name, u1_.date_of_birth, u1_.phone, u1_.adress, u1_.country, u1_.city, u1_.bio, u1_.profile_picture, u1_.id_card, u1_.id_card_file, u1_.created_at, u1_.profile_completed, u1_.trips_made, u1_.global_rating, u1_.user_experience_id, u1_.travel_preferences_id, u1_.vehicule_id ORDER BY m0_.send_at DESC',
+            ],
+        ],
+        'stdClass' => [
+            'aliasMap' => [
+                2 => [
+                    'message' => 'App\\Entity\\Message',
+                    'sender' => 'App\\Entity\\User',
+                ],
+            ],
+            'relationMap' => [
+                2 => [
+                    'sender' => 'sender',
+                ],
+            ],
+            'parentAliasMap' => [
+                2 => [
+                    'sender' => 'message',
+                ],
+            ],
+            'fieldMappings' => [
+                2 => [
+                    'id_0' => 'id',
+                    'content_1' => 'content',
+                    'send_at_2' => 'send_at',
+                    'id_3' => 'id',
+                    'email_4' => 'email',
+                    'roles_5' => 'roles',
+                    'password_6' => 'password',
+                    'first_name_7' => 'first_name',
+                    'last_name_8' => 'last_name',
+                    'date_of_birth_9' => 'date_of_birth',
+                    'phone_10' => 'phone',
+                    'adress_11' => 'adress',
+                    'country_12' => 'country',
+                    'city_13' => 'city',
+                    'bio_14' => 'bio',
+                    'profile_picture_15' => 'profile_picture',
+                    'id_card_16' => 'id_card',
+                    'id_card_file_17' => 'id_card_file',
+                    'created_at_18' => 'created_at',
+                    'profile_completed_19' => 'profile_completed',
+                    'trips_made_20' => 'trips_made',
+                    'global_rating_21' => 'global_rating',
+                ],
+            ],
+            'typeMappings' => [
+                2 => [
+                    'sender_id_22' => 'string',
+                    'receiver_id_23' => 'string',
+                    'user_experience_id_24' => 'integer',
+                    'travel_preferences_id_25' => 'integer',
+                    'vehicule_id_26' => 'string',
+                ],
+            ],
+            'entityMappings' => [
+                2 => [
+                    'message' => null,
+                ],
+            ],
+            'metaMappings' => [
+                2 => [
+                    'sender_id_22' => 'sender_id',
+                    'receiver_id_23' => 'receiver_id',
+                    'user_experience_id_24' => 'user_experience_id',
+                    'travel_preferences_id_25' => 'travel_preferences_id',
+                    'vehicule_id_26' => 'vehicule_id',
+                ],
+            ],
+            'columnOwnerMap' => [
+                2 => [
+                    'id_0' => 'message',
+                    'content_1' => 'message',
+                    'send_at_2' => 'message',
+                    'id_3' => 'sender',
+                    'email_4' => 'sender',
+                    'roles_5' => 'sender',
+                    'password_6' => 'sender',
+                    'first_name_7' => 'sender',
+                    'last_name_8' => 'sender',
+                    'date_of_birth_9' => 'sender',
+                    'phone_10' => 'sender',
+                    'adress_11' => 'sender',
+                    'country_12' => 'sender',
+                    'city_13' => 'sender',
+                    'bio_14' => 'sender',
+                    'profile_picture_15' => 'sender',
+                    'id_card_16' => 'sender',
+                    'id_card_file_17' => 'sender',
+                    'created_at_18' => 'sender',
+                    'profile_completed_19' => 'sender',
+                    'trips_made_20' => 'sender',
+                    'global_rating_21' => 'sender',
+                    'sender_id_22' => 'message',
+                    'receiver_id_23' => 'message',
+                    'user_experience_id_24' => 'sender',
+                    'travel_preferences_id_25' => 'sender',
+                    'vehicule_id_26' => 'sender',
+                ],
+            ],
+            'declaringClasses' => [
+                2 => [
+                    'id_0' => 'App\\Entity\\Message',
+                    'content_1' => 'App\\Entity\\Message',
+                    'send_at_2' => 'App\\Entity\\Message',
+                    'id_3' => 'App\\Entity\\User',
+                    'email_4' => 'App\\Entity\\User',
+                    'roles_5' => 'App\\Entity\\User',
+                    'password_6' => 'App\\Entity\\User',
+                    'first_name_7' => 'App\\Entity\\User',
+                    'last_name_8' => 'App\\Entity\\User',
+                    'date_of_birth_9' => 'App\\Entity\\User',
+                    'phone_10' => 'App\\Entity\\User',
+                    'adress_11' => 'App\\Entity\\User',
+                    'country_12' => 'App\\Entity\\User',
+                    'city_13' => 'App\\Entity\\User',
+                    'bio_14' => 'App\\Entity\\User',
+                    'profile_picture_15' => 'App\\Entity\\User',
+                    'id_card_16' => 'App\\Entity\\User',
+                    'id_card_file_17' => 'App\\Entity\\User',
+                    'created_at_18' => 'App\\Entity\\User',
+                    'profile_completed_19' => 'App\\Entity\\User',
+                    'trips_made_20' => 'App\\Entity\\User',
+                    'global_rating_21' => 'App\\Entity\\User',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

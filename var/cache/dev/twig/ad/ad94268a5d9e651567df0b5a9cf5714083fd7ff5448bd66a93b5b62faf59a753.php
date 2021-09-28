@@ -1349,6 +1349,6 @@ class __TwigTemplate_ce444db9d35fda8ff1ffb95ce78468525221ec4ecadc07b92bc50d03d16
         <span>{{ route|default(controller) }}</span>
     {%- endif %}
 {% endmacro %}
-", "@WebProfiler/Collector/request.html.twig", "/home/simplon/devilbox/data/www/Projet-Final/vendor/symfony/web-profiler-bundle/Resources/views/Collector/request.html.twig");
+", "@WebProfiler/Collector/request.html.twig", "/shared/httpd/Projet-Final/vendor/symfony/web-profiler-bundle/Resources/views/Collector/request.html.twig");
     }
 }

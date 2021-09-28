@@ -2,9 +2,13 @@
     background: #000;
     color: #030303;
     font-family: sans-serif;
-    background-image: url(https://images.pexels.com/photos/934718/pexels-photo-934718.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    background-image: url("/assets/uploads/custom-pic/roadtrip.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.error-page{
+    width: 30%;
 }
 
 .hero {
@@ -17,7 +21,7 @@
   }
 
   .title {
-    font-size: 7em;
+    font-size: 5em;
     text-align: center;
     width: 100%;
     font-family: serif;
@@ -38,7 +42,7 @@
 
   .button {
     background: #ff4c54;
-    padding: 18px 29px;
+    padding: 8px 9px;
     border-radius: 10px;
     text-transform: uppercase;
     text-align: center;
@@ -106,7 +110,7 @@
 }
 
 .about-section{
-    background: url(https://fadzrinmadu.github.io/hosted-assets/responsive-about-us-section-using-html/pic.jpg) no-repeat left;
+    background: url("/assets/uploads/custom-pic/trip-pic.jpg") no-repeat left;
     background-size: 55%;
     background-color: #fdfdfd;
     overflow: hidden;
@@ -166,3 +170,5 @@
         padding: 60px;
     }
 }
+
+

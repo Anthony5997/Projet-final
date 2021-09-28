@@ -3573,6 +3573,14 @@
       <argument type="collection"/>
       <argument>/shared/httpd/Projet-Final</argument>
       <call method="addPath">
+        <argument>/shared/httpd/Projet-Final/templates/bundles/TwigBundle</argument>
+        <argument>Twig</argument>
+      </call>
+      <call method="addPath">
+        <argument>/shared/httpd/Projet-Final/templates/bundles/TwigBundle</argument>
+        <argument>!Twig</argument>
+      </call>
+      <call method="addPath">
         <argument>/shared/httpd/Projet-Final/vendor/symfony/web-profiler-bundle/Resources/views</argument>
         <argument>WebProfiler</argument>
       </call>

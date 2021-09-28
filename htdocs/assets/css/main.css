@@ -6277,7 +6277,7 @@ header {
   width: 100%;
   position: relative;
   background: #fff;
-  padding: 2.5rem 9% 2% 10%;
+  padding: 2rem 6% 2% 5%;
   display: flex;
   justify-content: space-between;
   z-index: 1000;
@@ -6716,9 +6716,13 @@ header .fa-user {
   background: #000;
   color: #030303;
   font-family: sans-serif;
-  background-image: url(https://images.pexels.com/photos/934718/pexels-photo-934718.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  background-image: url("/assets/uploads/custom-pic/roadtrip.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.error-page {
+  width: 30%;
 }
 
 .hero {
@@ -6731,7 +6735,7 @@ header .fa-user {
 }
 
 .title {
-  font-size: 7em;
+  font-size: 5em;
   text-align: center;
   width: 100%;
   font-family: serif;
@@ -6752,7 +6756,7 @@ header .fa-user {
 
 .button {
   background: #ff4c54;
-  padding: 18px 29px;
+  padding: 8px 9px;
   border-radius: 10px;
   text-transform: uppercase;
   text-align: center;
@@ -6820,7 +6824,7 @@ i {
 }
 
 .about-section {
-  background: url(https://fadzrinmadu.github.io/hosted-assets/responsive-about-us-section-using-html/pic.jpg) no-repeat left;
+  background: url("/assets/uploads/custom-pic/trip-pic.jpg") no-repeat left;
   background-size: 55%;
   background-color: #fdfdfd;
   overflow: hidden;
@@ -7240,6 +7244,19 @@ a .font-control-rating {
 }
 * {
   max-height: none !important;
+}
+
+.search-section {
+  background-image: url("");
+  background-size: cover;
+}
+
+.button-search {
+  border-radius: 5px;
+  background-color: rgba(89, 125, 233, 0.522);
+  border: 1px solid aliceblue;
+  color: aliceblue;
+  padding: 7px 35px 1px 35px;
 }
 
 .container {

@@ -91,7 +91,7 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
                 <a href=\"";
             // line 36
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_edit", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 36, $this->source); })()), "user", [], "any", false, false, false, 36), "id", [], "any", false, false, false, 36)]), "html", null, true);
-            echo "\"><i class=\"fas fa-house-user\"></i> Mon Profil</a>
+            echo "\"><i class=\"far fa-id-badge\"></i> Mon Profil</a>
                 <a href=\"";
             // line 37
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("message_discussion", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 37, $this->source); })()), "user", [], "any", false, false, false, 37), "id", [], "any", false, false, false, 37)]), "html", null, true);
@@ -387,7 +387,7 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
             {% if app.user != null %}
             
                 <a href=\"{{path('home')}}\"><i class=\"fas fa-home\"></i> Accueil</a>
-                <a href=\"{{ path ('user_edit', {'id': app.user.id})}}\"><i class=\"fas fa-house-user\"></i> Mon Profil</a>
+                <a href=\"{{ path ('user_edit', {'id': app.user.id})}}\"><i class=\"far fa-id-badge\"></i> Mon Profil</a>
                 <a href=\"{{ path ('message_discussion', {'id': app.user.id})}}\"><i class=\"far fa-envelope\"></i> Boite de réception</a>
                 <a href=\"{{ path ('user_edit', {'id': app.user.id})}}#tabs-2\"><i class=\"fas fa-file-alt\"></i> Mes informations personnel</a>
                 <a href=\"{{ path ('user_edit', {'id': app.user.id})}}#tabs-3\"><i class=\"fas fa-info-circle\"></i> Préférence de voyage</a>

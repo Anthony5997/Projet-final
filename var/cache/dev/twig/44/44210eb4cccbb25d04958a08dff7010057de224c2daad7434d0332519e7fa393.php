@@ -1306,6 +1306,6 @@ $context["voter_detail"], "vote", [], "array", false, false, false, 357), twig_c
         </table>
     {% endif %}
 {% endblock %}
-", "@Security/Collector/security.html.twig", "/home/simplon/devilbox/data/www/Projet-Final/vendor/symfony/security-bundle/Resources/views/Collector/security.html.twig");
+", "@Security/Collector/security.html.twig", "/shared/httpd/Projet-Final/vendor/symfony/security-bundle/Resources/views/Collector/security.html.twig");
     }
 }

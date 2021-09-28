@@ -898,6 +898,6 @@ class __TwigTemplate_a3e0cc432bf8253b3f1a308d75dd1cf36ef4806cb62c99f05f6d11ebd63
         </tbody>
     </table>
 {% endmacro %}
-", "@WebProfiler/Collector/translation.html.twig", "/home/simplon/devilbox/data/www/Projet-Final/vendor/symfony/web-profiler-bundle/Resources/views/Collector/translation.html.twig");
+", "@WebProfiler/Collector/translation.html.twig", "/shared/httpd/Projet-Final/vendor/symfony/web-profiler-bundle/Resources/views/Collector/translation.html.twig");
     }
 }

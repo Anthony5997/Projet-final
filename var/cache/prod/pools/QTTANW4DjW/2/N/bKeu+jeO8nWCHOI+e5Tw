@@ -1,0 +1,111 @@
+<?php //%255B507c59c42acc8e346f3ad03192fe1a86%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Query\\ParserResult'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ParserResult')),
+        clone ($p['Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor')),
+        clone ($p['Doctrine\\ORM\\Query\\ResultSetMapping'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ResultSetMapping')),
+    ],
+    null,
+    [
+        'Doctrine\\ORM\\Query\\ParserResult' => [
+            '_sqlExecutor' => [
+                $o[1],
+            ],
+            '_resultSetMapping' => [
+                $o[2],
+            ],
+            '_parameterMappings' => [
+                [
+                    'departure' => [
+                        0,
+                    ],
+                    'arrival' => [
+                        1,
+                    ],
+                    'date' => [
+                        2,
+                    ],
+                ],
+            ],
+        ],
+        'Doctrine\\ORM\\Query\\Exec\\AbstractSqlExecutor' => [
+            '_sqlStatements' => [
+                1 => 'SELECT t0_.id AS id_0, t0_.departure AS departure_1, t0_.arrival AS arrival_2, t0_.date_of_trip AS date_of_trip_3, t0_.passengers AS passengers_4, t0_.trip_full AS trip_full_5, t0_.trip_completed AS trip_completed_6, t0_.duration AS duration_7, t0_.distance AS distance_8, t0_.start_time AS start_time_9, t0_.trip_started AS trip_started_10, t0_.created_at AS created_at_11, t0_.driver_id AS driver_id_12 FROM trip t0_ WHERE t0_.departure = ? AND t0_.arrival = ? AND t0_.date_of_trip = ? ORDER BY t0_.start_time ASC LIMIT 20',
+            ],
+        ],
+        'stdClass' => [
+            'aliasMap' => [
+                2 => [
+                    'trip' => 'App\\Entity\\Trip',
+                ],
+            ],
+            'fieldMappings' => [
+                2 => [
+                    'id_0' => 'id',
+                    'departure_1' => 'departure',
+                    'arrival_2' => 'arrival',
+                    'date_of_trip_3' => 'date_of_trip',
+                    'passengers_4' => 'passengers',
+                    'trip_full_5' => 'trip_full',
+                    'trip_completed_6' => 'trip_completed',
+                    'duration_7' => 'duration',
+                    'distance_8' => 'distance',
+                    'start_time_9' => 'startTime',
+                    'trip_started_10' => 'tripStarted',
+                    'created_at_11' => 'created_at',
+                ],
+            ],
+            'typeMappings' => [
+                2 => [
+                    'driver_id_12' => 'string',
+                ],
+            ],
+            'entityMappings' => [
+                2 => [
+                    'trip' => null,
+                ],
+            ],
+            'metaMappings' => [
+                2 => [
+                    'driver_id_12' => 'driver_id',
+                ],
+            ],
+            'columnOwnerMap' => [
+                2 => [
+                    'id_0' => 'trip',
+                    'departure_1' => 'trip',
+                    'arrival_2' => 'trip',
+                    'date_of_trip_3' => 'trip',
+                    'passengers_4' => 'trip',
+                    'trip_full_5' => 'trip',
+                    'trip_completed_6' => 'trip',
+                    'duration_7' => 'trip',
+                    'distance_8' => 'trip',
+                    'start_time_9' => 'trip',
+                    'trip_started_10' => 'trip',
+                    'created_at_11' => 'trip',
+                    'driver_id_12' => 'trip',
+                ],
+            ],
+            'declaringClasses' => [
+                2 => [
+                    'id_0' => 'App\\Entity\\Trip',
+                    'departure_1' => 'App\\Entity\\Trip',
+                    'arrival_2' => 'App\\Entity\\Trip',
+                    'date_of_trip_3' => 'App\\Entity\\Trip',
+                    'passengers_4' => 'App\\Entity\\Trip',
+                    'trip_full_5' => 'App\\Entity\\Trip',
+                    'trip_completed_6' => 'App\\Entity\\Trip',
+                    'duration_7' => 'App\\Entity\\Trip',
+                    'distance_8' => 'App\\Entity\\Trip',
+                    'start_time_9' => 'App\\Entity\\Trip',
+                    'trip_started_10' => 'App\\Entity\\Trip',
+                    'created_at_11' => 'App\\Entity\\Trip',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

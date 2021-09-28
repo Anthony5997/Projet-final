@@ -1671,6 +1671,6 @@ class __TwigTemplate_0dc4a4bdfccae8c55076d45ca4a486bfc723f9a21f65f884d51750ab58a
         </tbody>
     </table>
 {% endmacro %}
-", "@Doctrine/Collector/db.html.twig", "/home/simplon/devilbox/data/www/Projet-Final/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
+", "@Doctrine/Collector/db.html.twig", "/shared/httpd/Projet-Final/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
     }
 }
