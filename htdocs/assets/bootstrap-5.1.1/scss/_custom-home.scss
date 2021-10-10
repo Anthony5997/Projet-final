@@ -1,10 +1,13 @@
+.base-content{
+
+  padding-top: 9rem;
+}
+
 .home{
-    background: #000;
+    background: rgb(255, 255, 255);
     color: #030303;
     font-family: sans-serif;
-    background-image: url("/assets/uploads/custom-pic/roadtrip.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+  
 }
 
 .error-page{
@@ -12,69 +15,56 @@
 }
 
 .hero {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    padding: 100px 0;
-    flex-wrap: wrap;
-  }
-
-  .title {
-    font-size: 5em;
-    text-align: center;
-    width: 100%;
-    font-family: serif;
-    font-weight: bold;
-  }
-
-  .title::before {
-    content: "Beats to your rythm";
-    font-size: 10px;
-    letter-spacing: 1.8px;
-    font-weight: bold;
-    text-align: center;
-    color: #eee;
-    display: block;
-    text-transform: uppercase;
-    margin-bottom: -5px;
-  }
-
-  .button {
-    background: #ff4c54;
-    padding: 8px 9px;
-    border-radius: 10px;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 12px;
-    margin-top: 3%;
-    cursor: pointer;
-  }
-
-  i {
-    color: black;
-  }
+  // height: 100vh; /* https://mdbootstrap.com/snippets/jquery/mdbootstrap/916526#css-tab-view */
+  background-image: url("/assets/uploads/custom-pic/blablacar.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 
   .main {
-    width: 100%;
-    background: rgba(255, 255, 255, 0.35);
+    width: 80%;
+    background: rgba(255, 255, 255, 0.357);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-radius: 10px;
+    margin-top: 16rem;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+
+    form{
+      padding: 0px 20px;
+      width: 100%;
+
+      .home-search {
+        background-color: aliceblue;
+
+      }
+
+      .home-search:hover {
+        background-color: rgba(139, 139, 247, 0.748);
+        color: aliceblue;
+        transform: scale(1.01);
+        transition: 300ms;
+        
+      }
+    }
+
   }
   
   .main input {
     border: none;
-    border-bottom: 2px solid #ff4c54;
+    border-bottom: 2px solid #00477e;
     font-size: 1.4em;
-    font-weight: bold;
+    font-weight: lighter;
+    color: grey;
   }
 
   .date {
     padding: 5px;
-    font-weight: bold;
+    font-weight: normal;
     color: gray;
     border: 1px solid #828282;
   }
@@ -83,21 +73,16 @@
     margin: 5px;
   }
 
+  .page-header {
+    background-color: rgba(0, 0, 0, 0.166);
+    width: 100%;
+    height: 100%;
+  }
+
   .date span:first-of-type {
     border-right: 1px solid #828282;
   }
   
-  .go {
-    background: lightgreen;
-    padding: 10px;
-    border-radius: 50%;
-    position: absolute;
-    right: -17px;
-    transition: all 0.5s ease-in-out;
-    transform: rotate(12deg);
-    color: #eee;
-    font-size: 1.5em;
-  }
 
   .main-about{
     min-height: 100vh;
@@ -146,6 +131,10 @@
     font-size: 13px;
 }
 
+.display-1 {
+  padding-top: 5rem;
+}
+
 @media screen and (max-width:1200px){
     .inner-container{
         padding: 80px;
@@ -169,6 +158,28 @@
     .inner-container{
         padding: 60px;
     }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+
+  .page-header {
+    margin-top: 2rem;
+  }
+  #header {
+    font-size: calc(1.625rem + 4.5vw);
+  }
+  #header2 {
+    font-size: calc(1.475rem + 2.7vw);
+  }
+}
+.display-1 {
+  font-size: 6rem;
+}
+.display-4 {
+  font-size: 3.5rem;
+}
+.lead {
+  font-size: 2rem;
 }
 
 

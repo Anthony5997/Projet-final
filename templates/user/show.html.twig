@@ -25,7 +25,7 @@
                             <a class="d-flex justify-content-center align-items-center" href="{{asset ('/assets/uploads/profilePicture/default_profile_picture.jpg')}}" target="_blank"><img class="profile-picture-profile" src="{{asset ('/assets/uploads/profilePicture/default_profile_picture.jpg')}}"/></a>
                         </div>
                     {% endif %}
-                    <p class="mt-4 text-center"><i style="color: gold;"class="fas fa-star"></i>{{user.globalRating ?  user.globalRating : 'Aucune note pour l\'instant'}}</p>
+                    <p class="mt-4 text-center"><i style="color: gold;"class="fas fa-star"></i>{{user.globalRating ?  user.globalRating|round(1, 'floor') : 'Aucune note pour l\'instant'}}</p>
                 </div>
             </div>
         </div>

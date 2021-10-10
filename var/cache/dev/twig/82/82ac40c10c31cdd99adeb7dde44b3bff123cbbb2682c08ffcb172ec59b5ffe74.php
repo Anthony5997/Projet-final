@@ -90,34 +90,54 @@ class __TwigTemplate_93a4719728c36b2659256272a43424c23836accf747eb6edda27542d013
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 <div class=\"home\">
-        <div class=\"container\">
-        <div class=\"hero\">
-            <div class=\"title\">Voyager</div>
+       <div class=\"hero d-flex align-items-center justify-content-center border-bottom \">
+            <div class=\"page-header text-center\">
+                <h1 class=\"display-1 text-white fw-bold mb-0\">CarcarBla</h1>
+                <h2 class=\"fw-light display-4 mt-0 mb-5\" id=\"header2\">Voyager, rencontrer, partager !</h2>
 
-            <div class=\"button\">
-                Rechercher un trajet
-            </div>
-        </div>
-
-        <div class=\"main\">
-            <form action=\"";
-        // line 21
+                <div class=\"main\">
+                    <form action=\"";
+        // line 17
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("trip_search");
         echo "\">
-                <div class=\"form-row my-5\">
-                    <div class=\"col-md-3 col-sm-6 mt-3\">
-                    <input name=\"departureSearch\" type=\"text\" class=\"form-control\" placeholder=\"Départ\">
-                    </div>
-                    <div class=\"col-md-3 col-sm-6 mt-3\">
-                    <input name=\"arrivalSearch\" type=\"text\" class=\"form-control\" placeholder=\"Arrivé\">
-                    </div>
-                    <div class=\"col-md-3 col-sm-6 mt-3\">
-                    <input name=\"dateSearch\" type=\"date\" class=\"form-control\" placeholder=\"Arrivé\">
-                    </div>
-                    <button class=\"btn btn-info col-md-3 col-sm-6 mt-3\" type=\"submit\">Rechercher</button>
+                        <div class=\"form-row my-5\">
+                            <div class=\"col-md-3 col-sm-6 mt-3\">
+                            <input name=\"departureSearch\" type=\"text\" class=\"form-control\" placeholder=\"Départ\">
+                            </div>
+                            <div class=\"col-md-3 col-sm-6 mt-3\">
+                            <input name=\"arrivalSearch\" type=\"text\" class=\"form-control\" placeholder=\"Arrivé\">
+                            </div>
+                            <div class=\"col-md-3 col-sm-6 mt-3\">
+                            <input name=\"dateSearch\" type=\"date\" class=\"form-control\" placeholder=\"DATE\">
+                            </div>
+                            <button class=\"btn home-search col-md-3 col-sm-6 mt-3\" type=\"submit\">Rechercher</button>
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         </div>
+<div class=\"container\">
+    <div class=\"row\">
+        <div class=\"col d-flex justify-content-center\">A
+        
+        </div>
+        <div class=\"col d-flex justify-content-center \">B
+        
+        </div>
+        <div class=\"col d-flex justify-content-center \">C
+        
+        </div>
+    </div>
+</div>
+
+<div class=\"container\">
+    <div class=\"row\">
+        <div class=\"d-flex justify-content-center\">
+            <h3>Notre Objectif</h3>
+        
+        </div>
+    </div>
+</div>
         <div class=\"main-about\">
             <div class=\"about-section\">
                 <div class=\"inner-container\">
@@ -154,7 +174,7 @@ class __TwigTemplate_93a4719728c36b2659256272a43424c23836accf747eb6edda27542d013
 
     public function getDebugInfo()
     {
-        return array (  105 => 21,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  101 => 17,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -169,31 +189,51 @@ class __TwigTemplate_93a4719728c36b2659256272a43424c23836accf747eb6edda27542d013
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 <div class=\"home\">
-        <div class=\"container\">
-        <div class=\"hero\">
-            <div class=\"title\">Voyager</div>
+       <div class=\"hero d-flex align-items-center justify-content-center border-bottom \">
+            <div class=\"page-header text-center\">
+                <h1 class=\"display-1 text-white fw-bold mb-0\">CarcarBla</h1>
+                <h2 class=\"fw-light display-4 mt-0 mb-5\" id=\"header2\">Voyager, rencontrer, partager !</h2>
 
-            <div class=\"button\">
-                Rechercher un trajet
+                <div class=\"main\">
+                    <form action=\"{{path('trip_search')}}\">
+                        <div class=\"form-row my-5\">
+                            <div class=\"col-md-3 col-sm-6 mt-3\">
+                            <input name=\"departureSearch\" type=\"text\" class=\"form-control\" placeholder=\"Départ\">
+                            </div>
+                            <div class=\"col-md-3 col-sm-6 mt-3\">
+                            <input name=\"arrivalSearch\" type=\"text\" class=\"form-control\" placeholder=\"Arrivé\">
+                            </div>
+                            <div class=\"col-md-3 col-sm-6 mt-3\">
+                            <input name=\"dateSearch\" type=\"date\" class=\"form-control\" placeholder=\"DATE\">
+                            </div>
+                            <button class=\"btn home-search col-md-3 col-sm-6 mt-3\" type=\"submit\">Rechercher</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-
-        <div class=\"main\">
-            <form action=\"{{path('trip_search')}}\">
-                <div class=\"form-row my-5\">
-                    <div class=\"col-md-3 col-sm-6 mt-3\">
-                    <input name=\"departureSearch\" type=\"text\" class=\"form-control\" placeholder=\"Départ\">
-                    </div>
-                    <div class=\"col-md-3 col-sm-6 mt-3\">
-                    <input name=\"arrivalSearch\" type=\"text\" class=\"form-control\" placeholder=\"Arrivé\">
-                    </div>
-                    <div class=\"col-md-3 col-sm-6 mt-3\">
-                    <input name=\"dateSearch\" type=\"date\" class=\"form-control\" placeholder=\"Arrivé\">
-                    </div>
-                    <button class=\"btn btn-info col-md-3 col-sm-6 mt-3\" type=\"submit\">Rechercher</button>
-                </div>
-            </form>
+<div class=\"container\">
+    <div class=\"row\">
+        <div class=\"col d-flex justify-content-center\">A
+        
         </div>
+        <div class=\"col d-flex justify-content-center \">B
+        
+        </div>
+        <div class=\"col d-flex justify-content-center \">C
+        
+        </div>
+    </div>
+</div>
+
+<div class=\"container\">
+    <div class=\"row\">
+        <div class=\"d-flex justify-content-center\">
+            <h3>Notre Objectif</h3>
+        
+        </div>
+    </div>
+</div>
         <div class=\"main-about\">
             <div class=\"about-section\">
                 <div class=\"inner-container\">

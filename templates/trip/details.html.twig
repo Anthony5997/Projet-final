@@ -55,7 +55,7 @@
                   <span class="custom-separator"></span>
                   </div>
                   <div class="row card-detail-profile">
-                    <a href="{{path('user_view_profile', {'id': trip.driver.id})}}">
+                    <a href="{{path('user_show', {'id': trip.driver.id})}}">
                     <div class="row">
                       <div class="col">
                         <img class="img-card"src="{{asset('assets/uploads/profilePicture/') ~ trip.driver.profile_picture}}"/>
@@ -63,7 +63,7 @@
                         <div class="col d-flex  flex-column justify-content-center">
                           <p class="font-control">{{trip.driver.firstName}}</p>
                           {% if trip.driver.globalRating %}
-                              <p class="font-control"><i class="fas fa-star"></i>{{trip.driver.globalRating}}</p>
+                              <p class="font-control"><i style="color: gold;" class="fas fa-star"></i>{{trip.driver.globalRating|round(1, 'floor')}}</p>
                           {% else %}
                               <p class="font-control-rating"><i class="fas fa-star"></i> Pas de note</p>
                           {% endif %}
@@ -146,7 +146,7 @@
                         <h4 class="text-center mt-3 mb-3">Déjà à bord </h4>
                         {% for booker in bookers %}
                         <div class="row card-detail-profile">
-                        <a class="d-flex" href="{{path('user_view_profile', {'id':  booker.user.id})}}" >
+                        <a class="d-flex" href="{{path('user_show', {'id':  booker.user.id})}}" >
                                 <div class="col d-flex  flex-column justify-content-center">
                                 <p class="font-control"> {{ booker.user.firstName}}</p>
                             </div>

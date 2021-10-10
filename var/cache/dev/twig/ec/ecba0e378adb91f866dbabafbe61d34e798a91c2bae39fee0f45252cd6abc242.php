@@ -89,7 +89,7 @@ class __TwigTemplate_4e169d7155bfcd58ac170e8e988238415172b114660ee15b6519b228b25
     <div class=\"row search-section\">
     <div class=\"col-8 mt-5\">
         <form>
-            <div class=\"form-row\">
+            <div class=\"form-row\" style=\"z-index: 30;\">
              <div class=\"col-12 mt-3\">
                 <h2 class=\"text-center my-5\" >Rechercher un trajet</h2>
              </div>
@@ -103,14 +103,14 @@ class __TwigTemplate_4e169d7155bfcd58ac170e8e988238415172b114660ee15b6519b228b25
                 <input name=\"dateSearch\" type=\"date\" class=\"form-control\" placeholder=\"Arrivé\">
                 </div>
                  <div class=\"col-md-3 col-sm-6\">
-                    <button class=\"mt-3 button-search\" type=\"submit\"><i style=\"font-weight: 400; font-size: 28px;\"class=\"text-white fas fa-search-location\"></i></button>
+                    <button class=\"mt-3 button-search col-12\" type=\"submit\"><i style=\"font-weight: 400; font-size: 28px;\"class=\"text-white fas fa-search-location\"></i></button>
                 </div>
             </div>
-            </form>
+        </form>
     </div>
     <div class=\"col-3\">
-          <div class=\" d-flex justify-content-center\">
-            <img class=\"\"src=\"";
+          <div class=\"d-flex justify-content-center div-test-search\">
+            <img style=\"z-index: 5;\" src=\"";
         // line 31
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/uploads/custom-pic/search.png"), "html", null, true);
         echo "\">
@@ -154,7 +154,7 @@ class __TwigTemplate_4e169d7155bfcd58ac170e8e988238415172b114660ee15b6519b228b25
     <div class=\"row search-section\">
     <div class=\"col-8 mt-5\">
         <form>
-            <div class=\"form-row\">
+            <div class=\"form-row\" style=\"z-index: 30;\">
              <div class=\"col-12 mt-3\">
                 <h2 class=\"text-center my-5\" >Rechercher un trajet</h2>
              </div>
@@ -168,14 +168,14 @@ class __TwigTemplate_4e169d7155bfcd58ac170e8e988238415172b114660ee15b6519b228b25
                 <input name=\"dateSearch\" type=\"date\" class=\"form-control\" placeholder=\"Arrivé\">
                 </div>
                  <div class=\"col-md-3 col-sm-6\">
-                    <button class=\"mt-3 button-search\" type=\"submit\"><i style=\"font-weight: 400; font-size: 28px;\"class=\"text-white fas fa-search-location\"></i></button>
+                    <button class=\"mt-3 button-search col-12\" type=\"submit\"><i style=\"font-weight: 400; font-size: 28px;\"class=\"text-white fas fa-search-location\"></i></button>
                 </div>
             </div>
-            </form>
+        </form>
     </div>
     <div class=\"col-3\">
-          <div class=\" d-flex justify-content-center\">
-            <img class=\"\"src=\"{{asset('assets/uploads/custom-pic/search.png')}}\">
+          <div class=\"d-flex justify-content-center div-test-search\">
+            <img style=\"z-index: 5;\" src=\"{{asset('assets/uploads/custom-pic/search.png')}}\">
         </div>
     </div>
     </div>
