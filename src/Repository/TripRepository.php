@@ -24,6 +24,17 @@ class TripRepository extends ServiceEntityRepository
     //  * @return Trip[] Returns an array of Trip objects
     //  */
 
+    public function findLastTrip(){
+        
+        return $this->createQueryBuilder('trip')
+        ->orderBy('trip.startTime', 'ASC')
+        ->setMaxResults(3)
+        ->getQuery()
+        ->getResult()
+    ;
+
+    }
+
     public function findOnTripWithDate($arrival, $departure, $date)
     {
         return $this->createQueryBuilder('trip')

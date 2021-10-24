@@ -5793,6 +5793,12 @@
         <argument key="booking" type="service_closure" id=".errored..service_locator.v3bldx6.App\Entity\Booking"/>
       </argument>
     </service>
+    <service id=".service_locator.PFPujJk" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="tripRepository" type="service_closure" id="App\Repository\TripRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.ClO9SG7" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5866,12 +5872,6 @@
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="travelPreference" type="service_closure" id=".errored..service_locator.JUZyQIf.App\Entity\TravelPreferences"/>
-      </argument>
-    </service>
-    <service id=".service_locator.PFPujJk" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="tripRepository" type="service_closure" id="App\Repository\TripRepository"/>
       </argument>
     </service>
     <service id=".service_locator.ndWfguk" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -5954,7 +5954,7 @@
         <argument key="vehicule" type="service_closure" id=".errored..service_locator.0J1782j.App\Entity\Vehicule"/>
       </argument>
     </service>
-    <service id=".service_locator.zQtyOKS" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.VvIJ_AO" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AdminController::index" type="service_closure" id=".service_locator.npyimLp"/>
@@ -5962,6 +5962,7 @@
         <argument key="App\Controller\BookingController::delete" type="service_closure" id=".service_locator.v3bldx6"/>
         <argument key="App\Controller\BookingController::index" type="service_closure" id=".service_locator.ENco2Qi"/>
         <argument key="App\Controller\BookingController::new" type="service_closure" id=".service_locator.DpceKts"/>
+        <argument key="App\Controller\HomeController::index" type="service_closure" id=".service_locator.PFPujJk"/>
         <argument key="App\Controller\MessageController::delete" type="service_closure" id=".service_locator.N8sf8v1"/>
         <argument key="App\Controller\MessageController::detail" type="service_closure" id=".service_locator.8omtK4t"/>
         <argument key="App\Controller\MessageController::edit" type="service_closure" id=".service_locator.N8sf8v1"/>
@@ -6012,6 +6013,7 @@
         <argument key="App\Controller\BookingController:delete" type="service_closure" id=".service_locator.v3bldx6"/>
         <argument key="App\Controller\BookingController:index" type="service_closure" id=".service_locator.ENco2Qi"/>
         <argument key="App\Controller\BookingController:new" type="service_closure" id=".service_locator.DpceKts"/>
+        <argument key="App\Controller\HomeController:index" type="service_closure" id=".service_locator.PFPujJk"/>
         <argument key="App\Controller\MessageController:delete" type="service_closure" id=".service_locator.N8sf8v1"/>
         <argument key="App\Controller\MessageController:detail" type="service_closure" id=".service_locator.8omtK4t"/>
         <argument key="App\Controller\MessageController:edit" type="service_closure" id=".service_locator.N8sf8v1"/>
@@ -6609,12 +6611,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.zQtyOKS"/>
+      <argument type="service" id=".service_locator.VvIJ_AO"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.zQtyOKS"/>
+      <argument type="service" id=".service_locator.VvIJ_AO"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -7047,7 +7049,7 @@
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.Kbr2i2X" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.zQtyOKS"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.VvIJ_AO"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

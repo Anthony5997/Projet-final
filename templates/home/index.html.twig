@@ -3,12 +3,12 @@
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-<div class="home">
-       <div class="hero d-flex align-items-center justify-content-center border-bottom ">
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    </style>
+    <div class="home">
+        <div class="hero d-flex align-items-center justify-content-center border-bottom ">
             <div class="page-header text-center">
                 <h1 class="display-1 text-white fw-bold mb-0">CarcarBla</h1>
                 <h2 class="fw-light display-4 mt-0 mb-5" id="header2">Voyager, rencontrer, partager !</h2>
@@ -31,28 +31,40 @@
                 </div>
             </div>
         </div>
-<div class="container">
-    <div class="row">
-        <div class="col d-flex justify-content-center">A
-        
+         <div class="container mt-5">
+            <div class="row">
+                <div class="d-flex justify-content-center">
+                    <h3>Nos Objectifs</h3>
+                </div>
+            </div>
         </div>
-        <div class="col d-flex justify-content-center ">B
-        
+        <div class="container mb-5">
+            <div class="row">
+                <div class="col d-flex flex-column justify-content-center">
+                    <i class="fas fa-road align-self-center mt-4 py-4"></i> 
+                    <h4>Vos trajets préférés à petits prix</h4>
+                    <p>
+                        Où que vous alliez, en bus ou en covoiturage, trouvez le trajet idéal parmi notre large choix de         destinations à petits prix.
+                    </p>
+                </div>
+                <div class="col d-flex flex-column justify-content-center ">
+                    <i class="fas fa-road align-self-center mt-4 py-4"></i> 
+                    <h4>Vos trajets préférés à petits prix</h4>
+                    <p>
+                        Où que vous alliez, en bus ou en covoiturage, trouvez le trajet idéal parmi notre large choix de         destinations à petits prix.
+                    </p>
+                </div>
+                <div class="col d-flex flex-column justify-content-center">
+                <i class="fas fa-road align-self-center mt-4 py-4"></i> 
+                    <h4>Vos trajets préférés à petits prix</h4>
+                    <p>
+                        Où que vous alliez, en bus ou en covoiturage, trouvez le trajet idéal parmi notre large choix de         destinations à petits prix.
+                    </p>
+                </div>
+                </div>
+                </div>
+            </div>
         </div>
-        <div class="col d-flex justify-content-center ">C
-        
-        </div>
-    </div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="d-flex justify-content-center">
-            <h3>Notre Objectif</h3>
-        
-        </div>
-    </div>
-</div>
         <div class="main-about">
             <div class="about-section">
                 <div class="inner-container">
@@ -66,6 +78,98 @@
                 </div>
             </div>
         </div>
-</div>
+        <h2 class="text-center my-3">Les derniers trajets publier</h2>
+           <div class="p-3">
+                <div class="row justify-content-center">
+                    {% for trip in tripList %}
+                        <div class="col-10 col-md-4 ">
+                            {% if trip.tripFull %}
+                                <div class="card-custom-found disabled w-100">
+                                    <a class="global-card-found " href="">
+                                {% elseif trip.tripStarted == true and trip.tripCompleted == false %}
+                                <div class="card-custom-found disabled w-100">
+                                    <a class="global-card-found " href="">
+                                {% elseif trip.tripStarted == true and trip.tripCompleted == true %}
+                                <div class="card-custom-found disabled w-100">
+                                    <a class="global-card-found " href="">
+                                {% else %}
+                                <div class="card-custom-found w-100">
+                                    <a class="global-card-found" href="{{path('trip_details', {'id': trip.id})}}">
+                                {% endif %}
+                                    <div class="plan-found p-0">
+                                        <div class="timeline">
+                                            {% if trip.tripFull == true and trip.tripStarted == false %}
+                                                <div class="d-flex justify-content-end"><h4>Complet</h4></div>
+                                                {% elseif trip.tripStarted == true and trip.tripCompleted == false %}
+                                                <div class="d-flex justify-content-end"><h4>Trajet en cours</h4></div>
+                                                {% elseif trip.tripStarted == true and trip.tripCompleted == true %}
+                                                <div class="d-flex justify-content-end"><h4>Terminé</h4></div>
+                                                {% else %}
+                                            {% endif %}
+                                            <div class="d-flex justify-content-end"><p>{{trip.tripFull ? "Complet" : trip.duration}}</p></div>
+                                            <div class="row">
+                                                <div class="col-3 d-flex align-items-end flex-column justify-content-around p-3">
+                                                    <p><strong>{{trip.startTime|date('H:i')}}</strong></p>
+                                                    <p class="d-flex justify-content-center font-control">{{trip.distance}} </p>
+                                                    {% set hour = trip.duration|replace({'heure':'hour'})%}
+                                                    <p class="pt-3"><strong>{{ trip.startTime|date_modify("+" ~ hour)|date('H:i') }}</strong></p>
+                                                </div>
+                                                <div class="col-9">
+                                                    <div class="line">
+                                                        <div class="line-content">
+                                                            <div class="content">
+                                                                <h1>{{trip.departure}}</h1>
+                                                            </div>
+                                                            <div class="content">
+                                                                <h1> {{trip.arrival}}</h1>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                            <span class="custom-separator"></span>
+                                        <div class="row card-found-profile">                                  
+                                            <div class="col d-flex justify-content-start align-items-center font-control fas fa-chevron-right"></div>
+                                            
+                                            <div class="col d-flex align-items-center flex-column justify-content-center "><p class="mt-2">Places restantes : </p><strong>{{trip.passengers}}</strong><i class="fas fa-user-friends"></i></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+    </div>
+    <div class="" style="margin-top: 10rem;">
+    
+    </div>
+      <footer class="footer">
+
+    <ul class="social-icon">
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a></li>
+    </ul>
+    <ul class="menu">
+      <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+
+    </ul>
+    <p>&copy;2021 Anthony RITA | All Rights Reserved</p>
+  </footer>
 
 {% endblock %}
