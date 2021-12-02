@@ -110,7 +110,7 @@ class __TwigTemplate_4e169d7155bfcd58ac170e8e988238415172b114660ee15b6519b228b25
     </div>
     <div class=\"col-3\">
           <div class=\"d-flex justify-content-center div-test-search\">
-            <img style=\"z-index: 5;\" src=\"";
+            <img style=\"z-index: 5; width: 100%; padding-top:100px;\" src=\"";
         // line 31
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/uploads/custom-pic/search.png"), "html", null, true);
         echo "\">
@@ -175,7 +175,7 @@ class __TwigTemplate_4e169d7155bfcd58ac170e8e988238415172b114660ee15b6519b228b25
     </div>
     <div class=\"col-3\">
           <div class=\"d-flex justify-content-center div-test-search\">
-            <img style=\"z-index: 5;\" src=\"{{asset('assets/uploads/custom-pic/search.png')}}\">
+            <img style=\"z-index: 5; width: 100%; padding-top:100px;\" src=\"{{asset('assets/uploads/custom-pic/search.png')}}\">
         </div>
     </div>
     </div>

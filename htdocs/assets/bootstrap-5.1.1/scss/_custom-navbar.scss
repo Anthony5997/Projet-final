@@ -1,4 +1,3 @@
-
 // *{
 //     margin:0; padding:0;
 //     box-sizing: border-box;
@@ -17,59 +16,53 @@
 // }
 
 
-header{
+header {
 
     text-decoration: none;
     text-transform: capitalize;
-    transition: .2s linear;
+    transition: 0.2s linear;
     width: 100%;
     position: fixed;
-    background:#fff;
+    background: #fff;
     padding: 1.2rem 6% 2% 5%;
     display: flex;
     justify-content: space-between;
-   
-    z-index: 1000;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
-}
 
-header .navbar{
+    z-index: 1000;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .1);
+}
+header .navbar {
     position: absolute;
     width: 30%;
     top: 100%;
-    
+
     right: 0;
     background: #eee;
     border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
     display: none;
-    padding-top: 0.2rem!important;
-    padding-bottom: 0.2rem!important;
-    
-    
-}
+    padding-top: 0.2rem !important;
+    padding-bottom: 0.2rem !important;
 
-header .logo{
+
+}
+header .logo {
     font-size: 2.5rem;
-    color:#333;
+    color: #333;
     font-weight: bolder;
     text-decoration: none;
-    
-    .logo-navbar{
+    .logo-navbar {
         width: 25%;
     }
 }
-
-
-
-header .logo span{
-    color:var(--mainColor);
+header .logo span {
+    color: var(--mainColor);
+    font-family: 'Courier New', Courier, monospace;
 }
-
-header .navbar a{
+header .navbar a {
     font-size: 0.8rem;
     text-decoration: none;
-    color:#666;
-    margin: 1rem;
+    color: #666;
+    margin: 0.5rem;
     padding: 0.7rem;
     background: #fff;
     border: 0.1rem solid rgba(0, 0, 0, 0.1);
@@ -77,17 +70,17 @@ header .navbar a{
     border-radius: 8px;
 }
 
-header .navbar a:hover{
+header .navbar a:hover {
     margin-left: -0.7rem;
 }
 
-header .icons{
+header .icons {
 
     display: flex;
     justify-content: flex-end;
 }
 
-.label-right-icon{
+.label-right-icon {
     display: flex;
     align-self: center;
     font-size: 3rem;
@@ -95,7 +88,7 @@ header .icons{
     margin-left: 10px;
 }
 
-header .icons .icon-custom{
+header .icons .icon-custom {
     font-size: 3rem;
     color: #333;
     margin-left: 1.5rem;
@@ -107,50 +100,50 @@ header .icons .icon-custom{
 
 }
 
-header .icons a:hover{
-    color:var(--mainColor);
+header .icons a:hover {
+    color: var(--mainColor);
 }
 
-header #toggler{
+header #toggler {
     display: none;
 }
-header.active{
-    padding: 0.2rem 3% 0% 1%;
+header.active {
+    padding: 0.2rem 3% 0 1%;
     justify-content: space-between;
 }
 
-header .fa-angle-right{
+header .fa-angle-right {
     font-size: 3rem;
-    color:#333;
-    border-radius: .5rem;
-    padding:.5rem 1.5rem;
+    color: #333;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1.5rem;
     cursor: pointer;
 
     display: none;
-   
- 
+
+
 }
 
-header .fa-user{
+header .fa-user {
     font-size: 3rem;
-    color:#333;
-    border-radius: .5rem;
+    color: #333;
+    border-radius: 0.5rem;
     cursor: pointer;
 
     display: none;
 }
 
-.fa-times{
+.fa-times {
     transform: rotate(90deg);
-    transition: .2s linear;
+    transition: 0.2s linear;
 }
 
-.user-icon-profile{
+.user-icon-profile {
     display: contents;
     width: 15%;
 }
 
-.navbar-profile-picture{
+.navbar-profile-picture {
     width: 10%;
     border-radius: 50%;
     border: 1px rgba(128, 128, 128, 0.261) solid;
@@ -158,116 +151,113 @@ header .fa-user{
     margin-left: 20px;
 }
 
-.navbar{
+.navbar {
     padding: 0.5rem 0.1rem;
     border-radius: 5px;
 }
 
 
 /* media queries  */
-@media (max-width:991px){
-    
-    html{
+@media(max-width:991px) {
+
+    html {
         font-size: 55%;
     }
 
-    header{
-        padding:2rem;
+    header {
+        padding: 2rem;
     }
 
-    .navbar-profile-picture{
+    .navbar-profile-picture {
         width: 10%;
         margin-left: 15px;
-
     }
-    
-
-
 }
 
 
-@media (min-width:768px){
+@media(min-width:768px) {
 
-    header .fa-arrow-down{
+    header .fa-arrow-down {
         display: block;
     }
 
-    header #toggler:checked ~ .navbar{
-        clip-path:polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    header #toggler:checked ~ .navbar {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
         display: block;
     }
 
 }
 
-@media (max-width:768px){
+@media(max-width:768px) {
 
-    header{
-
+    header {
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
 
-    header .fa-arrow-down{
+    header .fa-arrow-down {
         display: none;
     }
 
 
-    header .fa-user{
+    header .fa-user {
         display: block;
     }
 
-    header .fa-angle-right{
+    header .fa-angle-right {
         display: block;
     }
 
-    header .navbar{
+    header .navbar {
         display: block;
-        position:absolute;
+        position: absolute;
         width: 50%;
         left: 0;
         right: 0;
-        top:100%; left:0; right:0;
-        background:#eee;
-        border-top: .1rem solid rgba(0,0,0,.1);
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #eee;
+        border-top: 0.1rem solid rgba(0, 0, 0, .1);
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-        
+
     }
 
-    header #toggler:checked ~ .navbar{
-        clip-path:polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    header #toggler:checked ~ .navbar {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     }
 
-    header .navbar a{
-        margin:1rem;
-        padding:1rem;
-        background:#fff;
-        border:.1rem solid rgba(0,0,0,.1);
+    header .navbar a {
+        margin: 1rem;
+        padding: 1rem;
+        background: #fff;
+        border: 0.1rem solid rgba(0, 0, 0, .1);
         display: block;
         font-size: 0.9rem;
     }
 
-    .icons{
+    .icons {
 
-    .user-icon-profile{
-        display: none;
+        .user-icon-profile {
+            display: none;
+        }
+
+        .fa-user-plus {
+            display: none;
+        }
+
+        .navbar-profile-picture {
+            display: none;
+        }
     }
 
-    .fa-user-plus{
-        display: none;
-    }
 
-    .navbar-profile-picture{
-        display: none;
-    }
 }
 
+@media(max-width:450px) {
 
-}
-
-@media (max-width:450px){
-    
-    html{
+    html {
         font-size: 50%;
     }
 }
