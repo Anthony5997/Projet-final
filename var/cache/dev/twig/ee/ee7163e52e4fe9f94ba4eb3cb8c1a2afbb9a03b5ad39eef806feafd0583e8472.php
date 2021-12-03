@@ -265,18 +265,20 @@ class __TwigTemplate_564d9db4a8728797de8d48a9587a8e831b0203c9c84338c8efb2199f550
             </div>
             <div class=\"tab-pane\" id=\"tabs-2\" role=\"tabpanel\">
                 <div class=\"container profile-section\">
-                        <h3>Informations Personnelle</h3>
-                    ";
-        // line 107
+                    <div >
+                        <h3 class=\"my-4 text-center\">Informations Personnelle</h3>
+                        ";
+        // line 108
         echo twig_include($this->env, $context, "user/_form.html.twig");
         echo "
+                    </div>
                 </div>
             </div>
             <div class=\"tab-pane\" id=\"tabs-3\" role=\"tabpanel\">
                 <div class=\"container profile-section\">
-                <h3>Mes préférences</h3>
+                <h3 class=\"text-center\">Mes préférences de voyage</h3>
                     ";
-        // line 113
+        // line 115
         echo twig_include($this->env, $context, "travel_preferences/_form.html.twig");
         echo "
                 </div>
@@ -285,7 +287,7 @@ class __TwigTemplate_564d9db4a8728797de8d48a9587a8e831b0203c9c84338c8efb2199f550
                 <div class=\"container profile-section\">
                 <h3>Mon véhicule</h3>
                  ";
-        // line 119
+        // line 121
         echo twig_include($this->env, $context, "vehicule/_form.html.twig");
         echo "
                 </div>
@@ -294,14 +296,11 @@ class __TwigTemplate_564d9db4a8728797de8d48a9587a8e831b0203c9c84338c8efb2199f550
                 <div class=\"container profile-section\">
                 <h3 class=\"col d-flex justify-content-center\">Mes trajets</h3>
                 <div class=\"row\">
-                    ";
-        // line 127
-        echo "                    <div class=\"col d-flex justify-content-center\">Trajet</div>
+                    <div class=\"col d-flex justify-content-center\">Trajet</div>
                     <div class=\"col d-flex justify-content-around\">Date</div>
                     <div class=\"col d-flex justify-content-center\">Status</div>
                     <div class=\"col d-flex justify-content-center\">Détails</div>
                 </div>
-
           
             ";
         // line 134
@@ -310,44 +309,43 @@ class __TwigTemplate_564d9db4a8728797de8d48a9587a8e831b0203c9c84338c8efb2199f550
         foreach ($context['_seq'] as $context["_key"] => $context["trip"]) {
             // line 135
             echo "                <div class=\"row mt-4 line-trip-profile\">
-                    ";
-            // line 137
-            echo "                    <div class=\"col d-flex justify-content-center\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "departure", [], "any", false, false, false, 137), "html", null, true);
+                    <div class=\"col d-flex justify-content-center\">";
+            // line 136
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "departure", [], "any", false, false, false, 136), "html", null, true);
             echo " -> ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "arrival", [], "any", false, false, false, 137), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "arrival", [], "any", false, false, false, 136), "html", null, true);
             echo "</div>
                     <div class=\"col d-flex justify-content-center\">";
-            // line 138
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "dateOfTrip", [], "any", false, false, false, 138), "d M"), "html", null, true);
+            // line 137
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "dateOfTrip", [], "any", false, false, false, 137), "d M"), "html", null, true);
             echo "</div>
                     ";
-            // line 139
-            if (((0 !== twig_compare(twig_get_attribute($this->env, $this->source, $context["trip"], "tripStarted", [], "any", false, false, false, 139), true)) && (0 !== twig_compare(twig_get_attribute($this->env, $this->source, $context["trip"], "tripCompleted", [], "any", false, false, false, 139), true)))) {
-                // line 140
+            // line 138
+            if (((0 !== twig_compare(twig_get_attribute($this->env, $this->source, $context["trip"], "tripStarted", [], "any", false, false, false, 138), true)) && (0 !== twig_compare(twig_get_attribute($this->env, $this->source, $context["trip"], "tripCompleted", [], "any", false, false, false, 138), true)))) {
+                // line 139
                 echo "                        <div class=\"col d-flex flex-column align-items-center\"><a href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("trip_start", ["id" => twig_get_attribute($this->env, $this->source, $context["trip"], "id", [], "any", false, false, false, 140)]), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("trip_start", ["id" => twig_get_attribute($this->env, $this->source, $context["trip"], "id", [], "any", false, false, false, 139)]), "html", null, true);
                 echo "\" onclick=\"return prompt('Voulez vous commencer le trajet ? Taper \\'Oui\\' pour commencer') == 'Oui'\" href=\"\" class=\"btn btn-primary\">Commencer</a></div>
                     ";
-            } elseif ((0 === twig_compare(twig_get_attribute($this->env, $this->source,             // line 141
-$context["trip"], "tripCompleted", [], "any", false, false, false, 141), true))) {
-                // line 142
+            } elseif ((0 === twig_compare(twig_get_attribute($this->env, $this->source,             // line 140
+$context["trip"], "tripCompleted", [], "any", false, false, false, 140), true))) {
+                // line 141
                 echo "                        <div class=\"col d-flex flex-column align-items-center\"><a class=\"btn btn-success\">Trajet terminé</a></div>
                     ";
             } else {
-                // line 144
+                // line 143
                 echo "                        <div class=\"col d-flex flex-column align-items-center\">
                         <div class=\"row d-flex \">Trajet en cours</div><a href=\"";
-                // line 145
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("trip_finish", ["id" => twig_get_attribute($this->env, $this->source, $context["trip"], "id", [], "any", false, false, false, 145)]), "html", null, true);
+                // line 144
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("trip_finish", ["id" => twig_get_attribute($this->env, $this->source, $context["trip"], "id", [], "any", false, false, false, 144)]), "html", null, true);
                 echo "\" class=\"btn btn-info\">Terminer le trajet</a></div>
                     ";
             }
-            // line 147
+            // line 146
             echo "                    <div class=\"col d-flex  justify-content-center align-items-center\">
                         <a href=\"";
-            // line 148
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("trip_details", ["id" => twig_get_attribute($this->env, $this->source, $context["trip"], "id", [], "any", false, false, false, 148)]), "html", null, true);
+            // line 147
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("trip_details", ["id" => twig_get_attribute($this->env, $this->source, $context["trip"], "id", [], "any", false, false, false, 147)]), "html", null, true);
             echo "\" class=\"btn btn-rich-black\"><i class=\"far fa-eye\"></i></a></div>
                     </div>
                 ";
@@ -355,7 +353,7 @@ $context["trip"], "tripCompleted", [], "any", false, false, false, 141), true)))
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['trip'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 151
+        // line 150
         echo "             
             </div>
             </div>
@@ -364,15 +362,15 @@ $context["trip"], "tripCompleted", [], "any", false, false, false, 141), true)))
                 <h3>Mon compte</h3>
                     <div class=\"col-xs-12 col-sm-6 col-md-6 col-md-offset-4\">
                         ";
-        // line 158
+        // line 157
         echo twig_include($this->env, $context, "user/_form-reset.html.twig");
         echo "
                         <a href=\"";
-        // line 159
+        // line 158
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("logout");
         echo "\" class=\"btn btn-danger mb-4\"><i class=\"fas fa-sign-out-alt\"></i> Me déconnecter</a>
                         ";
-        // line 160
+        // line 159
         echo twig_include($this->env, $context, "user/_delete_form.html.twig");
         echo "
                     </div>
@@ -380,10 +378,7 @@ $context["trip"], "tripCompleted", [], "any", false, false, false, 141), true)))
                 </div>
             </div>
         </div>
-</div>
-
-   
-
+</div> 
 
 ";
         
@@ -406,7 +401,7 @@ $context["trip"], "tripCompleted", [], "any", false, false, false, 141), true)))
 
     public function getDebugInfo()
     {
-        return array (  376 => 160,  372 => 159,  368 => 158,  359 => 151,  350 => 148,  347 => 147,  342 => 145,  339 => 144,  335 => 142,  333 => 141,  328 => 140,  326 => 139,  322 => 138,  315 => 137,  312 => 135,  308 => 134,  299 => 127,  289 => 119,  280 => 113,  271 => 107,  253 => 94,  247 => 91,  243 => 90,  239 => 89,  227 => 80,  222 => 78,  217 => 76,  212 => 74,  207 => 72,  194 => 61,  186 => 58,  183 => 57,  175 => 54,  172 => 53,  170 => 52,  162 => 47,  157 => 45,  153 => 44,  124 => 17,  115 => 14,  112 => 13,  107 => 12,  98 => 9,  95 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  374 => 159,  370 => 158,  366 => 157,  357 => 150,  348 => 147,  345 => 146,  340 => 144,  337 => 143,  333 => 141,  331 => 140,  326 => 139,  324 => 138,  320 => 137,  314 => 136,  311 => 135,  307 => 134,  291 => 121,  282 => 115,  272 => 108,  253 => 94,  247 => 91,  243 => 90,  239 => 89,  227 => 80,  222 => 78,  217 => 76,  212 => 74,  207 => 72,  194 => 61,  186 => 58,  183 => 57,  175 => 54,  172 => 53,  170 => 52,  162 => 47,  157 => 45,  153 => 44,  124 => 17,  115 => 14,  112 => 13,  107 => 12,  98 => 9,  95 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -516,13 +511,15 @@ $context["trip"], "tripCompleted", [], "any", false, false, false, 141), true)))
             </div>
             <div class=\"tab-pane\" id=\"tabs-2\" role=\"tabpanel\">
                 <div class=\"container profile-section\">
-                        <h3>Informations Personnelle</h3>
-                    {{ include('user/_form.html.twig') }}
+                    <div >
+                        <h3 class=\"my-4 text-center\">Informations Personnelle</h3>
+                        {{ include('user/_form.html.twig') }}
+                    </div>
                 </div>
             </div>
             <div class=\"tab-pane\" id=\"tabs-3\" role=\"tabpanel\">
                 <div class=\"container profile-section\">
-                <h3>Mes préférences</h3>
+                <h3 class=\"text-center\">Mes préférences de voyage</h3>
                     {{ include('travel_preferences/_form.html.twig') }}
                 </div>
             </div>
@@ -536,17 +533,14 @@ $context["trip"], "tripCompleted", [], "any", false, false, false, 141), true)))
                 <div class=\"container profile-section\">
                 <h3 class=\"col d-flex justify-content-center\">Mes trajets</h3>
                 <div class=\"row\">
-                    {# <div class=\"col d-flex justify-content-center\">Identifiant</div> #}
                     <div class=\"col d-flex justify-content-center\">Trajet</div>
                     <div class=\"col d-flex justify-content-around\">Date</div>
                     <div class=\"col d-flex justify-content-center\">Status</div>
                     <div class=\"col d-flex justify-content-center\">Détails</div>
                 </div>
-
           
             {% for trip in trips %}
                 <div class=\"row mt-4 line-trip-profile\">
-                    {# <div class=\"col\">{{trip.id}}</div> #}
                     <div class=\"col d-flex justify-content-center\">{{trip.departure}} -> {{trip.arrival}}</div>
                     <div class=\"col d-flex justify-content-center\">{{trip.dateOfTrip|date(\"d M\")}}</div>
                     {% if trip.tripStarted != true and trip.tripCompleted != true %}
@@ -576,10 +570,7 @@ $context["trip"], "tripCompleted", [], "any", false, false, false, 141), true)))
                 </div>
             </div>
         </div>
-</div>
-
-   
-
+</div> 
 
 {% endblock %}", "user/edit.html.twig", "/shared/httpd/Projet-Final/templates/user/edit.html.twig");
     }

@@ -68,7 +68,7 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
         // line 26
         echo "        <header>
             <input type=\"checkbox\" name=\"\" id=\"toggler\">
-            <span class=\"d-flex\"><label class=\"far fa-user\"></label><label for=\"toggler\" class=\"far fa-angle-right\"></label></span>
+            <span class=\"d-flex\"><label class=\"far fa-user\"></label><label for=\"toggler\" class=\"fas fa-angle-right\"></label></span>
             <div class=\"titleHeader d-flex\">
                 <a href=\"";
         // line 30
@@ -155,7 +155,7 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
                 <img class=\"navbar-profile-picture\" src=\"";
             // line 56
             echo twig_escape_filter($this->env, ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/uploads/profilePicture/") . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 56, $this->source); })()), "user", [], "any", false, false, false, 56), "profile_picture", [], "any", false, false, false, 56)), "html", null, true);
-            echo "\"/><label class=\"label-right-icon\" for=\"toggler\"><i class=\"fas fa-arrow-down\"></i></label>
+            echo "\"/><label class=\"label-right-icon\" for=\"toggler\"><i class=\"fas fa-bars\"></i></label>
                 <a class=\"user-icon-profile\" href=\"";
             // line 57
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_edit", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 57, $this->source); })()), "user", [], "any", false, false, false, 57), "id", [], "any", false, false, false, 57)]), "html", null, true);
@@ -410,7 +410,7 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
         {# {{dump(app.user)}} #}
         <header>
             <input type=\"checkbox\" name=\"\" id=\"toggler\">
-            <span class=\"d-flex\"><label class=\"far fa-user\"></label><label for=\"toggler\" class=\"far fa-angle-right\"></label></span>
+            <span class=\"d-flex\"><label class=\"far fa-user\"></label><label for=\"toggler\" class=\"fas fa-angle-right\"></label></span>
             <div class=\"titleHeader d-flex\">
                 <a href=\"{{path('home')}}\" class=\"logo d-flex justify-content-center\"><img  class=\"logo-navbar\" src=\"{{asset('assets/uploads/custom-pic/logotest.webp')}}\"/></a>
             </div>
@@ -438,7 +438,7 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
                 <a class=\"icon-custom far fa-plus-circle\" href=\"{{path('trip_new')}}\"></a>
             {% if app.user != null %}
               <input type=\"checkbox\" name=\"\" id=\"toggler\">
-                <img class=\"navbar-profile-picture\" src=\"{{asset('assets/uploads/profilePicture/') ~ app.user.profile_picture}}\"/><label class=\"label-right-icon\" for=\"toggler\"><i class=\"fas fa-arrow-down\"></i></label>
+                <img class=\"navbar-profile-picture\" src=\"{{asset('assets/uploads/profilePicture/') ~ app.user.profile_picture}}\"/><label class=\"label-right-icon\" for=\"toggler\"><i class=\"fas fa-bars\"></i></label>
                 <a class=\"user-icon-profile\" href=\"{{ path ('user_edit', {'id': app.user.id})}}\"></a>
                 {% else %}
                 <input type=\"checkbox\" name=\"\" id=\"toggler\">

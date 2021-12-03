@@ -70,7 +70,7 @@ class UserType extends AbstractType
             //     'choice_label' => 'type',
             // ])
             ->add('id_card_file', FileType::class, [
-                'label' => 'id card file',
+                'label' => 'Cliquer pour ajouter une carte',
 
                 // unmapped means that this field is not associated to any entity property
                 'mapped' => false,

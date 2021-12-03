@@ -42,12 +42,12 @@ class __TwigTemplate_13636a7fb029de0233df1a9764891f00810b3bb0acf8b7407cac69bd5b7
         // line 1
         echo " <section class=\"section-padding\">
                 <div class=\"container\">  
-                  <div class=\"row\">
+                  <div class=\"row justify-content-center\">
                       ";
         // line 4
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["userPref"]) || array_key_exists("userPref", $context) ? $context["userPref"] : (function () { throw new RuntimeError('Variable "userPref" does not exist.', 4, $this->source); })()), 'form_start');
         echo "
-                      <div class=\"col-xs-12 col-sm-6 col-md-8\">
+                      <div class=\"col-xs-12 col-sm-6 col-md-6\">
                                 <div class=\"form-group\">
                                     ";
         // line 7
@@ -156,9 +156,9 @@ class __TwigTemplate_13636a7fb029de0233df1a9764891f00810b3bb0acf8b7407cac69bd5b7
     {
         return new Source(" <section class=\"section-padding\">
                 <div class=\"container\">  
-                  <div class=\"row\">
+                  <div class=\"row justify-content-center\">
                       {{ form_start(userPref) }}
-                      <div class=\"col-xs-12 col-sm-6 col-md-8\">
+                      <div class=\"col-xs-12 col-sm-6 col-md-6\">
                                 <div class=\"form-group\">
                                     {{ form_label(userPref.discussion, 'Discussion') }}
                                     {{ form_widget(userPref.discussion, {'attr': {'class': 'form-control'}}) }}

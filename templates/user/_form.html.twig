@@ -1,40 +1,48 @@
   <section class="section-padding">
                 <div class="container">  
                 
-                    <div class="row">
+                    <div class="row justify-content-center ">
+                    <div class="col-6 d-flex form-info">
                     {{ form_start(form) }}
                         <div class="clearfix visible-sm"></div>
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6 col-md-4">
-                                <div class="form-group">
-                                    {{ form_label(form.first_name, 'Prénom') }}
-                                    {{ form_widget(form.first_name, {'attr': {'class': 'form-control'}}) }}
+                        <div class="row justify-content-between">
+                            <div class="col-xs-12 col-sm-6 col-md-5">
+                                <div class="d-flex custom-input-div">
+                                    <i class="fas fa-user d-flex align-items-center"></i>
+                                    {{ form_widget(form.first_name, {'attr': {'class': 'custom-field-form', 'placeholder': 'Prénom'}}) }}
                                 </div> 
                                 <div class='red-text'>{{ form_errors(form.first_name)}}</div>
-                                <div class="form-group">
-                                    {{ form_label(form.last_name, 'Nom') }}
-                                    {{ form_widget(form.last_name, {'attr': {'class': 'form-control'}}) }}
+                                <div class="d-flex custom-input-div">
+                                    <span class="d-flex align-items-center ml-4"></span>
+                                    {{ form_widget(form.last_name, {'attr': {'class': 'custom-field-form', 'placeholder': 'Nom'}}) }}
                                 </div>
                                 <div class='red-text'>{{ form_errors(form.last_name)}}</div>
-                                <div class="form-group">
-                                    {{ form_label(form.date_of_birth,'Date de naissance') }} 
-                                    {{ form_widget(form.date_of_birth, {'attr': {'class': 'form-control'}}) }}
+                                <div class="d-flex custom-input-div">
+                                    <i class="fas fa-birthday-cake d-flex align-items-center"></i>
+                                    {{ form_widget(form.date_of_birth, {'attr': {'class': 'custom-field-form', 'placeholder': 'Prénom'}}) }}
                                 </div> 
                                 <div class='red-text'>{{ form_errors(form.date_of_birth)}}</div>
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-4">
-                            </div>
-                            <div class="col-xs-12 col-sm-6 col-md-4">
                                 <div class='red-text'>{{ form_errors(form.profile_picture)}}</div>
-                                <div class="form-group" style="margin-top: 32px;">
-                                    <div class="custom-file" id='btnHeigt'>
-                                        {{ form_label(form.profile_picture, 'Ajouter une photo de profil') }} 
+                                <div class="">
+                                 {% if user.profile_picture != '' %}
+                                    <div class="existing-file d-flex justify-content-center">
+                                       <img class="profile-picture-profile" src="{{asset ('/assets/uploads/profilePicture/') ~ user.profile_picture }}"/>
+                                    </div>
+                                    {% else %}
+                                        <div class="existing-file d-flex justify-content-center">
+                                        <img class="profile-picture-profile" src="{{asset ('/assets/uploads/profilePicture/default_profile_picture.jpg')}}"/>
+                                    </div>
+                                {% endif %}
+                                    <div class="custom-file fileUpload" id='btnHeigt'>
                                         {{ form_widget(form.profile_picture, { 'attr': {
                                             'accept' : '.pdf,.jpg,.doc,.docx,.png,.gif',
                                             'size' : '20000000', 
                                             'type' : 'file',
-                                            'class': 'form-control'
+                                            'class': 'custom-field-form upload'
                                             }}) }}
+                                               <span>Upload</span>
                                     </div>
                                     {% if user.profile_picture != '' %}
                                         <div class="existing-file">
@@ -47,56 +55,57 @@
 
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-md-4">
-                                <div class="form-group">
-                                    {{ form_label(form.adress, 'Addresse') }}
-                                    {{ form_widget(form.adress, {'attr': {'class': 'form-control'}}) }}
+                                <div class="d-flex custom-input-div">
+                                    <i class="fas fa-city d-flex align-items-center"></i>
+                                    {{ form_widget(form.adress, {'attr': {'class': 'custom-field-form', 'placeholder': 'Adresse'}}) }}
                                 </div>
                                 <div class='red-text'>{{ form_errors(form.adress)}}</div>
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-4">
-                                <div class="form-group">
-                                    {{ form_label(form.country, 'Pays') }}
-                                    {{ form_widget(form.country, {'attr': {'class': 'form-control'}}) }}
+                                <div class="d-flex custom-input-div">
+                                    {{ form_widget(form.country, {'attr': {'class': 'custom-field-form', 'placeholder': 'Pays'}}) }}
                                 </div>  
                                 <div class='red-text'>{{ form_errors(form.country)}}</div>
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-4">
-                                <div class="form-group">
-                                    {{ form_label(form.city, 'Ville') }}
-                                    {{ form_widget(form.city, {'attr': {'class': 'form-control'}}) }}
+                                <div class="d-flex custom-input-div">
+                                    {{ form_widget(form.city, {'attr': {'class': 'custom-field-form', 'placeholder': 'Ville'}}) }}
                                 </div>  
                                 <div class='red-text'>{{ form_errors(form.city)}}</div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-xs-12 col-sm-6">
-                                <div class="form-group">
-                                    {{ form_label(form.phone,'Téléphone') }} 
-                                    {{ form_widget(form.phone, {'attr': {'class': 'form-control'}}) }}
+                                <div class="d-flex custom-input-div">
+                                <i class="fas fa-phone d-flex align-items-center"></i>   
+                                {{ form_widget(form.phone, {'attr': {'class': 'custom-field-form', 'placeholder': 'Téléphone'}}) }}
                                 </div> 
                                 <div class='red-text'>{{ form_errors(form.phone)}}</div>
                             </div>
                             <div class="col-xs-12 col-sm-6">
-                                <div class="form-group">
-                                    {{ form_label(form.email,'Email') }} 
-                                    {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+                                <div class="d-flex custom-input-div">
+                                <i class="fas fa-at d-flex align-items-center"></i>
+                                    {{ form_widget(form.email, {'attr': {'class': 'custom-field-form', 'placeholder': 'Email'}}) }}
                                 </div> 
                                 <div class='red-text'>{{ form_errors(form.email)}}</div>
                             </div>
                         </div>
                     <div class="row mt-4">
-                        <div class="col-xs-12 col-sm-6 mt-5">
-                    <p>Ajouter une carte d'dentité</p>
+                        <div class="col-xs-12 col-sm-6 mt-2">
+                            <div class="d-flex custom-input-div my-0">
+                                <i class="fas fa-address-card d-flex align-items-center"></i>
+                                <p class="d-flex align-items-center mb-0">Ajouter une carte d'dentité</p>
+                            </div>
                             <div class="card card-panel passport"> 
                                 <div class='red-text'>{{ form_errors(form.id_card_file)}}</div>
-                                <div class="file-field form-group">
-                                    <div class="btn btn-lg primary waves-effect waves-light" id='btnHeigt'>
+                                <div class="file-field ">
+                                    <div class="btn btn-lg primary" id='btnHeigt'>
                                         {{ form_label(form.id_card_file) }}
                                         {{ form_widget(form.id_card_file, { 'attr': {
                                         'accept' : '.pdf,.jpg,.doc,.docx,.png,.gif',
                                         'size' : '20000000', 
                                         'type' : 'file',
-                                        'class': 'form-control'
+                                        'class': 'custom-field-form'
                                         }}) }}
                                     </div>
                                     {% if user.id_card_file != '' %}
@@ -108,11 +117,14 @@
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-6">
-                            <div class="form-group mt-5">
-                                {{ form_label(form.bio, 'Ajouter une biographie ! Apprennez en plus sur vous aux autres utilisateurs') }}
+                            <div class="custom-input-div mt-2">
+                            <i class="fas fa-info"></i>
+                                {{ form_label(form.bio, 'Ajouter une biographie!') }}
                                 {{ form_widget(form.bio, { 'attr': {
                                         'cols' : "20",
-                                        'rows' : "5"
+                                        'rows' : "5",
+                                        'placeholder': ' Apprennez en plus sur vous aux autres utilisateurs',
+                                        'class':'custom-field-form'
                                 }}) }}
                             </div>
                             <div class='red-text'>{{ form_errors(form.bio)}}</div>
@@ -122,6 +134,7 @@
                         </div>
                         {{ form_end(form) }}
                     </div>
+                </div>
                 </div>
             </div>
     </section>

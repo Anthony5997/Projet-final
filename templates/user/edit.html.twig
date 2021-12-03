@@ -103,13 +103,15 @@
             </div>
             <div class="tab-pane" id="tabs-2" role="tabpanel">
                 <div class="container profile-section">
-                        <h3>Informations Personnelle</h3>
-                    {{ include('user/_form.html.twig') }}
+                    <div >
+                        <h3 class="my-4 text-center">Informations Personnelle</h3>
+                        {{ include('user/_form.html.twig') }}
+                    </div>
                 </div>
             </div>
             <div class="tab-pane" id="tabs-3" role="tabpanel">
                 <div class="container profile-section">
-                <h3>Mes préférences</h3>
+                <h3 class="text-center">Mes préférences de voyage</h3>
                     {{ include('travel_preferences/_form.html.twig') }}
                 </div>
             </div>
@@ -123,17 +125,14 @@
                 <div class="container profile-section">
                 <h3 class="col d-flex justify-content-center">Mes trajets</h3>
                 <div class="row">
-                    {# <div class="col d-flex justify-content-center">Identifiant</div> #}
                     <div class="col d-flex justify-content-center">Trajet</div>
                     <div class="col d-flex justify-content-around">Date</div>
                     <div class="col d-flex justify-content-center">Status</div>
                     <div class="col d-flex justify-content-center">Détails</div>
                 </div>
-
           
             {% for trip in trips %}
                 <div class="row mt-4 line-trip-profile">
-                    {# <div class="col">{{trip.id}}</div> #}
                     <div class="col d-flex justify-content-center">{{trip.departure}} -> {{trip.arrival}}</div>
                     <div class="col d-flex justify-content-center">{{trip.dateOfTrip|date("d M")}}</div>
                     {% if trip.tripStarted != true and trip.tripCompleted != true %}
@@ -163,9 +162,6 @@
                 </div>
             </div>
         </div>
-</div>
-
-   
-
+</div> 
 
 {% endblock %}
