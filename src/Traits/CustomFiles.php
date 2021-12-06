@@ -4,6 +4,9 @@ namespace App\Traits;
 
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
+use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\Filesystem\Path;
 
 trait CustomFiles{
     public function uploadFiles($file, $target_directory ,$slugger){
@@ -23,5 +26,11 @@ trait CustomFiles{
         }
         return $newFilename;
         
+    }
+
+    public function deletePicture($profilePicture){
+
+        $filesystem = new Filesystem();
+        $filesystem->remove($profilePicture);
     }
 }

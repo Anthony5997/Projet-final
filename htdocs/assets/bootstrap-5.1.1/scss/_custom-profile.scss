@@ -13,6 +13,16 @@
     margin-top: 40px;
     margin-left: 20px;
     margin-right: 20px;
+
+    .tab-custom.active{
+
+        border: 1px $custom-yellow solid !important;
+        border-bottom: none !important;
+    }
+
+    .nav-tabs{
+        border-bottom: 1px solid $custom-yellow !important;
+    }
 }
 
 
@@ -126,6 +136,60 @@
         transform: scale(1.1);
         transition: 500ms;
     }
+
+    //ACCORDION
+    
+
+
+            .accordion-wrapper {
+            display: block;
+            box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+            margin: 0 auto;
+            margin-top: 12px;
+            margin-bottom: 12px;
+            }
+
+            .accordion + .title {
+            user-select: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px;
+            background: $custom-yellow;
+            
+            }
+
+            .accordion ~ .title strong {
+            line-height: 24px;
+            color: white;
+            }
+
+            .accordion ~ .title .side-icon {
+            display: block;
+            }
+
+            .accordion:checked ~ .title .side-icon {
+            display: none;
+            }
+
+            .accordion ~ .title .down-icon {
+            display: none;
+            }
+
+            .accordion:checked ~ .title .down-icon {
+            display: block;
+            }
+
+            .accordion ~ .content {
+            display: none;
+            padding: 8px;
+            cursor: pointer;
+            }
+
+            .accordion:checked ~ .content {
+            display: block;
+            }
 
 
 @media (max-width:950px) {

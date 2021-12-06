@@ -74,7 +74,7 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
         // line 30
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\" class=\"logo d-flex justify-content-center\"><img  class=\"logo-navbar\" src=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/uploads/custom-pic/logotest.webp"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/uploads/custom-pic/logo-test-preview.png"), "html", null, true);
         echo "\"/></a>
             </div>
 
@@ -176,7 +176,7 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
         $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 64, $this->source); })()), "flashes", [0 => "success"], "method", false, false, false, 64));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
             // line 65
-            echo "            <div class=\"alert alert-success text-white\">
+            echo "            <div class=\"alert alert-success text-white\" style=\"z-index: 999;\">
                 ";
             // line 66
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
@@ -193,7 +193,7 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
         $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 69, $this->source); })()), "flashes", [0 => "error"], "method", false, false, false, 69));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
             // line 70
-            echo "            <div class=\"alert alert-error text-white\">
+            echo "            <div class=\"alert alert-error text-white\" style=\"z-index: 999;\">
                 ";
             // line 71
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
@@ -412,7 +412,7 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
             <input type=\"checkbox\" name=\"\" id=\"toggler\">
             <span class=\"d-flex\"><label class=\"far fa-user\"></label><label for=\"toggler\" class=\"fas fa-angle-right\"></label></span>
             <div class=\"titleHeader d-flex\">
-                <a href=\"{{path('home')}}\" class=\"logo d-flex justify-content-center\"><img  class=\"logo-navbar\" src=\"{{asset('assets/uploads/custom-pic/logotest.webp')}}\"/></a>
+                <a href=\"{{path('home')}}\" class=\"logo d-flex justify-content-center\"><img  class=\"logo-navbar\" src=\"{{asset('assets/uploads/custom-pic/logo-test-preview.png')}}\"/></a>
             </div>
 
             <nav class=\"navbar\">
@@ -447,12 +447,12 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
             </div>
         </header>
         {% for message in app.flashes('success') %}
-            <div class=\"alert alert-success text-white\">
+            <div class=\"alert alert-success text-white\" style=\"z-index: 999;\">
                 {{ message }}
             </div>
         {% endfor %}
         {% for message in app.flashes('error') %}
-            <div class=\"alert alert-error text-white\">
+            <div class=\"alert alert-error text-white\" style=\"z-index: 999;\">
                 {{ message }}
             </div>
         {% endfor %}

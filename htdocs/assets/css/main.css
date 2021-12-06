@@ -6758,13 +6758,13 @@ textarea.form-control-lg {
   }
 }
 header {
+  background-color: #193041;
   text-decoration: none;
   text-transform: capitalize;
   transition: 0.2s linear;
   width: 100%;
   position: fixed;
-  background: #fff;
-  padding: 1.2rem 6% 2% 5%;
+  padding: 0.7rem 4% 1% 3%;
   display: flex;
   justify-content: space-between;
   z-index: 1000;
@@ -6775,8 +6775,8 @@ header .navbar {
   position: absolute;
   width: 30%;
   top: 100%;
+  background-color: #193041;
   right: 0;
-  background: #eee;
   border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
   display: none;
   padding-top: 0.2rem !important;
@@ -6790,7 +6790,8 @@ header .logo {
   text-decoration: none;
 }
 header .logo .logo-navbar {
-  width: 20%;
+  width: 76px;
+  border-radius: 50%;
 }
 
 header .logo span {
@@ -6825,11 +6826,15 @@ header .icons {
   font-size: 3rem;
   font-weight: 400;
   margin-left: 10px;
+  margin-right: 6px;
+}
+.label-right-icon i {
+  color: #F99C25;
 }
 
 header .icons .icon-custom {
   font-size: 2rem;
-  color: #333;
+  color: #F99C25;
   margin-left: 1.5rem;
   text-decoration: none;
   font-weight: 500;
@@ -6846,13 +6851,14 @@ header #toggler {
 }
 
 header.active {
-  padding: 0.2rem 3% 0 1%;
+  background-color: #193041;
+  padding: 0.2rem 0% 0 1%;
   justify-content: space-between;
 }
 
 header .fa-angle-right {
   font-size: 3rem;
-  color: #333;
+  color: #F99C25;
   border-radius: 0.5rem;
   padding: 0.5rem 1.5rem;
   cursor: pointer;
@@ -6861,7 +6867,7 @@ header .fa-angle-right {
 
 header .fa-user {
   font-size: 3rem;
-  color: #333;
+  color: #F99C25;
   border-radius: 0.5rem;
   cursor: pointer;
   display: none;
@@ -6897,12 +6903,13 @@ header .fa-user {
   }
 
   header {
-    padding: 2rem;
+    padding: 0.8rem;
   }
 
   .navbar-profile-picture {
     width: 10%;
     margin-left: 15px;
+    margin-bottom: 3px;
   }
 }
 @media (min-width: 768px) {
@@ -6971,6 +6978,10 @@ header .fa-user {
   .icons .navbar-profile-picture {
     display: none;
   }
+
+  header .logo .logo-navbar {
+    width: 56px;
+  }
 }
 @media (max-width: 450px) {
   html {
@@ -6990,6 +7001,13 @@ header .fa-user {
   margin-top: 40px;
   margin-left: 20px;
   margin-right: 20px;
+}
+.container-profile .tab-custom.active {
+  border: 1px #F99C25 solid !important;
+  border-bottom: none !important;
+}
+.container-profile .nav-tabs {
+  border-bottom: 1px solid #F99C25 !important;
 }
 
 .profile-picture-profile {
@@ -7092,6 +7110,55 @@ header .fa-user {
   padding: 16px;
   transform: scale(1.1);
   transition: 500ms;
+}
+
+.accordion-wrapper {
+  display: block;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.accordion + .title {
+  user-select: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  background: #F99C25;
+}
+
+.accordion ~ .title strong {
+  line-height: 24px;
+  color: white;
+}
+
+.accordion ~ .title .side-icon {
+  display: block;
+}
+
+.accordion:checked ~ .title .side-icon {
+  display: none;
+}
+
+.accordion ~ .title .down-icon {
+  display: none;
+}
+
+.accordion:checked ~ .title .down-icon {
+  display: block;
+}
+
+.accordion ~ .content {
+  display: none;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.accordion:checked ~ .content {
+  display: block;
 }
 
 @media (max-width: 950px) {

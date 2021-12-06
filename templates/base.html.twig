@@ -27,7 +27,7 @@
             <input type="checkbox" name="" id="toggler">
             <span class="d-flex"><label class="far fa-user"></label><label for="toggler" class="fas fa-angle-right"></label></span>
             <div class="titleHeader d-flex">
-                <a href="{{path('home')}}" class="logo d-flex justify-content-center"><img  class="logo-navbar" src="{{asset('assets/uploads/custom-pic/logotest.webp')}}"/></a>
+                <a href="{{path('home')}}" class="logo d-flex justify-content-center"><img  class="logo-navbar" src="{{asset('assets/uploads/custom-pic/logo-test-preview.png')}}"/></a>
             </div>
 
             <nav class="navbar">
@@ -62,12 +62,12 @@
             </div>
         </header>
         {% for message in app.flashes('success') %}
-            <div class="alert alert-success text-white">
+            <div class="alert alert-success text-white" style="z-index: 999;">
                 {{ message }}
             </div>
         {% endfor %}
         {% for message in app.flashes('error') %}
-            <div class="alert alert-error text-white">
+            <div class="alert alert-error text-white" style="z-index: 999;">
                 {{ message }}
             </div>
         {% endfor %}

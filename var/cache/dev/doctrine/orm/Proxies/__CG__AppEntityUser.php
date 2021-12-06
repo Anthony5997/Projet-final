@@ -66,10 +66,10 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'first_name', '' . "\0" . 'App\\Entity\\User' . "\0" . 'last_name', '' . "\0" . 'App\\Entity\\User' . "\0" . 'date_of_birth', '' . "\0" . 'App\\Entity\\User' . "\0" . 'phone', '' . "\0" . 'App\\Entity\\User' . "\0" . 'adress', '' . "\0" . 'App\\Entity\\User' . "\0" . 'country', '' . "\0" . 'App\\Entity\\User' . "\0" . 'city', '' . "\0" . 'App\\Entity\\User' . "\0" . 'bio', '' . "\0" . 'App\\Entity\\User' . "\0" . 'profile_picture', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id_card', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id_card_file', '' . "\0" . 'App\\Entity\\User' . "\0" . 'created_at', '' . "\0" . 'App\\Entity\\User' . "\0" . 'profile_completed', '' . "\0" . 'App\\Entity\\User' . "\0" . 'trips_made', '' . "\0" . 'App\\Entity\\User' . "\0" . 'global_rating', '' . "\0" . 'App\\Entity\\User' . "\0" . 'user_experience', '' . "\0" . 'App\\Entity\\User' . "\0" . 'travel_preferences', '' . "\0" . 'App\\Entity\\User' . "\0" . 'vehicule'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'first_name', '' . "\0" . 'App\\Entity\\User' . "\0" . 'last_name', '' . "\0" . 'App\\Entity\\User' . "\0" . 'date_of_birth', '' . "\0" . 'App\\Entity\\User' . "\0" . 'phone', '' . "\0" . 'App\\Entity\\User' . "\0" . 'adress', '' . "\0" . 'App\\Entity\\User' . "\0" . 'country', '' . "\0" . 'App\\Entity\\User' . "\0" . 'city', '' . "\0" . 'App\\Entity\\User' . "\0" . 'bio', '' . "\0" . 'App\\Entity\\User' . "\0" . 'profile_picture', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id_card', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id_card_file', '' . "\0" . 'App\\Entity\\User' . "\0" . 'created_at', '' . "\0" . 'App\\Entity\\User' . "\0" . 'profile_completed', '' . "\0" . 'App\\Entity\\User' . "\0" . 'trips_made', '' . "\0" . 'App\\Entity\\User' . "\0" . 'global_rating', '' . "\0" . 'App\\Entity\\User' . "\0" . 'user_experience', '' . "\0" . 'App\\Entity\\User' . "\0" . 'travel_preferences', '' . "\0" . 'App\\Entity\\User' . "\0" . 'vehicule', '' . "\0" . 'App\\Entity\\User' . "\0" . 'resetToken'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'first_name', '' . "\0" . 'App\\Entity\\User' . "\0" . 'last_name', '' . "\0" . 'App\\Entity\\User' . "\0" . 'date_of_birth', '' . "\0" . 'App\\Entity\\User' . "\0" . 'phone', '' . "\0" . 'App\\Entity\\User' . "\0" . 'adress', '' . "\0" . 'App\\Entity\\User' . "\0" . 'country', '' . "\0" . 'App\\Entity\\User' . "\0" . 'city', '' . "\0" . 'App\\Entity\\User' . "\0" . 'bio', '' . "\0" . 'App\\Entity\\User' . "\0" . 'profile_picture', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id_card', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id_card_file', '' . "\0" . 'App\\Entity\\User' . "\0" . 'created_at', '' . "\0" . 'App\\Entity\\User' . "\0" . 'profile_completed', '' . "\0" . 'App\\Entity\\User' . "\0" . 'trips_made', '' . "\0" . 'App\\Entity\\User' . "\0" . 'global_rating', '' . "\0" . 'App\\Entity\\User' . "\0" . 'user_experience', '' . "\0" . 'App\\Entity\\User' . "\0" . 'travel_preferences', '' . "\0" . 'App\\Entity\\User' . "\0" . 'vehicule'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'first_name', '' . "\0" . 'App\\Entity\\User' . "\0" . 'last_name', '' . "\0" . 'App\\Entity\\User' . "\0" . 'date_of_birth', '' . "\0" . 'App\\Entity\\User' . "\0" . 'phone', '' . "\0" . 'App\\Entity\\User' . "\0" . 'adress', '' . "\0" . 'App\\Entity\\User' . "\0" . 'country', '' . "\0" . 'App\\Entity\\User' . "\0" . 'city', '' . "\0" . 'App\\Entity\\User' . "\0" . 'bio', '' . "\0" . 'App\\Entity\\User' . "\0" . 'profile_picture', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id_card', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id_card_file', '' . "\0" . 'App\\Entity\\User' . "\0" . 'created_at', '' . "\0" . 'App\\Entity\\User' . "\0" . 'profile_completed', '' . "\0" . 'App\\Entity\\User' . "\0" . 'trips_made', '' . "\0" . 'App\\Entity\\User' . "\0" . 'global_rating', '' . "\0" . 'App\\Entity\\User' . "\0" . 'user_experience', '' . "\0" . 'App\\Entity\\User' . "\0" . 'travel_preferences', '' . "\0" . 'App\\Entity\\User' . "\0" . 'vehicule', '' . "\0" . 'App\\Entity\\User' . "\0" . 'resetToken'];
     }
 
     /**
@@ -695,6 +695,28 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'jsonSerialize', []);
 
         return parent::jsonSerialize();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getResetToken(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getResetToken', []);
+
+        return parent::getResetToken();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setResetToken(?string $resetToken): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setResetToken', [$resetToken]);
+
+        return parent::setResetToken($resetToken);
     }
 
 }

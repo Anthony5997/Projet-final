@@ -33,4 +33,16 @@ trait CustomResetPassword {
         $em->persist($user);
         $em->flush();  
     }
+
+
+    public function forgetPassword($passwordEncoder, $newPassword, $user) {
+        
+        $newEncodedPassword = $passwordEncoder->encodePassword($user, $newPassword);
+        $user->setPassword($newEncodedPassword);
+        
+        
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($user);
+        $em->flush();  
+    }
 }

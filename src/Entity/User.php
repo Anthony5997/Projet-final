@@ -60,7 +60,7 @@ class User implements UserInterface, JsonSerializable
     private $date_of_birth;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="string", nullable=true)
      */
     private $phone;
 
@@ -135,6 +135,11 @@ class User implements UserInterface, JsonSerializable
      * @ORM\JoinColumn(nullable=false)
      */
     private $vehicule;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $resetToken;
 
     public function getId(): ?string
     {
@@ -440,5 +445,17 @@ class User implements UserInterface, JsonSerializable
             'lastName' => $this->getLastName(),
             'profile_picture' => $this->getProfile_Picture(),
         ];
+    }
+
+    public function getResetToken(): ?string
+    {
+        return $this->resetToken;
+    }
+
+    public function setResetToken(?string $resetToken): self
+    {
+        $this->resetToken = $resetToken;
+
+        return $this;
     }
 }

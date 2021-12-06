@@ -82,7 +82,7 @@ final class Versions
   'symfony/event-dispatcher' => 'v5.2.4@d08d6ec121a425897951900ab692b612a61d6240',
   'symfony/event-dispatcher-contracts' => 'v2.4.0@69fee1ad2332a7cbab3aca13591953da9cdb7a11',
   'symfony/expression-language' => 'v5.2.7@c8bb14c3bcc397845d7e86a1cc5022671eed1ff8',
-  'symfony/filesystem' => 'v5.2.7@056e92acc21d977c37e6ea8e97374b2a6c8551b0',
+  'symfony/filesystem' => 'v5.2.12@ed397ef25365b3db9f215af4ed5b1ec8a5b10989',
   'symfony/finder' => 'v5.2.8@eccb8be70d7a6a2230d05f6ecede40f3fdd9e252',
   'symfony/flex' => 'v1.12.2@e472606b4b3173564f0edbca8f5d32b52fc4f2c9',
   'symfony/form' => 'v5.2.12@929811a7667aa5814f93a70974423870b14c05aa',
@@ -124,7 +124,6 @@ final class Versions
   'symfony/translation-contracts' => 'v2.4.0@95c812666f3e91db75385749fe219c5e494c7f95',
   'symfony/twig-bridge' => 'v5.2.8@dcdc60ace03264f50258978113c4f2a33bdc439f',
   'symfony/twig-bundle' => 'v5.2.4@5ebbb5f0e8bfaa0b4b37cb25ff97f83b18caf221',
-  'symfony/twig-pack' => 'v1.0.1@08a73e833e07921c464336deb7630f93e85ef930',
   'symfony/validator' => 'v5.2.14@a46ac85624ad3418d455bb8f4ce452014c28518c',
   'symfony/var-dumper' => 'v5.2.8@d693200a73fae179d27f8f1b16b4faf3e8569eba',
   'symfony/var-exporter' => 'v5.2.8@d26db2d2b2d7eb2c1adb8545179f8803998b8237',
@@ -141,10 +140,10 @@ final class Versions
   'symfony/maker-bundle' => 'v1.31.1@4f57a44cef0b4555043160b8bf223fcde8a7a59a',
   'symfony/phpunit-bridge' => 'v5.2.8@b3cf2c3f7f6196fb498002920c1ae9036d9e5619',
   'symfony/web-profiler-bundle' => 'v5.2.8@68aea5b0ca1328c2a1ae3df04cce50302a5106f9',
-  'symfony/polyfill-ctype' => '*@ce35785bda688ba01c812084cb1bf59c58967ddc',
-  'symfony/polyfill-iconv' => '*@ce35785bda688ba01c812084cb1bf59c58967ddc',
-  'symfony/polyfill-php72' => '*@ce35785bda688ba01c812084cb1bf59c58967ddc',
-  '__root__' => 'dev-master@ce35785bda688ba01c812084cb1bf59c58967ddc',
+  'symfony/polyfill-ctype' => '*@ffb8f3f60c7acb018ded89e0715888200cd0f72f',
+  'symfony/polyfill-iconv' => '*@ffb8f3f60c7acb018ded89e0715888200cd0f72f',
+  'symfony/polyfill-php72' => '*@ffb8f3f60c7acb018ded89e0715888200cd0f72f',
+  '__root__' => 'dev-master@ffb8f3f60c7acb018ded89e0715888200cd0f72f',
 );
 
     private function __construct()

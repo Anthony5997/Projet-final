@@ -21,6 +21,10 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use \App\Traits\CustomFiles;
 use \App\Traits\CustomResetPassword;
 
+use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
+use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\Filesystem\Path;
+
 /**
  * @Route("/user")
  */
@@ -97,6 +101,7 @@ class UserController extends AbstractController
                 $this->addFlash('success', 'La carte d\'identité a été ajouté');
             }
             if($profile_picture !== null){
+                $this->deletePicture($this->getParameter('profile_picture_directory').'/'. $this->getUser()->getProfile_Picture());
                 $user->setProfile_Picture($this->uploadFiles($profile_picture, 'profile_picture_directory', $slugger));
                 $this->addFlash('success', 'La photo a été mis à jour');
             }
@@ -161,7 +166,10 @@ class UserController extends AbstractController
      */
     public function delete(Request $request, User $user): Response
     {
+
         if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
+
+            $this->deletePicture($this->getParameter('profile_picture_directory').'/'. $this->getUser()->getProfile_Picture());
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($user);
             $entityManager->flush();

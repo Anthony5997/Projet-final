@@ -65,7 +65,7 @@ class __TwigTemplate_41cf5a877eef2d0e3745d6dab9b438227f07c0326fb8c243d9379118fdc
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "500";
+        echo twig_escape_filter($this->env, (isset($context["status_code"]) || array_key_exists("status_code", $context) ? $context["status_code"] : (function () { throw new RuntimeError('Variable "status_code" does not exist.', 3, $this->source); })()), "html", null, true);
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -85,18 +85,26 @@ class __TwigTemplate_41cf5a877eef2d0e3745d6dab9b438227f07c0326fb8c243d9379118fdc
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1 class=\"text-center mt-5\">Erreur ";
-        echo twig_escape_filter($this->env, (isset($context["status_code"]) || array_key_exists("status_code", $context) ? $context["status_code"] : (function () { throw new RuntimeError('Variable "status_code" does not exist.', 6, $this->source); })()), "html", null, true);
-        echo "</h1>
-    <h3 class=\"text-center mt-5\">";
+        echo "      <div class=\"container\">
+        <h1 class=\"text-center mt-5\">Erreur ";
         // line 7
-        echo twig_escape_filter($this->env, (isset($context["status_text"]) || array_key_exists("status_text", $context) ? $context["status_text"] : (function () { throw new RuntimeError('Variable "status_text" does not exist.', 7, $this->source); })()), "html", null, true);
-        echo "</h3>
-        <h3 class=\"text-center mt-5\"><a href=\"";
+        echo twig_escape_filter($this->env, (isset($context["status_code"]) || array_key_exists("status_code", $context) ? $context["status_code"] : (function () { throw new RuntimeError('Variable "status_code" does not exist.', 7, $this->source); })()), "html", null, true);
+        echo "</h1>
+        <h3 class=\"text-center mt-3\">";
         // line 8
+        echo twig_escape_filter($this->env, (isset($context["status_text"]) || array_key_exists("status_text", $context) ? $context["status_text"] : (function () { throw new RuntimeError('Variable "status_text" does not exist.', 8, $this->source); })()), "html", null, true);
+        echo "</h3>
+        <div class=\" d-flex justify-content-center\">
+        <img class=\"error-page\"src=\"";
+        // line 10
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets//uploads/custom-pic/car-broken.jpg"), "html", null, true);
+        echo "\">
+        </div>
+        <h3 class=\"text-center mt-2\"><a href=\"";
+        // line 12
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\">Retourner à l'accueil</a></h3>
-
+    </div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -118,20 +126,24 @@ class __TwigTemplate_41cf5a877eef2d0e3745d6dab9b438227f07c0326fb8c243d9379118fdc
 
     public function getDebugInfo()
     {
-        return array (  97 => 8,  93 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  105 => 12,  100 => 10,  95 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}500{% endblock %}
+{% block title %}{{status_code}}{% endblock %}
 
 {% block body %}
-    <h1 class=\"text-center mt-5\">Erreur {{status_code}}</h1>
-    <h3 class=\"text-center mt-5\">{{status_text}}</h3>
-        <h3 class=\"text-center mt-5\"><a href=\"{{path('home')}}\">Retourner à l'accueil</a></h3>
-
-{% endblock %}", "@Twig/Exception/error500.html.twig", "/shared/httpd/Projet-Final/templates/bundles/TwigBundle/Exception/error500.html.twig");
+      <div class=\"container\">
+        <h1 class=\"text-center mt-5\">Erreur {{status_code}}</h1>
+        <h3 class=\"text-center mt-3\">{{status_text}}</h3>
+        <div class=\" d-flex justify-content-center\">
+        <img class=\"error-page\"src=\"{{asset('assets//uploads/custom-pic/car-broken.jpg')}}\">
+        </div>
+        <h3 class=\"text-center mt-2\"><a href=\"{{path('home')}}\">Retourner à l'accueil</a></h3>
+    </div>
+{% endblock %}", "@Twig/Exception/error500.html.twig", "/home/simplon/devilbox/data/www/Projet-Final/templates/bundles/TwigBundle/Exception/error500.html.twig");
     }
 }
