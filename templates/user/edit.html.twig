@@ -4,6 +4,7 @@
 {% endblock %}
 
 {% block body %}
+        <div class="container">
     <div class="container-profile">
         {% for message in app.flashes('success') %}
             <div class="alert alert-success text-white">
@@ -139,20 +140,17 @@
                 <div class="tab-pane" id="tabs-2" role="tabpanel">
                     <div class="container profile-section">
                         <div>
-                            <h3 class="my-4 text-center">Informations Personnelle</h3>
                             {{ include('user/_form.html.twig') }}
                         </div>
                     </div>
                 </div>
                 <div class="tab-pane" id="tabs-3" role="tabpanel">
                     <div class="container profile-section">
-                        <h3 class="text-center">Mes préférences de voyage</h3>
                         {{ include('travel_preferences/_form.html.twig') }}
                     </div>
                 </div>
                 <div class="tab-pane" id="tabs-4" role="tabpanel">
                     <div class="container profile-section">
-                        <h3>Mon véhicule</h3>
                         {{ include('vehicule/_form.html.twig') }}
                     </div>
                 </div>
@@ -210,6 +208,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
 
     {% endblock %}

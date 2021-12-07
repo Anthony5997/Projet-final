@@ -78,26 +78,16 @@
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
     {% endfor %}
 
-        <section class="page-title page-title-bg fixed-bg overlay dark-5 padding-top-160 padding-bottom-80">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="white-text my-3">S'enregistrer</h2>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section class="section-padding gray-bg log-section">
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-sm-offset-3 card card-panel">
+                    <div class="col-xs-12 col-sm-6 col-sm-offset-3 form-info mx-auto p-4 my-3">
                         <h3 class="text-extrabold my-2">Créé un nouveau compte</h3>
                         <form id="register-form" role="form" method="post" accept-char="UTF-8" autocomplete="off" data-parsley-validate>
                              {{ form_start(registrationForm) }}
-                            <div class="input-field">
+                            <div class="custom-input-div">
                             {{ form_widget(registrationForm.email, { 'attr': {
-                             'class': 'form-control',
+                             'class': 'custom-field-form',
                             'data-parsley-trigger' : "change",
                             'data-parsley-error-message' : "Une adresse mail valide est nécessaire."
                             } }) }}
@@ -105,9 +95,9 @@
                                 <div class='red-text'>{{ form_errors(registrationForm.email)}}</div>
                             </div>
 
-                            <div class="input-field">
+                            <div class="custom-input-div">
                              {{ form_widget(registrationForm.password.first, { 'attr': {
-                            'class': 'form-control',
+                            'class': 'custom-field-form',
                             'data-parsley-trigger' : "change",
                             'data-parsley-minlength' : "6",
                             'data-parsley-error-message' : "Le mot de passe doit contenir au moins 6 caractères."
@@ -117,9 +107,9 @@
                                 <div class='red-text'>{{ form_errors(registrationForm.password.first) }}</div>
                             </div>
 
-                             <div class="input-field">
+                             <div class="custom-input-div">
                              {{ form_widget(registrationForm.password.second, { 'attr': {
-                            'class': 'form-control',
+                            'class': 'custom-field-form',
                             'data-parsley-trigger' : "change",
                             'data-parsley-equalto' :"#password",
                             'data-parsley-error-message' : "Les mots de passes ne correspondent pas."
@@ -134,10 +124,11 @@
                                 <label for="registration_form_agreeTerms">J'ai lu et accepte les <a href="#!" target="_blank">Conditions d'utilisation</a></label>
                                 <div class='red-text'>{{ form_errors(registrationForm.agreeTerms) }}</div>
                             </div>
-
-                            <button type="submit" class="btn btn-primary my-3">Crée mon compte</button>
+							<div class="d-flex">
+                            	<button type="submit" class="button-update-profile my-3 mx-auto">Crée mon compte</button>
+                            </div>
                                {{ form_end(registrationForm) }}
-                               <div class="links">
+                               <div class="links-login">
                                 <a href="{{ path('login') }}">Vous avez déjà un compte? Cliquer ici! </a>
                             </div>
                         </form>
@@ -241,7 +232,7 @@
 
 						<div class="mb-5">
 
-                              <div class="input-field">
+                              <div class="custom-input-div">
                                 {{ form_label(registrationForm.email, "Votre email", {'label_attr': {
                                    
                                     'class': 'font-bold mb-1 text-gray-700 block'

@@ -17,7 +17,6 @@ class UserResetType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('email')
             ->add('password',PasswordType::class,[
                 'data' => '',
                 'mapped'=>false,

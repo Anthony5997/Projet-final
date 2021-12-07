@@ -57,22 +57,22 @@
                 <a class="user-icon-profile" href="{{ path ('user_edit', {'id': app.user.id})}}"></a>
                 {% else %}
                 <input type="checkbox" name="" id="toggler">
-                <label class="label-right-icon" for="toggler"><i class="fas fa-arrow-down"></i></label>
+                <label class="label-right-icon" for="toggler"><i class="fas fa-bars"></i></label>
             {% endif %}
             </div>
         </header>
+
+    <div class="base-content">
         {% for message in app.flashes('success') %}
-            <div class="alert alert-success text-white" style="z-index: 999;">
+            <div class="alert alert-success text-white pt-4" style="z-index: 999; background-color:chartreuse;">
                 {{ message }}
             </div>
         {% endfor %}
         {% for message in app.flashes('error') %}
-            <div class="alert alert-error text-white" style="z-index: 999;">
+            <div class="alert alert-error text-white pt-4" style="z-index: 999; background-color:chocolate;">
                 {{ message }}
             </div>
         {% endfor %}
-
-    <div class="base-content">
     {% block body %}
     
     {% endblock %}

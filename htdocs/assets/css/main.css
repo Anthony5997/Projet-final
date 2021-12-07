@@ -6823,10 +6823,11 @@ header .icons {
 .label-right-icon {
   display: flex;
   align-self: center;
-  font-size: 3rem;
-  font-weight: 400;
-  margin-left: 10px;
-  margin-right: 6px;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-left: 1.5rem;
+  margin-right: 16px;
+  margin-bottom: 0px;
 }
 .label-right-icon i {
   color: #F99C25;
@@ -7005,9 +7006,15 @@ header .fa-user {
 .container-profile .tab-custom.active {
   border: 1px #F99C25 solid !important;
   border-bottom: none !important;
+  color: #F99C25;
 }
 .container-profile .nav-tabs {
   border-bottom: 1px solid #F99C25 !important;
+}
+.container-profile .nav-tabs .nav-item a:hover {
+  border: 1px solid #F99C25 !important;
+  border-bottom: 0px !important;
+  color: #F99C25;
 }
 
 .profile-picture-profile {
@@ -7113,6 +7120,7 @@ header .fa-user {
 }
 
 .accordion-wrapper {
+  width: 80%;
   display: block;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
   margin: 0 auto;
@@ -7133,6 +7141,7 @@ header .fa-user {
 .accordion ~ .title strong {
   line-height: 24px;
   color: white;
+  font-family: "Poppins", sans-serif;
 }
 
 .accordion ~ .title .side-icon {
@@ -7251,6 +7260,10 @@ header .fa-user {
     color: black;
     font-size: 8px;
   }
+  .nav-tabs a:hover {
+    color: #F99C25;
+    font-size: 8px;
+  }
 
   .preference-input {
     margin: 20px 0px;
@@ -7279,8 +7292,8 @@ body {
 }
 
 .base-content {
-  overflow-y: hidden;
   padding-top: 6rem;
+  min-height: 460px;
 }
 
 .home {
@@ -7457,7 +7470,7 @@ body {
 .footer {
   position: relative;
   width: 100%;
-  background: #6ea4f7;
+  background: #193041;
   min-height: 100px;
   padding: 20px 50px;
   display: flex;
@@ -7513,6 +7526,15 @@ body {
   margin: 15px 0 10px 0;
   font-size: 1rem;
   font-weight: 300;
+}
+
+.links-login a {
+  color: #193041;
+  text-decoration: none;
+}
+
+.links-login a:hover {
+  color: #F99C25;
 }
 
 .card-custom {

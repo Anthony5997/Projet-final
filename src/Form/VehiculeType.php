@@ -26,6 +26,7 @@ class VehiculeType extends AbstractType
             ->add('year')
             ->add('vehicule_picture',FileType::class, [
                 'label' => 'profil picture',
+                'attr' => [ 'class'=> 'custom-field-form'],
 
                 // unmapped means that this field is not associated to any entity property
                 'mapped' => false,
@@ -33,7 +34,6 @@ class VehiculeType extends AbstractType
                 // make it optional so you don't have to re-upload the PDF file
                 // every time you edit the Product details
                 'required' => false,
-
                 // unmapped fields can't define their validation using annotations
                 // in the associated entity, so you can use the PHP constraint classes
                 'constraints' => [

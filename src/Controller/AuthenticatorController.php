@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Repository\UserRepository;
+use App\Security\Authenticator;
 use App\Traits\CustomResetPassword;
 use App\Traits\tokenGenerator;
 use DateTime;
@@ -16,6 +17,7 @@ use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Security\Guard\GuardAuthenticatorHandler;
 
 class AuthenticatorController extends AbstractController
 {
@@ -23,7 +25,7 @@ class AuthenticatorController extends AbstractController
     /**
      * @Route("/login", name="login")
      */
-    public function login(AuthenticationUtils $authenticationUtils): Response
+    public function login(Request $request, AuthenticationUtils $authenticationUtils): Response
     {
         if ($this->getUser()) {
             return $this->redirectToRoute('home');
@@ -108,31 +110,45 @@ class AuthenticatorController extends AbstractController
     /**
      * @Route("/{id}/reset-forget-password/{token}", name="reset_forget_password", methods={"GET","POST"})
      */
-    public function forgetPasswordReset(Request $request,UserRepository $userRepository, User $user, UserPasswordEncoderInterface $passwordEncoder): Response
+    public function forgetPasswordReset(Request $request,UserRepository $userRepository, User $user, UserPasswordEncoderInterface $passwordEncoder, GuardAuthenticatorHandler $guardHandler, Authenticator $authenticator): Response
     {
         $user = $userRepository->findOneBy(['id' => $request->get('id')]);
         $token = $request->get('token');
         $tokenDate = substr($request->get('token'), 5, 14);
         $currentDate = new DateTime();
-        if($tokenDate =! $currentDate->format('dmY')){
+        if($tokenDate != $currentDate->format('dmY')){
            
             $this->addFlash('error', 'Votre lien à expiré, veuillez recommencer l\'opération');
             return $this->redirectToRoute('login');
 
         }else{
-            
-            if ($request->get('password1') == $request->get('password2')) {
-                
-           
+            if ($request->get('password1') == $request->get('password2') && $request->get('password1') != '') {
+
                 $newPassword = $request->get('password1');
-              //  $this->forgetPassword($passwordEncoder, $newPassword, $user); 
+                 $this->forgetPassword($passwordEncoder, $newPassword, $user); 
+                 $passwordValide = $passwordEncoder->isPasswordValid($user, $request->get('password1') );
+                    if($passwordValide){
+
+                    $guardHandler->authenticateUserAndHandleSuccess(
+                        $user,
+                        $request,
+                        $authenticator,
+                        'main' // firewall name in security.yaml
+                        );
+                    }
+
+                 $this->addFlash('success', 'Votre mot de passe à bie été réinitialisé');
+                 
+                return $this->redirectToRoute('login');
+            }else{
+
+                return $this->render('security/reset-password.html.twig', [
+                    'user' => $user,
+                    'id' => $user->getId(),
+                    'token' => $token
+                ]);
             }
             
-            return $this->render('security/reset-password.html.twig', [
-                'user' => $user,
-                'id' => $user->getId(),
-                'token' => $token
-            ]);
         }
     }
 
@@ -145,7 +161,7 @@ class AuthenticatorController extends AbstractController
             ->to($user->getEmail())
             ->subject('Récupération de mot de passe')
             ->text('Sending emails is fun again!')
-            ->html('Bonjour,<br><br>Une demande de réinitialisation de mot de passe a été effectuée pour le site Nouvelle-Techno.fr. Veuillez cliquer sur le lien suivant : <a href='.$url.'>'. $url .'</a>', 'text/html');
+            ->html('Bonjour,<br><br>Une demande de réinitialisation de mot de passe a été effectuée pour le site Vamos. Veuillez cliquer sur le lien suivant : <a href='.$url.'>'. $url .'</a>', 'text/html');
 
         return $mailer->send($email);
     }

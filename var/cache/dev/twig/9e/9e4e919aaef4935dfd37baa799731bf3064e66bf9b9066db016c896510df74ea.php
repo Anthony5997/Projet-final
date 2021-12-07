@@ -92,7 +92,7 @@ class __TwigTemplate_cbc4a312d7cd30982d8373d5a647dd2f572c2068877fbc10eddd125d5bb
         <div class=\"row\">
             <form method=\"post\" action=\"";
         // line 11
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reset_forget_password");
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reset_forget_password", ["id" => (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 11, $this->source); })()), "token" => (isset($context["token"]) || array_key_exists("token", $context) ? $context["token"] : (function () { throw new RuntimeError('Variable "token" does not exist.', 11, $this->source); })())]), "html", null, true);
         echo "\">
             <div class=\"col-xs-12 col-sm-12 col-md-6\">
                 <div class=\"form-group\">
@@ -101,7 +101,7 @@ class __TwigTemplate_cbc4a312d7cd30982d8373d5a647dd2f572c2068877fbc10eddd125d5bb
             </div>
             <div class=\"col-xs-12 col-sm-12 col-md-6\">
                 <div class=\"form-group\">
-                    <input type=\"password\" name=\"password1\"/>
+                    <input type=\"password\" name=\"password2\"/>
                 </div>
             </div>    
 
@@ -150,7 +150,7 @@ class __TwigTemplate_cbc4a312d7cd30982d8373d5a647dd2f572c2068877fbc10eddd125d5bb
      <section class=\"section-padding\">
     <div class=\"container\">
         <div class=\"row\">
-            <form method=\"post\" action=\"{{path('reset_forget_password')}}\">
+            <form method=\"post\" action=\"{{path('reset_forget_password', {'id' : id, 'token' : token })}}\">
             <div class=\"col-xs-12 col-sm-12 col-md-6\">
                 <div class=\"form-group\">
                     <input type=\"password\" name=\"password1\"/>
@@ -158,7 +158,7 @@ class __TwigTemplate_cbc4a312d7cd30982d8373d5a647dd2f572c2068877fbc10eddd125d5bb
             </div>
             <div class=\"col-xs-12 col-sm-12 col-md-6\">
                 <div class=\"form-group\">
-                    <input type=\"password\" name=\"password1\"/>
+                    <input type=\"password\" name=\"password2\"/>
                 </div>
             </div>    
 

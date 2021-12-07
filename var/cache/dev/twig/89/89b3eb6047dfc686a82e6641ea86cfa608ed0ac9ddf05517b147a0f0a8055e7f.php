@@ -164,21 +164,23 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
         } else {
             // line 59
             echo "                <input type=\"checkbox\" name=\"\" id=\"toggler\">
-                <label class=\"label-right-icon\" for=\"toggler\"><i class=\"fas fa-arrow-down\"></i></label>
+                <label class=\"label-right-icon\" for=\"toggler\"><i class=\"fas fa-bars\"></i></label>
             ";
         }
         // line 62
         echo "            </div>
         </header>
+
+    <div class=\"base-content\">
         ";
-        // line 64
+        // line 66
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 64, $this->source); })()), "flashes", [0 => "success"], "method", false, false, false, 64));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 66, $this->source); })()), "flashes", [0 => "success"], "method", false, false, false, 66));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 65
-            echo "            <div class=\"alert alert-success text-white\" style=\"z-index: 999;\">
+            // line 67
+            echo "            <div class=\"alert alert-success text-white pt-4\" style=\"z-index: 999; background-color:chartreuse;\">
                 ";
-            // line 66
+            // line 68
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
             echo "
             </div>
@@ -187,15 +189,15 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 69
+        // line 71
         echo "        ";
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 69, $this->source); })()), "flashes", [0 => "error"], "method", false, false, false, 69));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 71, $this->source); })()), "flashes", [0 => "error"], "method", false, false, false, 71));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 70
-            echo "            <div class=\"alert alert-error text-white\" style=\"z-index: 999;\">
+            // line 72
+            echo "            <div class=\"alert alert-error text-white pt-4\" style=\"z-index: 999; background-color:chocolate;\">
                 ";
-            // line 71
+            // line 73
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
             echo "
             </div>
@@ -204,11 +206,8 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 74
-        echo "
-    <div class=\"base-content\">
-    ";
         // line 76
+        echo "    ";
         $this->displayBlock('body', $context, $blocks);
         // line 79
         echo "    </div>
@@ -378,7 +377,7 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
 
     public function getDebugInfo()
     {
-        return array (  358 => 116,  354 => 115,  350 => 114,  346 => 113,  339 => 108,  329 => 107,  318 => 77,  308 => 76,  291 => 15,  286 => 12,  276 => 11,  257 => 9,  246 => 118,  244 => 107,  214 => 79,  212 => 76,  208 => 74,  199 => 71,  196 => 70,  191 => 69,  182 => 66,  179 => 65,  175 => 64,  171 => 62,  166 => 59,  161 => 57,  157 => 56,  154 => 55,  152 => 54,  148 => 53,  144 => 52,  140 => 50,  135 => 48,  130 => 47,  125 => 45,  121 => 44,  117 => 43,  113 => 42,  109 => 41,  105 => 40,  101 => 39,  97 => 38,  93 => 37,  89 => 36,  86 => 35,  84 => 34,  75 => 30,  69 => 26,  64 => 22,  62 => 11,  57 => 9,  47 => 1,);
+        return array (  357 => 116,  353 => 115,  349 => 114,  345 => 113,  338 => 108,  328 => 107,  317 => 77,  307 => 76,  290 => 15,  285 => 12,  275 => 11,  256 => 9,  245 => 118,  243 => 107,  213 => 79,  210 => 76,  201 => 73,  198 => 72,  193 => 71,  184 => 68,  181 => 67,  177 => 66,  171 => 62,  166 => 59,  161 => 57,  157 => 56,  154 => 55,  152 => 54,  148 => 53,  144 => 52,  140 => 50,  135 => 48,  130 => 47,  125 => 45,  121 => 44,  117 => 43,  113 => 42,  109 => 41,  105 => 40,  101 => 39,  97 => 38,  93 => 37,  89 => 36,  86 => 35,  84 => 34,  75 => 30,  69 => 26,  64 => 22,  62 => 11,  57 => 9,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -442,22 +441,22 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
                 <a class=\"user-icon-profile\" href=\"{{ path ('user_edit', {'id': app.user.id})}}\"></a>
                 {% else %}
                 <input type=\"checkbox\" name=\"\" id=\"toggler\">
-                <label class=\"label-right-icon\" for=\"toggler\"><i class=\"fas fa-arrow-down\"></i></label>
+                <label class=\"label-right-icon\" for=\"toggler\"><i class=\"fas fa-bars\"></i></label>
             {% endif %}
             </div>
         </header>
+
+    <div class=\"base-content\">
         {% for message in app.flashes('success') %}
-            <div class=\"alert alert-success text-white\" style=\"z-index: 999;\">
+            <div class=\"alert alert-success text-white pt-4\" style=\"z-index: 999; background-color:chartreuse;\">
                 {{ message }}
             </div>
         {% endfor %}
         {% for message in app.flashes('error') %}
-            <div class=\"alert alert-error text-white\" style=\"z-index: 999;\">
+            <div class=\"alert alert-error text-white pt-4\" style=\"z-index: 999; background-color:chocolate;\">
                 {{ message }}
             </div>
         {% endfor %}
-
-    <div class=\"base-content\">
     {% block body %}
     
     {% endblock %}

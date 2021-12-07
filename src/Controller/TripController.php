@@ -73,7 +73,7 @@ class TripController extends AbstractController
         
     }else{
 
-        $this->addFlash('success', 'Veuillez vous connecté pour poster un trajet');
+        $this->addFlash('error', 'Veuillez vous connecté pour poster un trajet');
         return $this->redirectToRoute('login');
         }
     }

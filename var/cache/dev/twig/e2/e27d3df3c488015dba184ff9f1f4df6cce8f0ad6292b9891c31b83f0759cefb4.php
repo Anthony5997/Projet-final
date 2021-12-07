@@ -47,7 +47,7 @@ class __TwigTemplate_35d2c1671031fcae1aab9081e27c6080cede350d722801aa9a8fe0e4a39
         // line 4
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["vehicule"]) || array_key_exists("vehicule", $context) ? $context["vehicule"] : (function () { throw new RuntimeError('Variable "vehicule" does not exist.', 4, $this->source); })()), 'form_start');
         echo "
-                      <div class=\"col-xs-12 col-sm-6 col-md-8\">
+                      <div class=\"col-xs-12 col-sm-10 col-md-10 form-info py-4 mx-auto\">
                                 <div class=\"form-group\">
                                     ";
         // line 7
@@ -55,7 +55,7 @@ class __TwigTemplate_35d2c1671031fcae1aab9081e27c6080cede350d722801aa9a8fe0e4a39
         echo "
                                     ";
         // line 8
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["vehicule"]) || array_key_exists("vehicule", $context) ? $context["vehicule"] : (function () { throw new RuntimeError('Variable "vehicule" does not exist.', 8, $this->source); })()), "country_of_registration", [], "any", false, false, false, 8), 'widget', ["attr" => ["class" => "form-control"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["vehicule"]) || array_key_exists("vehicule", $context) ? $context["vehicule"] : (function () { throw new RuntimeError('Variable "vehicule" does not exist.', 8, $this->source); })()), "country_of_registration", [], "any", false, false, false, 8), 'widget', ["attr" => ["class" => "custom-field-form"]]);
         echo "
                                 </div> 
                                 <div class='red-text'>";
@@ -69,7 +69,7 @@ class __TwigTemplate_35d2c1671031fcae1aab9081e27c6080cede350d722801aa9a8fe0e4a39
         echo "
                                     ";
         // line 13
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["vehicule"]) || array_key_exists("vehicule", $context) ? $context["vehicule"] : (function () { throw new RuntimeError('Variable "vehicule" does not exist.', 13, $this->source); })()), "numberplate", [], "any", false, false, false, 13), 'widget', ["attr" => ["class" => "form-control"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["vehicule"]) || array_key_exists("vehicule", $context) ? $context["vehicule"] : (function () { throw new RuntimeError('Variable "vehicule" does not exist.', 13, $this->source); })()), "numberplate", [], "any", false, false, false, 13), 'widget', ["attr" => ["class" => "custom-field-form"]]);
         echo "
                                 </div>
                                 <div class='red-text'>";
@@ -83,7 +83,7 @@ class __TwigTemplate_35d2c1671031fcae1aab9081e27c6080cede350d722801aa9a8fe0e4a39
         echo " 
                                     ";
         // line 18
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["vehicule"]) || array_key_exists("vehicule", $context) ? $context["vehicule"] : (function () { throw new RuntimeError('Variable "vehicule" does not exist.', 18, $this->source); })()), "brand", [], "any", false, false, false, 18), 'widget', ["attr" => ["class" => "form-control"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["vehicule"]) || array_key_exists("vehicule", $context) ? $context["vehicule"] : (function () { throw new RuntimeError('Variable "vehicule" does not exist.', 18, $this->source); })()), "brand", [], "any", false, false, false, 18), 'widget', ["attr" => ["class" => "custom-field-form"]]);
         echo "
                                 </div> 
                                 <div class='red-text'>";
@@ -97,7 +97,7 @@ class __TwigTemplate_35d2c1671031fcae1aab9081e27c6080cede350d722801aa9a8fe0e4a39
         echo " 
                                     ";
         // line 23
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["vehicule"]) || array_key_exists("vehicule", $context) ? $context["vehicule"] : (function () { throw new RuntimeError('Variable "vehicule" does not exist.', 23, $this->source); })()), "model", [], "any", false, false, false, 23), 'widget', ["attr" => ["class" => "form-control"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["vehicule"]) || array_key_exists("vehicule", $context) ? $context["vehicule"] : (function () { throw new RuntimeError('Variable "vehicule" does not exist.', 23, $this->source); })()), "model", [], "any", false, false, false, 23), 'widget', ["attr" => ["class" => "custom-field-form"]]);
         echo "
                                 </div> 
                                 <div class='red-text'>";
@@ -111,7 +111,7 @@ class __TwigTemplate_35d2c1671031fcae1aab9081e27c6080cede350d722801aa9a8fe0e4a39
         echo " 
                                     ";
         // line 28
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["vehicule"]) || array_key_exists("vehicule", $context) ? $context["vehicule"] : (function () { throw new RuntimeError('Variable "vehicule" does not exist.', 28, $this->source); })()), "color", [], "any", false, false, false, 28), 'widget', ["attr" => ["class" => "form-control"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["vehicule"]) || array_key_exists("vehicule", $context) ? $context["vehicule"] : (function () { throw new RuntimeError('Variable "vehicule" does not exist.', 28, $this->source); })()), "color", [], "any", false, false, false, 28), 'widget', ["attr" => ["class" => "custom-field-form"]]);
         echo "
                                 </div> 
                                 <div class='red-text'>";
@@ -125,7 +125,7 @@ class __TwigTemplate_35d2c1671031fcae1aab9081e27c6080cede350d722801aa9a8fe0e4a39
         echo " 
                                     ";
         // line 33
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["vehicule"]) || array_key_exists("vehicule", $context) ? $context["vehicule"] : (function () { throw new RuntimeError('Variable "vehicule" does not exist.', 33, $this->source); })()), "year", [], "any", false, false, false, 33), 'widget', ["attr" => ["class" => "form-control"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["vehicule"]) || array_key_exists("vehicule", $context) ? $context["vehicule"] : (function () { throw new RuntimeError('Variable "vehicule" does not exist.', 33, $this->source); })()), "year", [], "any", false, false, false, 33), 'widget', ["attr" => ["class" => "custom-field-form"]]);
         echo "
                                 </div> 
                                 <div class='red-text'>";
@@ -139,7 +139,7 @@ class __TwigTemplate_35d2c1671031fcae1aab9081e27c6080cede350d722801aa9a8fe0e4a39
         echo " 
                                     ";
         // line 38
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["vehicule"]) || array_key_exists("vehicule", $context) ? $context["vehicule"] : (function () { throw new RuntimeError('Variable "vehicule" does not exist.', 38, $this->source); })()), "vehicule_picture", [], "any", false, false, false, 38), 'widget', ["attr" => ["class" => "form-control"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["vehicule"]) || array_key_exists("vehicule", $context) ? $context["vehicule"] : (function () { throw new RuntimeError('Variable "vehicule" does not exist.', 38, $this->source); })()), "vehicule_picture", [], "any", false, false, false, 38), 'widget', ["attr" => ["class" => "custom-field-form"]]);
         echo "
                                 </div> 
                                 <div class='red-text'>";
@@ -154,7 +154,7 @@ class __TwigTemplate_35d2c1671031fcae1aab9081e27c6080cede350d722801aa9a8fe0e4a39
         echo "
                                         ";
         // line 44
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["vehicule"]) || array_key_exists("vehicule", $context) ? $context["vehicule"] : (function () { throw new RuntimeError('Variable "vehicule" does not exist.', 44, $this->source); })()), "typeOfVehicule", [], "any", false, false, false, 44), 'widget', ["attr" => ["class" => "form-control"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["vehicule"]) || array_key_exists("vehicule", $context) ? $context["vehicule"] : (function () { throw new RuntimeError('Variable "vehicule" does not exist.', 44, $this->source); })()), "typeOfVehicule", [], "any", false, false, false, 44), 'widget', ["attr" => ["class" => "custom-field-form"]]);
         echo "
                                     </div>
                                     <div class='red-text'>";
@@ -162,9 +162,9 @@ class __TwigTemplate_35d2c1671031fcae1aab9081e27c6080cede350d722801aa9a8fe0e4a39
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["vehicule"]) || array_key_exists("vehicule", $context) ? $context["vehicule"] : (function () { throw new RuntimeError('Variable "vehicule" does not exist.', 46, $this->source); })()), "typeOfVehicule", [], "any", false, false, false, 46), 'errors');
         echo "</div>
                                 </div>
-                            </div>
                              <div class=\"col-xs-12 col-sm-12 col-md-12 mb-4 mt-4 d-flex justify-content-center\">
-                                <button  type='submit' class=\"col-md-6 button-update-profile\">Sauvegarder mon véhicule</button>
+                                <button  type='submit' class=\"col-md-10 button-update-profile\">Sauvegarder mon véhicule</button>
+                            </div>
                             </div>
                         ";
         // line 52
@@ -202,52 +202,52 @@ class __TwigTemplate_35d2c1671031fcae1aab9081e27c6080cede350d722801aa9a8fe0e4a39
                 <div class=\"container\">  
                   <div class=\"row\">
                       {{ form_start(vehicule) }}
-                      <div class=\"col-xs-12 col-sm-6 col-md-8\">
+                      <div class=\"col-xs-12 col-sm-10 col-md-10 form-info py-4 mx-auto\">
                                 <div class=\"form-group\">
                                     {{ form_label(vehicule.country_of_registration, 'Pays d\\'immatriculation') }}
-                                    {{ form_widget(vehicule.country_of_registration, {'attr': {'class': 'form-control'}}) }}
+                                    {{ form_widget(vehicule.country_of_registration, {'attr': {'class': 'custom-field-form'}}) }}
                                 </div> 
                                 <div class='red-text'>{{ form_errors(vehicule.country_of_registration)}}</div>
                                 <div class=\"form-group\">
                                     {{ form_label(vehicule.numberplate, 'Plaque d\\'immatriculation') }}
-                                    {{ form_widget(vehicule.numberplate, {'attr': {'class': 'form-control'}}) }}
+                                    {{ form_widget(vehicule.numberplate, {'attr': {'class': 'custom-field-form'}}) }}
                                 </div>
                                 <div class='red-text'>{{ form_errors(vehicule.numberplate)}}</div>
                                 <div class=\"form-group\">
                                     {{ form_label(vehicule.brand,'Marque') }} 
-                                    {{ form_widget(vehicule.brand, {'attr': {'class': 'form-control'}}) }}
+                                    {{ form_widget(vehicule.brand, {'attr': {'class': 'custom-field-form'}}) }}
                                 </div> 
                                 <div class='red-text'>{{ form_errors(vehicule.brand)}}</div>
                                  <div class=\"form-group\">
                                     {{ form_label(vehicule.model,'Modèle') }} 
-                                    {{ form_widget(vehicule.model, {'attr': {'class': 'form-control'}}) }}
+                                    {{ form_widget(vehicule.model, {'attr': {'class': 'custom-field-form'}}) }}
                                 </div> 
                                 <div class='red-text'>{{ form_errors(vehicule.model)}}</div>
                                  <div class=\"form-group\">
                                     {{ form_label(vehicule.color,'Couleur') }} 
-                                    {{ form_widget(vehicule.color, {'attr': {'class': 'form-control'}}) }}
+                                    {{ form_widget(vehicule.color, {'attr': {'class': 'custom-field-form'}}) }}
                                 </div> 
                                 <div class='red-text'>{{ form_errors(vehicule.color)}}</div>
                                 <div class=\"form-group\">
                                     {{ form_label(vehicule.year,'Année') }} 
-                                    {{ form_widget(vehicule.year, {'attr': {'class': 'form-control'}}) }}
+                                    {{ form_widget(vehicule.year, {'attr': {'class': 'custom-field-form'}}) }}
                                 </div> 
                                 <div class='red-text'>{{ form_errors(vehicule.year)}}</div>
                                 <div class=\"form-group\">
                                     {{ form_label(vehicule.vehicule_picture,'Photo du véhicule') }} 
-                                    {{ form_widget(vehicule.vehicule_picture, {'attr': {'class': 'form-control'}}) }}
+                                    {{ form_widget(vehicule.vehicule_picture, {'attr': {'class': 'custom-field-form'}}) }}
                                 </div> 
                                 <div class='red-text'>{{ form_errors(vehicule.vehicule_picture)}}</div>
                                   <div class=\"col-xs-12 col-sm-12\">
                                     <div class=\"input-field\">
                                         {{ form_label(vehicule.typeOfVehicule, 'Type de véhicule') }}
-                                        {{ form_widget(vehicule.typeOfVehicule, {'attr': {'class': 'form-control'}}) }}
+                                        {{ form_widget(vehicule.typeOfVehicule, {'attr': {'class': 'custom-field-form'}}) }}
                                     </div>
                                     <div class='red-text'>{{ form_errors(vehicule.typeOfVehicule)}}</div>
                                 </div>
-                            </div>
                              <div class=\"col-xs-12 col-sm-12 col-md-12 mb-4 mt-4 d-flex justify-content-center\">
-                                <button  type='submit' class=\"col-md-6 button-update-profile\">Sauvegarder mon véhicule</button>
+                                <button  type='submit' class=\"col-md-10 button-update-profile\">Sauvegarder mon véhicule</button>
+                            </div>
                             </div>
                         {{ form_end(vehicule) }}
                     </div>

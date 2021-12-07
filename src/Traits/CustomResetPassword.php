@@ -28,7 +28,6 @@ trait CustomResetPassword {
         $newEncodedPassword = $passwordEncoder->encodePassword($user, $newPassword);
         $user->setPassword($newEncodedPassword);
         
-        
         $em = $this->getDoctrine()->getManager();
         $em->persist($user);
         $em->flush();  
@@ -36,11 +35,10 @@ trait CustomResetPassword {
 
 
     public function forgetPassword($passwordEncoder, $newPassword, $user) {
-        
+
         $newEncodedPassword = $passwordEncoder->encodePassword($user, $newPassword);
         $user->setPassword($newEncodedPassword);
-        
-        
+        $user->setResetToken(null);      
         $em = $this->getDoctrine()->getManager();
         $em->persist($user);
         $em->flush();  

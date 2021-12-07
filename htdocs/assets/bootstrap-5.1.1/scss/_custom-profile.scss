@@ -18,11 +18,20 @@
 
         border: 1px $custom-yellow solid !important;
         border-bottom: none !important;
+        color: $custom-yellow;
     }
 
     .nav-tabs{
         border-bottom: 1px solid $custom-yellow !important;
+
+        .nav-item a:hover{
+            border: 1px solid $custom-yellow !important;
+            border-bottom: 0px !important;
+
+            color: $custom-yellow;
+        }
     }
+
 }
 
 
@@ -139,14 +148,14 @@
 
     //ACCORDION
     
-
-
             .accordion-wrapper {
+            width: 80%;
             display: block;
             box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
             margin: 0 auto;
             margin-top: 12px;
             margin-bottom: 12px;
+
             }
 
             .accordion + .title {
@@ -163,6 +172,8 @@
             .accordion ~ .title strong {
             line-height: 24px;
             color: white;
+            font-family: "Poppins", sans-serif;
+
             }
 
             .accordion ~ .title .side-icon {
@@ -303,7 +314,12 @@
         a{
             color: black;
             font-size: 8px;
-        }    
+        }
+        
+        a:hover{
+            color: $custom-yellow;
+            font-size: 8px;
+        }  
     } 
 
     .preference-input{

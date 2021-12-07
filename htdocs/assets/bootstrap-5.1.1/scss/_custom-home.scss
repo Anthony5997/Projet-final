@@ -10,8 +10,9 @@ body {
 
 }
 .base-content{
-  overflow-y: hidden;
   padding-top: 6rem;
+  min-height: 460px;
+
 }
 
 .home{
@@ -198,7 +199,7 @@ body {
 .footer {
   position: relative;
   width: 100%;
-  background: #6ea4f7;
+  background: $gunmetal;
   min-height: 100px;
   padding: 20px 50px;
   display: flex;
@@ -255,6 +256,15 @@ body {
   font-weight: 300;
 }
 
+.links-login a{
+  color: $gunmetal;
+  text-decoration: none;
+}
+
+.links-login a:hover{
+  color: $custom-yellow;
+
+}
 
 
 

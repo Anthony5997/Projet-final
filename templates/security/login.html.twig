@@ -14,13 +14,12 @@
                 {{ message }}
             </div>
         {% endfor %}
-
         <section class="section-padding gray-bg log-section mt-5">
             <div class="container">
-                <div class="row">
+                <div class="row justify-content-center">
 
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div class="card card-panel p-2 mt-3">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-info mx-auto p-4 my-3">
                             <h3 class="text-extrabold">Connectez vous</h3>
                            <form  method="post">
                             {% if error %}
@@ -35,9 +34,9 @@
 
                                 <input type="hidden" name="_token" value="">
 
-                                <div class="input-field"> 
+                                <div class="custom-input-div"> 
                                 
-                                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" 
+                                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="custom-field-form" autocomplete="email" 
                                             autofocus
                                            required
                                            autofocus
@@ -45,10 +44,10 @@
                                            data-parsley-error-message="Une addresse valide est nécessaire.">
                                     <label for="inputEmail">Votre Email</label>
                                 </div>
-                                <div class="input-field">
+                                <div class="custom-input-div">
                                
     
-                                <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" 
+                                <input type="password" name="password" id="inputPassword" class="custom-field-form" autocomplete="current-password" 
                                             required
                                            data-parsley-trigger="change"
                                            data-parsley-error-message="Le mot de passe doit contenir au moins 6 caractères.">
@@ -61,12 +60,18 @@
                                         <label for="_remember_me">Je souhaite rester connecté
                                         </label>
                                 </div>
-                                <button type="submit" class="btn btn-primary my-3">Ce connecter</button>
+                                <div class="d-flex">
+                                    <button type="submit" class="button-update-profile my-3 mx-auto">Se connecter</button>
+                                </div>
                             </form>
-
-                                <div class="links">
+                            <div class="d-flex align-items-center flex-column">
+                                <div class="links-login mb-3">
+                                    <a href="{{path('forget_password')}}">Mot de passe oublié ?</a>
+                                </div>
+                                <div class="links-login">
                                     <a href="{{path('register')}}">Vous n'êtes pas encore inscrit ?</a>
                                 </div>
+                            </div>
                             
                         </div>
                     </div>
