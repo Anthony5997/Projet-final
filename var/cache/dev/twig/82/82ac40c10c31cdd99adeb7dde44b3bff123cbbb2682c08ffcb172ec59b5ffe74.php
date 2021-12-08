@@ -102,15 +102,15 @@ class __TwigTemplate_93a4719728c36b2659256272a43424c23836accf747eb6edda27542d013
         echo "\">
                         <div class=\"form-row my-5\">
                             <div class=\"col-md-3 col-sm-6 mt-3\">
-                            <input name=\"departureSearch\" type=\"text\" class=\"form-control\" placeholder=\"Départ\">
+                            <input name=\"departureSearch\" type=\"text\" class=\"custom-field-form\" placeholder=\"Départ\">
                             </div>
                             <div class=\"col-md-3 col-sm-6 mt-3\">
-                            <input name=\"arrivalSearch\" type=\"text\" class=\"form-control\" placeholder=\"Arrivé\">
+                            <input name=\"arrivalSearch\" type=\"text\" class=\"custom-field-form\" placeholder=\"Arrivé\">
                             </div>
                             <div class=\"col-md-3 col-sm-6 mt-3\">
-                            <input name=\"dateSearch\" type=\"date\" class=\"form-control\" placeholder=\"DATE\">
+                            <input name=\"dateSearch\" type=\"date\" class=\"custom-field-form\" placeholder=\"DATE\">
                             </div>
-                            <button class=\"btn home-search col-md-3 col-sm-6 mt-3\" type=\"submit\">Rechercher</button>
+                            <button class=\"button-update-profile col-md-3 col-sm-6 mt-3\" type=\"submit\">Rechercher</button>
                         </div>
                     </form>
                 </div>
@@ -337,15 +337,15 @@ $context["trip"], "tripStarted", [], "any", false, false, false, 105), true)) &&
                     <form action=\"{{path('trip_search')}}\">
                         <div class=\"form-row my-5\">
                             <div class=\"col-md-3 col-sm-6 mt-3\">
-                            <input name=\"departureSearch\" type=\"text\" class=\"form-control\" placeholder=\"Départ\">
+                            <input name=\"departureSearch\" type=\"text\" class=\"custom-field-form\" placeholder=\"Départ\">
                             </div>
                             <div class=\"col-md-3 col-sm-6 mt-3\">
-                            <input name=\"arrivalSearch\" type=\"text\" class=\"form-control\" placeholder=\"Arrivé\">
+                            <input name=\"arrivalSearch\" type=\"text\" class=\"custom-field-form\" placeholder=\"Arrivé\">
                             </div>
                             <div class=\"col-md-3 col-sm-6 mt-3\">
-                            <input name=\"dateSearch\" type=\"date\" class=\"form-control\" placeholder=\"DATE\">
+                            <input name=\"dateSearch\" type=\"date\" class=\"custom-field-form\" placeholder=\"DATE\">
                             </div>
-                            <button class=\"btn home-search col-md-3 col-sm-6 mt-3\" type=\"submit\">Rechercher</button>
+                            <button class=\"button-update-profile col-md-3 col-sm-6 mt-3\" type=\"submit\">Rechercher</button>
                         </div>
                     </form>
                 </div>

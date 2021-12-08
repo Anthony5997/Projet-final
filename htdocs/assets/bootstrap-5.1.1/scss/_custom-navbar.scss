@@ -20,9 +20,7 @@ header .navbar {
     width: 30%;
     top: 100%;
     background-color: $gunmetal;
-
     right: 0;
-    border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
     display: none;
     padding-top: 0.2rem !important;
     padding-bottom: 0.2rem !important;
@@ -46,17 +44,20 @@ header .logo span {
 header .navbar a {
     font-size: 0.8rem;
     text-decoration: none;
-    color: #666;
-    margin: 0.5rem;
+    color: $gunmetal;
+    margin: 0.5rem auto;
     padding: 0.7rem;
     background: #fff;
     border: 0.1rem solid rgba(0, 0, 0, 0.1);
     display: block;
     border-radius: 8px;
+    width: 92%;
 }
 
 header .navbar a:hover {
-    margin-left: -0.7rem;
+    background-color: $custom-yellow;
+    width: 98%;
+    transition: 500ms;
 }
 
 header .icons {
@@ -145,7 +146,7 @@ header .fa-user {
 
 .navbar {
     padding: 0.5rem 0.1rem;
-    border-radius: 5px;
+    border-radius: 0px 0px 5px 5px;
 }
 
 
@@ -208,14 +209,13 @@ header .fa-user {
     header .navbar {
         display: block;
         position: absolute;
-        width: 50%;
+        width: 40%;
         left: 0;
         right: 0;
         top: 100%;
         left: 0;
         right: 0;
-        background: #eee;
-        border-top: 0.1rem solid rgba(0, 0, 0, .1);
+        background: $gunmetal;
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 
     }
@@ -225,12 +225,22 @@ header .fa-user {
     }
 
     header .navbar a {
-        margin: 1rem;
+        margin: 0.5rem auto;
         padding: 1rem;
+        color: $gunmetal;
         background: #fff;
         border: 0.1rem solid rgba(0, 0, 0, .1);
         display: block;
         font-size: 0.9rem;
+        width: 92%;
+    }
+
+    header .navbar a:hover {
+       
+        background-color: $custom-yellow;
+        width: 98%;
+        transition: 500ms;
+        
     }
 
     .icons {

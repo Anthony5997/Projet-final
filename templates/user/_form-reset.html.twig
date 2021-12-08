@@ -1,23 +1,22 @@
  <section class="section-padding">
-    <div class="container">
         <div class="row">
             {{form_start(formReset)}}
             <div class="col-xs-12 col-sm-12 col-md-6">
-                <div class="form-group">
+                <div class="custom-input-div">
                     <span>{{ form_label(formReset.password, 'Mot de passe actuel') }}</span>
-                    {{ form_widget(formReset.password) }}
+                    {{ form_widget(formReset.password, {'attr': {'class': 'custom-field-form'}}) }}
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-6">
-                <div class="form-group">
+                <div class="custom-input-div">
                     {{ form_label(formReset.newPassword.first) }}
-                    {{ form_widget(formReset.newPassword.first) }}
+                    {{ form_widget(formReset.newPassword.first, {'attr': {'class': 'custom-field-form'}}) }}
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-6">
-                <div class="form-group">
+                <div class="custom-input-div">
                     {{ form_label(formReset.newPassword.second) }}  
-                    {{ form_widget(formReset.newPassword.second) }}
+                    {{ form_widget(formReset.newPassword.second, {'attr': {'class': 'custom-field-form'}}) }}
                 </div>
             </div>    
 
@@ -28,5 +27,4 @@
             </div>  
             {{form_end(formReset)}}
         </div>
-    </div>
 </section>
