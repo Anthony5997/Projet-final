@@ -28,6 +28,7 @@
   --bs-blue-gray: #6090BF;
   --bs-blue-ligth: #A0BAD2;
   --bs-custom-yellow: #F99C25;
+  --bs-cultured: #F0F1F2;
   --bs-gray-100: #f8f9fa;
   --bs-gray-200: #e9ecef;
   --bs-gray-300: #dee2e6;
@@ -7009,9 +7010,8 @@ header .fa-user {
 .container-profile {
   width: 100%;
   padding-top: 40px;
-  padding-bottom: 40px;
-  margin-left: 10px;
   margin-right: 20px;
+  padding-right: 10px;
 }
 .container-profile .tab-custom.active {
   border-bottom: none !important;
@@ -7083,6 +7083,12 @@ header .fa-user {
 .profile-section {
   padding-top: 30px;
   padding-bottom: 30px;
+}
+
+.section-padding {
+  background-color: #6090BF;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .button-update-profile {
@@ -7234,6 +7240,7 @@ header .fa-user {
   padding-bottom: 20px;
   width: 90%;
   animation: fadeInRight 1s ease-in-out;
+  background-color: #F0F1F2;
 }
 
 @media (max-width: 768px) {
@@ -7315,15 +7322,18 @@ input[type=file] {
   padding-left: 5px;
   padding-right: 5px;
   padding-top: 3px;
-  margin-top: 5px;
+  margin-top: 1px;
   font-size: 12px;
-  border-radius: 5px;
+  border-radius: 5px 0px 0px 5px;
   transform: scale(1.05);
   transition: 500ms;
+  margin-right: -22px;
+  background-color: #6090BF;
 }
 .nav-item-test a.active div p {
   font-size: 10px;
   color: #F99C25;
+  margin-bottom: 2px;
 }
 
 .nav-item-test a {
@@ -7472,6 +7482,14 @@ input[type=file] {
     padding-left: 0;
     display: flex;
     justify-content: center;
+  }
+
+  .nav-item-test a.active {
+    color: #F99C25;
+  }
+  .nav-item-test a.active div {
+    margin-right: -14px;
+    background-color: #6090BF;
   }
 }
 @keyframes fadeInRight {

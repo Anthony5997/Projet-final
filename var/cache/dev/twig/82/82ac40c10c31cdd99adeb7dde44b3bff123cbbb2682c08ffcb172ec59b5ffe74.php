@@ -288,10 +288,6 @@ $context["trip"], "tripStarted", [], "any", false, false, false, 105), true)) &&
         echo "                </div>
             </div>
     </div>
-    <div class=\"\" style=\"margin-top: 10rem;\">
-    
-    </div>
-
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -462,10 +458,6 @@ $context["trip"], "tripStarted", [], "any", false, false, false, 105), true)) &&
                 </div>
             </div>
     </div>
-    <div class=\"\" style=\"margin-top: 10rem;\">
-    
-    </div>
-
 {% endblock %}
 ", "home/index.html.twig", "/shared/httpd/Projet-Final/templates/home/index.html.twig");
     }

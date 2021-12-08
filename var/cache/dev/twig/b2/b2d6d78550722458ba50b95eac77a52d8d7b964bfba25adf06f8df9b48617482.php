@@ -40,7 +40,7 @@ class __TwigTemplate_afd4f3a139eb7a269521ab83469fc2bf30afb999af47b8570ad656fd595
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "user/_form-reset.html.twig"));
 
         // line 1
-        echo " <section class=\"section-padding\">
+        echo " <section>
         <div class=\"row\">
             ";
         // line 3
@@ -119,7 +119,7 @@ class __TwigTemplate_afd4f3a139eb7a269521ab83469fc2bf30afb999af47b8570ad656fd595
 
     public function getSourceContext()
     {
-        return new Source(" <section class=\"section-padding\">
+        return new Source(" <section>
         <div class=\"row\">
             {{form_start(formReset)}}
             <div class=\"col-xs-12 col-sm-12 col-md-6\">

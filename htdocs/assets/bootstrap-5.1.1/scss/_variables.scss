@@ -52,6 +52,7 @@ $gunmetal : #193041 !default;
 $blue-gray : #6090BF !default;
 $blue-ligth : #A0BAD2 !default;
 $custom-yellow : #F99C25 !default;
+$cultured : #F0F1F2 !default;
 // scss-docs-end color-variables
 
 // scss-docs-start colors-map
@@ -75,6 +76,7 @@ $colors: (
   "blue-gray" : $blue-gray,
   "blue-ligth" : $blue-ligth,
   "custom-yellow" : $custom-yellow,
+  "cultured" : $cultured,
 ) !default;
 // scss-docs-end colors-map
 
