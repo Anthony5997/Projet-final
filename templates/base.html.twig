@@ -36,12 +36,7 @@
                 <a href="{{path('home')}}"><i class="fas fa-home"></i> Accueil</a>
                 <a href="{{ path ('user_edit', {'id': app.user.id})}}"><i class="far fa-id-badge"></i> Mon Profil</a>
                 <a href="{{ path ('message_discussion', {'id': app.user.id})}}"><i class="far fa-envelope"></i> Boite de réception</a>
-                <a href="{{ path ('user_edit', {'id': app.user.id})}}#tabs-2"><i class="fas fa-file-alt"></i> Mes informations personnel</a>
-                <a href="{{ path ('user_edit', {'id': app.user.id})}}#tabs-3"><i class="fas fa-info-circle"></i> Préférence de voyage</a>
-                <a href="{{ path ('user_edit', {'id': app.user.id})}}#tabs-4"><i class="fas fa-car-side"></i> Mon véhicule</a>
-                <a href="{{ path ('user_edit', {'id': app.user.id})}}#tabs-5"><i class="fas fa-road"></i> Mes trajets</a>
                 <a href="{{ path ('review_show', {'id': app.user.id})}}"><i class="far fa-comment-alt"></i> Mes Avis</a>
-                <a href="{{ path ('user_edit', {'id': app.user.id})}}#tabs-6"><i class="far fa-user-circle"></i> Mon compte</a>
                 <a href="{{ path ('logout')}}"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
             {% else %}
                 <a href="{{ path ('login')}}">Ce connecter</a>

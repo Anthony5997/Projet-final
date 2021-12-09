@@ -7011,7 +7011,6 @@ header .fa-user {
   width: 100%;
   padding-top: 40px;
   margin-right: 20px;
-  padding-right: 10px;
 }
 .container-profile .tab-custom.active {
   border-bottom: none !important;
@@ -7086,9 +7085,10 @@ header .fa-user {
 }
 
 .section-padding {
-  background-color: #6090BF;
+  background-color: #193041;
   padding-top: 20px;
   padding-bottom: 20px;
+  min-height: 415px;
 }
 
 .button-update-profile {
@@ -7299,12 +7299,16 @@ input[type=file] {
   position: fixed;
   right: 100%;
   bottom: 100%;
+  background-color: transparent;
+  border: none;
+  color: transparent;
 }
 
 .custom-file-upload {
-  border: 1px solid #ccc;
+  border: none;
   display: inline-block;
   padding: 6px 12px;
+  color: transparent;
   cursor: pointer;
 }
 
@@ -7318,17 +7322,14 @@ input[type=file] {
 }
 .nav-item-test a.active div {
   border: 1px solid #F0F1F2;
-  background-color: #6090BF;
+  background-color: #193041;
   padding-left: 5px;
   padding-right: 5px;
   padding-top: 3px;
-  margin-top: 1px;
   font-size: 12px;
   border-radius: 5px 0px 0px 5px;
-  transform: scale(1.05);
+  transform: translateX(56px) scale(1.05);
   transition: 500ms;
-  margin-right: -22px;
-  background-color: #6090BF;
 }
 .nav-item-test a.active div p {
   font-size: 10px;
@@ -7368,6 +7369,86 @@ input[type=file] {
 }
 .nav-item-test a:hover p {
   color: #F99C25;
+}
+
+.card-profile-last-trip {
+  background-color: #F99C25;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+}
+.card-profile-last-trip .trip-profile-card {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid chocolate;
+  background-color: #A0BAD2;
+}
+.card-profile-last-trip .trip-profile-card p {
+  color: white;
+}
+.card-profile-last-trip .trip-profile-card i {
+  color: white;
+}
+.card-profile-last-trip .trip-profile-card i:hover {
+  color: #F99C25;
+  transform: scale(1.1);
+}
+
+.card-profile a {
+  text-decoration: none;
+  border-radius: 5px;
+}
+.card-profile a .card-profile-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  background-color: #F99C25;
+  border-radius: 5px;
+  min-height: 95px;
+}
+.card-profile a .card-profile-content p {
+  color: white;
+  font-size: 12px;
+}
+.card-profile a .card-profile-content i {
+  font-size: 2.5rem;
+  color: white;
+}
+
+.card-profile:hover {
+  box-shadow: 0 15px 5px rgba(0, 0, 0, 0.2);
+  transform: translateY(-0.5rem);
+  transition: 500ms;
+}
+.card-profile:hover p {
+  color: white;
+  font-size: 12px;
+  transform: scale(1.1);
+  transition: 500ms;
+}
+.card-profile:hover i {
+  font-size: 2.5rem;
+  color: white;
+  transform: scale(1.2);
+  transition: 500ms;
+  margin-bottom: 3px;
+}
+
+.trip-finish-button {
+  padding: 5px;
+  background-color: #6090BF;
+  color: #193041;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.trip-start-button {
+  padding: 5px;
+  background-color: #F99C25;
+  color: #193041;
+  border-radius: 5px;
+  text-decoration: none;
 }
 
 @media (max-width: 950px) {
@@ -7488,8 +7569,15 @@ input[type=file] {
     color: #F99C25;
   }
   .nav-item-test a.active div {
-    margin-right: -14px;
-    background-color: #6090BF;
+    border: 1px solid #F0F1F2;
+    background-color: #193041;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 3px;
+    font-size: 12px;
+    border-radius: 5px 0px 0px 5px;
+    transform: translateX(21px) scale(1.05);
+    transition: 500ms;
   }
 }
 @keyframes fadeInRight {

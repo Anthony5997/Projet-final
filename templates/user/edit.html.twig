@@ -172,6 +172,28 @@
                                     </div>
                                 </div>
                             </label>
+                            <div class="row justify-content-around mt-4">
+                                <div class="col-6">
+                                    <div class="card-profile"> 
+                                        <a href="{{ path ('message_discussion', {'id': app.user.id})}}">
+                                            <div class="card-profile-content justify-content-center">
+                                                <i class="far fa-envelope"></i>
+                                                <p>Boite de récéption</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="card-profile">
+                                        <a href="{{ path ('review_show', {'id': app.user.id})}}">
+                                            <div class="card-profile-content justify-content-center">
+                                                <i class="far fa-star"></i>
+                                                <p>Vos avis</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="tab-pane" id="tabs-2" role="tabpanel">
@@ -190,40 +212,43 @@
                         <div class="row justify-content-center ">
                             <div class=" form-info">
                                 <h3 class="col d-flex justify-content-center">Historique de mes trajets</h3>
-                                <div class="row">
-                                {% for trip in trips %}
-                                {% if loop.index0 < 3 %}
-
-                                    <div class="row mt-4 line-trip-profile">
-                                    <div class="col d-flex justify-content-center">{{ trip.departure }}
-                                        ->
-                                        {{ trip.arrival }}</div>
-                                    <div class="col d-flex justify-content-center">{{ trip.dateOfTrip|date("d M") }}</div>
-                                    {% if trip.tripStarted != true and trip.tripCompleted != true %}
-                                        <div class="col d-flex flex-column align-items-center">
-                                            <a href="{{ path ('trip_start', {'id': trip.id}) }}" onclick="return prompt('Voulez vous commencer le trajet ? Taper \'Oui\' pour commencer') == 'Oui'" href="" class="btn btn-primary">Commencer</a>
-                                        </div>
-                                    {% elseif trip.tripCompleted == true %}
-                                        <div class="col d-flex flex-column align-items-center">
-                                            <a class="btn btn-success">Trajet terminé</a>
-                                        </div>
-                                    {% else %}
-                                        <div class="col d-flex flex-column align-items-center">
-                                            <div class="row d-flex ">Trajet en cours</div>
-                                            <a href="{{ path ('trip_finish', {'id': trip.id}) }}" class="btn btn-info">Terminer le trajet</a>
-                                        </div>
-                                    {% endif %}
-                                    <div class="col d-flex  justify-content-center align-items-center">
-                                        <a href="{{ path ('trip_details', {'id': trip.id}) }}" class="btn">
-                                            <i class="far fa-eye"></i>
-                                        </a>
-                                    </div>
+                                <div class="row justify-content-around">
+                                    {% for trip in trips %}
+                                        {% if loop.index0 < 3 %}
+                                            <div class="col-12 col-sm-4 my-2">
+                                                <div class="card-profile-last-trip"> 
+                                                    <div class="card-profile-content">
+                                                        <div class="col trip-profile-card">
+                                                            <div class="col d-flex justify-content-center">
+                                                            <p>{{ trip.departure }} -> {{ trip.arrival }}</p>
+                                                            </div>
+                                                            <div class="col d-flex justify-content-center my-2"><p>{{ trip.dateOfTrip|date("d M") }}</p></div>
+                                                            <div class="col d-flex  justify-content-center align-items-center my-2">
+                                                                <a href="{{ path ('trip_details', {'id': trip.id}) }}" class="btn">
+                                                                    <i class="far fa-eye"></i>
+                                                                </a>
+                                                            </div>
+                                                            {% if trip.tripStarted != true and trip.tripCompleted != true %}
+                                                                <div class="col d-flex flex-column align-items-center">
+                                                                    <a href="{{ path ('trip_start', {'id': trip.id}) }}" onclick="return prompt('Voulez vous commencer le trajet ? Taper \'Oui\' pour commencer') == 'Oui'" href="" class="trip-start-button">Commencer</a>
+                                                                </div>
+                                                            {% elseif trip.tripCompleted == true %}
+                                                                <div class="col d-flex flex-column align-items-center">
+                                                                    <a class="trip-finish-button">Trajet terminé</a>
+                                                                </div>
+                                                            {% else %}
+                                                                <div class="col d-flex flex-column align-items-center">
+                                                                    <div class="row d-flex ">Trajet en cours</div>
+                                                                    <a href="{{ path ('trip_finish', {'id': trip.id}) }}" class="btn btn-info">Terminer le trajet</a>
+                                                                </div>
+                                                            {% endif %}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
                                 </div>
-                                
-                                
-                                {% endif %}
-                            {% endfor %}
-                        </div>
                         <label class="accordion-wrapper">
                             <input type="checkbox" class="accordion" hidden/>
                             <div class="title">
@@ -252,11 +277,11 @@
                                             <div class="col d-flex justify-content-center">{{ trip.dateOfTrip|date("d M") }}</div>
                                             {% if trip.tripStarted != true and trip.tripCompleted != true %}
                                                 <div class="col d-flex flex-column align-items-center">
-                                                    <a href="{{ path ('trip_start', {'id': trip.id}) }}" onclick="return prompt('Voulez vous commencer le trajet ? Taper \'Oui\' pour commencer') == 'Oui'" href="" class="btn btn-primary">Commencer</a>
+                                                    <a href="{{ path ('trip_start', {'id': trip.id}) }}" onclick="return prompt('Voulez vous commencer le trajet ? Taper \'Oui\' pour commencer') == 'Oui'" href="" class="trip-start-button">Commencer</a>
                                                 </div>
                                             {% elseif trip.tripCompleted == true %}
                                                 <div class="col d-flex flex-column align-items-center">
-                                                    <a class="btn btn-success">Trajet terminé</a>
+                                                    <a class="trip-finish-button">Trajet terminé</a>
                                                 </div>
                                             {% else %}
                                                 <div class="col d-flex flex-column align-items-center">
