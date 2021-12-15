@@ -11,7 +11,7 @@ use JsonSerializable;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
- * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
+ * @UniqueEntity(fields={"email"}, message="Cet email est déjà utilisé.")
  */
 class User implements UserInterface, JsonSerializable
 {
@@ -67,37 +67,12 @@ class User implements UserInterface, JsonSerializable
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $adress;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $country;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $city;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
     private $bio;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true, options={"default":"default_profile_picture.jpg"})
      */
     private $profile_picture;
-
-    /**
-     * @ORM\Column(type="boolean", nullable=true)
-     */
-    private $id_card;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $id_card_file;
 
     /**
      * @ORM\Column(type="date", nullable=false)
@@ -271,42 +246,6 @@ class User implements UserInterface, JsonSerializable
     public function setPhone(?int $phone): self
     {
         $this->phone = $phone;
-
-        return $this;
-    }
-
-    public function getAdress(): ?string
-    {
-        return $this->adress;
-    }
-
-    public function setAdress(?string $adress): self
-    {
-        $this->adress = $adress;
-
-        return $this;
-    }
-
-    public function getCountry(): ?string
-    {
-        return $this->country;
-    }
-
-    public function setCountry(?string $country): self
-    {
-        $this->country = $country;
-
-        return $this;
-    }
-
-    public function getCity(): ?string
-    {
-        return $this->city;
-    }
-
-    public function setCity(?string $city): self
-    {
-        $this->city = $city;
 
         return $this;
     }

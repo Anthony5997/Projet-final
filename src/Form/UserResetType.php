@@ -35,7 +35,7 @@ class UserResetType extends AbstractType
                     ]),
                     new Length([
                        'min' => 6,
-                       'minMessage' => 'Mot de passe invalide, veuillez inclure au moins 6 caractère',
+                       'minMessage' => 'Mot de passe invalide, veuillez inclure au moins 6 caractères',
                         // max length allowed by Symfony for security reasons
                          'max' => 4096,
                      ]),

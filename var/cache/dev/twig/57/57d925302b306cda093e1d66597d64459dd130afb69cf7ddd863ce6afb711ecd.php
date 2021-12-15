@@ -120,7 +120,7 @@ class __TwigTemplate_ba6902c2b42979aae61d943d6eec761e6c9e67ea2f4a82c98905f34347d
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 16
         echo "<div class=\"container\">
-    <h1>Proposer un trajet</h1>
+    <h1 class=\"text-center\">Publier un trajet</h1>
 
     ";
         // line 19
@@ -169,7 +169,7 @@ class __TwigTemplate_ba6902c2b42979aae61d943d6eec761e6c9e67ea2f4a82c98905f34347d
             </div>
         {% endfor %}
 <div class=\"container\">
-    <h1>Proposer un trajet</h1>
+    <h1 class=\"text-center\">Publier un trajet</h1>
 
     {{ include('trip/_form.html.twig') }}
 </div>

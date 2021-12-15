@@ -6783,6 +6783,10 @@ header .navbar {
   padding-bottom: 0.2rem !important;
 }
 
+.fa-bars:before {
+  cursor: pointer;
+}
+
 header .logo {
   font-size: 2.5rem;
   color: #333;
@@ -6893,6 +6897,8 @@ header .fa-user {
   border: 1px rgba(128, 128, 128, 0.261) solid;
   cursor: pointer;
   margin-left: 20px;
+  min-width: 70px;
+  min-height: 70px;
 }
 
 .navbar {
@@ -7023,6 +7029,21 @@ header .fa-user {
   border: 1px solid #F99C25 !important;
   border-bottom: 0 !important;
   color: #F99C25;
+}
+
+.welcome-profile {
+  width: 85%;
+  border: #6090BF 1px solid;
+  background-color: #F0F1F2;
+  border-radius: 5px;
+  padding: 0px 15px;
+  margin-bottom: 10px;
+}
+.welcome-profile h2, .welcome-profile .h2 {
+  padding-top: 5px;
+}
+.welcome-profile p {
+  text-align: justify;
 }
 
 .profile-picture-profile {
@@ -7257,17 +7278,19 @@ header .fa-user {
   -moz-border-radius: 15px;
   border-radius: 15px;
   color: #fff;
-  font-size: 1em;
+  font-size: 0.7rem;
   font-weight: bold;
-  margin: 1.25em auto;
-  /*20px/16px 0*/
+  margin: 1rem auto;
   overflow: hidden;
-  padding: 0.875em;
-  /*14px/16px*/
+  padding: 1em;
   position: relative;
   text-align: center;
-  width: 50%;
+  width: 70%;
+  justify-content: center;
   cursor: pointer;
+}
+.fileUpload span {
+  color: white;
 }
 
 .fileUpload:hover,
@@ -7592,6 +7615,25 @@ input[type=file] {
 * {
   color: #011821;
   font-family: "Poppins", sans-serif;
+}
+
+.bold-yellow {
+  color: #F99C25;
+  font-weight: bold;
+}
+
+.red-text {
+  color: red !important;
+}
+.red-text ul {
+  color: red !important;
+}
+.red-text ul li {
+  color: red !important;
+}
+
+.alert {
+  margin: 0 !important;
 }
 
 body {
@@ -8063,11 +8105,11 @@ body {
 
 .line .content::before {
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 23px;
+  height: 23px;
   background-color: #82b6e8;
   content: "";
-  left: -9px;
+  left: -10px;
   border-radius: 50%;
 }
 
@@ -8156,11 +8198,11 @@ a .font-control-rating {
 
   .line .content::before {
     position: absolute;
-    width: 13px;
-    height: 13px;
+    width: 15px;
+    height: 15px;
     background-color: #82b6e8;
     content: "";
-    left: -9px;
+    left: -10px;
     border-radius: 50%;
   }
 
@@ -8470,11 +8512,11 @@ a .font-control-rating {
 
   .line-detail .content::before {
     position: absolute;
-    width: 13px;
-    height: 13px;
+    width: 15px;
+    height: 15px;
     background-color: #82b6e8;
     content: "";
-    left: -9px;
+    left: -10px;
     border-radius: 50%;
   }
 

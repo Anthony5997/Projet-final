@@ -16,6 +16,7 @@ divDepartureGuess.addEventListener("input", (e)=> {
     currentSearch = e.target.value;
 
     divDepartureGuess.innerHTML = ''
+    console.log(currentSearch);
     if(currentSearch.length > 2){
         fetch('http://projet-final.loc/trip/test/'+currentSearch)
         .then((response)=>{

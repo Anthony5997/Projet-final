@@ -2,77 +2,6 @@
 
 {% block title %}S'enregister{% endblock %}
 
-  {#  {% block stylesheets %}
-        <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
-            <link rel="stylesheet" href="style.css">
-
-
-
-<style>
-		[x-cloak] {
-			display: none;
-		}
-
-		[type="checkbox"] {
-			box-sizing: border-box;
-			padding: 0;
-		}
-
-		.form-checkbox,
-		.form-radio {
-			-webkit-appearance: none;
-			-moz-appearance: none;
-			appearance: none;
-			-webkit-print-color-adjust: exact;
-			color-adjust: exact;
-			display: inline-block;
-			vertical-align: middle;
-			background-origin: border-box;
-			-webkit-user-select: none;
-			-moz-user-select: none;
-			-ms-user-select: none;
-			user-select: none;
-			flex-shrink: 0;
-			color: currentColor;
-			background-color: #fff;
-			border-color: #e2e8f0;
-			border-width: 1px;
-			height: 1.4em;
-			width: 1.4em;
-		}
-
-		.form-checkbox {
-			border-radius: 0.25rem;
-		}
-
-		.form-radio {
-			border-radius: 50%;
-		}
-
-		.form-checkbox:checked {
-			background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z'/%3e%3c/svg%3e");
-			border-color: transparent;
-			background-color: currentColor;
-			background-size: 100% 100%;
-			background-position: center;
-			background-repeat: no-repeat;
-		}
-		
-		.form-radio:checked {
-			background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
-			border-color: transparent;
-			background-color: currentColor;
-			background-size: 100% 100%;
-			background-position: center;
-			background-repeat: no-repeat;
-		}
-	</style> 
-
-
-
-
-    {% endblock %} #}
-
 {% block body %}
     {% for flashError in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
@@ -85,50 +14,59 @@
                         <h3 class="text-extrabold my-2">Créé un nouveau compte</h3>
                         <form id="register-form" role="form" method="post" accept-char="UTF-8" autocomplete="off" data-parsley-validate>
                              {{ form_start(registrationForm) }}
+							     <div class="custom-input-div">
+                            {{ form_label(registrationForm.firstname, 'Nom d\'utilisateur')}}
+                                <div class='red-text'>{{ form_errors(registrationForm.email)}}</div>
+                            </div>
+                            {{ form_widget(registrationForm.firstname, { 'attr': {
+                             'class': 'custom-field-form',
+                            'data-parsley-trigger' : "change",
+                            'data-parsley-error-message' : "Veuillez saisir un nom"
+                            } }) }}
                             <div class="custom-input-div">
+                            {{ form_label(registrationForm.email, 'Votre Email')}}
+                                <div class='red-text'>{{ form_errors(registrationForm.email)}}</div>
+                            </div>
                             {{ form_widget(registrationForm.email, { 'attr': {
                              'class': 'custom-field-form',
                             'data-parsley-trigger' : "change",
                             'data-parsley-error-message' : "Une adresse mail valide est nécessaire."
                             } }) }}
-                            {{ form_label(registrationForm.email, 'Votre Email')}}
-                                <div class='red-text'>{{ form_errors(registrationForm.email)}}</div>
-                            </div>
 
                             <div class="custom-input-div">
+                            {{ form_label(registrationForm.password.first, 'Mot de passe')}}
+                                <i class="fa fa-eye show-password"></i>
+                                <div class='red-text'>{{ form_errors(registrationForm.password.first) }}</div>
+                            </div>
                              {{ form_widget(registrationForm.password.first, { 'attr': {
                             'class': 'custom-field-form',
                             'data-parsley-trigger' : "change",
                             'data-parsley-minlength' : "6",
                             'data-parsley-error-message' : "Le mot de passe doit contenir au moins 6 caractères."
                             } }) }}
-                            {{ form_label(registrationForm.password.first, 'Mot de passe')}}
-                                <i class="fa fa-eye show-password"></i>
-                                <div class='red-text'>{{ form_errors(registrationForm.password.first) }}</div>
-                            </div>
 
                              <div class="custom-input-div">
+                            {{ form_label(registrationForm.password.second, 'Confirmez votre mot de passe.')}}
+                                <i class="fa fa-eye show-password"></i>
+                                 <div class='red-text'>{{ form_errors(registrationForm.password.second)}}</div>
+                            </div>
                              {{ form_widget(registrationForm.password.second, { 'attr': {
                             'class': 'custom-field-form',
                             'data-parsley-trigger' : "change",
                             'data-parsley-equalto' :"#password",
                             'data-parsley-error-message' : "Les mots de passes ne correspondent pas."
                             } }) }}
-                            {{ form_label(registrationForm.password.second, 'Confirmez votre mot de passe.')}}
-                                <i class="fa fa-eye show-password"></i>
-                                 <div class='red-text'>{{ form_errors(registrationForm.password.second)}}</div>
-                            </div>
-                            <div class="checkbox">
+                            <div class="checkbox mt-3">
 
                             {{ form_widget(registrationForm.agreeTerms, { 'attr' :{'oninvalid' : 'alert("Vous devez accepter les conditions d\'utilisation")'}  }) }}
-                                <label for="registration_form_agreeTerms">J'ai lu et accepte les <a href="#!" target="_blank">Conditions d'utilisation</a></label>
+                                <label for="registration_form_agreeTerms">J'ai lu et accepte les <a class="links-login" href="#!" target="_blank">Conditions d'utilisation</a></label>
                                 <div class='red-text'>{{ form_errors(registrationForm.agreeTerms) }}</div>
                             </div>
 							<div class="d-flex">
                             	<button type="submit" class="button-update-profile my-3 mx-auto">Crée mon compte</button>
                             </div>
                                {{ form_end(registrationForm) }}
-                               <div class="links-login">
+                               <div class="links-login text-center">
                                 <a href="{{ path('login') }}">Vous avez déjà un compte? Cliquer ici! </a>
                             </div>
                         </form>

@@ -74,7 +74,7 @@ class Authenticator extends AbstractFormLoginAuthenticator implements PasswordAu
 
 
         if (!$user) {
-            throw new UsernameNotFoundException('Email could not be found.');
+            throw new UsernameNotFoundException('L\'adresse mail est inconnue.');
         }
 
         return $user;

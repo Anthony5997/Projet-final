@@ -28,9 +28,6 @@ class UserType extends AbstractType
                 'widget' => 'single_text',
             ])
             ->add('phone')
-            ->add('adress')
-            ->add('country')
-            ->add('city')
             ->add('bio', TextareaType::class, [
                 'required' => false,
                 'attr' => [
@@ -59,40 +56,6 @@ class UserType extends AbstractType
                             'image/pgn',
                             'image/gif'
                         ],
-                    ])
-                ],
-            ])
-            // ->add('travel_preferences', EntityType::class, [
-            //     'class' => TravelPreferences::class,
-            //     'query_builder' => function (EntityRepository $er) {
-            //         return $er->createQueryBuilder('u');
-            //     },
-            //     'choice_label' => 'type',
-            // ])
-            ->add('id_card_file', FileType::class, [
-                'label' => 'Cliquer pour ajouter une carte',
-
-                // unmapped means that this field is not associated to any entity property
-                'mapped' => false,
-
-                // make it optional so you don't have to re-upload the PDF file
-                // every time you edit the Product details
-                'required' => false,
-
-                // unmapped fields can't define their validation using annotations
-                // in the associated entity, so you can use the PHP constraint classes
-                'constraints' => [
-                    new File([
-                        'maxSize' => '1024k',
-                        'mimeTypes' => [
-                            'application/pdf',
-                            'application/x-pdf',
-                            'image/jpeg',
-                            'image/jpg',
-                            'image/pgn',
-                            'image/gif'
-                        ],
-                        'mimeTypesMessage' => 'Please upload a valid PDF document',
                     ])
                 ],
             ])

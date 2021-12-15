@@ -1,3 +1,4 @@
+{% set checkAllPreferences = (user.travelPreferences.discussion != null) and (user.travelPreferences.smoking != null) and (user.travelPreferences.music != null) and (user.travelPreferences.animals != null) and (user.travelPreferences.healthPass != null) %}
 {% extends 'base.html.twig' %}
 
 {% block title %}Edit User
@@ -5,11 +6,19 @@
 
 {% block body %}
 <div class="container-profile">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 mt-4">
-                <h1 class="mx-auto text-center">TEST DE SECTION DE PRESENTATION</h1>
-            </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-12 mt-4 welcome-profile align-items-center">
+            <h2 class="mx-auto text-center">Bienvenue {{user.firstName}} !</h2>
+            <p>
+                Depuis votre espace membre, vous pouvrez remplir des informations vous concernant et utile à la communauté. Vous retrouverez ici l'historique de vos trajets ainsi que vos informations personnelles.
+            </p>
+            <p>Pour commencer où mettre à jour l'avancée d'un trajet, rendez-vous dans l'onglet "<span class="bold-yellow">Mes trajets</span>"</p>
+            <p> Les informations du résumé seront visible par les autres utilisateurs, n'oublier pas de les remplirs depuis les onglets
+                    "<span class="bold-yellow">Mes préférences de voyage</span>", 
+                    "<span class="bold-yellow">Mon véhicule</span>" et 
+                    "<span class="bold-yellow">Informations personnelles</span>" !
+            </p>
+            <p><span class="bold-yellow">Bonne route !</span></p>
         </div>
     </div>
     <div class="row">
@@ -19,7 +28,7 @@
                     <a class="nav-link-test  tab-custom-test active" data-toggle="tab" href="#tabs-1" role="tab">
                         <div class="d-flex flex-column justify-content-center align-items-center">
                                 <i class="far fa-id-badge d-flex align-items-center"></i> 
-                                <p>A propos</p>
+                                <p>Résumé</p>
                         </div>
                     </a>
                 </li>
@@ -27,7 +36,7 @@
                     <a class="tab-custom-test " data-toggle="tab" href="#tabs-2" role="tab">
                         <div class="d-flex flex-column justify-content-center align-items-center">
                             <i class="fas fa-info d-flex align-items-center"></i> 
-                            <p>Information Personnel</p>
+                            <p>Informations personnelles</p>
                         </div>
                     </a>
                 </li>
@@ -43,7 +52,7 @@
                     <a class="tab-custom-test" data-toggle="tab" href="#tabs-4" role="tab">
                         <div class="d-flex flex-column justify-content-center align-items-center">
                             <i class="fas fa-car d-flex align-items-center"></i> 
-                            <p>Véhicule Personnel</p>
+                            <p>Mon Véhicule</p>
                         </div>
                     </a>
                 </li>
@@ -120,28 +129,42 @@
                                         <path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"/>
                                     </svg>
                                 </div>
-                                <div class="content">
-                                    <div class="preference-profile-container col-xs-12 col-sm-10 col-md-9">
-                                        <h6>
-                                            Discussion :
-                                        </h6>
-                                        <p class="form-control">{{ user.travelPreferences.discussion }}</p>
-                                        <h6>
-                                            Fumeur :
-                                        </h6>
-                                        <p class="form-control">{{ user.travelPreferences.smoking }}</p>
-                                        <h6>
-                                            Musique :
-                                        </h6>
-                                        <p class="form-control">{{ user.travelPreferences.music }}</p>
-                                        <h6>
-                                            Animaux :
-                                        </h6>
-                                        <p class="form-control">{{ user.travelPreferences.animals }}</p>
-                                        <h6>
-                                            Pass Sanitaire :
-                                        </h6>
-                                        <p class="form-control">{{ user.travelPreferences.healthPass }}</p>
+                                <div class="content py-2">
+                                    <div class="form-info mx-auto col-xs-12 col-sm-10 col-md-9">
+                                    {% if checkAllPreferences == false %}
+                                     <p>Veuillez renseigner vos préférences pour les consulters et les rendre visibles.</p>
+                                    {% else %}
+                                        {% if user.travelPreferences.discussion != null %}
+                                            <h6>
+                                                Discussion :
+                                            </h6>
+                                            <p class="custom-field-form">{{ user.travelPreferences.discussion }}</p>
+                                        {% endif %}
+                                        {% if user.travelPreferences.smoking != null %}
+                                            <h6>
+                                                Fumeur :
+                                            </h6>
+                                            <p class="custom-field-form">{{ user.travelPreferences.smoking }}</p>
+                                        {% endif %}
+                                            {% if user.travelPreferences.music != null %}
+                                            <h6>
+                                                Musique :
+                                            </h6>
+                                            <p class="custom-field-form">{{ user.travelPreferences.music }}</p>
+                                        {% endif %}
+                                        {% if user.travelPreferences.animals != null %}
+                                            <h6>
+                                                Animaux :
+                                            </h6>
+                                            <p class="custom-field-form">{{ user.travelPreferences.animals }}</p>
+                                            {% endif %}
+                                        {% if user.travelPreferences.healthPass != null %}
+                                            <h6>
+                                                Pass Sanitaire :
+                                            </h6>
+                                            <p class="custom-field-form">{{ user.travelPreferences.healthPass }}</p>
+                                        {% endif %}
+                                    {% endif %}
                                     </div>
                                 </div>
                             </label>
@@ -156,8 +179,8 @@
                                         <path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"/>
                                     </svg>
                                 </div>
-                                <div class="content">
-                                    <div class="row mt-3 preference-profile-container">
+                                <div class="content py-2">
+                                    <div class="row mx-auto form-info">
                                         <div class="col-xs-12 col-sm-6 col-md-6 d-flex flex-column pl-5 justify-content-center">
                                             <p class="vehicule-profile">Marque :
                                                 {{ user.vehicule.brand }}</p>
@@ -166,8 +189,8 @@
                                             <p class="vehicule-profile">Couleur :
                                                 {{ user.vehicule.color }}</p>
                                         </div>
-                                        <div class="col-xs-12 col-sm-6 col-md-6">
-                                            <a class="d-flex justify-content-center" href="{{ asset ('/assets/uploads/vehiculePicture/') ~ user.vehicule.vehiculePicture }}" target="_blank"><img class="profile-picture-profile" src="{{ asset ('/assets/uploads/vehiculePicture/' ~ user.vehicule.vehiculePicture ) }}"/></a>
+                                        <div class="col-xs-12 col-sm-6 col-md-6 d-flex justify-content-center">
+                                           <img class="profile-picture-profile" src="{{ asset ('/assets/uploads/vehiculePicture/' ~ user.vehicule.vehiculePicture ) }}"/>
                                         </div>
                                     </div>
                                 </div>
@@ -175,7 +198,7 @@
                             <div class="row justify-content-around mt-4">
                                 <div class="col-6">
                                     <div class="card-profile"> 
-                                        <a href="{{ path ('message_discussion', {'id': app.user.id})}}">
+                                        <a href="{{ path ('message_discussion', {'id': user.id})}}">
                                             <div class="card-profile-content justify-content-center">
                                                 <i class="far fa-envelope"></i>
                                                 <p>Boite de récéption</p>

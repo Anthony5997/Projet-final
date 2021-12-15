@@ -97,11 +97,11 @@
 
 .line .content::before {
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 23px;
+  height: 23px;
   background-color: #82b6e8;
   content: "";
-  left: -9px;
+  left: -10px;
   border-radius: 50%;
 }
 
@@ -206,11 +206,11 @@
 
     .line .content::before {
         position: absolute;
-        width: 13px;
-        height: 13px;
+        width: 15px;
+        height: 15px;
         background-color: #82b6e8;
         content: "";
-        left: -9px;
+        left: -10px;
         border-radius: 50%;
     }
 

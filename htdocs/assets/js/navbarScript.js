@@ -4,8 +4,8 @@ $(document).ready(function(){
     
     })
 
-    $('.fa-arrow-down').click(function(){
-        $('.fa-arrow-down').toggleClass('fa-times')
+    $('.fa-bars').click(function(){
+        $('.fa-bars').toggleClass('fa-times')
         
         })
 $(window).scroll(function(){
@@ -15,4 +15,4 @@ if ($(window).scrollTop() >= 20)
 } else {
     $('header').removeClass('active')
 }
-    });})
+});})

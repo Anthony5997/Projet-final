@@ -94,16 +94,16 @@ class __TwigTemplate_4e169d7155bfcd58ac170e8e988238415172b114660ee15b6519b228b25
                 <h2 class=\"text-center my-5\" >Rechercher un trajet</h2>
              </div>
                 <div class=\"col-md-3 col-sm-6 mt-3\">
-                <input name=\"departureSearch\" type=\"text\" class=\"form-control\" placeholder=\"Départ\">
+                <input name=\"departureSearch\" type=\"text\" class=\"custom-field-form\" placeholder=\"Départ\">
                 </div>
                 <div class=\"col-md-3 col-sm-6 mt-3\">
-                <input name=\"arrivalSearch\" type=\"text\" class=\"form-control\" placeholder=\"Arrivé\">
+                <input name=\"arrivalSearch\" type=\"text\" class=\"custom-field-form\" placeholder=\"Arrivé\">
                 </div>
                 <div class=\"col-md-3 col-sm-6 mt-3\">
-                <input name=\"dateSearch\" type=\"date\" class=\"form-control\" placeholder=\"Arrivé\">
+                <input name=\"dateSearch\" type=\"date\" class=\"custom-field-form\" placeholder=\"Arrivé\">
                 </div>
                  <div class=\"col-md-3 col-sm-6\">
-                    <button class=\"mt-3 button-search col-12\" type=\"submit\"><i style=\"font-weight: 400; font-size: 28px;\"class=\"text-white fas fa-search-location\"></i></button>
+                    <button class=\"mt-3 button-update-profile col-12\" type=\"submit\"><i style=\"font-weight: 400; font-size: 28px;\"class=\"text-white fas fa-search-location\"></i></button>
                 </div>
             </div>
         </form>
@@ -159,16 +159,16 @@ class __TwigTemplate_4e169d7155bfcd58ac170e8e988238415172b114660ee15b6519b228b25
                 <h2 class=\"text-center my-5\" >Rechercher un trajet</h2>
              </div>
                 <div class=\"col-md-3 col-sm-6 mt-3\">
-                <input name=\"departureSearch\" type=\"text\" class=\"form-control\" placeholder=\"Départ\">
+                <input name=\"departureSearch\" type=\"text\" class=\"custom-field-form\" placeholder=\"Départ\">
                 </div>
                 <div class=\"col-md-3 col-sm-6 mt-3\">
-                <input name=\"arrivalSearch\" type=\"text\" class=\"form-control\" placeholder=\"Arrivé\">
+                <input name=\"arrivalSearch\" type=\"text\" class=\"custom-field-form\" placeholder=\"Arrivé\">
                 </div>
                 <div class=\"col-md-3 col-sm-6 mt-3\">
-                <input name=\"dateSearch\" type=\"date\" class=\"form-control\" placeholder=\"Arrivé\">
+                <input name=\"dateSearch\" type=\"date\" class=\"custom-field-form\" placeholder=\"Arrivé\">
                 </div>
                  <div class=\"col-md-3 col-sm-6\">
-                    <button class=\"mt-3 button-search col-12\" type=\"submit\"><i style=\"font-weight: 400; font-size: 28px;\"class=\"text-white fas fa-search-location\"></i></button>
+                    <button class=\"mt-3 button-update-profile col-12\" type=\"submit\"><i style=\"font-weight: 400; font-size: 28px;\"class=\"text-white fas fa-search-location\"></i></button>
                 </div>
             </div>
         </form>

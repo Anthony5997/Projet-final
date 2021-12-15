@@ -5,6 +5,27 @@
   font-family: "Poppins", sans-serif;
 
 }
+
+.bold-yellow{
+  color: $custom-yellow;
+  font-weight: bold;
+}
+
+.red-text{
+  color: red!important;
+  ul{
+    color: red!important;
+    li{
+      color: red!important;
+    }
+  }
+}
+
+.alert{
+
+  margin: 0 !important;
+}
+
 body {
   background-color: $gainsboro;
   overflow-x: hidden;

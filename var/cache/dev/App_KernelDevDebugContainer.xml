@@ -444,7 +444,6 @@
     <service id="App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
-    <service id="App\Form\Vehicule" class="App\Form\Vehicule" autowire="true" autoconfigure="true"/>
     <service id="App\Form\VehiculeType" class="App\Form\VehiculeType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>

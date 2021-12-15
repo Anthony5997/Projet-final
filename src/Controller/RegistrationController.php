@@ -36,10 +36,11 @@ class RegistrationController extends AbstractController
             $user->setPassword(
                 $passwordEncoder->encodePassword(
                     $user,
-                    $form->get('password')->getData()
+                    $form->get('password')->getData(),
                 )
             );
             $user->setRoles(['ROLE_USER']);
+            $user->setFirstName($form->get('firstname')->getData());
             $user->setProfileCompleted(false);
             $user->setIdCard(false);
             $user->setTripsMade(0);

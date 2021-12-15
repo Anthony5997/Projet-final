@@ -145,7 +145,7 @@ class UserController extends AbstractController
     
             $oldPassword = $formReset->get('password')->getData();
             $newPassword = $formReset->get('newPassword')->getData();
-            $email = $formReset->get('email')->getData();
+            $email = $user->getEmail();
             $this->verifications($user, $userEmail, $email, $passwordEncoder,$oldPassword, $newPassword);  
     
             }

@@ -27,6 +27,9 @@ header .navbar {
 
 
 }
+.fa-bars:before {
+    cursor: pointer;
+}
 header .logo {
     font-size: 2.5rem;
     color: #333;
@@ -142,6 +145,9 @@ header .fa-user {
     border: 1px rgba(128, 128, 128, 0.261) solid;
     cursor: pointer;
     margin-left: 20px;
+    min-width: 70px;
+    min-height: 70px;
+
 }
 
 .navbar {

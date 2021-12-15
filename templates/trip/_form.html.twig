@@ -1,11 +1,11 @@
- <section class="section-padding">
-    <div class="container">
+ <section class="py-4">
+    <div class="container col-10 d-flex justify-content-center form-info">
         {{form_start(form)}} 
         <div class="row">
             <div class="col-xs-12 col-sm-5 col-md-5">
-                <div class="form-group d-flex flex-column justify-content-center">
+                <div class="custom-input-div d-flex flex-column justify-content-center">
                     <label for="departureInput">Départ</label>
-                        <input id="departureInput" list="departureCityGuessData" name="trip[departure]" class="form-control" />
+                        <input id="departureInput" list="departureCityGuessData" name="trip[departure]" class="custom-field-form" />
                         <datalist id="departureCityGuessData" name="dataDepart">
                         </datalist>
                      <div class="col-xs-12 col-sm-12 col-md-12" id="departure-list">
@@ -14,9 +14,9 @@
             </div>
             <div class="col-xs-12 col-sm-2 col-md-2"></div>
             <div class="col-xs-12 col-sm-5 col-md-5">
-                <div class="form-group d-flex flex-column justify-content-center">
+                <div class="custom-input-div d-flex flex-column justify-content-center">
                     <label for="arrivalInput">Arrivé</label>
-                    <input id="arrivalInput" list="arrivalCityGuessData" name="trip[arrival]" class="form-control" />
+                    <input id="arrivalInput" list="arrivalCityGuessData" name="trip[arrival]" class="custom-field-form" />
                     <datalist id="arrivalCityGuessData">
                     </datalist>
                     <div class="col-xs-12 col-sm-12 col-md-12" id="arrival-list">
@@ -26,22 +26,22 @@
         </div>
      
             <div class="col-xs-12 col-sm-5 col-md-5">
-                <div class="form-group d-flex flex-column justify-content-center">
+                <div class="custom-input-div d-flex flex-column justify-content-center">
                     {{ form_label(form.date_of_trip, 'Date du trajet') }}
-                    {{ form_widget(form.date_of_trip,  { 'attr': {'class': 'form-control'} }) }}
+                    {{ form_widget(form.date_of_trip,  { 'attr': {'class': 'custom-field-form'} }) }}
                 </div>
             </div>
             <div class="col-xs-12 col-sm-5 col-md-5">
-                <div class="form-group d-flex flex-column justify-content-center">
+                <div class="custom-input-div d-flex flex-column justify-content-center">
                     {{ form_label(form.startTime, 'heure de départ estimé') }}
-                    {{ form_widget(form.startTime,  { 'attr': {'class': 'form-control'} }) }}
+                    {{ form_widget(form.startTime,  { 'attr': {'class': 'custom-field-form'} }) }}
                 </div>
             </div>
              <div class="col-xs-12 col-sm-2 col-md-2"></div>
             <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="form-group d-flex flex-column justify-content-center">
+                <div class="custom-input-div d-flex flex-column justify-content-center">
                     {{ form_label(form.passengers, "Nombre de passager") }}  
-                    {{ form_widget(form.passengers,  { 'attr': {'class': 'form-control'} }) }}
+                    {{ form_widget(form.passengers,  { 'attr': {'class': 'custom-field-form'} }) }}
                 </div>
             </div>    
    
