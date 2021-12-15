@@ -11,7 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Validator\Constraints\File;
 use Doctrine\ORM\EntityRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class VehiculeType extends AbstractType
 {
@@ -22,7 +22,22 @@ class VehiculeType extends AbstractType
             ->add('numberplate')
             ->add('brand')
             ->add('model')
-            ->add('color')
+            ->add('color', ChoiceType::class, [
+                'choices'  => [
+                    'Blanche' => 'Blanche',
+                    'Noir' => 'Noir',
+                    'Rouge' => 'Rouge',
+                    'Verte' => 'Verte',
+                    'Jaune' => 'Jaune',
+                    'Orange' => 'Orange',
+                    'Bleu' => 'Bleu',
+                    'Bleu Marine' => 'Bleu Marine',
+                    'Grise' => 'Grise',
+                    'Violette' => 'Violette',
+                    'Rose' => 'Rose',
+                    'Autre' => 'Autre',
+                ],
+            ])
             ->add('year')
             ->add('vehicule_picture',FileType::class, [
                 'label' => 'profil picture',

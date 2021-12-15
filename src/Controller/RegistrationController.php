@@ -27,6 +27,7 @@ class RegistrationController extends AbstractController
         $user = new User();
         $travelPreferences = new TravelPreferences();
         $vehicule = new Vehicule();
+        $vehicule->setVehiculePicture('default_car_picture.jpg');
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
         $date = new \DateTime();
@@ -42,7 +43,6 @@ class RegistrationController extends AbstractController
             $user->setRoles(['ROLE_USER']);
             $user->setFirstName($form->get('firstname')->getData());
             $user->setProfileCompleted(false);
-            $user->setIdCard(false);
             $user->setTripsMade(0);
             $user->setCreatedAt($date);
             $user->setUserExperience($experience);

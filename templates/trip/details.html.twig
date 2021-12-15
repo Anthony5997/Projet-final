@@ -55,6 +55,7 @@
                   <span class="custom-separator"></span>
                   </div>
                   <div class="row card-detail-profile">
+                  <h4 class="text-center">Informations du conducteur </h4>
                     <a href="{{path('user_show', {'id': trip.driver.id})}}">
                     <div class="row">
                       <div class="col">
@@ -72,9 +73,6 @@
                     </div>
                     </a>
                       <div class="row d-flex justify-content-center">
-                          {% if trip.driver.idCard %}
-                              <p class="info-detail"><i style="color:green;" class="far fa-check-circle"></i> Pièce d'identité vérifiée</p>
-                          {% endif %}
                             {% if trip.driver.phone %}
                               <p class="info-detail"><i style="color:green;" class="far fa-check-circle"></i> Numéro de téléphone</p>
                           {% endif %}

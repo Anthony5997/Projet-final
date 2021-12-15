@@ -101,139 +101,159 @@ class __TwigTemplate_ff061d71e7303d95aecadd4d1553b4a22480e5889eb16c73dbb69417c08
      <div class=\"tab-content\">
         <div class=\"tab-pane active\" id=\"tabs-received\" role=\"tabpanel\">
                 <div class=\"container profile-section\">
-                        <h3>Avis Reçu</h3>
                         ";
-        // line 23
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["reviewReceived"]) || array_key_exists("reviewReceived", $context) ? $context["reviewReceived"] : (function () { throw new RuntimeError('Variable "reviewReceived" does not exist.', 23, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["reviewReceive"]) {
-            // line 24
-            echo "                            <div class=\"card-review\">
+        // line 22
+        if ((-1 === twig_compare(twig_length_filter($this->env, (isset($context["reviewReceived"]) || array_key_exists("reviewReceived", $context) ? $context["reviewReceived"] : (function () { throw new RuntimeError('Variable "reviewReceived" does not exist.', 22, $this->source); })())), 1))) {
+            // line 23
+            echo "                        <h4 class=\"text-center\"> Aucun avis reçu pour l'instant</h4>
+                        ";
+        } else {
+            // line 25
+            echo "                        ";
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["reviewReceived"]) || array_key_exists("reviewReceived", $context) ? $context["reviewReceived"] : (function () { throw new RuntimeError('Variable "reviewReceived" does not exist.', 25, $this->source); })()));
+            foreach ($context['_seq'] as $context["_key"] => $context["reviewReceive"]) {
+                // line 26
+                echo "                            <div class=\"card-review\">
                                 <div class=\"reviews-list\">
                                     <div class=\"review-card\">
                                         <div class=\"review-header\">
                                             <div class=\"name-group\">
                                                 <a class=\"d-flex\" href=\"";
-            // line 29
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_show", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reviewReceive"], "author", [], "any", false, false, false, 29), "id", [], "any", false, false, false, 29)]), "html", null, true);
-            echo "\" >
+                // line 31
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_show", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reviewReceive"], "author", [], "any", false, false, false, 31), "id", [], "any", false, false, false, 31)]), "html", null, true);
+                echo "\" >
                                                     <div class=\"initials\">
                                                         <img  class=\"img-review\" src=\"";
-            // line 31
-            echo twig_escape_filter($this->env, ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/uploads/profilePicture/") . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reviewReceive"], "author", [], "any", false, false, false, 31), "profile_picture", [], "any", false, false, false, 31)), "html", null, true);
-            echo "\">
+                // line 33
+                echo twig_escape_filter($this->env, ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/uploads/profilePicture/") . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reviewReceive"], "author", [], "any", false, false, false, 33), "profile_picture", [], "any", false, false, false, 33)), "html", null, true);
+                echo "\">
                                                     </div>
                                                     <p class=\"d-flex align-items-center m-0\">";
-            // line 33
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reviewReceive"], "author", [], "any", false, false, false, 33), "firstName", [], "any", false, false, false, 33), "html", null, true);
-            echo "</p>
+                // line 35
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reviewReceive"], "author", [], "any", false, false, false, 35), "firstName", [], "any", false, false, false, 35), "html", null, true);
+                echo "</p>
                                                 </a>
                                             </div>
                                             <div class=\"rating\">
                                             ";
-            // line 37
-            $context["items"] = twig_get_attribute($this->env, $this->source, $context["reviewReceive"], "rating", [], "any", false, false, false, 37);
-            // line 38
-            echo "                                            ";
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(range(1, (isset($context["items"]) || array_key_exists("items", $context) ? $context["items"] : (function () { throw new RuntimeError('Variable "items" does not exist.', 38, $this->source); })())));
-            foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
                 // line 39
-                echo "                                                <i id='one' class=\"fas fa-star\"></i>
+                $context["items"] = twig_get_attribute($this->env, $this->source, $context["reviewReceive"], "rating", [], "any", false, false, false, 39);
+                // line 40
+                echo "                                            ";
+                $context['_parent'] = $context;
+                $context['_seq'] = twig_ensure_traversable(range(1, (isset($context["items"]) || array_key_exists("items", $context) ? $context["items"] : (function () { throw new RuntimeError('Variable "items" does not exist.', 40, $this->source); })())));
+                foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
+                    // line 41
+                    echo "                                                <i id='one' class=\"fas fa-star\"></i>
                                             ";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 41
-            echo "                                            </div>
+                }
+                $_parent = $context['_parent'];
+                unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
+                $context = array_intersect_key($context, $_parent) + $_parent;
+                // line 43
+                echo "                                            </div>
                                         </div>
                                         <div class=\"review-description\">
                                         ";
-            // line 44
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reviewReceive"], "content", [], "any", false, false, false, 44), "html", null, true);
-            echo "
+                // line 46
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reviewReceive"], "content", [], "any", false, false, false, 46), "html", null, true);
+                echo "
                                         </div>
                                         <div class=\"review-details\">
                                             <div class=\"review-date\">";
-            // line 47
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reviewReceive"], "createdAt", [], "any", false, false, false, 47), "H:i d M, Y"), "html", null, true);
-            echo "</div>
+                // line 49
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reviewReceive"], "createdAt", [], "any", false, false, false, 49), "H:i d M, Y"), "html", null, true);
+                echo "</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                     ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['reviewReceive'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 55
+            echo "                    ";
         }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['reviewReceive'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 53
+        // line 56
         echo "                </div>
             </div>
             <div class=\"tab-pane\" id=\"tabs-send\" role=\"tabpanel\">
                 <div class=\"container profile-section\">
-                <h3>Avis Laisser</h3>
+                ";
+        // line 60
+        if ((-1 === twig_compare(twig_length_filter($this->env, (isset($context["reviewLeaved"]) || array_key_exists("reviewLeaved", $context) ? $context["reviewLeaved"] : (function () { throw new RuntimeError('Variable "reviewLeaved" does not exist.', 60, $this->source); })())), 1))) {
+            // line 61
+            echo "                    <h4 class=\"text-center\"> Aucun avis laissé pour l'instant</h4>
+                ";
+        } else {
+            // line 63
+            echo "                <h3>Avis Laisser</h3>
                     ";
-        // line 58
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["reviewLeaved"]) || array_key_exists("reviewLeaved", $context) ? $context["reviewLeaved"] : (function () { throw new RuntimeError('Variable "reviewLeaved" does not exist.', 58, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["reviewLeave"]) {
-            // line 59
-            echo "                          <div class=\"card-review\">
+            // line 64
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["reviewLeaved"]) || array_key_exists("reviewLeaved", $context) ? $context["reviewLeaved"] : (function () { throw new RuntimeError('Variable "reviewLeaved" does not exist.', 64, $this->source); })()));
+            foreach ($context['_seq'] as $context["_key"] => $context["reviewLeave"]) {
+                // line 65
+                echo "                          <div class=\"card-review\">
                             <div class=\"reviews-list\">
                                 <div class=\"review-card\">
                                     <div class=\"review-header\">
                                         <div class=\"name-group\">
                                             <div class=\"initials\"><img  class=\"img-review\" src=\"";
-            // line 64
-            echo twig_escape_filter($this->env, ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/uploads/profilePicture/") . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reviewLeave"], "author", [], "any", false, false, false, 64), "profile_picture", [], "any", false, false, false, 64)), "html", null, true);
-            echo "\"></div>
+                // line 70
+                echo twig_escape_filter($this->env, ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/uploads/profilePicture/") . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reviewLeave"], "author", [], "any", false, false, false, 70), "profile_picture", [], "any", false, false, false, 70)), "html", null, true);
+                echo "\"></div>
                                             <p>";
-            // line 65
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reviewLeave"], "author", [], "any", false, false, false, 65), "firstName", [], "any", false, false, false, 65), "html", null, true);
-            echo "</p>
+                // line 71
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reviewLeave"], "author", [], "any", false, false, false, 71), "firstName", [], "any", false, false, false, 71), "html", null, true);
+                echo "</p>
                                         </div>
                                         <div class=\"rating\">
                                         ";
-            // line 68
-            $context["items"] = twig_get_attribute($this->env, $this->source, $context["reviewLeave"], "rating", [], "any", false, false, false, 68);
-            // line 69
-            echo "                                        ";
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(range(1, (isset($context["items"]) || array_key_exists("items", $context) ? $context["items"] : (function () { throw new RuntimeError('Variable "items" does not exist.', 69, $this->source); })())));
-            foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-                // line 70
-                echo "                                            <i id='one' class=\"fas fa-star\"></i>
+                // line 74
+                $context["items"] = twig_get_attribute($this->env, $this->source, $context["reviewLeave"], "rating", [], "any", false, false, false, 74);
+                // line 75
+                echo "                                        ";
+                $context['_parent'] = $context;
+                $context['_seq'] = twig_ensure_traversable(range(1, (isset($context["items"]) || array_key_exists("items", $context) ? $context["items"] : (function () { throw new RuntimeError('Variable "items" does not exist.', 75, $this->source); })())));
+                foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
+                    // line 76
+                    echo "                                            <i id='one' class=\"fas fa-star\"></i>
                                         ";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 72
-            echo "                                        </div>
+                }
+                $_parent = $context['_parent'];
+                unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
+                $context = array_intersect_key($context, $_parent) + $_parent;
+                // line 78
+                echo "                                        </div>
                                     </div>
                                     <div class=\"review-description\">
                                     ";
-            // line 75
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reviewLeave"], "content", [], "any", false, false, false, 75), "html", null, true);
-            echo "
+                // line 81
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reviewLeave"], "content", [], "any", false, false, false, 81), "html", null, true);
+                echo "
                                     </div>
                                     <div class=\"review-details\">
                                         <div class=\"review-date\">";
-            // line 78
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reviewLeave"], "createdAt", [], "any", false, false, false, 78), "H:i d M, Y"), "html", null, true);
-            echo "</div>
+                // line 84
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reviewLeave"], "createdAt", [], "any", false, false, false, 84), "H:i d M, Y"), "html", null, true);
+                echo "</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['reviewLeave'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 90
+            echo "                ";
         }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['reviewLeave'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 84
+        // line 91
         echo "                </div>
             </div>
     </div>
@@ -260,7 +280,7 @@ class __TwigTemplate_ff061d71e7303d95aecadd4d1553b4a22480e5889eb16c73dbb69417c08
 
     public function getDebugInfo()
     {
-        return array (  237 => 84,  225 => 78,  219 => 75,  214 => 72,  207 => 70,  202 => 69,  200 => 68,  194 => 65,  190 => 64,  183 => 59,  179 => 58,  172 => 53,  160 => 47,  154 => 44,  149 => 41,  142 => 39,  137 => 38,  135 => 37,  128 => 33,  123 => 31,  118 => 29,  111 => 24,  107 => 23,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  257 => 91,  254 => 90,  242 => 84,  236 => 81,  231 => 78,  224 => 76,  219 => 75,  217 => 74,  211 => 71,  207 => 70,  200 => 65,  196 => 64,  193 => 63,  189 => 61,  187 => 60,  181 => 56,  178 => 55,  166 => 49,  160 => 46,  155 => 43,  148 => 41,  143 => 40,  141 => 39,  134 => 35,  129 => 33,  124 => 31,  117 => 26,  112 => 25,  108 => 23,  106 => 22,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -286,7 +306,9 @@ class __TwigTemplate_ff061d71e7303d95aecadd4d1553b4a22480e5889eb16c73dbb69417c08
      <div class=\"tab-content\">
         <div class=\"tab-pane active\" id=\"tabs-received\" role=\"tabpanel\">
                 <div class=\"container profile-section\">
-                        <h3>Avis Reçu</h3>
+                        {% if reviewReceived|length < 1 %}
+                        <h4 class=\"text-center\"> Aucun avis reçu pour l'instant</h4>
+                        {% else %}
                         {% for reviewReceive in reviewReceived %}
                             <div class=\"card-review\">
                                 <div class=\"reviews-list\">
@@ -317,10 +339,14 @@ class __TwigTemplate_ff061d71e7303d95aecadd4d1553b4a22480e5889eb16c73dbb69417c08
                                 </div>
                             </div>
                     {% endfor %}
+                    {% endif %}
                 </div>
             </div>
             <div class=\"tab-pane\" id=\"tabs-send\" role=\"tabpanel\">
                 <div class=\"container profile-section\">
+                {% if reviewLeaved|length < 1 %}
+                    <h4 class=\"text-center\"> Aucun avis laissé pour l'instant</h4>
+                {% else %}
                 <h3>Avis Laisser</h3>
                     {% for reviewLeave in reviewLeaved %}
                           <div class=\"card-review\">
@@ -348,6 +374,7 @@ class __TwigTemplate_ff061d71e7303d95aecadd4d1553b4a22480e5889eb16c73dbb69417c08
                             </div>
                         </div>
                     {% endfor %}
+                {% endif %}
                 </div>
             </div>
     </div>

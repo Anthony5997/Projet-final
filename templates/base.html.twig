@@ -47,7 +47,7 @@
                 <a class="icon-custom fas fa-search" href="{{path('trip_search')}}"></a>
                 <a class="icon-custom far fa-plus-circle" href="{{path('trip_new')}}"></a>
             {% if app.user != null %}
-              <button type="checkbox" name="" id="toggler">Ok</button>
+              <button type="checkbox" name="" id="toggler"></button>
                 <img class="navbar-profile-picture" src="{{asset('assets/uploads/profilePicture/') ~ app.user.profile_picture}}"/><label class="label-right-icon" for="toggler"><i class="fas fa-bars"></i></label>
                 <a class="user-icon-profile" href="{{ path ('user_edit', {'id': app.user.id})}}"></a>
                 {% else %}

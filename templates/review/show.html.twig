@@ -19,7 +19,9 @@
      <div class="tab-content">
         <div class="tab-pane active" id="tabs-received" role="tabpanel">
                 <div class="container profile-section">
-                        <h3>Avis Reçu</h3>
+                        {% if reviewReceived|length < 1 %}
+                        <h4 class="text-center"> Aucun avis reçu pour l'instant</h4>
+                        {% else %}
                         {% for reviewReceive in reviewReceived %}
                             <div class="card-review">
                                 <div class="reviews-list">
@@ -50,10 +52,14 @@
                                 </div>
                             </div>
                     {% endfor %}
+                    {% endif %}
                 </div>
             </div>
             <div class="tab-pane" id="tabs-send" role="tabpanel">
                 <div class="container profile-section">
+                {% if reviewLeaved|length < 1 %}
+                    <h4 class="text-center"> Aucun avis laissé pour l'instant</h4>
+                {% else %}
                 <h3>Avis Laisser</h3>
                     {% for reviewLeave in reviewLeaved %}
                           <div class="card-review">
@@ -81,6 +87,7 @@
                             </div>
                         </div>
                     {% endfor %}
+                {% endif %}
                 </div>
             </div>
     </div>

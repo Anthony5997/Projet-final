@@ -92,14 +92,8 @@ class UserController extends AbstractController
        // dd($userRepository->findUserTravelPreferences($user->getId()));
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $id_card_file = $form->get('id_card_file')->getData();
             $profile_picture = $form->get('profile_picture')->getData();
         
-            if($id_card_file !== null){
-                $user->setId_Card_File($this->uploadFiles($id_card_file, 'id_card_directory', $slugger));
-                $user->setIdCard(true);
-                $this->addFlash('success', 'La carte d\'identité a été ajouté');
-            }
             if($profile_picture !== null){
                 $this->deletePicture($this->getParameter('profile_picture_directory').'/'. $this->getUser()->getProfile_Picture());
                 $user->setProfile_Picture($this->uploadFiles($profile_picture, 'profile_picture_directory', $slugger));

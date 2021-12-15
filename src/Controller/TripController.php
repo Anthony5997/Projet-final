@@ -47,7 +47,7 @@ class TripController extends AbstractController
        // dd($form->isValid());
        
        
-       if ($form->isSubmitted()) {
+       if ($form->isSubmitted() && $request->get('trip')['arrival'] && $request->get('trip')['departure']) {
             
             $date = new \DateTime();
             $formatDeparture = explode(",", $request->get('trip')['departure']);
@@ -64,12 +64,15 @@ class TripController extends AbstractController
             $entityManager->flush();
             $this->addFlash('success', 'Votre trajet a été publié');
             return $this->redirectToRoute('trip_show', ['id'=> $trip->getId()]);
+        }else{
+            
+            $this->addFlash('error', 'Veuillez remplir tous les champs pour poster un trajet');
+            return $this->render('trip/new.html.twig', [
+                'trip' => $trip,
+                'form' => $form->createView(),
+            ]);
         }
 
-        return $this->render('trip/new.html.twig', [
-            'trip' => $trip,
-            'form' => $form->createView(),
-        ]);
         
     }else{
 
@@ -193,6 +196,7 @@ class TripController extends AbstractController
             }
 
         $trip = $tripRepository->findUserInfoByTrip($trip);
+
         return $this->render('trip/details.html.twig', [
             'trip' => $trip,
             'checkBooking' => $checkBooking,

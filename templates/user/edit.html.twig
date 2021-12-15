@@ -1,4 +1,6 @@
 {% set checkAllPreferences = (user.travelPreferences.discussion != null) and (user.travelPreferences.smoking != null) and (user.travelPreferences.music != null) and (user.travelPreferences.animals != null) and (user.travelPreferences.healthPass != null) %}
+{% set checkAllVehiculeInfos = (user.vehicule.brand != null) and (user.vehicule.color != null) and (user.vehicule.model != null) %}
+
 {% extends 'base.html.twig' %}
 
 {% block title %}Edit User
@@ -130,42 +132,42 @@
                                     </svg>
                                 </div>
                                 <div class="content py-2">
-                                    <div class="form-info mx-auto col-xs-12 col-sm-10 col-md-9">
                                     {% if checkAllPreferences == false %}
                                      <p>Veuillez renseigner vos préférences pour les consulters et les rendre visibles.</p>
                                     {% else %}
-                                        {% if user.travelPreferences.discussion != null %}
-                                            <h6>
-                                                Discussion :
-                                            </h6>
-                                            <p class="custom-field-form">{{ user.travelPreferences.discussion }}</p>
-                                        {% endif %}
-                                        {% if user.travelPreferences.smoking != null %}
-                                            <h6>
-                                                Fumeur :
-                                            </h6>
-                                            <p class="custom-field-form">{{ user.travelPreferences.smoking }}</p>
-                                        {% endif %}
-                                            {% if user.travelPreferences.music != null %}
-                                            <h6>
-                                                Musique :
-                                            </h6>
-                                            <p class="custom-field-form">{{ user.travelPreferences.music }}</p>
-                                        {% endif %}
-                                        {% if user.travelPreferences.animals != null %}
-                                            <h6>
-                                                Animaux :
-                                            </h6>
-                                            <p class="custom-field-form">{{ user.travelPreferences.animals }}</p>
+                                        <div class="form-info mx-auto col-xs-12 col-sm-10 col-md-9">
+                                            {% if user.travelPreferences.discussion != null %}
+                                                <h6>
+                                                    Discussion :
+                                                </h6>
+                                                <p class="custom-field-form">{{ user.travelPreferences.discussion }}</p>
                                             {% endif %}
-                                        {% if user.travelPreferences.healthPass != null %}
-                                            <h6>
-                                                Pass Sanitaire :
-                                            </h6>
-                                            <p class="custom-field-form">{{ user.travelPreferences.healthPass }}</p>
-                                        {% endif %}
+                                            {% if user.travelPreferences.smoking != null %}
+                                                <h6>
+                                                    Fumeur :
+                                                </h6>
+                                                <p class="custom-field-form">{{ user.travelPreferences.smoking }}</p>
+                                            {% endif %}
+                                                {% if user.travelPreferences.music != null %}
+                                                <h6>
+                                                    Musique :
+                                                </h6>
+                                                <p class="custom-field-form">{{ user.travelPreferences.music }}</p>
+                                            {% endif %}
+                                            {% if user.travelPreferences.animals != null %}
+                                                <h6>
+                                                    Animaux :
+                                                </h6>
+                                                <p class="custom-field-form">{{ user.travelPreferences.animals }}</p>
+                                                {% endif %}
+                                            {% if user.travelPreferences.healthPass != null %}
+                                                <h6>
+                                                    Pass Sanitaire :
+                                                </h6>
+                                                <p class="custom-field-form">{{ user.travelPreferences.healthPass }}</p>
+                                            {% endif %}
+                                        </div>
                                     {% endif %}
-                                    </div>
                                 </div>
                             </label>
                             <label class="accordion-wrapper">
@@ -180,19 +182,29 @@
                                     </svg>
                                 </div>
                                 <div class="content py-2">
+                                    {% if checkAllVehiculeInfos == false %}
+                                        <p class="p-4">Veuillez renseigner les informations de votre véhicule pour les consulter et les rendre visibles.</p>
+                                    {% else %}
                                     <div class="row mx-auto form-info">
                                         <div class="col-xs-12 col-sm-6 col-md-6 d-flex flex-column pl-5 justify-content-center">
-                                            <p class="vehicule-profile">Marque :
-                                                {{ user.vehicule.brand }}</p>
-                                            <p class="vehicule-profile">Modèle :
+                                            {% if user.vehicule.brand != null %}
+                                                <p class="vehicule-profile">Marque :
+                                                    {{ user.vehicule.brand }}</p>
+                                            {% endif %}
+                                            {% if user.vehicule.model != null %}
+                                                <p class="vehicule-profile">Modèle :
                                                 {{ user.vehicule.model }}</p>
-                                            <p class="vehicule-profile">Couleur :
-                                                {{ user.vehicule.color }}</p>
+                                            {% endif %}
+                                            {% if user.vehicule.color != null %}
+                                                <p class="vehicule-profile">Couleur :
+                                                    {{ user.vehicule.color }}</p>
+                                            {% endif %}
                                         </div>
                                         <div class="col-xs-12 col-sm-6 col-md-6 d-flex justify-content-center">
                                            <img class="profile-picture-profile" src="{{ asset ('/assets/uploads/vehiculePicture/' ~ user.vehicule.vehiculePicture ) }}"/>
                                         </div>
                                     </div>
+                                    {% endif %}
                                 </div>
                             </label>
                             <div class="row justify-content-around mt-4">
@@ -236,6 +248,7 @@
                             <div class=" form-info">
                                 <h3 class="col d-flex justify-content-center">Historique de mes trajets</h3>
                                 <div class="row justify-content-around">
+                                <p class="text-center">Vos 3 derniers trajets</p>
                                     {% for trip in trips %}
                                         {% if loop.index0 < 3 %}
                                             <div class="col-12 col-sm-4 my-2">

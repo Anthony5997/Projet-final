@@ -131,7 +131,7 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
         // line 49
         if ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 49, $this->source); })()), "user", [], "any", false, false, false, 49), null))) {
             // line 50
-            echo "              <button type=\"checkbox\" name=\"\" id=\"toggler\">Ok</button>
+            echo "              <button type=\"checkbox\" name=\"\" id=\"toggler\"></button>
                 <img class=\"navbar-profile-picture\" src=\"";
             // line 51
             echo twig_escape_filter($this->env, ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/uploads/profilePicture/") . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 51, $this->source); })()), "user", [], "any", false, false, false, 51), "profile_picture", [], "any", false, false, false, 51)), "html", null, true);
@@ -411,7 +411,7 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
                 <a class=\"icon-custom fas fa-search\" href=\"{{path('trip_search')}}\"></a>
                 <a class=\"icon-custom far fa-plus-circle\" href=\"{{path('trip_new')}}\"></a>
             {% if app.user != null %}
-              <button type=\"checkbox\" name=\"\" id=\"toggler\">Ok</button>
+              <button type=\"checkbox\" name=\"\" id=\"toggler\"></button>
                 <img class=\"navbar-profile-picture\" src=\"{{asset('assets/uploads/profilePicture/') ~ app.user.profile_picture}}\"/><label class=\"label-right-icon\" for=\"toggler\"><i class=\"fas fa-bars\"></i></label>
                 <a class=\"user-icon-profile\" href=\"{{ path ('user_edit', {'id': app.user.id})}}\"></a>
                 {% else %}

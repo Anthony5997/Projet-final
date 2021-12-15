@@ -547,7 +547,6 @@ input[type="file"] {
     .container-profile {
         max-width: none !important;
         width: 100%;
-        margin-top: 6rem;
         margin-right: 20px;
     }
 
@@ -640,7 +639,6 @@ input[type="file"] {
     .container-profile {
         max-width: none !important;
         width: 100%;
-        margin: 20px auto 0;
     }
 
     .line-trip-profile {
@@ -699,6 +697,25 @@ input[type="file"] {
         }
     
     }
+
+    .welcome-profile{
+        width: 85%;
+        border: $blue-gray 1px solid;
+        background-color: $cultured;
+        border-radius: 5px;
+        padding: 0px 15px;
+        margin-bottom: 10px;
+    
+        h2{
+            padding-top: 5px;
+        }
+        p{
+            font-size: 12px;
+            text-align: justify;
+        }
+    
+    }
+    
 
 
 }

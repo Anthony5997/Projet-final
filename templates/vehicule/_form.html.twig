@@ -1,56 +1,55 @@
  <section class="section-padding">
-              
-                          <div class="row justify-content-center ">
-                    <div class="col-10 d-flex form-info">
-                      {{ form_start(vehicule) }}
-                    
-                                <div class="custom-input-div">
-                                    {{ form_label(vehicule.country_of_registration, 'Pays d\'immatriculation') }}
-                                    {{ form_widget(vehicule.country_of_registration, {'attr': {'class': 'custom-field-form'}}) }}
-                                </div> 
-                                <div class='red-text'>{{ form_errors(vehicule.country_of_registration)}}</div>
-                                <div class="custom-input-div">
-                                    {{ form_label(vehicule.numberplate, 'Plaque d\'immatriculation') }}
-                                    {{ form_widget(vehicule.numberplate, {'attr': {'class': 'custom-field-form'}}) }}
-                                </div>
-                                <div class='red-text'>{{ form_errors(vehicule.numberplate)}}</div>
-                                <div class="custom-input-div">
-                                    {{ form_label(vehicule.brand,'Marque') }} 
-                                    {{ form_widget(vehicule.brand, {'attr': {'class': 'custom-field-form'}}) }}
-                                </div> 
-                                <div class='red-text'>{{ form_errors(vehicule.brand)}}</div>
-                                 <div class="custom-input-div">
-                                    {{ form_label(vehicule.model,'Modèle') }} 
-                                    {{ form_widget(vehicule.model, {'attr': {'class': 'custom-field-form'}}) }}
-                                </div> 
-                                <div class='red-text'>{{ form_errors(vehicule.model)}}</div>
-                                 <div class="custom-input-div">
-                                    {{ form_label(vehicule.color,'Couleur') }} 
-                                    {{ form_widget(vehicule.color, {'attr': {'class': 'custom-field-form'}}) }}
-                                </div> 
-                                <div class='red-text'>{{ form_errors(vehicule.color)}}</div>
-                                <div class="custom-input-div">
-                                    {{ form_label(vehicule.year,'Année') }} 
-                                    {{ form_widget(vehicule.year, {'attr': {'class': 'custom-field-form'}}) }}
-                                </div> 
-                                <div class='red-text'>{{ form_errors(vehicule.year)}}</div>
-                                <div class="custom-input-div">
-                                    {{ form_label(vehicule.vehicule_picture,'Photo du véhicule') }} 
-                                    {{ form_widget(vehicule.vehicule_picture, {'attr': {'class': 'custom-field-form'}}) }}
-                                </div> 
-                                <div class='red-text'>{{ form_errors(vehicule.vehicule_picture)}}</div>
-                                  <div class="col-xs-12 col-sm-12">
-                                    <div class="input-field">
-                                        {{ form_label(vehicule.typeOfVehicule, 'Type de véhicule') }}
-                                        {{ form_widget(vehicule.typeOfVehicule, {'attr': {'class': 'custom-field-form'}}) }}
-                                    </div>
-                                    <div class='red-text'>{{ form_errors(vehicule.typeOfVehicule)}}</div>
-                                </div>
-                             <div class="col-xs-12 col-sm-12 col-md-12 mb-4 mt-4 d-flex justify-content-center">
-                                <button  type='submit' class="col-md-10 button-update-profile">Sauvegarder mon véhicule</button>
-                            </div>
-                        {{ form_end(vehicule) }}
-                            </div>
+    <div class="row justify-content-center ">
+        <div class="col-10 form-info">
+        <p class=""><i style="color: #F99C25;padding:5px;"class="fas fa-circle"></i>Informations de votre véhicule :</p>
+            {{ form_start(vehicule) }}
+                    <div class="custom-input-div">
+                        {{ form_label(vehicule.country_of_registration, 'Pays d\'immatriculation') }}
+                        {{ form_widget(vehicule.country_of_registration, {'attr': {'class': 'custom-field-form','placeholder': ' Pays'}}) }}
+                    </div> 
+                    <div class='red-text'>{{ form_errors(vehicule.country_of_registration)}}</div>
+                    <div class="custom-input-div">
+                        {{ form_label(vehicule.numberplate, 'Plaque d\'immatriculation') }}
+                        {{ form_widget(vehicule.numberplate, {'attr': {'class': 'custom-field-form','placeholder': 'XX-123-XX'}}) }}
                     </div>
-  
-            </section> 
+                    <div class='red-text'>{{ form_errors(vehicule.numberplate)}}</div>
+                    <div class="custom-input-div">
+                        {{ form_label(vehicule.brand,'Marque') }} 
+                        {{ form_widget(vehicule.brand, {'attr': {'class': 'custom-field-form','placeholder': ' Exemple : Opel'}}) }}
+                    </div> 
+                    <div class='red-text'>{{ form_errors(vehicule.brand)}}</div>
+                        <div class="custom-input-div">
+                        {{ form_label(vehicule.model,'Modèle') }} 
+                        {{ form_widget(vehicule.model, {'attr': {'class': 'custom-field-form','placeholder': ' Exemple : Corsa'}}) }}
+                    </div> 
+                    <div class='red-text'>{{ form_errors(vehicule.model)}}</div>
+                        <div class="custom-input-div">
+                        {{ form_label(vehicule.color,'Couleur') }} 
+                        {{ form_widget(vehicule.color, {'attr': {'class': 'custom-field-form','placeholder': ' Sélectionnée une couleur'}}) }}
+                    </div> 
+                    <div class='red-text'>{{ form_errors(vehicule.color)}}</div>
+                    <div class="custom-input-div">
+                        {{ form_label(vehicule.year,'Année') }} 
+                        {{ form_widget(vehicule.year, {'attr': {'class': 'custom-field-form','placeholder': ' Année'}}) }}
+                    </div> 
+                    <div class='red-text'>{{ form_errors(vehicule.year)}}</div>
+                        <div class="custom-input-div">
+                        <div class="input-field">
+                            {{ form_label(vehicule.typeOfVehicule, 'Type de véhicule') }}
+                            {{ form_widget(vehicule.typeOfVehicule, {'attr': {'class': 'custom-field-form'}}) }}
+                        </div>
+                        <div class='red-text'>{{ form_errors(vehicule.typeOfVehicule)}}</div>
+                    </div>
+                    <div class="custom-input-div">
+                        {{ form_label(vehicule.vehicule_picture,'Photo du véhicule') }} 
+                        {{ form_widget(vehicule.vehicule_picture, {'attr': {'class': 'custom-field-form'}}) }}
+                    </div> 
+                    <div class='red-text'>{{ form_errors(vehicule.vehicule_picture)}}</div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 mb-4 mt-4 d-flex justify-content-center">
+                    <button  type='submit' class="col-md-10 button-update-profile">Sauvegarder mon véhicule</button>
+                </div>
+            {{ form_end(vehicule) }}
+        </div>
+    </div>
+
+</section> 

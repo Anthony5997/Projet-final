@@ -32,6 +32,14 @@
     margin: 0 auto;
     margin-bottom: 30px;
 
+    a:hover{
+        transform: scale(1.05);
+        transition: 500ms;
+        background-color: #cdcece42;
+        padding-right: 0px;
+        border-radius: 15px;
+    }
+
 }
 
 .timeline-detail {
@@ -93,11 +101,12 @@
 
 .plan-detail{
 
-    background-color: rgba(227, 230, 238, 0.33);
+    background-color: $custom-yellow;
     border-radius: 15px;
     /* margin: 13px 30px 13px 30px; */
     padding: 23px;
     width: 100%;
+    color: $gunmetal;
 
     .custom-separator{
         display: flex;
@@ -144,8 +153,8 @@
         border-radius: 0px 0px 15px 15px;
 
         a{
+            color: $gunmetal;
             width: 100%;
-            color: black;
             text-decoration: none;
             .img-card{
                 width: 100%;
@@ -324,9 +333,7 @@
     }
 
     .plan-detail {
-        background-color: rgba(227, 230, 238, 0.33);
         border-radius: 15px;
-        /* margin: 13px 30px 13px 30px; */
         padding: 23px;
         width: 100%;
     }
