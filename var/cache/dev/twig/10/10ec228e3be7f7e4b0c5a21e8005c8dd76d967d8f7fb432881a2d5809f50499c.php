@@ -90,7 +90,7 @@ class __TwigTemplate_3622d2f62bd1191eb44e5f453684770da818018f046c674d57daea876b5
         // line 7
         if ((0 === twig_compare((isset($context["reviewExist"]) || array_key_exists("reviewExist", $context) ? $context["reviewExist"] : (function () { throw new RuntimeError('Variable "reviewExist" does not exist.', 7, $this->source); })()), null))) {
             // line 8
-            echo "        <h1 class=\"text-center my-5\">Laisser votre avis !</h1>
+            echo "        <h1 class=\"text-center my-5\">À quel point recommanderiez-vous ce conducteur</h1>
         <div class=\"container\">
             ";
             // line 10
@@ -102,8 +102,11 @@ class __TwigTemplate_3622d2f62bd1191eb44e5f453684770da818018f046c674d57daea876b5
             // line 13
             echo "         <h1 class=\"text-center my-5\">Votre avis à bien été prend en compte</h1>
         <div class=\"container\">
-        <div class=\"d-flex justify-content-center align-items-center\">
-            <i style=\"font-size: 100px;\" class=\"far fa-thumbs-up\"></i>
+         <div id=\"robot-profile-div\" class=\"d-flex justify-content-center\">
+            <img class=\"robot-thumbs-up-img\" src=\"";
+            // line 16
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/uploads/custom-pic/robot-thumbs-up.png"), "html", null, true);
+            echo "\">
         </div>
             <a class=\"button-comeback\"href=\"";
             // line 18
@@ -138,7 +141,7 @@ class __TwigTemplate_3622d2f62bd1191eb44e5f453684770da818018f046c674d57daea876b5
 
     public function getDebugInfo()
     {
-        return array (  117 => 22,  110 => 18,  103 => 13,  97 => 10,  93 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  120 => 22,  113 => 18,  108 => 16,  103 => 13,  97 => 10,  93 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -150,15 +153,15 @@ class __TwigTemplate_3622d2f62bd1191eb44e5f453684770da818018f046c674d57daea876b5
 {% block body %}
 <div class=\"container\">
     {% if reviewExist == null %}
-        <h1 class=\"text-center my-5\">Laisser votre avis !</h1>
+        <h1 class=\"text-center my-5\">À quel point recommanderiez-vous ce conducteur</h1>
         <div class=\"container\">
             {{ include('review/_form.html.twig') }}
         </div>
     {% else %}
          <h1 class=\"text-center my-5\">Votre avis à bien été prend en compte</h1>
         <div class=\"container\">
-        <div class=\"d-flex justify-content-center align-items-center\">
-            <i style=\"font-size: 100px;\" class=\"far fa-thumbs-up\"></i>
+         <div id=\"robot-profile-div\" class=\"d-flex justify-content-center\">
+            <img class=\"robot-thumbs-up-img\" src=\"{{asset('assets/uploads/custom-pic/robot-thumbs-up.png')}}\">
         </div>
             <a class=\"button-comeback\"href=\"{{path('user_edit', { 'id' : app.user.id})}}\"><i class=\"fas fa-arrow-left\"></i> Retourné au profil</a>
         </div>

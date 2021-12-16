@@ -1,6 +1,11 @@
 :root {
-    --color-gold: #ffc41f;
+    --color-gold: $custom-yellow;
     --color-gold-light: #ffd560;
+  }
+
+  .robot-thumbs-up-img{
+
+    width: 12%;
   }
   
   
@@ -16,7 +21,7 @@
     }
     
     .comment-stars-input:checked ~ .comment-stars-view svg {
-        fill: #ffc41f;
+        fill: $custom-yellow;
     }
     
     .comment-stars-input:checked ~ .comment-stars-view:hover svg,
@@ -48,7 +53,7 @@
     
     .comment-stars-view:hover svg,
     .comment-stars-view:hover ~ .comment-stars-view svg {
-        fill: var(--color-gold-light);
+        fill: $custom-yellow;
     }
 }
 

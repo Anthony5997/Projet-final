@@ -12,7 +12,6 @@
             <div class="page-header text-center">
                 <h1 class="display-1 text-white fw-bold mb-0">Vamos !</h1>
                 <h2 class="fw-light display-4 mt-0 mb-5" id="header2">Voyager, rencontrer, partager !</h2>
-
                 <div class="main">
                     <form action="{{path('trip_search')}}">
                         <div class="form-row my-5">
@@ -34,35 +33,49 @@
          <div class="container mt-5">
             <div class="row">
                 <div class="d-flex justify-content-center">
-                    <h3>Nos Objectifs</h3>
+                    <h2>Nos Objectifs</h3>
                 </div>
             </div>
         </div>
-        <div class="container mb-5">
-            <div class="row">
-                <div class="col d-flex flex-column justify-content-center">
+        <div class="container info-objectif">
+            <div class="row d-flex justify-content-around px-5">
+                <div class="col-sm-3 col-xs-12 px-3 d-flex flex-column align-item-center">
                     <i class="fas fa-road align-self-center mt-4 py-4"></i> 
                     <h4 class="text-center">Voyage voyage !</h4>
                     <p class="text-justify">
-                        En tant qu'utilisateur, vous devenez acteur de la communauté de Vamos, proposant de partagé vos trajets favoris! Le voyage c'est bien , à plusieurs, c'est mieux ! 
+                        En tant qu'utilisateur, vous devenez acteur de la communauté de Vamos, proposant de partager vos trajets favoris! Le voyage c'est bien, à plusieurs, c'est mieux ! 
                     </p>
                 </div>
-                <div class="col d-flex flex-column justify-content-center ">
+                <div class="col-sm-3 col-xs-12 px-3 d-flex flex-column align-item-center ">
                     <i class="fas fa-user-friends align-self-center mt-4 py-4"></i> 
                     <h4 class="text-center">Rencontré d'autre utilisateur</h4>
                     <p class="text-justify">
-                        Vous pouvez prendre contact avec les utilisateurs qui compte partager votre route !
+                        Vous pouvez prendre contact avec les utilisateurs qui comptent partager votre route !
                     </p>
                 </div>
-                <div class="col d-flex flex-column justify-content-center">
+                <div class="col-sm-3 col-xs-12 px-3 d-flex flex-column align-item-center">
                 <i class="fas fa-umbrella-beach align-self-center mt-4 py-4"></i> 
                     <h4 class="text-center">Partagé un moment conviviale</h4>
                     <p class="text-justify">
-                        Vamos est très à l'écoute du retour de ses utilisateurs afin de leur proposé les trajets qui leur conviennent le mieux, dans une ambiance convivial et bienveillante !   
+                        Vamos est très à l'écoute du retour de ses utilisateurs afin de leur proposer les trajets qui leur conviennent le mieux, dans une ambiance conviviale et bienveillante !   
                     </p>
                 </div>
                 </div>
                 </div>
+            </div>
+        </div>
+        <div class="main-research-section">
+            <div class="row justify-content-center">
+                <h2 class="text-center">Publier vos trajets !</h2>
+                <p class="text-center">
+                    Proposer de partager vos trajets à travers toute la France ! 
+                </p>
+                    <a class="main-publication-button" href="{{path('trip_search')}}">
+                        <div class="card-publication-button justify-content-center">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <p class="m-0 pt-2">Je publie un trajet</p>
+                        </div>
+                    </a>
             </div>
         </div>
         <div class="main-about">
@@ -85,13 +98,13 @@
                         <div class="col-10 col-md-4 ">
                             {% if trip.tripFull %}
                                 <div class="card-custom-found disabled w-100">
-                                    <a class="global-card-found " href="">
+                                    <a class="global-card-found" href="">
                                 {% elseif trip.tripStarted == true and trip.tripCompleted == false %}
                                 <div class="card-custom-found disabled w-100">
-                                    <a class="global-card-found " href="">
+                                    <a class="global-card-found" href="">
                                 {% elseif trip.tripStarted == true and trip.tripCompleted == true %}
                                 <div class="card-custom-found disabled w-100">
-                                    <a class="global-card-found " href="">
+                                    <a class="global-card-found" href="">
                                 {% else %}
                                 <div class="card-custom-found w-100">
                                     <a class="global-card-found" href="{{path('trip_details', {'id': trip.id})}}">

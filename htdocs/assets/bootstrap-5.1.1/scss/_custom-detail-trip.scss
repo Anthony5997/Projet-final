@@ -35,8 +35,6 @@
     a:hover{
         transform: scale(1.05);
         transition: 500ms;
-        background-color: #cdcece42;
-        padding-right: 0px;
         border-radius: 15px;
     }
 
@@ -130,7 +128,7 @@
 
     a{
         width: 100%;
-        color: black;
+        color: $gunmetal;
         text-decoration: none;
         .img-card{
             width: 100%;
@@ -183,8 +181,6 @@
     }
 
     .contact-button:hover{
-        font-size: 20px;
-        padding: 16px;
         transform: scale(1.05);
         transition: 500ms;
     }
@@ -202,8 +198,6 @@
     }
 
     .contact-button-cancel:hover{
-        font-size: 20px;
-        padding: 16px;
         transform: scale(1.05);
         transition: 500ms;
     }

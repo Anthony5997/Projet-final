@@ -14,10 +14,9 @@
                 {{ message }}
             </div>
         {% endfor %}
-        <section class="section-padding gray-bg log-section mt-5">
+        <section class="section-padding gray-bg log-section">
             <div class="container">
                 <div class="row justify-content-center">
-
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-info mx-auto p-4 my-3">
                             <h3 class="text-extrabold">Connectez vous</h3>
@@ -25,28 +24,22 @@
                             {% if error %}
                                 <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                             {% endif %}
-
                             {% if app.user %}
                                 <div class="red-text">
                                     Vous êtes connecté en tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
                                 </div>
                             {% endif %} 
-
                                 <input type="hidden" name="_token" value="">
-
                                 <div class="custom-input-div"> 
-                                
                                     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="custom-field-form" autocomplete="email" 
-                                            autofocus
-                                           required
-                                           autofocus
-                                           data-parsley-trigger="change"
-                                           data-parsley-error-message="Une addresse valide est nécessaire.">
+                                        autofocus
+                                        required
+                                        autofocus
+                                        data-parsley-trigger="change"
+                                        data-parsley-error-message="Une addresse valide est nécessaire.">
                                     <label for="inputEmail">Votre Email</label>
                                 </div>
                                 <div class="custom-input-div">
-                               
-    
                                 <input type="password" name="password" id="inputPassword" class="custom-field-form" autocomplete="current-password" 
                                             required
                                            data-parsley-trigger="change"
@@ -72,10 +65,8 @@
                                     <a href="{{path('register')}}">Vous n'êtes pas encore inscrit ?</a>
                                 </div>
                             </div>
-                            
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>

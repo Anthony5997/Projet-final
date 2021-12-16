@@ -9,18 +9,23 @@
 {% block body %}
 <div class="container-profile">
     <div class="row d-flex justify-content-center">
-        <div class="col-12 mt-4 welcome-profile align-items-center">
+        <div class="row mt-4 welcome-profile align-items-center">
+            <div id="robot-profile-div" class="col-3 d-flex justify-content-center">
+                <img class="robot-mascott-img" src="{{asset('assets/uploads/custom-pic/hello-mascot.png')}}">
+            </div>
+            <div class="col-sm-9 col-xs-12 d-flex flex-column justify-content-center">
             <h2 class="mx-auto text-center">Bienvenue {{user.firstName}} !</h2>
             <p>
                 Depuis votre espace membre, vous pouvrez remplir des informations vous concernant et utile à la communauté. Vous retrouverez ici l'historique de vos trajets ainsi que vos informations personnelles.
             </p>
             <p>Pour commencer où mettre à jour l'avancée d'un trajet, rendez-vous dans l'onglet "<span class="bold-yellow">Mes trajets</span>"</p>
             <p> Les informations du résumé seront visible par les autres utilisateurs, n'oublier pas de les remplirs depuis les onglets
-                    "<span class="bold-yellow">Mes préférences de voyage</span>", 
-                    "<span class="bold-yellow">Mon véhicule</span>" et 
-                    "<span class="bold-yellow">Informations personnelles</span>" !
+                "<span class="bold-yellow">Mes préférences de voyage</span>", 
+                "<span class="bold-yellow">Mon véhicule</span>" et 
+                "<span class="bold-yellow">Informations personnelles</span>" !
             </p>
-            <p><span class="bold-yellow">Bonne route !</span></p>
+            <p class="text-center"><span class="bold-yellow">Bonne route !</span></p>
+            </div>
         </div>
     </div>
     <div class="row">
@@ -73,6 +78,14 @@
                             <p>Mon compte</p>
                         </div>
                     </a>
+                </li>
+                <li class="nav-item-test mt-3">
+                   <a href="{{ path ('logout') }}" class="tab-custom-test">
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <p>Déconnexion</p>
+                        </div>
+                   </a>
                 </li>
             </ul>
         </div>
@@ -262,6 +275,7 @@
                                                             <div class="col d-flex  justify-content-center align-items-center my-2">
                                                                 <a href="{{ path ('trip_details', {'id': trip.id}) }}" class="btn">
                                                                     <i class="far fa-eye"></i>
+                                                                    <p class="text-custom-yellow ">Voir détails</p>
                                                                 </a>
                                                             </div>
                                                             {% if trip.tripStarted != true and trip.tripCompleted != true %}
@@ -274,8 +288,8 @@
                                                                 </div>
                                                             {% else %}
                                                                 <div class="col d-flex flex-column align-items-center">
-                                                                    <div class="row d-flex ">Trajet en cours</div>
-                                                                    <a href="{{ path ('trip_finish', {'id': trip.id}) }}" class="btn btn-info">Terminer le trajet</a>
+                                                                    <div class="row d-flex font-weight-bold text-custom-yellow">Trajet en cours</div>
+                                                                    <a href="{{ path ('trip_finish', {'id': trip.id}) }}" class="trip-started-button">Terminer le trajet</a>
                                                                 </div>
                                                             {% endif %}
                                                         </div>
@@ -288,7 +302,7 @@
                         <label class="accordion-wrapper">
                             <input type="checkbox" class="accordion" hidden/>
                             <div class="title">
-                                <strong>Tous mes trajets</strong>
+                                <strong>Consulté mes trajets plus ancien</strong>
                                 <svg viewBox="0 0 256 512" width="12" title="angle-right" class="side-icon" fill="white">
                                     <path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/>
                                 </svg>
@@ -298,12 +312,14 @@
                             </div>
                             <div class="content">
                                 <div class="col-12 pt-3">
+                                {% if trips|length > 2 %}
                                     <div class="row">
                                         <div class="col d-flex justify-content-center">Trajet</div>
                                         <div class="col d-flex justify-content-around">Date</div>
                                         <div class="col d-flex justify-content-center">Status</div>
                                         <div class="col d-flex justify-content-center">Détails</div>
                                     </div>
+                                {% endif %}
                                     {% for trip in trips %}
                                     {% if loop.index0 > 2 %}
                                         <div class="row mt-4 line-trip-profile">
@@ -331,6 +347,55 @@
                                                 </a>
                                             </div>
                                         </div>
+                                        {% else %}
+                                            <p class="text-center py-2"><i style="color:chocolate;"class="fas fa-hourglass-end"></i>Aucun autres trajets pour l'instant</p>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </label>
+                             <label class="accordion-wrapper">
+                            <input type="checkbox" class="accordion" hidden/>
+                            <div class="title">
+                                <strong>Consulté mes réservations</strong>
+                                <svg viewBox="0 0 256 512" width="12" title="angle-right" class="side-icon" fill="white">
+                                    <path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/>
+                                </svg>
+                                <svg viewBox="0 0 320 512" height="24" title="angle-down" class="down-icon" fill="white">
+                                    <path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"/>
+                                </svg>
+                            </div>
+                            <div class="content">
+                                <div class="col-12 pt-3">
+                                    {% for trip in trips %}
+                                    {% if loop.index0 > 2 %}
+                                        <div class="row mt-4 line-trip-profile">
+                                            <div class="col d-flex justify-content-center">{{ trip.departure }}
+                                                ->
+                                                {{ trip.arrival }}</div>
+                                            <div class="col d-flex justify-content-center">{{ trip.dateOfTrip|date("d M") }}</div>
+                                            {% if trip.tripStarted != true and trip.tripCompleted != true %}
+                                                <div class="col d-flex flex-column align-items-center">
+                                                    <a href="{{ path ('trip_start', {'id': trip.id}) }}" onclick="return prompt('Voulez vous commencer le trajet ? Taper \'Oui\' pour commencer') == 'Oui'" href="" class="trip-start-button">Commencer</a>
+                                                </div>
+                                            {% elseif trip.tripCompleted == true %}
+                                                <div class="col d-flex flex-column align-items-center">
+                                                    <a class="trip-finish-button">Trajet terminé</a>
+                                                </div>
+                                            {% else %}
+                                                <div class="col d-flex flex-column align-items-center">
+                                                    <div class="row d-flex ">Trajet en cours</div>
+                                                    <a href="{{ path ('trip_finish', {'id': trip.id}) }}" class="btn btn-info">Terminer le trajet</a>
+                                                </div>
+                                            {% endif %}
+                                            <div class="col d-flex  justify-content-center align-items-center">
+                                                <a href="{{ path ('trip_details', {'id': trip.id}) }}" class="btn">
+                                                    <i class="far fa-eye"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        {% else %}
+                                            <p class="text-center py-2"><i style="color:chocolate;"class="fas fa-hourglass-end"></i>Aucune réservations pour l'instant</p>
                                         {% endif %}
                                     {% endfor %}
                                 </div>
@@ -345,12 +410,13 @@
                             <div class="row justify-content-center ">
                                 <div class=" form-info">
                                     <h4 class="text-center">Modifier mon mot de passe</h4>
-                                    <div class="col-12">
+                                    <div class="row">
+                                    <div class="col-md-6 col-sm-12">
                                         {{ include('user/_form-reset.html.twig') }}
-                                        <a href="{{ path ('logout') }}" class="btn btn-danger mb-4">
-                                            <i class="fas fa-sign-out-alt"></i>
-                                            Me déconnecter</a>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12 p-5 d-flex flex-column align-items-center justify-content-around">
                                         {{ include('user/_delete_form.html.twig') }}
+                                    </div>
                                     </div>
                                 </div>
                             </div>

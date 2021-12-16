@@ -53,7 +53,7 @@ class __TwigTemplate_84b15d006ee2d4be357dd8efc7e80819da00ec9ee837c5f3cffff0c6284
                 </symbol>
             </defs>
         </svg>
-        <div class=\"comment-stars\">
+        <div class=\"comment-stars my-3\">
 
             <input class=\"comment-stars-input\" type=\"radio\" name=\"rating\" value=\"5\" id=\"rating-5\">
             <label class=\"comment-stars-view\" for=\"rating-5\"><svg class=\"icon icon-star\">
@@ -78,17 +78,20 @@ class __TwigTemplate_84b15d006ee2d4be357dd8efc7e80819da00ec9ee837c5f3cffff0c6284
         // line 34
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 34, $this->source); })()), "id", [], "any", false, false, false, 34), "html", null, true);
         echo "\"/>
-    ";
+      <p><i style=\"color: #F99C25;padding:5px;\"class=\"fas fa-circle\"></i>";
         // line 35
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 35, $this->source); })()), 'widget');
-        echo "
-    <button class=\"btn\">";
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 35, $this->source); })()), "content", [], "any", false, false, false, 35), 'label', ["label" => "Laissez nous votre avis"]);
+        echo "</p>
+        ";
         // line 36
-        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 36, $this->source); })()), "Save")) : ("Save")), "html", null, true);
-        echo "</button>
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 36, $this->source); })()), "content", [], "any", false, false, false, 36), 'widget', ["attr" => ["class" => "custom-field-form"]]);
+        echo "   
+          <div class=\"col-xs-12 col-sm-12 col-md-12 mb-4 d-flex justify-content-center\">
+            <button  type='submit' class=\"col-md-6 mt-3 button-update-profile\">Envoyer</button>
+        </div>
 ";
-        // line 37
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 37, $this->source); })()), 'form_end');
+        // line 40
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 40, $this->source); })()), 'form_end');
         echo "
 ";
         
@@ -111,7 +114,7 @@ class __TwigTemplate_84b15d006ee2d4be357dd8efc7e80819da00ec9ee837c5f3cffff0c6284
 
     public function getDebugInfo()
     {
-        return array (  91 => 37,  87 => 36,  83 => 35,  79 => 34,  43 => 1,);
+        return array (  94 => 40,  87 => 36,  83 => 35,  79 => 34,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -128,7 +131,7 @@ class __TwigTemplate_84b15d006ee2d4be357dd8efc7e80819da00ec9ee837c5f3cffff0c6284
                 </symbol>
             </defs>
         </svg>
-        <div class=\"comment-stars\">
+        <div class=\"comment-stars my-3\">
 
             <input class=\"comment-stars-input\" type=\"radio\" name=\"rating\" value=\"5\" id=\"rating-5\">
             <label class=\"comment-stars-view\" for=\"rating-5\"><svg class=\"icon icon-star\">
@@ -150,8 +153,11 @@ class __TwigTemplate_84b15d006ee2d4be357dd8efc7e80819da00ec9ee837c5f3cffff0c6284
                 </svg></label>
         </div>
         <input type=\"hidden\" name=\"author\" id=\"author\" value=\"{{currentUser.id}}\"/>
-    {{ form_widget(form) }}
-    <button class=\"btn\">{{ button_label|default('Save') }}</button>
+      <p><i style=\"color: #F99C25;padding:5px;\"class=\"fas fa-circle\"></i>{{ form_label(form.content, 'Laissez nous votre avis') }}</p>
+        {{ form_widget(form.content, {'attr': {'class': 'custom-field-form'}}) }}   
+          <div class=\"col-xs-12 col-sm-12 col-md-12 mb-4 d-flex justify-content-center\">
+            <button  type='submit' class=\"col-md-6 mt-3 button-update-profile\">Envoyer</button>
+        </div>
 {{ form_end(form) }}
 ", "review/_form.html.twig", "/shared/httpd/Projet-Final/templates/review/_form.html.twig");
     }

@@ -10,7 +10,7 @@
                 </symbol>
             </defs>
         </svg>
-        <div class="comment-stars">
+        <div class="comment-stars my-3">
 
             <input class="comment-stars-input" type="radio" name="rating" value="5" id="rating-5">
             <label class="comment-stars-view" for="rating-5"><svg class="icon icon-star">
@@ -32,6 +32,9 @@
                 </svg></label>
         </div>
         <input type="hidden" name="author" id="author" value="{{currentUser.id}}"/>
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+      <p><i style="color: #F99C25;padding:5px;"class="fas fa-circle"></i>{{ form_label(form.content, 'Laissez nous votre avis') }}</p>
+        {{ form_widget(form.content, {'attr': {'class': 'custom-field-form'}}) }}   
+          <div class="col-xs-12 col-sm-12 col-md-12 mb-4 d-flex justify-content-center">
+            <button  type='submit' class="col-md-6 mt-3 button-update-profile">Envoyer</button>
+        </div>
 {{ form_end(form) }}

@@ -12,11 +12,32 @@
 }
 
 .red-text{
-  color: red!important;
+  color: #f7542b!important;
   ul{
-    color: red!important;
+    color: #f7542b!important;
     li{
-      color: red!important;
+      color: #f7542b!important;
+    }
+  }
+}
+
+
+
+.home{
+
+  background-color: $cultured;
+
+  .info-objectif{
+
+
+    i{
+      font-size: 2rem;
+      color: $custom-yellow;
+    }
+
+    p{
+      text-align-last: center;
+      padding: 10px 0px;
     }
   }
 }
@@ -31,15 +52,25 @@ body {
   overflow-x: hidden;
 
 }
+
+p{
+  color: $gunmetal;
+}
+
 .base-content{
   padding-top: 6rem;
   min-height: 460px;
 
 }
 
-.home{
-    font-family: sans-serif;
-  
+.robot-sleeping-img{
+
+  width: 18%;
+}
+
+.robot-mascott-img{
+
+  width: 100%;
 }
 
 .error-page{
@@ -113,18 +144,59 @@ body {
   .date span:first-of-type {
     border-right: 1px solid #828282;
   }
+
+  .main-research-section{
+
+    background-color: #e7e3db;
+    padding: 30px 10px;
+    color: $gunmetal;
+
+    .main-publication-button{
+
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 15px;
+      background-color: #F99C25;
+      border-radius: 5px;
+      text-decoration: none;
+    
+
+      .card-publication-button{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: $custom-yellow;
+        border-radius: 5px;
+        
+        p{
+            color: white;
+            font-size: 20px;
+            
+        }
+
+        i{
+            font-size: 3rem;
+            color: white;
+        }
+      }
+
+    }
+    .main-publication-button:hover{
+      transform: scale(1.02);
+      transition: 500ms;
+    }
+
+  }
   
 
   .main-about{
-    margin-top: 60px;
-    margin-bottom: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    // background-color: #f1f1f1;
     background-color: $gainsboro;
-
-    font-family: "Open Sans",sans-serif;
     box-sizing: border-box;
 }
 
@@ -247,7 +319,7 @@ body {
 
 .social-icon__link {
   font-size: 2rem;
-  color: #fff;
+  color: $custom-yellow !important;
   margin: 0 10px;
   display: inline-block;
   transition: 0.5s;

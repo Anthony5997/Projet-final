@@ -3,9 +3,14 @@
 {% block title %}Message{% endblock %}
 
 {% block body %}
-    <h1 class="p-3 my-3">Boite de réception</h1>
+    <h1 class="p-3 my-3 text-center">Boite de réception</h1>
 
-
+{% if messageReceive == null %}
+    <p class="text-center">Aucun message reçu pour l'instant</p>
+    <div class="row d-flex justify-content-center">
+        <img class="robot-sleeping-img" src="{{asset('assets/uploads/custom-pic/robot-sleeping.png')}}">
+    </div>
+{% else %}
        {% for message in messageReceive %}
 
         <div class="row card-receiver-message">
@@ -30,5 +35,7 @@
         </div>
          
         {% endfor %}
+{% endif %}
+
 
 {% endblock %}

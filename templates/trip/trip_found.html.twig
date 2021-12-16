@@ -3,9 +3,9 @@
 {% block title %}Trajet trouvé{% endblock %}
 
 {% block body %}
-<h1 class="text-center m-5"> Trajet trouvé</h1>
 
 {% if tripFound is defined %}
+<h1 class="text-center m-5"> Trajet trouvé</h1>
 
     {% for trip in tripFound %}
         {% if trip.tripFull %}
@@ -77,7 +77,11 @@
 
 {% else %}
         <div class="container">
-           <h2 class="mt-5 text-center red-text"> Désolé ! Aucun voyage n'a été trouver </h2>
+           <h2 class="my-5 text-center red-text"> Désolé ! Aucun voyage n'a été trouver </h2>
+           <p class="text-center">Aucun itinéraire de ce type n'a été publié pour l'instant, réessayer plus tard, ou publié le vôtre !</p>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <img class="robot-sleeping-img" src="{{asset('assets/uploads/custom-pic/robot-sleeping.png')}}">
         </div>
 {% endif %}
 

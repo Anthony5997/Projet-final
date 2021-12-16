@@ -18,7 +18,7 @@ class ReviewType extends AbstractType
                 'required' => false,
                 'attr' => [
                     'class' => 'form-control',
-                    'placeholder' => 'Votre avis ...'
+                    'placeholder' => 'Votre avis ...',
                 ],
             ])
         ;

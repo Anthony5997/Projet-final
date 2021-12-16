@@ -46,7 +46,7 @@ class __TwigTemplate_afd4f3a139eb7a269521ab83469fc2bf30afb999af47b8570ad656fd595
         // line 3
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formReset"]) || array_key_exists("formReset", $context) ? $context["formReset"] : (function () { throw new RuntimeError('Variable "formReset" does not exist.', 3, $this->source); })()), 'form_start');
         echo "
-            <div class=\"col-xs-12 col-sm-12 col-md-6\">
+            <div class=\"col-xs-12 col-sm-12 col-md-12\">
                 <div class=\"custom-input-div\">
                     <span>";
         // line 6
@@ -58,7 +58,7 @@ class __TwigTemplate_afd4f3a139eb7a269521ab83469fc2bf30afb999af47b8570ad656fd595
         echo "
                 </div>
             </div>
-            <div class=\"col-xs-12 col-sm-12 col-md-6\">
+            <div class=\"col-xs-12 col-sm-12 col-md-12\">
                 <div class=\"custom-input-div\">
                     ";
         // line 12
@@ -70,7 +70,7 @@ class __TwigTemplate_afd4f3a139eb7a269521ab83469fc2bf30afb999af47b8570ad656fd595
         echo "
                 </div>
             </div>
-            <div class=\"col-xs-12 col-sm-12 col-md-6\">
+            <div class=\"col-xs-12 col-sm-12 col-md-12\">
                 <div class=\"custom-input-div\">
                     ";
         // line 18
@@ -122,19 +122,19 @@ class __TwigTemplate_afd4f3a139eb7a269521ab83469fc2bf30afb999af47b8570ad656fd595
         return new Source(" <section>
         <div class=\"row\">
             {{form_start(formReset)}}
-            <div class=\"col-xs-12 col-sm-12 col-md-6\">
+            <div class=\"col-xs-12 col-sm-12 col-md-12\">
                 <div class=\"custom-input-div\">
                     <span>{{ form_label(formReset.password, 'Mot de passe actuel') }}</span>
                     {{ form_widget(formReset.password, {'attr': {'class': 'custom-field-form'}}) }}
                 </div>
             </div>
-            <div class=\"col-xs-12 col-sm-12 col-md-6\">
+            <div class=\"col-xs-12 col-sm-12 col-md-12\">
                 <div class=\"custom-input-div\">
                     {{ form_label(formReset.newPassword.first) }}
                     {{ form_widget(formReset.newPassword.first, {'attr': {'class': 'custom-field-form'}}) }}
                 </div>
             </div>
-            <div class=\"col-xs-12 col-sm-12 col-md-6\">
+            <div class=\"col-xs-12 col-sm-12 col-md-12\">
                 <div class=\"custom-input-div\">
                     {{ form_label(formReset.newPassword.second) }}  
                     {{ form_widget(formReset.newPassword.second, {'attr': {'class': 'custom-field-form'}}) }}

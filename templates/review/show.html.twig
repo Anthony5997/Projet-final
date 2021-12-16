@@ -21,6 +21,9 @@
                 <div class="container profile-section">
                         {% if reviewReceived|length < 1 %}
                         <h4 class="text-center"> Aucun avis reçu pour l'instant</h4>
+                         <div class="row d-flex justify-content-center">
+                            <img class="robot-sleeping-img" src="{{asset('assets/uploads/custom-pic/robot-sleeping.png')}}">
+                        </div>
                         {% else %}
                         {% for reviewReceive in reviewReceived %}
                             <div class="card-review">
@@ -59,6 +62,9 @@
                 <div class="container profile-section">
                 {% if reviewLeaved|length < 1 %}
                     <h4 class="text-center"> Aucun avis laissé pour l'instant</h4>
+                     <div class="row d-flex justify-content-center">
+                        <img class="robot-sleeping-img" src="{{asset('assets/uploads/custom-pic/robot-sleeping.png')}}">
+                    </div>
                 {% else %}
                 <h3>Avis Laisser</h3>
                     {% for reviewLeave in reviewLeaved %}

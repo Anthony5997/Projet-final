@@ -16,13 +16,10 @@
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
             <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
             <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
-
             <link rel="stylesheet" href="style.css">
         {% endblock %}
-
     </head>
     <body>
-        {# {{dump(app.user)}} #}
         <header>
             <input type="checkbox" name="" id="toggler">
             <span class="d-flex"><label class="far fa-user"></label><label for="toggler" class="fas fa-angle-right"></label></span>
@@ -34,7 +31,7 @@
             {% if app.user != null %}
             
                 <a href="{{path('home')}}"><i class="fas fa-home"></i> Accueil</a>
-                <a href="{{ path ('user_edit', {'id': app.user.id})}}"><i class="far fa-id-badge"></i> Mon Profil</a>
+                <a href="{{ path ('user_edit', {'id': app.user.id})}}"><i class="far fa-id-badge"></i> Mon espace membre</a>
                 <a href="{{ path ('message_discussion', {'id': app.user.id})}}"><i class="far fa-envelope"></i> Boite de réception</a>
                 <a href="{{ path ('review_show', {'id': app.user.id})}}"><i class="far fa-comment-alt"></i> Mes Avis</a>
                 <a href="{{ path ('logout')}}"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
@@ -89,12 +86,10 @@
         </a></li>
     </ul>
     <ul class="menu">
-      <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
-      <li class="menu__item"><a class="menu__link" href="#">About</a></li>
-      <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
-      <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
-      <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
-
+      <li class="menu__item"><a class="menu__link" href="{{path('home')}}">Accueil</a></li>
+      <li class="menu__item"><a class="menu__link" href="{{path('trip_search')}}">Rechercher un trajet</a></li>
+      <li class="menu__item"><a class="menu__link" href="{{path('trip_search')}}">Publier un trajet</a></li>
+      <li class="menu__item"><a class="menu__link" href="{{path('home')}}">Contactez nous</a></li>
     </ul>
     <p>&copy;2021 Anthony RITA | All Rights Reserved</p>
   </footer>

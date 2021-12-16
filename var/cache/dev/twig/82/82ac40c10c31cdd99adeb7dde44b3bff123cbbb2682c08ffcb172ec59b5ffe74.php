@@ -94,10 +94,9 @@ class __TwigTemplate_93a4719728c36b2659256272a43424c23836accf747eb6edda27542d013
             <div class=\"page-header text-center\">
                 <h1 class=\"display-1 text-white fw-bold mb-0\">Vamos !</h1>
                 <h2 class=\"fw-light display-4 mt-0 mb-5\" id=\"header2\">Voyager, rencontrer, partager !</h2>
-
                 <div class=\"main\">
                     <form action=\"";
-        // line 17
+        // line 16
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("trip_search");
         echo "\">
                         <div class=\"form-row my-5\">
@@ -119,35 +118,52 @@ class __TwigTemplate_93a4719728c36b2659256272a43424c23836accf747eb6edda27542d013
          <div class=\"container mt-5\">
             <div class=\"row\">
                 <div class=\"d-flex justify-content-center\">
-                    <h3>Nos Objectifs</h3>
+                    <h2>Nos Objectifs</h3>
                 </div>
             </div>
         </div>
-        <div class=\"container mb-5\">
-            <div class=\"row\">
-                <div class=\"col d-flex flex-column justify-content-center\">
+        <div class=\"container info-objectif\">
+            <div class=\"row d-flex justify-content-around px-5\">
+                <div class=\"col-sm-3 col-xs-12 px-3 d-flex flex-column align-item-center\">
                     <i class=\"fas fa-road align-self-center mt-4 py-4\"></i> 
                     <h4 class=\"text-center\">Voyage voyage !</h4>
                     <p class=\"text-justify\">
-                        En tant qu'utilisateur, vous devenez acteur de la communauté de Vamos, proposant de partagé vos trajets favoris! Le voyage c'est bien , à plusieurs, c'est mieux ! 
+                        En tant qu'utilisateur, vous devenez acteur de la communauté de Vamos, proposant de partager vos trajets favoris! Le voyage c'est bien, à plusieurs, c'est mieux ! 
                     </p>
                 </div>
-                <div class=\"col d-flex flex-column justify-content-center \">
+                <div class=\"col-sm-3 col-xs-12 px-3 d-flex flex-column align-item-center \">
                     <i class=\"fas fa-user-friends align-self-center mt-4 py-4\"></i> 
                     <h4 class=\"text-center\">Rencontré d'autre utilisateur</h4>
                     <p class=\"text-justify\">
-                        Vous pouvez prendre contact avec les utilisateurs qui compte partager votre route !
+                        Vous pouvez prendre contact avec les utilisateurs qui comptent partager votre route !
                     </p>
                 </div>
-                <div class=\"col d-flex flex-column justify-content-center\">
+                <div class=\"col-sm-3 col-xs-12 px-3 d-flex flex-column align-item-center\">
                 <i class=\"fas fa-umbrella-beach align-self-center mt-4 py-4\"></i> 
                     <h4 class=\"text-center\">Partagé un moment conviviale</h4>
                     <p class=\"text-justify\">
-                        Vamos est très à l'écoute du retour de ses utilisateurs afin de leur proposé les trajets qui leur conviennent le mieux, dans une ambiance convivial et bienveillante !   
+                        Vamos est très à l'écoute du retour de ses utilisateurs afin de leur proposer les trajets qui leur conviennent le mieux, dans une ambiance conviviale et bienveillante !   
                     </p>
                 </div>
                 </div>
                 </div>
+            </div>
+        </div>
+        <div class=\"main-research-section\">
+            <div class=\"row justify-content-center\">
+                <h2 class=\"text-center\">Publier vos trajets !</h2>
+                <p class=\"text-center\">
+                    Proposer de partager vos trajets à travers toute la France ! 
+                </p>
+                    <a class=\"main-publication-button\" href=\"";
+        // line 73
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("trip_search");
+        echo "\">
+                        <div class=\"card-publication-button justify-content-center\">
+                            <i class=\"fas fa-map-marked-alt\"></i>
+                            <p class=\"m-0 pt-2\">Je publie un trajet</p>
+                        </div>
+                    </a>
             </div>
         </div>
         <div class=\"main-about\">
@@ -167,83 +183,83 @@ class __TwigTemplate_93a4719728c36b2659256272a43424c23836accf747eb6edda27542d013
            <div class=\"p-3\">
                 <div class=\"row justify-content-center\">
                     ";
-        // line 84
+        // line 97
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["tripList"]) || array_key_exists("tripList", $context) ? $context["tripList"] : (function () { throw new RuntimeError('Variable "tripList" does not exist.', 84, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["tripList"]) || array_key_exists("tripList", $context) ? $context["tripList"] : (function () { throw new RuntimeError('Variable "tripList" does not exist.', 97, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["trip"]) {
-            // line 85
+            // line 98
             echo "                        <div class=\"col-10 col-md-4 \">
                             ";
-            // line 86
-            if (twig_get_attribute($this->env, $this->source, $context["trip"], "tripFull", [], "any", false, false, false, 86)) {
-                // line 87
-                echo "                                <div class=\"card-custom-found disabled w-100\">
-                                    <a class=\"global-card-found \" href=\"\">
-                                ";
-            } elseif (((0 === twig_compare(twig_get_attribute($this->env, $this->source,             // line 89
-$context["trip"], "tripStarted", [], "any", false, false, false, 89), true)) && (0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["trip"], "tripCompleted", [], "any", false, false, false, 89), false)))) {
-                // line 90
-                echo "                                <div class=\"card-custom-found disabled w-100\">
-                                    <a class=\"global-card-found \" href=\"\">
-                                ";
-            } elseif (((0 === twig_compare(twig_get_attribute($this->env, $this->source,             // line 92
-$context["trip"], "tripStarted", [], "any", false, false, false, 92), true)) && (0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["trip"], "tripCompleted", [], "any", false, false, false, 92), true)))) {
-                // line 93
-                echo "                                <div class=\"card-custom-found disabled w-100\">
-                                    <a class=\"global-card-found \" href=\"\">
-                                ";
-            } else {
-                // line 96
-                echo "                                <div class=\"card-custom-found w-100\">
-                                    <a class=\"global-card-found\" href=\"";
-                // line 97
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("trip_details", ["id" => twig_get_attribute($this->env, $this->source, $context["trip"], "id", [], "any", false, false, false, 97)]), "html", null, true);
-                echo "\">
-                                ";
-            }
             // line 99
-            echo "                                    <div class=\"plan-found p-0\">
-                                        <div class=\"timeline\">
-                                            ";
-            // line 101
-            if (((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["trip"], "tripFull", [], "any", false, false, false, 101), true)) && (0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["trip"], "tripStarted", [], "any", false, false, false, 101), false)))) {
-                // line 102
-                echo "                                                <div class=\"d-flex justify-content-end\"><h4>Complet</h4></div>
-                                                ";
-            } elseif (((0 === twig_compare(twig_get_attribute($this->env, $this->source,             // line 103
-$context["trip"], "tripStarted", [], "any", false, false, false, 103), true)) && (0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["trip"], "tripCompleted", [], "any", false, false, false, 103), false)))) {
-                // line 104
-                echo "                                                <div class=\"d-flex justify-content-end\"><h4>Trajet en cours</h4></div>
-                                                ";
+            if (twig_get_attribute($this->env, $this->source, $context["trip"], "tripFull", [], "any", false, false, false, 99)) {
+                // line 100
+                echo "                                <div class=\"card-custom-found disabled w-100\">
+                                    <a class=\"global-card-found\" href=\"\">
+                                ";
+            } elseif (((0 === twig_compare(twig_get_attribute($this->env, $this->source,             // line 102
+$context["trip"], "tripStarted", [], "any", false, false, false, 102), true)) && (0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["trip"], "tripCompleted", [], "any", false, false, false, 102), false)))) {
+                // line 103
+                echo "                                <div class=\"card-custom-found disabled w-100\">
+                                    <a class=\"global-card-found\" href=\"\">
+                                ";
             } elseif (((0 === twig_compare(twig_get_attribute($this->env, $this->source,             // line 105
 $context["trip"], "tripStarted", [], "any", false, false, false, 105), true)) && (0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["trip"], "tripCompleted", [], "any", false, false, false, 105), true)))) {
                 // line 106
+                echo "                                <div class=\"card-custom-found disabled w-100\">
+                                    <a class=\"global-card-found\" href=\"\">
+                                ";
+            } else {
+                // line 109
+                echo "                                <div class=\"card-custom-found w-100\">
+                                    <a class=\"global-card-found\" href=\"";
+                // line 110
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("trip_details", ["id" => twig_get_attribute($this->env, $this->source, $context["trip"], "id", [], "any", false, false, false, 110)]), "html", null, true);
+                echo "\">
+                                ";
+            }
+            // line 112
+            echo "                                    <div class=\"plan-found p-0\">
+                                        <div class=\"timeline\">
+                                            ";
+            // line 114
+            if (((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["trip"], "tripFull", [], "any", false, false, false, 114), true)) && (0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["trip"], "tripStarted", [], "any", false, false, false, 114), false)))) {
+                // line 115
+                echo "                                                <div class=\"d-flex justify-content-end\"><h4>Complet</h4></div>
+                                                ";
+            } elseif (((0 === twig_compare(twig_get_attribute($this->env, $this->source,             // line 116
+$context["trip"], "tripStarted", [], "any", false, false, false, 116), true)) && (0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["trip"], "tripCompleted", [], "any", false, false, false, 116), false)))) {
+                // line 117
+                echo "                                                <div class=\"d-flex justify-content-end\"><h4>Trajet en cours</h4></div>
+                                                ";
+            } elseif (((0 === twig_compare(twig_get_attribute($this->env, $this->source,             // line 118
+$context["trip"], "tripStarted", [], "any", false, false, false, 118), true)) && (0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["trip"], "tripCompleted", [], "any", false, false, false, 118), true)))) {
+                // line 119
                 echo "                                                <div class=\"d-flex justify-content-end\"><h4>Terminé</h4></div>
                                                 ";
             } else {
-                // line 108
+                // line 121
                 echo "                                            ";
             }
-            // line 109
+            // line 122
             echo "                                            <div class=\"d-flex justify-content-end\"><p>";
-            ((twig_get_attribute($this->env, $this->source, $context["trip"], "tripFull", [], "any", false, false, false, 109)) ? (print ("Complet")) : (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "duration", [], "any", false, false, false, 109), "html", null, true))));
+            ((twig_get_attribute($this->env, $this->source, $context["trip"], "tripFull", [], "any", false, false, false, 122)) ? (print ("Complet")) : (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "duration", [], "any", false, false, false, 122), "html", null, true))));
             echo "</p></div>
                                             <div class=\"row\">
                                                 <div class=\"col-3 d-flex align-items-end flex-column justify-content-around p-3\">
                                                     <p><strong>";
-            // line 112
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "startTime", [], "any", false, false, false, 112), "H:i"), "html", null, true);
+            // line 125
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "startTime", [], "any", false, false, false, 125), "H:i"), "html", null, true);
             echo "</strong></p>
                                                     <p class=\"d-flex justify-content-center font-control\">";
-            // line 113
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "distance", [], "any", false, false, false, 113), "html", null, true);
+            // line 126
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "distance", [], "any", false, false, false, 126), "html", null, true);
             echo " </p>
                                                     ";
-            // line 114
-            $context["hour"] = twig_replace_filter(twig_get_attribute($this->env, $this->source, $context["trip"], "duration", [], "any", false, false, false, 114), ["heure" => "hour"]);
-            // line 115
+            // line 127
+            $context["hour"] = twig_replace_filter(twig_get_attribute($this->env, $this->source, $context["trip"], "duration", [], "any", false, false, false, 127), ["heure" => "hour"]);
+            // line 128
             echo "                                                    <p class=\"pt-3\"><strong>";
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_date_modify_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "startTime", [], "any", false, false, false, 115), ("+" . (isset($context["hour"]) || array_key_exists("hour", $context) ? $context["hour"] : (function () { throw new RuntimeError('Variable "hour" does not exist.', 115, $this->source); })()))), "H:i"), "html", null, true);
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_date_modify_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "startTime", [], "any", false, false, false, 128), ("+" . (isset($context["hour"]) || array_key_exists("hour", $context) ? $context["hour"] : (function () { throw new RuntimeError('Variable "hour" does not exist.', 128, $this->source); })()))), "H:i"), "html", null, true);
             echo "</strong></p>
                                                 </div>
                                                 <div class=\"col-9\">
@@ -251,14 +267,14 @@ $context["trip"], "tripStarted", [], "any", false, false, false, 105), true)) &&
                                                         <div class=\"line-content\">
                                                             <div class=\"content\">
                                                                 <h1>";
-            // line 121
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "departure", [], "any", false, false, false, 121), "html", null, true);
+            // line 134
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "departure", [], "any", false, false, false, 134), "html", null, true);
             echo "</h1>
                                                             </div>
                                                             <div class=\"content\">
                                                                 <h1> ";
-            // line 124
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "arrival", [], "any", false, false, false, 124), "html", null, true);
+            // line 137
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "arrival", [], "any", false, false, false, 137), "html", null, true);
             echo "</h1>
                                                             </div>
                                                         </div>
@@ -271,8 +287,8 @@ $context["trip"], "tripStarted", [], "any", false, false, false, 105), true)) &&
                                             <div class=\"col d-flex justify-content-start align-items-center font-control fas fa-chevron-right\"></div>
                                             
                                             <div class=\"col d-flex align-items-center flex-column justify-content-center \"><p class=\"mt-2\">Places restantes : </p><strong>";
-            // line 135
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "passengers", [], "any", false, false, false, 135), "html", null, true);
+            // line 148
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "passengers", [], "any", false, false, false, 148), "html", null, true);
             echo "</strong><i class=\"fas fa-user-friends\"></i></div>
                                         </div>
                                     </div>
@@ -284,7 +300,7 @@ $context["trip"], "tripStarted", [], "any", false, false, false, 105), true)) &&
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['trip'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 142
+        // line 155
         echo "                </div>
             </div>
     </div>
@@ -309,7 +325,7 @@ $context["trip"], "tripStarted", [], "any", false, false, false, 105), true)) &&
 
     public function getDebugInfo()
     {
-        return array (  288 => 142,  275 => 135,  261 => 124,  255 => 121,  245 => 115,  243 => 114,  239 => 113,  235 => 112,  228 => 109,  225 => 108,  221 => 106,  219 => 105,  216 => 104,  214 => 103,  211 => 102,  209 => 101,  205 => 99,  200 => 97,  197 => 96,  192 => 93,  190 => 92,  186 => 90,  184 => 89,  180 => 87,  178 => 86,  175 => 85,  171 => 84,  101 => 17,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  304 => 155,  291 => 148,  277 => 137,  271 => 134,  261 => 128,  259 => 127,  255 => 126,  251 => 125,  244 => 122,  241 => 121,  237 => 119,  235 => 118,  232 => 117,  230 => 116,  227 => 115,  225 => 114,  221 => 112,  216 => 110,  213 => 109,  208 => 106,  206 => 105,  202 => 103,  200 => 102,  196 => 100,  194 => 99,  191 => 98,  187 => 97,  160 => 73,  100 => 16,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -328,7 +344,6 @@ $context["trip"], "tripStarted", [], "any", false, false, false, 105), true)) &&
             <div class=\"page-header text-center\">
                 <h1 class=\"display-1 text-white fw-bold mb-0\">Vamos !</h1>
                 <h2 class=\"fw-light display-4 mt-0 mb-5\" id=\"header2\">Voyager, rencontrer, partager !</h2>
-
                 <div class=\"main\">
                     <form action=\"{{path('trip_search')}}\">
                         <div class=\"form-row my-5\">
@@ -350,35 +365,49 @@ $context["trip"], "tripStarted", [], "any", false, false, false, 105), true)) &&
          <div class=\"container mt-5\">
             <div class=\"row\">
                 <div class=\"d-flex justify-content-center\">
-                    <h3>Nos Objectifs</h3>
+                    <h2>Nos Objectifs</h3>
                 </div>
             </div>
         </div>
-        <div class=\"container mb-5\">
-            <div class=\"row\">
-                <div class=\"col d-flex flex-column justify-content-center\">
+        <div class=\"container info-objectif\">
+            <div class=\"row d-flex justify-content-around px-5\">
+                <div class=\"col-sm-3 col-xs-12 px-3 d-flex flex-column align-item-center\">
                     <i class=\"fas fa-road align-self-center mt-4 py-4\"></i> 
                     <h4 class=\"text-center\">Voyage voyage !</h4>
                     <p class=\"text-justify\">
-                        En tant qu'utilisateur, vous devenez acteur de la communauté de Vamos, proposant de partagé vos trajets favoris! Le voyage c'est bien , à plusieurs, c'est mieux ! 
+                        En tant qu'utilisateur, vous devenez acteur de la communauté de Vamos, proposant de partager vos trajets favoris! Le voyage c'est bien, à plusieurs, c'est mieux ! 
                     </p>
                 </div>
-                <div class=\"col d-flex flex-column justify-content-center \">
+                <div class=\"col-sm-3 col-xs-12 px-3 d-flex flex-column align-item-center \">
                     <i class=\"fas fa-user-friends align-self-center mt-4 py-4\"></i> 
                     <h4 class=\"text-center\">Rencontré d'autre utilisateur</h4>
                     <p class=\"text-justify\">
-                        Vous pouvez prendre contact avec les utilisateurs qui compte partager votre route !
+                        Vous pouvez prendre contact avec les utilisateurs qui comptent partager votre route !
                     </p>
                 </div>
-                <div class=\"col d-flex flex-column justify-content-center\">
+                <div class=\"col-sm-3 col-xs-12 px-3 d-flex flex-column align-item-center\">
                 <i class=\"fas fa-umbrella-beach align-self-center mt-4 py-4\"></i> 
                     <h4 class=\"text-center\">Partagé un moment conviviale</h4>
                     <p class=\"text-justify\">
-                        Vamos est très à l'écoute du retour de ses utilisateurs afin de leur proposé les trajets qui leur conviennent le mieux, dans une ambiance convivial et bienveillante !   
+                        Vamos est très à l'écoute du retour de ses utilisateurs afin de leur proposer les trajets qui leur conviennent le mieux, dans une ambiance conviviale et bienveillante !   
                     </p>
                 </div>
                 </div>
                 </div>
+            </div>
+        </div>
+        <div class=\"main-research-section\">
+            <div class=\"row justify-content-center\">
+                <h2 class=\"text-center\">Publier vos trajets !</h2>
+                <p class=\"text-center\">
+                    Proposer de partager vos trajets à travers toute la France ! 
+                </p>
+                    <a class=\"main-publication-button\" href=\"{{path('trip_search')}}\">
+                        <div class=\"card-publication-button justify-content-center\">
+                            <i class=\"fas fa-map-marked-alt\"></i>
+                            <p class=\"m-0 pt-2\">Je publie un trajet</p>
+                        </div>
+                    </a>
             </div>
         </div>
         <div class=\"main-about\">
@@ -401,13 +430,13 @@ $context["trip"], "tripStarted", [], "any", false, false, false, 105), true)) &&
                         <div class=\"col-10 col-md-4 \">
                             {% if trip.tripFull %}
                                 <div class=\"card-custom-found disabled w-100\">
-                                    <a class=\"global-card-found \" href=\"\">
+                                    <a class=\"global-card-found\" href=\"\">
                                 {% elseif trip.tripStarted == true and trip.tripCompleted == false %}
                                 <div class=\"card-custom-found disabled w-100\">
-                                    <a class=\"global-card-found \" href=\"\">
+                                    <a class=\"global-card-found\" href=\"\">
                                 {% elseif trip.tripStarted == true and trip.tripCompleted == true %}
                                 <div class=\"card-custom-found disabled w-100\">
-                                    <a class=\"global-card-found \" href=\"\">
+                                    <a class=\"global-card-found\" href=\"\">
                                 {% else %}
                                 <div class=\"card-custom-found w-100\">
                                     <a class=\"global-card-found\" href=\"{{path('trip_details', {'id': trip.id})}}\">
