@@ -108,7 +108,7 @@ class __TwigTemplate_3622d2f62bd1191eb44e5f453684770da818018f046c674d57daea876b5
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/uploads/custom-pic/robot-thumbs-up.png"), "html", null, true);
             echo "\">
         </div>
-            <a class=\"button-comeback\"href=\"";
+            <a class=\"button-comeback mb-5\"href=\"";
             // line 18
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_edit", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 18, $this->source); })()), "user", [], "any", false, false, false, 18), "id", [], "any", false, false, false, 18)]), "html", null, true);
             echo "\"><i class=\"fas fa-arrow-left\"></i> Retourné au profil</a>
@@ -163,7 +163,7 @@ class __TwigTemplate_3622d2f62bd1191eb44e5f453684770da818018f046c674d57daea876b5
          <div id=\"robot-profile-div\" class=\"d-flex justify-content-center\">
             <img class=\"robot-thumbs-up-img\" src=\"{{asset('assets/uploads/custom-pic/robot-thumbs-up.png')}}\">
         </div>
-            <a class=\"button-comeback\"href=\"{{path('user_edit', { 'id' : app.user.id})}}\"><i class=\"fas fa-arrow-left\"></i> Retourné au profil</a>
+            <a class=\"button-comeback mb-5\"href=\"{{path('user_edit', { 'id' : app.user.id})}}\"><i class=\"fas fa-arrow-left\"></i> Retourné au profil</a>
         </div>
 
     {% endif %}

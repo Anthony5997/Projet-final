@@ -40,11 +40,17 @@
                         </div>
                         <div class='red-text'>{{ form_errors(vehicule.typeOfVehicule)}}</div>
                     </div>
-                    <div class="custom-input-div">
-                        {{ form_label(vehicule.vehicule_picture,'Photo du véhicule') }} 
-                        {{ form_widget(vehicule.vehicule_picture, {'attr': {'class': 'custom-field-form'}}) }}
-                    </div> 
-                    <div class='red-text'>{{ form_errors(vehicule.vehicule_picture)}}</div>
+                        <div class='red-text'>{{ form_errors(vehicule.vehicule_picture)}}</div>
+                            <div class="custom-file fileUpload" id='btnHeigt'>
+                                {{ form_widget(vehicule.vehicule_picture, { 'attr': {
+                                    'accept' : '.pdf,.jpg,.doc,.docx,.png,.gif',
+                                    'size' : '20000000', 
+                                    'type' : 'file',
+                                    'class': 'custom-field-form upload'
+                                    }}) 
+                                }}
+                                <span>Ajouter une photo de mon véhicule</span>
+                            </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 mb-4 mt-4 d-flex justify-content-center">
                     <button  type='submit' class="col-md-10 button-update-profile">Sauvegarder mon véhicule</button>
                 </div>

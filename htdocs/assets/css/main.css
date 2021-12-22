@@ -6839,6 +6839,11 @@ header .icons {
 .label-right-icon i {
   color: #F99C25;
 }
+.label-right-icon p {
+  color: #F99C25;
+  font-size: 1rem;
+  text-align: center;
+}
 
 header .icons .icon-custom {
   font-size: 2rem;
@@ -6848,6 +6853,14 @@ header .icons .icon-custom {
   font-weight: 500;
   display: flex;
   align-self: center;
+}
+header .icons .icon-custom i {
+  color: #F99C25;
+}
+header .icons .icon-custom p {
+  color: #F99C25;
+  font-size: 1rem;
+  text-align: center;
 }
 
 header .icons a:hover {
@@ -7152,6 +7165,30 @@ header .fa-user {
   transition: 500ms;
 }
 
+.delete-button-profile {
+  border: 2px solid rgba(248, 19, 19, 0.713) !important;
+  padding: 5px;
+  color: red;
+  border-radius: 15px;
+  transition: 400ms;
+}
+.delete-button-profile i {
+  color: red !important;
+  font-size: 1rem !important;
+}
+
+.delete-button-profile:hover {
+  border: 2px solid white !important;
+  padding: 5px;
+  color: white;
+  border-radius: 15px;
+  background-color: rgba(248, 19, 19, 0.713);
+  transition: 400ms;
+}
+.delete-button-profile:hover i {
+  color: white !important;
+}
+
 .accordion-wrapper {
   width: 100%;
   display: block;
@@ -7237,6 +7274,10 @@ header .fa-user {
 .custom-input-div {
   margin-top: 15px;
   margin-bottom: 10px;
+}
+.custom-input-div input[type=number]::-webkit-inner-spin-button {
+  opacity: 0;
+  pointer-events: none;
 }
 .custom-input-div i {
   color: #F99C25;

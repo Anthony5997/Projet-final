@@ -142,7 +142,7 @@ class __TwigTemplate_190bba3e03b6b7d7488f896b9f138fee49897ee217018d5e51ad2716751
                                 <i class=\"fas fa-phone d-flex align-items-center\"></i>   
                                 ";
         // line 57
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 57, $this->source); })()), "phone", [], "any", false, false, false, 57), 'widget', ["attr" => ["class" => "custom-field-form", "placeholder" => "Téléphone"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 57, $this->source); })()), "phone", [], "any", false, false, false, 57), 'widget', ["attr" => ["class" => "custom-field-form", "placeholder" => "Exemple : 06XXXXXXXX"]]);
         echo "
                                 </div> 
                                 <div class='red-text'>";
@@ -275,7 +275,7 @@ class __TwigTemplate_190bba3e03b6b7d7488f896b9f138fee49897ee217018d5e51ad2716751
                             <div class=\"col-xs-12 col-sm-6\">
                                 <div class=\"d-flex custom-input-div\">
                                 <i class=\"fas fa-phone d-flex align-items-center\"></i>   
-                                {{ form_widget(form.phone, {'attr': {'class': 'custom-field-form', 'placeholder': 'Téléphone'}}) }}
+                                {{ form_widget(form.phone, {'attr': {'class': 'custom-field-form', 'placeholder': 'Exemple : 06XXXXXXXX'}}) }}
                                 </div> 
                                 <div class='red-text'>{{ form_errors(form.phone)}}</div>
                             </div>

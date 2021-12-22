@@ -116,11 +116,6 @@ class User implements UserInterface, JsonSerializable
      */
     private $resetToken;
 
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $passwordAttempt;
-
     public function getId(): ?string
     {
         return $this->id;
@@ -403,15 +398,4 @@ class User implements UserInterface, JsonSerializable
         return $this;
     }
 
-    public function getPasswordAttempt(): ?int
-    {
-        return $this->passwordAttempt;
-    }
-
-    public function setPasswordAttempt(?int $passwordAttempt): self
-    {
-        $this->passwordAttempt = $passwordAttempt;
-
-        return $this;
-    }
 }

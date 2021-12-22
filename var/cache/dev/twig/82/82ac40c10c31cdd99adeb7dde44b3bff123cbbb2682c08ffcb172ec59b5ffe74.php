@@ -157,7 +157,7 @@ class __TwigTemplate_93a4719728c36b2659256272a43424c23836accf747eb6edda27542d013
                 </p>
                     <a class=\"main-publication-button\" href=\"";
         // line 73
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("trip_search");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("trip_new");
         echo "\">
                         <div class=\"card-publication-button justify-content-center\">
                             <i class=\"fas fa-map-marked-alt\"></i>
@@ -402,7 +402,7 @@ $context["trip"], "tripStarted", [], "any", false, false, false, 118), true)) &&
                 <p class=\"text-center\">
                     Proposer de partager vos trajets à travers toute la France ! 
                 </p>
-                    <a class=\"main-publication-button\" href=\"{{path('trip_search')}}\">
+                    <a class=\"main-publication-button\" href=\"{{path('trip_new')}}\">
                         <div class=\"card-publication-button justify-content-center\">
                             <i class=\"fas fa-map-marked-alt\"></i>
                             <p class=\"m-0 pt-2\">Je publie un trajet</p>

@@ -12,6 +12,7 @@ use Symfony\Component\Validator\Constraints\File;
 use Doctrine\ORM\EntityRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class VehiculeType extends AbstractType
 {
@@ -19,7 +20,14 @@ class VehiculeType extends AbstractType
     {
         $builder
             ->add('country_of_registration')
-            ->add('numberplate')
+            ->add('numberplate', TextType::class, [
+                'required' => false, 
+                'attr' => [ 
+                        'class'=> 'custom-field-form', 
+                        'pattern' => '[-0-9A-Z]{9}',
+                        'maxlength' => '9'
+                ]
+            ])
             ->add('brand')
             ->add('model')
             ->add('color', ChoiceType::class, [

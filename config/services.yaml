@@ -7,6 +7,7 @@ parameters:
     id_card_directory: '%kernel.project_dir%/htdocs/assets/uploads/idCard'
     profile_picture_directory: '%kernel.project_dir%/htdocs/assets/uploads/profilePicture'
     vehicule_picture_directory: '%kernel.project_dir%/htdocs/assets/uploads/vehiculePicture'
+    GoogleApiSK: "%env(GOOGLE_API)%"
 
 services:
     # default configuration for services in *this* file

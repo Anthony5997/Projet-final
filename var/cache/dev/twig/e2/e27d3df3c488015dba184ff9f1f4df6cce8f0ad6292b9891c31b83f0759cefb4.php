@@ -148,26 +148,24 @@ class __TwigTemplate_35d2c1671031fcae1aab9081e27c6080cede350d722801aa9a8fe0e4a39
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["vehicule"]) || array_key_exists("vehicule", $context) ? $context["vehicule"] : (function () { throw new RuntimeError('Variable "vehicule" does not exist.', 41, $this->source); })()), "typeOfVehicule", [], "any", false, false, false, 41), 'errors');
         echo "</div>
                     </div>
-                    <div class=\"custom-input-div\">
-                        ";
-        // line 44
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["vehicule"]) || array_key_exists("vehicule", $context) ? $context["vehicule"] : (function () { throw new RuntimeError('Variable "vehicule" does not exist.', 44, $this->source); })()), "vehicule_picture", [], "any", false, false, false, 44), 'label', ["label" => "Photo du véhicule"]);
-        echo " 
-                        ";
-        // line 45
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["vehicule"]) || array_key_exists("vehicule", $context) ? $context["vehicule"] : (function () { throw new RuntimeError('Variable "vehicule" does not exist.', 45, $this->source); })()), "vehicule_picture", [], "any", false, false, false, 45), 'widget', ["attr" => ["class" => "custom-field-form"]]);
-        echo "
-                    </div> 
-                    <div class='red-text'>";
-        // line 47
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["vehicule"]) || array_key_exists("vehicule", $context) ? $context["vehicule"] : (function () { throw new RuntimeError('Variable "vehicule" does not exist.', 47, $this->source); })()), "vehicule_picture", [], "any", false, false, false, 47), 'errors');
+                        <div class='red-text'>";
+        // line 43
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["vehicule"]) || array_key_exists("vehicule", $context) ? $context["vehicule"] : (function () { throw new RuntimeError('Variable "vehicule" does not exist.', 43, $this->source); })()), "vehicule_picture", [], "any", false, false, false, 43), 'errors');
         echo "</div>
+                            <div class=\"custom-file fileUpload\" id='btnHeigt'>
+                                ";
+        // line 45
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["vehicule"]) || array_key_exists("vehicule", $context) ? $context["vehicule"] : (function () { throw new RuntimeError('Variable "vehicule" does not exist.', 45, $this->source); })()), "vehicule_picture", [], "any", false, false, false, 45), 'widget', ["attr" => ["accept" => ".pdf,.jpg,.doc,.docx,.png,.gif", "size" => "20000000", "type" => "file", "class" => "custom-field-form upload"]]);
+        // line 51
+        echo "
+                                <span>Ajouter une photo de mon véhicule</span>
+                            </div>
                     <div class=\"col-xs-12 col-sm-12 col-md-12 mb-4 mt-4 d-flex justify-content-center\">
                     <button  type='submit' class=\"col-md-10 button-update-profile\">Sauvegarder mon véhicule</button>
                 </div>
             ";
-        // line 51
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["vehicule"]) || array_key_exists("vehicule", $context) ? $context["vehicule"] : (function () { throw new RuntimeError('Variable "vehicule" does not exist.', 51, $this->source); })()), 'form_end');
+        // line 57
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["vehicule"]) || array_key_exists("vehicule", $context) ? $context["vehicule"] : (function () { throw new RuntimeError('Variable "vehicule" does not exist.', 57, $this->source); })()), 'form_end');
         echo "
         </div>
     </div>
@@ -193,7 +191,7 @@ class __TwigTemplate_35d2c1671031fcae1aab9081e27c6080cede350d722801aa9a8fe0e4a39
 
     public function getDebugInfo()
     {
-        return array (  170 => 51,  163 => 47,  158 => 45,  154 => 44,  148 => 41,  143 => 39,  139 => 38,  133 => 35,  128 => 33,  124 => 32,  119 => 30,  114 => 28,  110 => 27,  105 => 25,  100 => 23,  96 => 22,  91 => 20,  86 => 18,  82 => 17,  77 => 15,  72 => 13,  68 => 12,  63 => 10,  58 => 8,  54 => 7,  49 => 5,  43 => 1,);
+        return array (  168 => 57,  160 => 51,  158 => 45,  153 => 43,  148 => 41,  143 => 39,  139 => 38,  133 => 35,  128 => 33,  124 => 32,  119 => 30,  114 => 28,  110 => 27,  105 => 25,  100 => 23,  96 => 22,  91 => 20,  86 => 18,  82 => 17,  77 => 15,  72 => 13,  68 => 12,  63 => 10,  58 => 8,  54 => 7,  49 => 5,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -240,11 +238,17 @@ class __TwigTemplate_35d2c1671031fcae1aab9081e27c6080cede350d722801aa9a8fe0e4a39
                         </div>
                         <div class='red-text'>{{ form_errors(vehicule.typeOfVehicule)}}</div>
                     </div>
-                    <div class=\"custom-input-div\">
-                        {{ form_label(vehicule.vehicule_picture,'Photo du véhicule') }} 
-                        {{ form_widget(vehicule.vehicule_picture, {'attr': {'class': 'custom-field-form'}}) }}
-                    </div> 
-                    <div class='red-text'>{{ form_errors(vehicule.vehicule_picture)}}</div>
+                        <div class='red-text'>{{ form_errors(vehicule.vehicule_picture)}}</div>
+                            <div class=\"custom-file fileUpload\" id='btnHeigt'>
+                                {{ form_widget(vehicule.vehicule_picture, { 'attr': {
+                                    'accept' : '.pdf,.jpg,.doc,.docx,.png,.gif',
+                                    'size' : '20000000', 
+                                    'type' : 'file',
+                                    'class': 'custom-field-form upload'
+                                    }}) 
+                                }}
+                                <span>Ajouter une photo de mon véhicule</span>
+                            </div>
                     <div class=\"col-xs-12 col-sm-12 col-md-12 mb-4 mt-4 d-flex justify-content-center\">
                     <button  type='submit' class=\"col-md-10 button-update-profile\">Sauvegarder mon véhicule</button>
                 </div>

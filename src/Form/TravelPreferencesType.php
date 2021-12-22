@@ -38,7 +38,7 @@ class TravelPreferencesType extends AbstractType
                 'choices'  => [
                     'J\'adore les animaux. Ouaf !' => 'J\'adore les animaux. Ouaf !',
                     'Je peux voyager avec certains animaux' => 'Je peux voyager avec certains animaux',
-                    'Je ne préfère pas voyages avec des animaux' => 'Je ne préfère pas voyages avec des animaux',
+                    'Je ne préfère pas voyages avec des animaux' => 'Je ne préfère pas voyager avec des animaux',
                 ],
             ])
             ->add('health_pass', ChoiceType::class, [

@@ -43,7 +43,7 @@ class __TwigTemplate_13636a7fb029de0233df1a9764891f00810b3bb0acf8b7407cac69bd5b7
         echo " <section class=\"section-padding\">
     <div class=\"row justify-content-center \">
         <div class=\"col-10 d-flex flex-column justify-content-center form-info\">
-             <p><i style=\"color: #F99C25;padding:5px;\"class=\"fas fa-circle\"></i>Choisissez parmis les différentes options vos préférences.</p>
+             <p><i style=\"color: #F99C25;padding:5px;\"class=\"fas fa-circle\"></i>Choisissez parmis les différentes options vos préférences de covoitureur.</p>
             ";
         // line 5
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["userPref"]) || array_key_exists("userPref", $context) ? $context["userPref"] : (function () { throw new RuntimeError('Variable "userPref" does not exist.', 5, $this->source); })()), 'form_start');
@@ -161,7 +161,7 @@ class __TwigTemplate_13636a7fb029de0233df1a9764891f00810b3bb0acf8b7407cac69bd5b7
         return new Source(" <section class=\"section-padding\">
     <div class=\"row justify-content-center \">
         <div class=\"col-10 d-flex flex-column justify-content-center form-info\">
-             <p><i style=\"color: #F99C25;padding:5px;\"class=\"fas fa-circle\"></i>Choisissez parmis les différentes options vos préférences.</p>
+             <p><i style=\"color: #F99C25;padding:5px;\"class=\"fas fa-circle\"></i>Choisissez parmis les différentes options vos préférences de covoitureur.</p>
             {{ form_start(userPref) }}
                 <div class=\"d-flex custom-input-div\">
                     <i class=\"far fa-comments d-flex align-items-center mb-2\"></i>

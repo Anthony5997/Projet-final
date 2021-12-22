@@ -3,7 +3,6 @@ let departure = document.querySelector("#departureCityGuessData");
 let divDepartureGuess = document.querySelector("#departureInput");
 let divArrivalGuess = document.querySelector("#arrivalInput");
 let currentSearch;
-let token = 'AIzaSyDNwlL_Fbumi8lvNKIctvzrIKxiSZITz7I';
 
 
 

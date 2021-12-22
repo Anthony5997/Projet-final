@@ -72,6 +72,7 @@
     <parameter key="id_card_directory">/shared/httpd/Projet-Final/htdocs/assets/uploads/idCard</parameter>
     <parameter key="profile_picture_directory">/shared/httpd/Projet-Final/htdocs/assets/uploads/profilePicture</parameter>
     <parameter key="vehicule_picture_directory">/shared/httpd/Projet-Final/htdocs/assets/uploads/vehiculePicture</parameter>
+    <parameter key="GoogleApiSK">%env(GOOGLE_API)%</parameter>
     <parameter key="event_dispatcher.event_aliases" type="collection">
       <parameter key="Symfony\Component\Console\Event\ConsoleCommandEvent">console.command</parameter>
       <parameter key="Symfony\Component\Console\Event\ConsoleErrorEvent">console.error</parameter>
@@ -5952,16 +5953,17 @@
         <argument key="user" type="service_closure" id=".errored..service_locator.ch4Jgvl.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.ioRteaB" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.CgIPHFT" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="bookingRepository" type="service_closure" id="App\Repository\BookingRepository"/>
         <argument key="passwordEncoder" type="service_closure" id="security.user_password_encoder.generic"/>
         <argument key="reviewRepository" type="service_closure" id="App\Repository\ReviewRepository"/>
         <argument key="slugger" type="service_closure" id="slugger"/>
         <argument key="travelPreferencesController" type="service_closure" id="App\Controller\TravelPreferencesController"/>
         <argument key="travelPreferencesRepository" type="service_closure" id="App\Repository\TravelPreferencesRepository"/>
         <argument key="tripRepository" type="service_closure" id="App\Repository\TripRepository"/>
-        <argument key="user" type="service_closure" id=".errored..service_locator.ioRteaB.App\Entity\User"/>
+        <argument key="user" type="service_closure" id=".errored..service_locator.CgIPHFT.App\Entity\User"/>
         <argument key="vehiculeController" type="service_closure" id="App\Controller\VehiculeController"/>
         <argument key="vehiculeRepository" type="service_closure" id="App\Repository\VehiculeRepository"/>
       </argument>
@@ -5978,7 +5980,7 @@
         <argument key="vehicule" type="service_closure" id=".errored..service_locator.0J1782j.App\Entity\Vehicule"/>
       </argument>
     </service>
-    <service id=".service_locator.IMhjp6k" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.28Ylf2J" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AdminController::index" type="service_closure" id=".service_locator.npyimLp"/>
@@ -6021,7 +6023,7 @@
         <argument key="App\Controller\TypeOfVehiculeController::index" type="service_closure" id=".service_locator.6rc6rfL"/>
         <argument key="App\Controller\TypeOfVehiculeController::show" type="service_closure" id=".service_locator.W8c9CE7"/>
         <argument key="App\Controller\UserController::delete" type="service_closure" id=".service_locator.ch4Jgvl"/>
-        <argument key="App\Controller\UserController::edit" type="service_closure" id=".service_locator.ioRteaB"/>
+        <argument key="App\Controller\UserController::edit" type="service_closure" id=".service_locator.CgIPHFT"/>
         <argument key="App\Controller\UserController::index" type="service_closure" id=".service_locator..Ae5NXw"/>
         <argument key="App\Controller\UserController::show" type="service_closure" id=".service_locator.4MF6DUv"/>
         <argument key="App\Controller\UserController::viewProfile" type="service_closure" id=".service_locator.ch4Jgvl"/>
@@ -6075,7 +6077,7 @@
         <argument key="App\Controller\TypeOfVehiculeController:index" type="service_closure" id=".service_locator.6rc6rfL"/>
         <argument key="App\Controller\TypeOfVehiculeController:show" type="service_closure" id=".service_locator.W8c9CE7"/>
         <argument key="App\Controller\UserController:delete" type="service_closure" id=".service_locator.ch4Jgvl"/>
-        <argument key="App\Controller\UserController:edit" type="service_closure" id=".service_locator.ioRteaB"/>
+        <argument key="App\Controller\UserController:edit" type="service_closure" id=".service_locator.CgIPHFT"/>
         <argument key="App\Controller\UserController:index" type="service_closure" id=".service_locator..Ae5NXw"/>
         <argument key="App\Controller\UserController:show" type="service_closure" id=".service_locator.4MF6DUv"/>
         <argument key="App\Controller\UserController:viewProfile" type="service_closure" id=".service_locator.ch4Jgvl"/>
@@ -6641,12 +6643,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.IMhjp6k"/>
+      <argument type="service" id=".service_locator.28Ylf2J"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.IMhjp6k"/>
+      <argument type="service" id=".service_locator.28Ylf2J"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -6681,7 +6683,7 @@
     <service id=".errored..service_locator.W8c9CE7.App\Entity\TypeOfVehicule" class="App\Entity\TypeOfVehicule"/>
     <service id=".errored..service_locator.4MF6DUv.App\Entity\User" class="App\Entity\User"/>
     <service id=".errored..service_locator.ch4Jgvl.App\Entity\User" class="App\Entity\User"/>
-    <service id=".errored..service_locator.ioRteaB.App\Entity\User" class="App\Entity\User"/>
+    <service id=".errored..service_locator.CgIPHFT.App\Entity\User" class="App\Entity\User"/>
     <service id=".errored..service_locator.0J1782j.App\Entity\Vehicule" class="App\Entity\Vehicule"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <tag name="container.no_preload"/>
@@ -7081,7 +7083,7 @@
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.Kbr2i2X" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.IMhjp6k"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.28Ylf2J"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

@@ -12,7 +12,7 @@ trait CustomResetPassword {
 
             if($passwordValide){
                 $this->resetPassword($passwordEncoder,$newPassword);
-                $this->addFlash('success', 'Le mot de passe a changer');
+                $this->addFlash('success', 'Votre mot de passe a été mis à jour avec succès');
                 
             }else{
                     $this->addFlash('error', 'Mauvais mot de passe');

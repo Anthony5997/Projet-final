@@ -7,6 +7,7 @@ use App\Form\UserType;
 use App\Form\TravelPreferencesType;
 use App\Form\VehiculeType;
 use App\Form\UserResetType;
+use App\Repository\BookingRepository;
 use App\Repository\ReviewRepository;
 use App\Repository\TravelPreferencesRepository;
 use App\Repository\TripRepository;
@@ -67,7 +68,7 @@ class UserController extends AbstractController
     /**
      * @Route("/{id}/edit", name="user_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, User $user, ReviewRepository $reviewRepository, TravelPreferencesController $travelPreferencesController, VehiculeController $vehiculeController, VehiculeRepository $vehiculeRepository, TravelPreferencesRepository $travelPreferencesRepository, TripRepository $tripRepository, SluggerInterface $slugger, UserPasswordEncoderInterface $passwordEncoder): Response
+    public function edit(Request $request, User $user, ReviewRepository $reviewRepository, TravelPreferencesController $travelPreferencesController, VehiculeController $vehiculeController, VehiculeRepository $vehiculeRepository, TravelPreferencesRepository $travelPreferencesRepository, TripRepository $tripRepository, BookingRepository $bookingRepository, SluggerInterface $slugger, UserPasswordEncoderInterface $passwordEncoder): Response
     {
 
     //    $allReview = $reviewRepository->getReviewByUser($user);
@@ -79,6 +80,7 @@ class UserController extends AbstractController
         $travelPreferences = $travelPreferencesRepository->findOneBy(['id'=> $user->getTravelPreferences()]);
         $vehicule = $vehiculeRepository->findOneBy(['id'=> $user->getVehicule()]);
         $allTrip = $tripRepository->getAllTripByUser($user);
+        $allBookings = $bookingRepository->findBy(['user' => $user]);
 
         $form = $this->createForm(UserType::class, $user);
         $form2 = $this->createForm(TravelPreferencesType::class, $travelPreferences);
@@ -101,6 +103,7 @@ class UserController extends AbstractController
             }
 
             $this->getDoctrine()->getManager()->flush();
+            $this->addFlash('success', 'Vos informations ont été mise à jour');
 
             return $this->redirectToRoute('user_edit', [
                 'id'=>$user->getId()
@@ -112,6 +115,7 @@ class UserController extends AbstractController
             $entityManager = $travelPreferencesController->getDoctrine()->getManager();
             $entityManager->persist($travelPreferences);
             $entityManager->flush();
+            $this->addFlash('success', 'Vos préférences ont été mis à jour');
 
             return $this->redirectToRoute('user_edit', [
                 'id'=>$user->getId()
@@ -129,6 +133,8 @@ class UserController extends AbstractController
             $entityManager = $vehiculeController->getDoctrine()->getManager();
             $entityManager->persist($vehicule);
             $entityManager->flush();
+            $this->addFlash('success', 'Votre véhicule a été mis à jour');
+
 
             return $this->redirectToRoute('user_edit', [
                 'id'=>$user->getId()
@@ -140,10 +146,9 @@ class UserController extends AbstractController
             $oldPassword = $formReset->get('password')->getData();
             $newPassword = $formReset->get('newPassword')->getData();
             $email = $user->getEmail();
-            $this->verifications($user, $userEmail, $email, $passwordEncoder,$oldPassword, $newPassword);  
-    
+            $this->verifications($user, $userEmail, $email, $passwordEncoder,$oldPassword, $newPassword); 
             }
-
+            $tripRepository->findAll();
         return $this->render('user/edit.html.twig', [
             'user' => $user,
             'form' => $form->createView(),
@@ -151,7 +156,8 @@ class UserController extends AbstractController
             'vehicule' => $formVehicule->createView(),
             'formReset' => $formReset->createView(),
             'trips' => $allTrip,
-            'globalRating' => $globalRating
+            'globalRating' => $globalRating,
+            'bookings' =>$allBookings,
         ]);
     }
 

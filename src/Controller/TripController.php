@@ -48,8 +48,28 @@ class TripController extends AbstractController
        
        
        if ($form->isSubmitted() && $request->get('trip')['arrival'] && $request->get('trip')['departure']) {
+          
+        $date = new \DateTime();
+        $time = date('H:i:s');
+
+        
+        if($form->get('date_of_trip')->getData()->format('Y-m-d') >= $date->format('Y-m-d')){
+           }else{
+                $this->addFlash('error', 'La date sélectionnée est dépassée.');
+                return $this->render('trip/new.html.twig', [
+                    'trip' => $trip,
+                    'form' => $form->createView(),
+                ]);
+           }
+
+           if($form->get('startTime')->getData()->format('H:i:s') < $time){
+               $this->addFlash('error', 'L\'heure sélectionnée est dépassée.');
+               return $this->render('trip/new.html.twig', [
+                   'trip' => $trip,
+                   'form' => $form->createView(),
+                ]);
+            }
             
-            $date = new \DateTime();
             $formatDeparture = explode(",", $request->get('trip')['departure']);
             $formatArrival = explode(",", $request->get('trip')['arrival']);
             $trip->setArrival($formatArrival[0]);
@@ -66,17 +86,14 @@ class TripController extends AbstractController
             return $this->redirectToRoute('trip_show', ['id'=> $trip->getId()]);
         }else{
             
-            $this->addFlash('error', 'Veuillez remplir tous les champs pour poster un trajet');
+            $this->addFlash('error', 'Veuillez remplir tous les champs pour publier un trajet');
             return $this->render('trip/new.html.twig', [
                 'trip' => $trip,
                 'form' => $form->createView(),
             ]);
         }
-
-        
     }else{
-
-        $this->addFlash('error', 'Veuillez vous connecté pour poster un trajet');
+        $this->addFlash('error', 'Veuillez vous connecter pour publier un trajet');
         return $this->redirectToRoute('login');
         }
     }
@@ -126,9 +143,7 @@ class TripController extends AbstractController
 
 
        $allBooker =  $bookingRepository->getAllBooker($trip->getId());
-       //dd($allBooker);
-       $adSender = $userRepository->findOneBy(['id' => "2684288a03284585a1d9f78382b1c8a6"]);
-       //dd($adSender);
+       $adSender = $userRepository->findOneBy(['id' => "40f453a08b5a49008ebcde259f83001d"]);
 
        foreach($allBooker as $booker){
 
@@ -140,7 +155,7 @@ class TripController extends AbstractController
            $message->setSendAt($date);
            $message->setSender($adSender);
            $message->setReceiver($booker->getUser());
-           $message->setContent("Votre trajet avec ".$trip->getDriver()->getFirstName() . " est terminé ! Laisser un avis sur votre expérience de voyage ! <a class='leave-review-button' href=".$path."> Laisser un avis </a>");
+           $message->setContent("Votre trajet avec ".$trip->getDriver()->getFirstName() . " est terminé ! Laisser un avis sur votre expérience de voyage ! <a class='leave-review-button' href=".$path."> Laissez-nous votre avis ! </a>");
          // dd($message);
 
            $entityManager = $this->getDoctrine()->getManager();
@@ -204,7 +219,7 @@ class TripController extends AbstractController
         ]);
         }else{
 
-        $this->addFlash('success', 'Veuillez vous connecté pour consulté et réserver un trajet');
+        $this->addFlash('success', 'Veuillez vous connecter pour consulter et réserver un trajet');
         return $this->redirectToRoute('login');
         }
 
@@ -332,10 +347,10 @@ class TripController extends AbstractController
     public function test(Request $request)
     {       
             $city = $request->get('ville');
-            $token = 'AIzaSyDNwlL_Fbumi8lvNKIctvzrIKxiSZITz7I';
+            $token = $this->getParameter('GoogleApiSK');
     
                 $httpClient = HttpClient::create([], 6, 50);
-                $response = $httpClient->request('GET', 'https://maps.googleapis.com/maps/api/place/autocomplete/json?input='.$city.'&types=geocode&language=fr&key='. $token, 
+                $response = $httpClient->request('GET', 'https://maps.googleapis.com/maps/api/place/autocomplete/json?input='.$city.'&components=country:fr&types=geocode&language=fr&key='. $token, 
                     ['headers' => [
                         'Authorization' => 'Bearer ' . $token,
                         'Content-type' =>'application/json',
@@ -360,7 +375,7 @@ class TripController extends AbstractController
 
         $arrival = $trip->getArrival();
         $departure = $trip->getDeparture();
-        $token = 'AIzaSyDNwlL_Fbumi8lvNKIctvzrIKxiSZITz7I';
+        $token = $this->getParameter('GoogleApiSK');
 
             $httpClient = HttpClient::create([], 6, 50);
             $response = $httpClient->request('GET', 'https://maps.googleapis.com/maps/api/directions/json?origin='.$departure.'&destination='.$arrival.'&language=fr&key='. $token, 

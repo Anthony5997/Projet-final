@@ -92,10 +92,10 @@ class __TwigTemplate_ff061d71e7303d95aecadd4d1553b4a22480e5889eb16c73dbb69417c08
 
     <ul class=\"nav nav-tabs\" role=\"tablist\">
         <li class=\"nav-item\">
-            <a class=\"nav-link active\" data-toggle=\"tab\" href=\"#tabs-received\" role=\"tab\">Avis reçu</a>
+            <a class=\"nav-link active\" data-toggle=\"tab\" href=\"#tabs-received\" role=\"tab\">Avis que vous avez reçu</a>
         </li>
         <li class=\"nav-item\">
-            <a class=\"nav-link\" data-toggle=\"tab\" href=\"#tabs-send\" role=\"tab\">Avis laisser</a>
+            <a class=\"nav-link\" data-toggle=\"tab\" href=\"#tabs-send\" role=\"tab\">Avis que vous avez laisser</a>
         </li>
     </ul>
      <div class=\"tab-content\">
@@ -105,7 +105,7 @@ class __TwigTemplate_ff061d71e7303d95aecadd4d1553b4a22480e5889eb16c73dbb69417c08
         // line 22
         if ((-1 === twig_compare(twig_length_filter($this->env, (isset($context["reviewReceived"]) || array_key_exists("reviewReceived", $context) ? $context["reviewReceived"] : (function () { throw new RuntimeError('Variable "reviewReceived" does not exist.', 22, $this->source); })())), 1))) {
             // line 23
-            echo "                        <h4 class=\"text-center\"> Aucun avis reçu pour l'instant</h4>
+            echo "                        <h4 class=\"text-center\">Vous n'avez reçu aucun avis pour l'instant</h4>
                          <div class=\"row d-flex justify-content-center\">
                             <img class=\"robot-sleeping-img\" src=\"";
             // line 25
@@ -192,7 +192,7 @@ class __TwigTemplate_ff061d71e7303d95aecadd4d1553b4a22480e5889eb16c73dbb69417c08
         // line 63
         if ((-1 === twig_compare(twig_length_filter($this->env, (isset($context["reviewLeaved"]) || array_key_exists("reviewLeaved", $context) ? $context["reviewLeaved"] : (function () { throw new RuntimeError('Variable "reviewLeaved" does not exist.', 63, $this->source); })())), 1))) {
             // line 64
-            echo "                    <h4 class=\"text-center\"> Aucun avis laissé pour l'instant</h4>
+            echo "                    <h4 class=\"text-center\">Vous n'avez laissé aucun avis pour l'instant</h4>
                      <div class=\"row d-flex justify-content-center\">
                         <img class=\"robot-sleeping-img\" src=\"";
             // line 66
@@ -309,17 +309,17 @@ class __TwigTemplate_ff061d71e7303d95aecadd4d1553b4a22480e5889eb16c73dbb69417c08
 
     <ul class=\"nav nav-tabs\" role=\"tablist\">
         <li class=\"nav-item\">
-            <a class=\"nav-link active\" data-toggle=\"tab\" href=\"#tabs-received\" role=\"tab\">Avis reçu</a>
+            <a class=\"nav-link active\" data-toggle=\"tab\" href=\"#tabs-received\" role=\"tab\">Avis que vous avez reçu</a>
         </li>
         <li class=\"nav-item\">
-            <a class=\"nav-link\" data-toggle=\"tab\" href=\"#tabs-send\" role=\"tab\">Avis laisser</a>
+            <a class=\"nav-link\" data-toggle=\"tab\" href=\"#tabs-send\" role=\"tab\">Avis que vous avez laisser</a>
         </li>
     </ul>
      <div class=\"tab-content\">
         <div class=\"tab-pane active\" id=\"tabs-received\" role=\"tabpanel\">
                 <div class=\"container profile-section\">
                         {% if reviewReceived|length < 1 %}
-                        <h4 class=\"text-center\"> Aucun avis reçu pour l'instant</h4>
+                        <h4 class=\"text-center\">Vous n'avez reçu aucun avis pour l'instant</h4>
                          <div class=\"row d-flex justify-content-center\">
                             <img class=\"robot-sleeping-img\" src=\"{{asset('assets/uploads/custom-pic/robot-sleeping.png')}}\">
                         </div>
@@ -360,7 +360,7 @@ class __TwigTemplate_ff061d71e7303d95aecadd4d1553b4a22480e5889eb16c73dbb69417c08
             <div class=\"tab-pane\" id=\"tabs-send\" role=\"tabpanel\">
                 <div class=\"container profile-section\">
                 {% if reviewLeaved|length < 1 %}
-                    <h4 class=\"text-center\"> Aucun avis laissé pour l'instant</h4>
+                    <h4 class=\"text-center\">Vous n'avez laissé aucun avis pour l'instant</h4>
                      <div class=\"row d-flex justify-content-center\">
                         <img class=\"robot-sleeping-img\" src=\"{{asset('assets/uploads/custom-pic/robot-sleeping.png')}}\">
                     </div>

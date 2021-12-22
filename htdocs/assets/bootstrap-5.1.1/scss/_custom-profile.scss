@@ -167,6 +167,32 @@
     transition: 500ms;
 }
 
+.delete-button-profile{
+    border: 2px solid rgba(248, 19, 19, 0.713)!important;
+    padding: 5px;
+    color: red;
+    border-radius: 15px;
+    transition: 400ms;
+
+    i{
+        color: red!important;
+        font-size: 1rem!important;
+    }
+}
+
+.delete-button-profile:hover{
+    border: 2px solid white!important;
+    padding: 5px;
+    color: white;
+    border-radius: 15px;
+    background-color: rgba(248, 19, 19, 0.713);
+    transition: 400ms;
+
+    i{
+        color: white!important;
+    }
+}
+
 // ACCORDION
 
 .accordion-wrapper {
@@ -260,6 +286,10 @@
 .custom-input-div {
     margin-top: 15px;
     margin-bottom: 10px;
+    input[type=number]::-webkit-inner-spin-button {
+        opacity: 0;
+        pointer-events: none;
+      }
 
     i {
         color: $custom-yellow;

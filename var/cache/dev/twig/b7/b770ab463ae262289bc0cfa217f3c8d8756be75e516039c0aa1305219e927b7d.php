@@ -40,14 +40,14 @@ class __TwigTemplate_b071abef34124e371e3b485fa33af4d9ee5beb2f314f20a89b8239eb393
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "user/_delete_form.html.twig"));
 
         // line 1
-        echo "<form method=\"post\" action=\"";
+        echo "<form class=\"d-flex flex-column\" method=\"post\" action=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_delete", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 1, $this->source); })()), "id", [], "any", false, false, false, 1)]), "html", null, true);
         echo "\">
     <input type=\"hidden\" name=\"_token\" value=\"";
         // line 2
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 2, $this->source); })()), "id", [], "any", false, false, false, 2))), "html", null, true);
         echo "\">
-    <button onclick=\"return prompt('Ecrivez \\'Supprimer mon compte\\' pour supprimer votre compte:') == 'Supprimer mon compte'\" class=\"btn btn-danger\"><i class=\"far fa-trash-alt\"></i> Supprimer mon compte</button>
+    <button onclick=\"return prompt('Ecrivez \\'Supprimer mon compte\\' pour supprimer votre compte:') == 'Supprimer mon compte'\" class=\"tab-custom-test d-flex flex-column justify-content-center align-items-center delete-button-profile\"><i class=\"far fa-trash-alt\"></i> Supprimer mon compte</button>
 </form>
 ";
         
@@ -75,9 +75,9 @@ class __TwigTemplate_b071abef34124e371e3b485fa33af4d9ee5beb2f314f20a89b8239eb393
 
     public function getSourceContext()
     {
-        return new Source("<form method=\"post\" action=\"{{ path('user_delete', {'id': user.id}) }}\">
+        return new Source("<form class=\"d-flex flex-column\" method=\"post\" action=\"{{ path('user_delete', {'id': user.id}) }}\">
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ user.id) }}\">
-    <button onclick=\"return prompt('Ecrivez \\'Supprimer mon compte\\' pour supprimer votre compte:') == 'Supprimer mon compte'\" class=\"btn btn-danger\"><i class=\"far fa-trash-alt\"></i> Supprimer mon compte</button>
+    <button onclick=\"return prompt('Ecrivez \\'Supprimer mon compte\\' pour supprimer votre compte:') == 'Supprimer mon compte'\" class=\"tab-custom-test d-flex flex-column justify-content-center align-items-center delete-button-profile\"><i class=\"far fa-trash-alt\"></i> Supprimer mon compte</button>
 </form>
 ", "user/_delete_form.html.twig", "/shared/httpd/Projet-Final/templates/user/_delete_form.html.twig");
     }

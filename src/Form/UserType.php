@@ -13,7 +13,7 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Doctrine\ORM\EntityRepository;
-
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class UserType extends AbstractType
 {
@@ -27,7 +27,13 @@ class UserType extends AbstractType
                 'required'   => false,
                 'widget' => 'single_text',
             ])
-            ->add('phone')
+            ->add('phone', TextType::class, array(
+                'required' => true, 
+                'attr' => [
+                    'pattern' => '[0-9]{10}', 
+                    'maxlength' => 10,
+                ])
+             )
             ->add('bio', TextareaType::class, [
                 'required' => false,
                 'attr' => [

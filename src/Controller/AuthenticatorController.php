@@ -137,7 +137,7 @@ class AuthenticatorController extends AbstractController
                         );
                     }
 
-                 $this->addFlash('success', 'Votre mot de passe à bie été réinitialisé');
+                 $this->addFlash('success', 'Votre mot de passe à bien été réinitialisé');
                  
                 return $this->redirectToRoute('login');
             }else{

@@ -36,20 +36,40 @@
                 <a href="{{ path ('review_show', {'id': app.user.id})}}"><i class="far fa-comment-alt"></i> Mes Avis</a>
                 <a href="{{ path ('logout')}}"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
             {% else %}
-                <a href="{{ path ('login')}}">Ce connecter</a>
+                <a href="{{ path ('login')}}">Se connecter</a>
                 <a href="{{ path ('register')}}">S'inscrire</a>
             {% endif %}
             </nav>
             <div class="icons">
-                <a class="icon-custom fas fa-search" href="{{path('trip_search')}}"></a>
-                <a class="icon-custom far fa-plus-circle" href="{{path('trip_new')}}"></a>
+                <a class="icon-custom" href="{{path('trip_search')}}">
+                 <div class="row flex-column justify-content-center align-items-center">
+                    <i class="d-flex justify-content-center fas fa-search"></i>
+                    <p>Rechercher</p>
+                </div> 
+                </a>
+                <a class="icon-custom" href="{{path('trip_new')}}"> 
+                <div class="row flex-column justify-content-center align-items-center">
+                    <i class="d-flex justify-content-center far fa-plus-circle"></i>
+                    <p>Ajouter un trajet</p>
+                </div> </a>
             {% if app.user != null %}
               <button type="checkbox" name="" id="toggler"></button>
-                <img class="navbar-profile-picture" src="{{asset('assets/uploads/profilePicture/') ~ app.user.profile_picture}}"/><label class="label-right-icon" for="toggler"><i class="fas fa-bars"></i></label>
-                <a class="user-icon-profile" href="{{ path ('user_edit', {'id': app.user.id})}}"></a>
+                <img class="navbar-profile-picture" src="{{asset('assets/uploads/profilePicture/') ~ app.user.profile_picture}}"/><label class="label-right-icon" for="toggler">   
+                 <div class="row flex-column justify-content-center align-items-center">
+                        <i class="d-flex justify-content-center fas fa-bars"></i>
+                        <p>Menu</p>
+                    </div></label>
+                <a class="user-icon-profile" href="{{ path ('user_edit', {'id': app.user.id})}}">
+                
+                </a>
                 {% else %}
                 <input type="checkbox" name="" id="toggler">
-                <label class="label-right-icon" for="toggler"><i class="fas fa-bars"></i></label>
+                <label class="label-right-icon" for="toggler">
+                    <div class="row flex-column justify-content-center align-items-center">
+                        <i class="d-flex justify-content-center fas fa-bars"></i>
+                        <p>Menu</p>
+                    </div>
+                </label>
             {% endif %}
             </div>
         </header>
