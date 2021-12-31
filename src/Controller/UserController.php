@@ -49,10 +49,17 @@ class UserController extends AbstractController
      */
     public function show(User $user, UserRepository $userRepository): Response
     {
-        $user = $userRepository->findAllUserInfo($user->getId());
-        return $this->render('user/show.html.twig', [
-            'user' => $user,
-        ]);
+        if($user == $this->getUser()){
+            return $this->redirectToRoute('user_edit', [
+                'id'=>$this->getUser()->getId(),
+            ]);  
+
+        }else{
+            $user = $userRepository->findAllUserInfo($user->getId());
+            return $this->render('user/show.html.twig', [
+                'user' => $user,
+            ]);
+        }
     }
 
       /**
@@ -68,20 +75,22 @@ class UserController extends AbstractController
     /**
      * @Route("/{id}/edit", name="user_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, User $user, ReviewRepository $reviewRepository, TravelPreferencesController $travelPreferencesController, VehiculeController $vehiculeController, VehiculeRepository $vehiculeRepository, TravelPreferencesRepository $travelPreferencesRepository, TripRepository $tripRepository, BookingRepository $bookingRepository, SluggerInterface $slugger, UserPasswordEncoderInterface $passwordEncoder): Response
+    public function edit(Request $request, User $user, UserRepository $userRepository ,ReviewRepository $reviewRepository, TravelPreferencesController $travelPreferencesController, VehiculeController $vehiculeController, VehiculeRepository $vehiculeRepository, TravelPreferencesRepository $travelPreferencesRepository, TripRepository $tripRepository, BookingRepository $bookingRepository, SluggerInterface $slugger, UserPasswordEncoderInterface $passwordEncoder): Response
     {
 
     //    $allReview = $reviewRepository->getReviewByUser($user);
           $globalRating = $reviewRepository->getAverageByUser($user);
     //    dd($globalRating[0]);
 
-       
+       $tripRepository->findAll();
+    //    $userRepository->findAll();
         $userEmail = $user->getEmail();
         $travelPreferences = $travelPreferencesRepository->findOneBy(['id'=> $user->getTravelPreferences()]);
         $vehicule = $vehiculeRepository->findOneBy(['id'=> $user->getVehicule()]);
         $allTrip = $tripRepository->getAllTripByUser($user);
         $allBookings = $bookingRepository->findBy(['user' => $user]);
 
+        // dd($allBookings);
         $form = $this->createForm(UserType::class, $user);
         $form2 = $this->createForm(TravelPreferencesType::class, $travelPreferences);
         $formReset = $this->createForm(UserResetType::class, $user);

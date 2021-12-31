@@ -5953,7 +5953,7 @@
         <argument key="user" type="service_closure" id=".errored..service_locator.ch4Jgvl.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.CgIPHFT" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.pioDPzl" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="bookingRepository" type="service_closure" id="App\Repository\BookingRepository"/>
@@ -5963,7 +5963,8 @@
         <argument key="travelPreferencesController" type="service_closure" id="App\Controller\TravelPreferencesController"/>
         <argument key="travelPreferencesRepository" type="service_closure" id="App\Repository\TravelPreferencesRepository"/>
         <argument key="tripRepository" type="service_closure" id="App\Repository\TripRepository"/>
-        <argument key="user" type="service_closure" id=".errored..service_locator.CgIPHFT.App\Entity\User"/>
+        <argument key="user" type="service_closure" id=".errored..service_locator.pioDPzl.App\Entity\User"/>
+        <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
         <argument key="vehiculeController" type="service_closure" id="App\Controller\VehiculeController"/>
         <argument key="vehiculeRepository" type="service_closure" id="App\Repository\VehiculeRepository"/>
       </argument>
@@ -5980,7 +5981,7 @@
         <argument key="vehicule" type="service_closure" id=".errored..service_locator.0J1782j.App\Entity\Vehicule"/>
       </argument>
     </service>
-    <service id=".service_locator.28Ylf2J" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.w_Dm2pL" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AdminController::index" type="service_closure" id=".service_locator.npyimLp"/>
@@ -6023,7 +6024,7 @@
         <argument key="App\Controller\TypeOfVehiculeController::index" type="service_closure" id=".service_locator.6rc6rfL"/>
         <argument key="App\Controller\TypeOfVehiculeController::show" type="service_closure" id=".service_locator.W8c9CE7"/>
         <argument key="App\Controller\UserController::delete" type="service_closure" id=".service_locator.ch4Jgvl"/>
-        <argument key="App\Controller\UserController::edit" type="service_closure" id=".service_locator.CgIPHFT"/>
+        <argument key="App\Controller\UserController::edit" type="service_closure" id=".service_locator.pioDPzl"/>
         <argument key="App\Controller\UserController::index" type="service_closure" id=".service_locator..Ae5NXw"/>
         <argument key="App\Controller\UserController::show" type="service_closure" id=".service_locator.4MF6DUv"/>
         <argument key="App\Controller\UserController::viewProfile" type="service_closure" id=".service_locator.ch4Jgvl"/>
@@ -6077,7 +6078,7 @@
         <argument key="App\Controller\TypeOfVehiculeController:index" type="service_closure" id=".service_locator.6rc6rfL"/>
         <argument key="App\Controller\TypeOfVehiculeController:show" type="service_closure" id=".service_locator.W8c9CE7"/>
         <argument key="App\Controller\UserController:delete" type="service_closure" id=".service_locator.ch4Jgvl"/>
-        <argument key="App\Controller\UserController:edit" type="service_closure" id=".service_locator.CgIPHFT"/>
+        <argument key="App\Controller\UserController:edit" type="service_closure" id=".service_locator.pioDPzl"/>
         <argument key="App\Controller\UserController:index" type="service_closure" id=".service_locator..Ae5NXw"/>
         <argument key="App\Controller\UserController:show" type="service_closure" id=".service_locator.4MF6DUv"/>
         <argument key="App\Controller\UserController:viewProfile" type="service_closure" id=".service_locator.ch4Jgvl"/>
@@ -6643,12 +6644,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.28Ylf2J"/>
+      <argument type="service" id=".service_locator.w_Dm2pL"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.28Ylf2J"/>
+      <argument type="service" id=".service_locator.w_Dm2pL"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -6683,7 +6684,7 @@
     <service id=".errored..service_locator.W8c9CE7.App\Entity\TypeOfVehicule" class="App\Entity\TypeOfVehicule"/>
     <service id=".errored..service_locator.4MF6DUv.App\Entity\User" class="App\Entity\User"/>
     <service id=".errored..service_locator.ch4Jgvl.App\Entity\User" class="App\Entity\User"/>
-    <service id=".errored..service_locator.CgIPHFT.App\Entity\User" class="App\Entity\User"/>
+    <service id=".errored..service_locator.pioDPzl.App\Entity\User" class="App\Entity\User"/>
     <service id=".errored..service_locator.0J1782j.App\Entity\Vehicule" class="App\Entity\Vehicule"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <tag name="container.no_preload"/>
@@ -7083,7 +7084,7 @@
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.Kbr2i2X" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.28Ylf2J"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.w_Dm2pL"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

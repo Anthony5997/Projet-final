@@ -85,12 +85,18 @@ class __TwigTemplate_95f38454245b2b9715267d2502a44502df95f82e0f4a5365992ad1713c0
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Mot de passe oublié</h1>
-
-<form method=\"post\">
-<input type=\"text\" name=\"email\">
-<button>Send</button>
-</form>
+        echo "  <section class=\"section-padding\">
+    <h1 class=\"text-center text-custom-yellow my-3\">Mot de passe oublié</h1>
+    <div class=\"row justify-content-center \">
+        <div class=\"col-10 form-info\">
+    <p class=\"text-center text-custom-yellow my-3\">Saisissez votre email</p>
+            <form method=\"post\" class=\"d-flex justify-content-center\">
+            <input type=\"text\" class=\"custom-field-form col-3\" name=\"email\">
+            <button class=\"button-update-profile ml-2\">Envoyer</button>
+            </form>
+        </div>
+    </div>
+</section>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -122,12 +128,18 @@ class __TwigTemplate_95f38454245b2b9715267d2502a44502df95f82e0f4a5365992ad1713c0
 {% block title %}Mot de passe oublié{% endblock %}
  
 {% block body %}
-    <h1>Mot de passe oublié</h1>
-
-<form method=\"post\">
-<input type=\"text\" name=\"email\">
-<button>Send</button>
-</form>
+  <section class=\"section-padding\">
+    <h1 class=\"text-center text-custom-yellow my-3\">Mot de passe oublié</h1>
+    <div class=\"row justify-content-center \">
+        <div class=\"col-10 form-info\">
+    <p class=\"text-center text-custom-yellow my-3\">Saisissez votre email</p>
+            <form method=\"post\" class=\"d-flex justify-content-center\">
+            <input type=\"text\" class=\"custom-field-form col-3\" name=\"email\">
+            <button class=\"button-update-profile ml-2\">Envoyer</button>
+            </form>
+        </div>
+    </div>
+</section>
 {% endblock %}", "security/forget-password.html.twig", "/shared/httpd/Projet-Final/templates/security/forget-password.html.twig");
     }
 }

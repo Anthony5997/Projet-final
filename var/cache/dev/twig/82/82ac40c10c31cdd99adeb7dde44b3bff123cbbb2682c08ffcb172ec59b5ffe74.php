@@ -93,7 +93,7 @@ class __TwigTemplate_93a4719728c36b2659256272a43424c23836accf747eb6edda27542d013
         <div class=\"hero d-flex align-items-center justify-content-center border-bottom \">
             <div class=\"page-header text-center\">
                 <h1 class=\"display-1 text-white fw-bold mb-0\">Vamos !</h1>
-                <h2 class=\"fw-light display-4 mt-0 mb-5\" id=\"header2\">Voyager, rencontrer, partager !</h2>
+                <h2 class=\"display-4 mt-0 mb-5\" id=\"header2\">Voyager, rencontrer, partager !</h2>
                 <div class=\"main\">
                     <form action=\"";
         // line 16
@@ -126,7 +126,7 @@ class __TwigTemplate_93a4719728c36b2659256272a43424c23836accf747eb6edda27542d013
             <div class=\"row d-flex justify-content-around px-5\">
                 <div class=\"col-sm-3 col-xs-12 px-3 d-flex flex-column align-item-center\">
                     <i class=\"fas fa-road align-self-center mt-4 py-4\"></i> 
-                    <h4 class=\"text-center\">Voyage voyage !</h4>
+                    <h4 class=\"text-center\">Voyage, <br> voyage !</h4>
                     <p class=\"text-justify\">
                         En tant qu'utilisateur, vous devenez acteur de la communauté de Vamos, proposant de partager vos trajets favoris! Le voyage c'est bien, à plusieurs, c'est mieux ! 
                     </p>
@@ -343,7 +343,7 @@ $context["trip"], "tripStarted", [], "any", false, false, false, 118), true)) &&
         <div class=\"hero d-flex align-items-center justify-content-center border-bottom \">
             <div class=\"page-header text-center\">
                 <h1 class=\"display-1 text-white fw-bold mb-0\">Vamos !</h1>
-                <h2 class=\"fw-light display-4 mt-0 mb-5\" id=\"header2\">Voyager, rencontrer, partager !</h2>
+                <h2 class=\"display-4 mt-0 mb-5\" id=\"header2\">Voyager, rencontrer, partager !</h2>
                 <div class=\"main\">
                     <form action=\"{{path('trip_search')}}\">
                         <div class=\"form-row my-5\">
@@ -373,7 +373,7 @@ $context["trip"], "tripStarted", [], "any", false, false, false, 118), true)) &&
             <div class=\"row d-flex justify-content-around px-5\">
                 <div class=\"col-sm-3 col-xs-12 px-3 d-flex flex-column align-item-center\">
                     <i class=\"fas fa-road align-self-center mt-4 py-4\"></i> 
-                    <h4 class=\"text-center\">Voyage voyage !</h4>
+                    <h4 class=\"text-center\">Voyage, <br> voyage !</h4>
                     <p class=\"text-justify\">
                         En tant qu'utilisateur, vous devenez acteur de la communauté de Vamos, proposant de partager vos trajets favoris! Le voyage c'est bien, à plusieurs, c'est mieux ! 
                     </p>

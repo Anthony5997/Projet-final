@@ -53,10 +53,8 @@ class MessageController extends AbstractController
             $entityManager->persist($message);
             $entityManager->flush();
 
-
             $message->setReceiver($userContacted);
             $getAllDiscussion = $messageRepository->findBy(['sender' => [$user, $userContacted], 'receiver' => [$userContacted, 'receiver' => $user]],  array('send_at' => 'ASC'));
-            // dd(json_encode($getAllDiscussion[0]));
             $response = new Response(json_encode($getAllDiscussion));
             $response->headers->set("Content-Type", "application/json");
             return $response;

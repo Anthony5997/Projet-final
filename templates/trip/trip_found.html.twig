@@ -5,9 +5,15 @@
 {% block body %}
 
 {% if tripFound is defined %}
-<h1 class="text-center m-5"> Trajet trouvé</h1>
+    {% if tripFound|length == 1 %}
+        <h1 class="text-center m-5"> {{tripFound|length}} Trajet trouvé</h1>
+    {% else %}
+        <h1 class="text-center m-5"> {{tripFound|length}} Trajets trouvés</h1>
+    {% endif %}
 
     {% for trip in tripFound %}
+        {% if trip.driver.id == app.user.id %}
+        {% endif %}
         {% if trip.tripFull %}
             <div class="card-custom-found disabled">
             <a class="global-card-found " href="">

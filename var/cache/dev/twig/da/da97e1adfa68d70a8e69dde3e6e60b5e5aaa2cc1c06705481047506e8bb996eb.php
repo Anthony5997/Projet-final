@@ -142,17 +142,17 @@ class __TwigTemplate_ff061d71e7303d95aecadd4d1553b4a22480e5889eb16c73dbb69417c08
                                                 </a>
                                             </div>
                                             <div class=\"rating\">
-                                            ";
+                                                ";
                 // line 42
                 $context["items"] = twig_get_attribute($this->env, $this->source, $context["reviewReceive"], "rating", [], "any", false, false, false, 42);
                 // line 43
-                echo "                                            ";
+                echo "                                                ";
                 $context['_parent'] = $context;
                 $context['_seq'] = twig_ensure_traversable(range(1, (isset($context["items"]) || array_key_exists("items", $context) ? $context["items"] : (function () { throw new RuntimeError('Variable "items" does not exist.', 43, $this->source); })())));
                 foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
                     // line 44
-                    echo "                                                <i id='one' class=\"fas fa-star\"></i>
-                                            ";
+                    echo "                                                    <i id='one' class=\"fas fa-star\"></i>
+                                                ";
                 }
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
@@ -338,10 +338,10 @@ class __TwigTemplate_ff061d71e7303d95aecadd4d1553b4a22480e5889eb16c73dbb69417c08
                                                 </a>
                                             </div>
                                             <div class=\"rating\">
-                                            {% set items = reviewReceive.rating %}
-                                            {% for item in 1..items %}
-                                                <i id='one' class=\"fas fa-star\"></i>
-                                            {% endfor %}
+                                                {% set items = reviewReceive.rating %}
+                                                {% for item in 1..items %}
+                                                    <i id='one' class=\"fas fa-star\"></i>
+                                                {% endfor %}
                                             </div>
                                         </div>
                                         <div class=\"review-description\">

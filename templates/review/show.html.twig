@@ -39,10 +39,10 @@
                                                 </a>
                                             </div>
                                             <div class="rating">
-                                            {% set items = reviewReceive.rating %}
-                                            {% for item in 1..items %}
-                                                <i id='one' class="fas fa-star"></i>
-                                            {% endfor %}
+                                                {% set items = reviewReceive.rating %}
+                                                {% for item in 1..items %}
+                                                    <i id='one' class="fas fa-star"></i>
+                                                {% endfor %}
                                             </div>
                                         </div>
                                         <div class="review-description">

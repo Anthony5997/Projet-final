@@ -22,6 +22,7 @@ use Symfony\Component\Security\Guard\GuardAuthenticatorHandler;
 class AuthenticatorController extends AbstractController
 {
     use tokenGenerator, CustomResetPassword;
+
     /**
      * @Route("/login", name="login")
      */
@@ -57,30 +58,22 @@ class AuthenticatorController extends AbstractController
         if($this->getUser()){
             return $this->redirectToRoute('home');
         }
-        // Si le formulaire est valide
         if ($request->get('email')) {
-            // On récupère les données
             $donnees = $request->get('email');
 
-            // On cherche un utilisateur ayant cet e-mail
             $user = $userRepository->findOneBy(['email' => $donnees]);
 
-            // Si l'utilisateur n'existe pas
             if ($user === null) {
-                // On envoie une alerte disant que l'adresse e-mail est inconnue
                 $this->addFlash('error', 'Cette adresse e-mail est inconnue');
                 
-                // On retourne sur la page de connexion
                 return $this->redirectToRoute('login');
             }
 
-            // On génère un token
             $token =  substr($this->generateToken($user),0, 5);
             $date = new DateTime();
             $date->format('dmY');
             $formatedToken = $token.$date->format('dmY');
 
-            // On essaie d'écrire le token en base de données
             try{
                 $user->setResetToken($formatedToken);
                 $entityManager = $this->getDoctrine()->getManager();
@@ -92,18 +85,13 @@ class AuthenticatorController extends AbstractController
             }
 
             $url = $this->generateUrl('reset_forget_password', array('id' => $user->getId(), 'token' => $formatedToken ), UrlGeneratorInterface::ABSOLUTE_URL);
-            // On génère l'e-mail
 
             $this->sendEmail($mailerInterface, $user, $formatedToken, $url);
-
-            // On crée le message flash de confirmation
             $this->addFlash('message', 'E-mail de réinitialisation du mot de passe envoyé !');
 
-            // On redirige vers la page de login
             return $this->redirectToRoute('login');
         }
 
-        // On envoie le formulaire à la vue
         return $this->render('security/forget-password.html.twig');
     }
 
@@ -133,7 +121,7 @@ class AuthenticatorController extends AbstractController
                         $user,
                         $request,
                         $authenticator,
-                        'main' // firewall name in security.yaml
+                        'main'
                         );
                     }
 
@@ -154,13 +142,13 @@ class AuthenticatorController extends AbstractController
 
 
 
-    public function sendEmail(MailerInterface $mailer, User $user, $token, $url)
+    public function sendEmail(MailerInterface $mailer, User $user, $url)
     {
         $email = (new Email())
             ->from('adminBot@test.com')
             ->to($user->getEmail())
             ->subject('Récupération de mot de passe')
-            ->text('Sending emails is fun again!')
+            ->text('Récupérez votre mot de passe')
             ->html('Bonjour,<br><br>Une demande de réinitialisation de mot de passe a été effectuée pour le site Vamos. Veuillez cliquer sur le lien suivant : <a href='.$url.'>'. $url .'</a>', 'text/html');
 
         return $mailer->send($email);

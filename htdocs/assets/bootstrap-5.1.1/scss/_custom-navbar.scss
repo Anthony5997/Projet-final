@@ -86,6 +86,7 @@ header .icons {
         color: $custom-yellow;
         font-size: 1rem;
         text-align: center;
+        margin: 0px;
     }
 }
 
@@ -106,6 +107,8 @@ header .icons .icon-custom {
         color: $custom-yellow;
         font-size: 1rem;
         text-align: center;
+        margin: 0px;
+
     }
 
 
@@ -215,6 +218,11 @@ header .fa-user {
     }
 
     header .fa-bars {
+        display: none;
+        
+    }
+
+    header .label-right-icon {
         display: none;
         
     }
