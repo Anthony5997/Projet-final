@@ -291,7 +291,7 @@ class TripController extends AbstractController
         $arrivalSearch = $request->get('arrivalSearch');
         $departureSearch = $request->get('departureSearch');
         $dateSearch = $request->get('dateSearch');
-
+        
         if ( $arrivalSearch && $departureSearch && $dateSearch ) {
 
             $result = $tripRepository->findOnTripWithDate($arrivalSearch, $departureSearch, $dateSearch);
@@ -311,7 +311,7 @@ class TripController extends AbstractController
 
         }elseif($arrivalSearch && $departureSearch && $dateSearch === null){
 
-
+            $this->addFlash('error', 'Veuillez remplir tous les champs pour effectuer une recherche');
             return $this->render('trip/trip_found.html.twig', [
                 'tripFound' => 'nope',
             ]);
@@ -366,6 +366,33 @@ class TripController extends AbstractController
                     Response::HTTP_OK
                );
     }
+
+
+          /**
+     * @Route("/searchArrival/{ville}", name="searchArrival")
+     */
+    public function searchArrival(Request $request, TripRepository $tripRepository): Response
+    {       
+            $city = $request->get('ville');
+            $response = new Response(json_encode($tripRepository->searchArrival($city)));
+            $response->headers->set("Content-Type", "application/json");
+                return $response;
+    }
+
+
+
+          /**
+     * @Route("/searchDeparture/{ville}", name="searchDeparture")
+     */
+    public function searchDeparture(Request $request, TripRepository $tripRepository): Response
+    {       
+            $city = $request->get('ville');
+            $response = new Response(json_encode($tripRepository->searchDeparture($city)));
+            $response->headers->set("Content-Type", "application/json");
+                return $response;
+            return $response;
+    }
+
 
     /**
      * @Route("/{id}/route_request", name="routeRequest", priority=2, methods={"GET"})

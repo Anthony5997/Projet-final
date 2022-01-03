@@ -248,7 +248,7 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
         ";
         // line 117
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 128
+        // line 129
         echo "    </body>
 </html>";
         
@@ -360,6 +360,10 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
         echo "\"></script>
             <script src=\"";
         // line 126
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/searchPlaces.js"), "html", null, true);
+        echo "\"></script>
+            <script src=\"";
+        // line 127
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/routeRequest.js"), "html", null, true);
         echo "\"></script>
         ";
@@ -383,7 +387,7 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
 
     public function getDebugInfo()
     {
-        return array (  363 => 126,  359 => 125,  355 => 124,  351 => 123,  344 => 118,  334 => 117,  323 => 89,  313 => 88,  297 => 15,  292 => 12,  282 => 11,  263 => 9,  252 => 128,  250 => 117,  242 => 112,  238 => 111,  234 => 110,  230 => 109,  210 => 91,  207 => 88,  198 => 85,  195 => 84,  190 => 83,  181 => 80,  178 => 79,  174 => 78,  168 => 74,  158 => 66,  151 => 62,  143 => 57,  140 => 56,  138 => 55,  130 => 50,  121 => 44,  117 => 42,  112 => 40,  107 => 39,  102 => 37,  98 => 36,  94 => 35,  90 => 34,  86 => 33,  83 => 32,  81 => 31,  72 => 27,  64 => 21,  62 => 11,  57 => 9,  47 => 1,);
+        return array (  367 => 127,  363 => 126,  359 => 125,  355 => 124,  351 => 123,  344 => 118,  334 => 117,  323 => 89,  313 => 88,  297 => 15,  292 => 12,  282 => 11,  263 => 9,  252 => 129,  250 => 117,  242 => 112,  238 => 111,  234 => 110,  230 => 109,  210 => 91,  207 => 88,  198 => 85,  195 => 84,  190 => 83,  181 => 80,  178 => 79,  174 => 78,  168 => 74,  158 => 66,  151 => 62,  143 => 57,  140 => 56,  138 => 55,  130 => 50,  121 => 44,  117 => 42,  112 => 40,  107 => 39,  102 => 37,  98 => 36,  94 => 35,  90 => 34,  86 => 33,  83 => 32,  81 => 31,  72 => 27,  64 => 21,  62 => 11,  57 => 9,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -513,6 +517,7 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
             <script src=\"{{asset('assets/js/tabLink.js')}}\"></script>
             <script src=\"{{asset('assets/js/navbarScript.js')}}\"></script>
             <script src=\"{{asset('assets/js/guessPlaces.js')}}\"></script>
+            <script src=\"{{asset('assets/js/searchPlaces.js')}}\"></script>
             <script src=\"{{asset('assets/js/routeRequest.js')}}\"></script>
         {% endblock %}
     </body>

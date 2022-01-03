@@ -31,6 +31,8 @@ trait CustomFiles{
     public function deletePicture($profilePicture){
 
         $filesystem = new Filesystem();
-        $filesystem->remove($profilePicture);
+        if($profilePicture != "/shared/httpd/Projet-Final/htdocs/assets/uploads/profilePicture/default_profile_picture.jpg"){
+            $filesystem->remove($profilePicture);
+        }
     }
 }

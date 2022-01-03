@@ -200,7 +200,7 @@ $context["trip"], "tripStarted", [], "any", false, false, false, 36), true)) && 
                 echo "</h1>
                                     </div>
                                     <div class=\"content\">
-                                        <h1> ";
+                                        <h1>";
                 // line 55
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trip"], "arrival", [], "any", false, false, false, 55), "html", null, true);
                 echo "</h1>
@@ -352,7 +352,7 @@ $context["trip"], "tripStarted", [], "any", false, false, false, 36), true)) && 
                                         <h1>{{trip.departure}}</h1>
                                     </div>
                                     <div class=\"content\">
-                                        <h1> {{trip.arrival}}</h1>
+                                        <h1>{{trip.arrival}}</h1>
                                     </div>
                                 </div>
                             </div>

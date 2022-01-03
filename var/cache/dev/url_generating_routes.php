@@ -53,6 +53,8 @@ return [
     'trip_edit' => [['id'], ['_controller' => 'App\\Controller\\TripController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/trip']], [], []],
     'trip_delete' => [['id'], ['_controller' => 'App\\Controller\\TripController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/trip/delete']], [], []],
     'test' => [['ville'], ['_controller' => 'App\\Controller\\TripController::test'], [], [['variable', '/', '[^/]++', 'ville', true], ['text', '/trip/test']], [], []],
+    'searchArrival' => [['ville'], ['_controller' => 'App\\Controller\\TripController::searchArrival'], [], [['variable', '/', '[^/]++', 'ville', true], ['text', '/trip/searchArrival']], [], []],
+    'searchDeparture' => [['ville'], ['_controller' => 'App\\Controller\\TripController::searchDeparture'], [], [['variable', '/', '[^/]++', 'ville', true], ['text', '/trip/searchDeparture']], [], []],
     'type_of_vehicule_index' => [[], ['_controller' => 'App\\Controller\\TypeOfVehiculeController::index'], [], [['text', '/type/of/vehicule/']], [], []],
     'type_of_vehicule_new' => [[], ['_controller' => 'App\\Controller\\TypeOfVehiculeController::new'], [], [['text', '/type/of/vehicule/new']], [], []],
     'type_of_vehicule_show' => [['id'], ['_controller' => 'App\\Controller\\TypeOfVehiculeController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/type/of/vehicule']], [], []],

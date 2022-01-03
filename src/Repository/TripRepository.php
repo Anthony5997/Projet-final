@@ -35,6 +35,29 @@ class TripRepository extends ServiceEntityRepository
 
     }
 
+    public function searchDeparture($search){
+        
+        return 
+         $this->createQueryBuilder('trip')
+         ->where('trip.departure like :search')
+         ->setParameter('search',$search.'%')
+         ->getQuery()
+         ->getResult();
+
+    }
+
+    public function searchArrival($search){
+        
+        return 
+         $this->createQueryBuilder('trip')
+         ->where('trip.arrival like :search')
+         ->setParameter('search',$search.'%')
+         ->getQuery()
+         ->getResult();
+
+    }
+
+
     public function findOnTripWithDate($arrival, $departure, $date)
     {
         return $this->createQueryBuilder('trip')

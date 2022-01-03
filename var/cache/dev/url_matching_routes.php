@@ -96,26 +96,30 @@ return [
                             .'|([^/]++)/edit(*:657)'
                             .'|delete/([^/]++)(*:680)'
                             .'|test/([^/]++)(*:701)'
+                            .'|search(?'
+                                .'|Arrival/([^/]++)(*:734)'
+                                .'|Departure/([^/]++)(*:760)'
+                            .')'
                         .')'
                     .')'
                     .'|ype/of/vehicule/([^/]++)(?'
-                        .'|(*:738)'
-                        .'|/edit(*:751)'
-                        .'|(*:759)'
+                        .'|(*:798)'
+                        .'|/edit(*:811)'
+                        .'|(*:819)'
                     .')'
                 .')'
                 .'|/user/(?'
-                    .'|([^/]++)(*:786)'
-                    .'|profile/([^/]++)(*:810)'
+                    .'|([^/]++)(*:846)'
+                    .'|profile/([^/]++)(*:870)'
                     .'|([^/]++)(?'
-                        .'|/edit(*:834)'
-                        .'|(*:842)'
+                        .'|/edit(*:894)'
+                        .'|(*:902)'
                     .')'
                 .')'
                 .'|/vehicule/([^/]++)(?'
-                    .'|(*:873)'
-                    .'|/edit(*:886)'
-                    .'|(*:894)'
+                    .'|(*:933)'
+                    .'|/edit(*:946)'
+                    .'|(*:954)'
                 .')'
             .')/?$}sDu',
     ],
@@ -153,16 +157,18 @@ return [
         657 => [[['_route' => 'trip_edit', '_controller' => 'App\\Controller\\TripController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
         680 => [[['_route' => 'trip_delete', '_controller' => 'App\\Controller\\TripController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
         701 => [[['_route' => 'test', '_controller' => 'App\\Controller\\TripController::test'], ['ville'], null, null, false, true, null]],
-        738 => [[['_route' => 'type_of_vehicule_show', '_controller' => 'App\\Controller\\TypeOfVehiculeController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        751 => [[['_route' => 'type_of_vehicule_edit', '_controller' => 'App\\Controller\\TypeOfVehiculeController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        759 => [[['_route' => 'type_of_vehicule_delete', '_controller' => 'App\\Controller\\TypeOfVehiculeController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        786 => [[['_route' => 'user_show', '_controller' => 'App\\Controller\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        810 => [[['_route' => 'user_view_profile', '_controller' => 'App\\Controller\\UserController::viewProfile'], ['id'], ['GET' => 0], null, false, true, null]],
-        834 => [[['_route' => 'user_edit', '_controller' => 'App\\Controller\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        842 => [[['_route' => 'user_delete', '_controller' => 'App\\Controller\\UserController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        873 => [[['_route' => 'vehicule_show', '_controller' => 'App\\Controller\\VehiculeController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        886 => [[['_route' => 'vehicule_edit', '_controller' => 'App\\Controller\\VehiculeController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        894 => [
+        734 => [[['_route' => 'searchArrival', '_controller' => 'App\\Controller\\TripController::searchArrival'], ['ville'], null, null, false, true, null]],
+        760 => [[['_route' => 'searchDeparture', '_controller' => 'App\\Controller\\TripController::searchDeparture'], ['ville'], null, null, false, true, null]],
+        798 => [[['_route' => 'type_of_vehicule_show', '_controller' => 'App\\Controller\\TypeOfVehiculeController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        811 => [[['_route' => 'type_of_vehicule_edit', '_controller' => 'App\\Controller\\TypeOfVehiculeController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        819 => [[['_route' => 'type_of_vehicule_delete', '_controller' => 'App\\Controller\\TypeOfVehiculeController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        846 => [[['_route' => 'user_show', '_controller' => 'App\\Controller\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        870 => [[['_route' => 'user_view_profile', '_controller' => 'App\\Controller\\UserController::viewProfile'], ['id'], ['GET' => 0], null, false, true, null]],
+        894 => [[['_route' => 'user_edit', '_controller' => 'App\\Controller\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        902 => [[['_route' => 'user_delete', '_controller' => 'App\\Controller\\UserController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        933 => [[['_route' => 'vehicule_show', '_controller' => 'App\\Controller\\VehiculeController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        946 => [[['_route' => 'vehicule_edit', '_controller' => 'App\\Controller\\VehiculeController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        954 => [
             [['_route' => 'vehicule_delete', '_controller' => 'App\\Controller\\VehiculeController::delete'], ['id'], ['POST' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

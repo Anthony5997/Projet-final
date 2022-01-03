@@ -90,17 +90,25 @@ class __TwigTemplate_4e169d7155bfcd58ac170e8e988238415172b114660ee15b6519b228b25
     <div class=\"col-8 mt-5\">
         <form>
             <div class=\"form-row\" style=\"z-index: 30;\">
-             <div class=\"col-12 mt-3\">
-                <h2 class=\"text-center my-5\" >Rechercher un trajet</h2>
-             </div>
-                <div class=\"col-md-3 col-sm-6 mt-3\">
-                <input name=\"departureSearch\" type=\"text\" class=\"custom-field-form\" placeholder=\"Départ\">
+                <div class=\"col-12 mt-3\">
+                    <h2 class=\"text-center my-5\" >Rechercher un trajet</h2>
                 </div>
                 <div class=\"col-md-3 col-sm-6 mt-3\">
-                <input name=\"arrivalSearch\" type=\"text\" class=\"custom-field-form\" placeholder=\"Arrivé\">
+                    <input id=\"departureInputSearch\" list=\"departureCitySearchData\" name=\"departureSearch\" class=\"custom-field-form\" placeholder=\"Départ\"/>
+                    <datalist id=\"departureCitySearchData\" name=\"dataDepart\">
+                    </datalist>
+                     <div class=\"col-xs-12 col-sm-12 col-md-12\" id=\"departure-list\">
+                    </div>
                 </div>
                 <div class=\"col-md-3 col-sm-6 mt-3\">
-                <input name=\"dateSearch\" type=\"date\" class=\"custom-field-form\" placeholder=\"Arrivé\">
+                    <input id=\"arrivalInputSearch\" list=\"arrivalCitySearchData\" name=\"arrivalSearch\" class=\"custom-field-form\" placeholder=\"Arrivée\"/>
+                    <datalist id=\"arrivalCitySearchData\">
+                    </datalist>
+                    <div class=\"col-xs-12 col-sm-12 col-md-12\" id=\"arrival-list\">
+                    </div>
+                </div>
+                <div class=\"col-md-3 col-sm-6 mt-3\">
+                    <input name=\"dateSearch\" type=\"date\" class=\"custom-field-form\" placeholder=\"Arrivé\">
                 </div>
                  <div class=\"col-md-3 col-sm-6\">
                     <button class=\"mt-3 button-update-profile col-12\" type=\"submit\"><i style=\"font-weight: 400; font-size: 28px;\"class=\"text-white fas fa-search-location\"></i></button>
@@ -109,15 +117,14 @@ class __TwigTemplate_4e169d7155bfcd58ac170e8e988238415172b114660ee15b6519b228b25
         </form>
     </div>
     <div class=\"col-3\">
-          <div class=\"d-flex justify-content-center div-test-search\">
+        <div class=\"d-flex justify-content-center div-test-search\">
             <img style=\"z-index: 5; width: 100%; padding-top:100px;\" src=\"";
-        // line 31
+        // line 39
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/uploads/custom-pic/search.png"), "html", null, true);
         echo "\">
         </div>
     </div>
     </div>
-
 </div>
 ";
         
@@ -140,7 +147,7 @@ class __TwigTemplate_4e169d7155bfcd58ac170e8e988238415172b114660ee15b6519b228b25
 
     public function getDebugInfo()
     {
-        return array (  115 => 31,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  123 => 39,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -155,17 +162,25 @@ class __TwigTemplate_4e169d7155bfcd58ac170e8e988238415172b114660ee15b6519b228b25
     <div class=\"col-8 mt-5\">
         <form>
             <div class=\"form-row\" style=\"z-index: 30;\">
-             <div class=\"col-12 mt-3\">
-                <h2 class=\"text-center my-5\" >Rechercher un trajet</h2>
-             </div>
-                <div class=\"col-md-3 col-sm-6 mt-3\">
-                <input name=\"departureSearch\" type=\"text\" class=\"custom-field-form\" placeholder=\"Départ\">
+                <div class=\"col-12 mt-3\">
+                    <h2 class=\"text-center my-5\" >Rechercher un trajet</h2>
                 </div>
                 <div class=\"col-md-3 col-sm-6 mt-3\">
-                <input name=\"arrivalSearch\" type=\"text\" class=\"custom-field-form\" placeholder=\"Arrivé\">
+                    <input id=\"departureInputSearch\" list=\"departureCitySearchData\" name=\"departureSearch\" class=\"custom-field-form\" placeholder=\"Départ\"/>
+                    <datalist id=\"departureCitySearchData\" name=\"dataDepart\">
+                    </datalist>
+                     <div class=\"col-xs-12 col-sm-12 col-md-12\" id=\"departure-list\">
+                    </div>
                 </div>
                 <div class=\"col-md-3 col-sm-6 mt-3\">
-                <input name=\"dateSearch\" type=\"date\" class=\"custom-field-form\" placeholder=\"Arrivé\">
+                    <input id=\"arrivalInputSearch\" list=\"arrivalCitySearchData\" name=\"arrivalSearch\" class=\"custom-field-form\" placeholder=\"Arrivée\"/>
+                    <datalist id=\"arrivalCitySearchData\">
+                    </datalist>
+                    <div class=\"col-xs-12 col-sm-12 col-md-12\" id=\"arrival-list\">
+                    </div>
+                </div>
+                <div class=\"col-md-3 col-sm-6 mt-3\">
+                    <input name=\"dateSearch\" type=\"date\" class=\"custom-field-form\" placeholder=\"Arrivé\">
                 </div>
                  <div class=\"col-md-3 col-sm-6\">
                     <button class=\"mt-3 button-update-profile col-12\" type=\"submit\"><i style=\"font-weight: 400; font-size: 28px;\"class=\"text-white fas fa-search-location\"></i></button>
@@ -174,12 +189,11 @@ class __TwigTemplate_4e169d7155bfcd58ac170e8e988238415172b114660ee15b6519b228b25
         </form>
     </div>
     <div class=\"col-3\">
-          <div class=\"d-flex justify-content-center div-test-search\">
+        <div class=\"d-flex justify-content-center div-test-search\">
             <img style=\"z-index: 5; width: 100%; padding-top:100px;\" src=\"{{asset('assets/uploads/custom-pic/search.png')}}\">
         </div>
     </div>
     </div>
-
 </div>
 {% endblock %}", "trip/search.html.twig", "/shared/httpd/Projet-Final/templates/trip/search.html.twig");
     }

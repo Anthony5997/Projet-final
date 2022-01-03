@@ -55,7 +55,7 @@ class UserType extends AbstractType
                 'constraints' => [
                     new File([
                         'maxSize' => '1024k',
-                        'mimeTypesMessage' => 'Please upload a valid picture document',
+                        'mimeTypesMessage' => 'Veuillez sélectionner une photo valide',
                         'mimeTypes' => [
                             'image/jpeg',
                             'image/jpg',

@@ -4,11 +4,12 @@ namespace App\Entity;
 
 use App\Repository\TripRepository;
 use Doctrine\ORM\Mapping as ORM;
+use JsonSerializable;
 
 /**
  * @ORM\Entity(repositoryClass=TripRepository::class)
  */
-class Trip
+class Trip implements JsonSerializable
 {
      /**
      * @var string
@@ -229,5 +230,13 @@ class Trip
         $this->created_at = $created_at;
 
         return $this;
+    }
+
+    public function jsonSerialize() {
+        return [
+            'id' => $this->getId(),
+            'arrival' => $this->getArrival(),
+            'departure' => $this->getDeparture(),
+        ];
     }
 }
