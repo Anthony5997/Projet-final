@@ -55,7 +55,10 @@ class UserController extends AbstractController
             ]);  
 
         }else{
-            $user = $userRepository->findAllUserInfo($user->getId());
+            if($userRepository->findAllUserInfo($user->getId())){
+                $user = $userRepository->findAllUserInfo($user->getId());
+            }
+
             return $this->render('user/show.html.twig', [
                 'user' => $user,
             ]);
@@ -204,6 +207,7 @@ class UserController extends AbstractController
          $entityManager->remove($userVehicule);
          $entityManager->remove($userPreferences);
         $entityManager->flush();
+        return $this->redirectToRoute('logout');
         
 
         // if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
@@ -214,6 +218,5 @@ class UserController extends AbstractController
         //     $entityManager->flush();
         // }
 
-        return $this->redirectToRoute('logout');
     }
 }

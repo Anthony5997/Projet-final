@@ -1,6 +1,11 @@
-{% set checkAllPreferences = (user.travelPreferences.discussion != null) and (user.travelPreferences.smoking != null) and (user.travelPreferences.music != null) and (user.travelPreferences.animals != null) and (user.travelPreferences.healthPass != null) %}
-{% set checkAllVehiculeInfos = (user.vehicule.brand != null) and (user.vehicule.color != null) and (user.vehicule.model != null) %}
+{% if user.travelPreferences != null and user.vehicule != null %}
+    {% set checkAllPreferences = (user.travelPreferences.discussion != null) and (user.travelPreferences.smoking != null) and (user.travelPreferences.music != null) and (user.travelPreferences.animals != null) and (user.travelPreferences.healthPass != null) %}
+    {% set checkAllVehiculeInfos = (user.vehicule.brand != null) and (user.vehicule.color != null) and (user.vehicule.model != null) %}
+{% else %}
+    {% set checkAllPreferences = null %}
+    {% set checkAllVehiculeInfos = null %}
 
+{% endif %} 
 {% extends 'base.html.twig' %}
 
 {% block title %}Profil utilisateur{% endblock %}
@@ -14,7 +19,7 @@
                             <div class="row">
                                 <div class="col-xs-12 col-sm-4 col-md-4 d-flex flex-column align-items-center justify-content-center">
                                     <p class="">{{ user.firstName }}</p>
-                                    <p class="experience-profile">{{ user.userExperience.experienceLevel }}</p>
+                                    <p class="experience-profile">{{ user.userExperience ? user.userExperience.experienceLevel : '' }}</p>
                                     <p class="experience-profile d-flex flex-column align-items-center justify-content-center">
                                         Trajets effectué</p>
                                     <p class="experience-profile d-flex flex-column align-items-center justify-content-center">

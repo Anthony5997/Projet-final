@@ -41,6 +41,7 @@ class TripRepository extends ServiceEntityRepository
          $this->createQueryBuilder('trip')
          ->where('trip.departure like :search')
          ->setParameter('search',$search.'%')
+         ->groupBy('trip.departure')
          ->getQuery()
          ->getResult();
 
@@ -52,6 +53,7 @@ class TripRepository extends ServiceEntityRepository
          $this->createQueryBuilder('trip')
          ->where('trip.arrival like :search')
          ->setParameter('search',$search.'%')
+         ->groupBy('trip.arrival')
          ->getQuery()
          ->getResult();
 
