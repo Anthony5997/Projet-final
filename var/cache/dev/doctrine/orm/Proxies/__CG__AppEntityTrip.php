@@ -455,4 +455,15 @@ class Trip extends \App\Entity\Trip implements \Doctrine\ORM\Proxy\Proxy
         return parent::setCreatedAt($created_at);
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function jsonSerialize()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'jsonSerialize', []);
+
+        return parent::jsonSerialize();
+    }
+
 }
