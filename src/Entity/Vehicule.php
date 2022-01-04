@@ -66,6 +66,13 @@ class Vehicule
         return $this->id;
     }
 
+    public function setId(?string $id): self
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
     public function getCountryOfRegistration(): ?string
     {
         return $this->country_of_registration;

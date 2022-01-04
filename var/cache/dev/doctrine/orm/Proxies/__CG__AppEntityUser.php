@@ -205,7 +205,7 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function setEmail(string $email): \App\Entity\User
+    public function setEmail(?string $email): ?\App\Entity\User
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setEmail', [$email]);
@@ -425,50 +425,6 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function getIdCard(): ?bool
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIdCard', []);
-
-        return parent::getIdCard();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setIdCard(?bool $id_card): \App\Entity\User
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setIdCard', [$id_card]);
-
-        return parent::setIdCard($id_card);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getId_Card_File(): ?string
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getId_Card_File', []);
-
-        return parent::getId_Card_File();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setId_Card_File(?string $id_card_file): \App\Entity\User
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setId_Card_File', [$id_card_file]);
-
-        return parent::setId_Card_File($id_card_file);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function getCreatedAt(): ?\DateTimeInterface
     {
 
@@ -590,7 +546,7 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function setTravelPreferences(\App\Entity\TravelPreferences $travel_preferences): \App\Entity\User
+    public function setTravelPreferences(?\App\Entity\TravelPreferences $travel_preferences): ?\App\Entity\User
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setTravelPreferences', [$travel_preferences]);
@@ -612,7 +568,7 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function setVehicule(\App\Entity\Vehicule $vehicule): \App\Entity\User
+    public function setVehicule(?\App\Entity\Vehicule $vehicule): ?\App\Entity\User
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setVehicule', [$vehicule]);

@@ -8,7 +8,6 @@ let currentArrival;
 divDepartureSearch.addEventListener("input", (e)=> {
     currentDeparture = e.target.value;
     departureSearch.innerHTML = ''
-    console.log("Current Departure", currentDeparture);
     if(currentDeparture.length > 2){
         fetch('http://projet-final.loc/trip/searchDeparture/'+currentDeparture)
         .then((response)=>{

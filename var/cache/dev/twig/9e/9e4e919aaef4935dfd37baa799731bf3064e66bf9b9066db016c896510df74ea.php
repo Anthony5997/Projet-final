@@ -85,35 +85,38 @@ class __TwigTemplate_cbc4a312d7cd30982d8373d5a647dd2f572c2068877fbc10eddd125d5bb
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Réinitialisé le mot de passe</h1>
+        echo "
+ <section class=\"section-padding\">
+    <h1 class=\"text-center text-custom-yellow my-3\">Réinitialiser le mot de passe</h1>
+    <div class=\"row justify-content-center \">
+        <div class=\"col-10 form-info\">
+        <p class=\"text-center text-custom-yellow my-3\">Saisissez votre email</p>
 
-     <section class=\"section-padding\">
-    <div class=\"container\">
-        <div class=\"row\">
-            <form method=\"post\" action=\"";
-        // line 11
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reset_forget_password", ["id" => (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 11, $this->source); })()), "token" => (isset($context["token"]) || array_key_exists("token", $context) ? $context["token"] : (function () { throw new RuntimeError('Variable "token" does not exist.', 11, $this->source); })())]), "html", null, true);
+            <form class=\"d-flex flex-column align-items-center justify-content-center\" method=\"post\" action=\"";
+        // line 13
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reset_forget_password", ["id" => (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 13, $this->source); })()), "token" => (isset($context["token"]) || array_key_exists("token", $context) ? $context["token"] : (function () { throw new RuntimeError('Variable "token" does not exist.', 13, $this->source); })())]), "html", null, true);
         echo "\">
             <div class=\"col-xs-12 col-sm-12 col-md-6\">
                 <div class=\"form-group\">
-                    <input type=\"password\" name=\"password1\"/>
+                    <input class=\"custom-field-form\" type=\"password\" name=\"password1\" placeholder=\"Nouveau mot de passe\"/>
                 </div>
             </div>
             <div class=\"col-xs-12 col-sm-12 col-md-6\">
                 <div class=\"form-group\">
-                    <input type=\"password\" name=\"password2\"/>
+                    <input class=\"custom-field-form\" type=\"password\" name=\"password2\" placeholder=\"Confirmation de mot de passe\"/>
                 </div>
             </div>    
 
             <div class=\"row\">
                 <div class=\"col-xs-12 col-sm-12 col-md-12 mb-4 mt-4 d-flex justify-content-start\">
-                    <button  type='submit' class=\"col-md-6 button-update-profile\">Mettre à jour</button>
+                    <button  type='submit' class=\" button-update-profile ml-2\">Mettre à jour</button>
                 </div>
             </div>  
             </form>
         </div>
     </div>
 </section>
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -135,7 +138,7 @@ class __TwigTemplate_cbc4a312d7cd30982d8373d5a647dd2f572c2068877fbc10eddd125d5bb
 
     public function getDebugInfo()
     {
-        return array (  95 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  97 => 13,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -145,32 +148,35 @@ class __TwigTemplate_cbc4a312d7cd30982d8373d5a647dd2f572c2068877fbc10eddd125d5bb
 {% block title %}Mot de passe oublié{% endblock %}
  
 {% block body %}
-    <h1>Réinitialisé le mot de passe</h1>
 
-     <section class=\"section-padding\">
-    <div class=\"container\">
-        <div class=\"row\">
-            <form method=\"post\" action=\"{{path('reset_forget_password', {'id' : id, 'token' : token })}}\">
+ <section class=\"section-padding\">
+    <h1 class=\"text-center text-custom-yellow my-3\">Réinitialiser le mot de passe</h1>
+    <div class=\"row justify-content-center \">
+        <div class=\"col-10 form-info\">
+        <p class=\"text-center text-custom-yellow my-3\">Saisissez votre email</p>
+
+            <form class=\"d-flex flex-column align-items-center justify-content-center\" method=\"post\" action=\"{{path('reset_forget_password', {'id' : id, 'token' : token })}}\">
             <div class=\"col-xs-12 col-sm-12 col-md-6\">
                 <div class=\"form-group\">
-                    <input type=\"password\" name=\"password1\"/>
+                    <input class=\"custom-field-form\" type=\"password\" name=\"password1\" placeholder=\"Nouveau mot de passe\"/>
                 </div>
             </div>
             <div class=\"col-xs-12 col-sm-12 col-md-6\">
                 <div class=\"form-group\">
-                    <input type=\"password\" name=\"password2\"/>
+                    <input class=\"custom-field-form\" type=\"password\" name=\"password2\" placeholder=\"Confirmation de mot de passe\"/>
                 </div>
             </div>    
 
             <div class=\"row\">
                 <div class=\"col-xs-12 col-sm-12 col-md-12 mb-4 mt-4 d-flex justify-content-start\">
-                    <button  type='submit' class=\"col-md-6 button-update-profile\">Mettre à jour</button>
+                    <button  type='submit' class=\" button-update-profile ml-2\">Mettre à jour</button>
                 </div>
             </div>  
             </form>
         </div>
     </div>
 </section>
+
 {% endblock %}", "security/reset-password.html.twig", "/shared/httpd/Projet-Final/templates/security/reset-password.html.twig");
     }
 }

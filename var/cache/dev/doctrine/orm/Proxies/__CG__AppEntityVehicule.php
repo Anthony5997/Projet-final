@@ -194,6 +194,17 @@ class Vehicule extends \App\Entity\Vehicule implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
+    public function setId(?string $id): \App\Entity\Vehicule
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setId', [$id]);
+
+        return parent::setId($id);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getCountryOfRegistration(): ?string
     {
 

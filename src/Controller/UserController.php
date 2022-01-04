@@ -173,17 +173,47 @@ class UserController extends AbstractController
     /**
      * @Route("/{id}", name="user_delete", methods={"POST"})
      */
-    public function delete(Request $request, User $user): Response
+    public function delete(Request $request, User $user, UserRepository $userRepository, TravelPreferencesRepository $travelPreferencesRepository, VehiculeRepository $vehiculeRepository): Response
     {
+        $userVehicule = $vehiculeRepository->findOneBy(['id' => $user->getVehicule()]);
+        $userPreferences = $travelPreferencesRepository->findOneBy(['id' => $user->getTravelPreferences()]);
+        // dd($user, $userVehicule, $userPreferences);
+        
+        $user->setFirstName("Compte supprimé");
+        $user->setLastName(null);
+        $user->setPhone(null);
+        $user->setTravelPreferences(null);
+        $userVehicule->setTypeOfVehicule(null);
+        $userVehicule->setVehiculePicture("default-vehicule.jpg");
+        $userVehicule->setCountryOfRegistration(null);
+        $userVehicule->setNumberplate(null);
+        $userVehicule->setBrand(null);
+        $userVehicule->setColor(null);
+        $userVehicule->setYear(null);
+        $userVehicule->setId(null);
+        $user->setVehicule(null);
+        $user->setProfile_Picture("default_profile_picture.jpg");
+        $user->setBio(null);
+        $user->setEmail(null);
+        $user->setTripsMade(0);
+        $user->setGlobalRating(null);
+        $user->setUserExperience(null);
+        $user->setDateOfBirth(null);
+        $userPreferences->setId(null);
+        $entityManager = $this->getDoctrine()->getManager();
+         $entityManager->remove($userVehicule);
+         $entityManager->remove($userPreferences);
+        $entityManager->flush();
+        
 
-        if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
+        // if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
 
-            $this->deletePicture($this->getParameter('profile_picture_directory').'/'. $this->getUser()->getProfile_Picture());
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($user);
-            $entityManager->flush();
-        }
+        //     $this->deletePicture($this->getParameter('profile_picture_directory').'/'. $this->getUser()->getProfile_Picture());
+        //     $entityManager = $this->getDoctrine()->getManager();
+        //     $entityManager->remove($user);
+        //     $entityManager->flush();
+        // }
 
-        return $this->redirectToRoute('user_index');
+        return $this->redirectToRoute('logout');
     }
 }

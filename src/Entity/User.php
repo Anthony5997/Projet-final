@@ -26,7 +26,7 @@ class User implements UserInterface, JsonSerializable
     private $id;
 
      /**
-     * @ORM\Column(type="string", length=180, unique=true) 
+     * @ORM\Column(type="string", length=180, unique=true, nullable=true) 
      * @Assert\Email(
      *     message = "L'email '{{ value }}' n'est pas valide"
      * )
@@ -100,14 +100,14 @@ class User implements UserInterface, JsonSerializable
     private $user_experience;
 
     /**
-     * @ORM\OneToOne(targetEntity=TravelPreferences::class, cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity=TravelPreferences::class, cascade={"persist","remove"})
      * @ORM\JoinColumn(nullable=true)
      */
     private $travel_preferences;
 
     /**
-     * @ORM\OneToOne(targetEntity=Vehicule::class, cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\OneToOne(targetEntity=Vehicule::class, cascade={"persist","remove"})
+     * @ORM\JoinColumn(nullable=true)
      */
     private $vehicule;
 
@@ -126,7 +126,7 @@ class User implements UserInterface, JsonSerializable
         return $this->email;
     }
 
-    public function setEmail(string $email): self
+    public function setEmail(?string $email): ?self
     {
         $this->email = $email;
 
@@ -269,30 +269,6 @@ class User implements UserInterface, JsonSerializable
         return $this;
     }
 
-    public function getIdCard(): ?bool
-    {
-        return $this->id_card;
-    }
-
-    public function setIdCard(?bool $id_card): self
-    {
-        $this->id_card = $id_card;
-
-        return $this;
-    }
-
-    public function getId_Card_File(): ?string
-    {
-        return $this->id_card_file;
-    }
-
-    public function setId_Card_File(?string $id_card_file): self
-    {
-        $this->id_card_file = $id_card_file;
-
-        return $this;
-    }
-
     public function getCreatedAt(): ?\DateTimeInterface
     {
         return $this->created_at;
@@ -358,7 +334,7 @@ class User implements UserInterface, JsonSerializable
         return $this->travel_preferences;
     }
 
-    public function setTravelPreferences(TravelPreferences $travel_preferences): self
+    public function setTravelPreferences(?TravelPreferences $travel_preferences): ?self
     {
         $this->travel_preferences = $travel_preferences;
 
@@ -370,7 +346,7 @@ class User implements UserInterface, JsonSerializable
         return $this->vehicule;
     }
 
-    public function setVehicule(Vehicule $vehicule): self
+    public function setVehicule(?Vehicule $vehicule): ?self
     {
         $this->vehicule = $vehicule;
 

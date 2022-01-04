@@ -96,6 +96,7 @@ class __TwigTemplate_95f38454245b2b9715267d2502a44502df95f82e0f4a5365992ad1713c0
             </form>
         </div>
     </div>
+    <p class=\"text-center text-custom-yellow my-3\">Pensez à vérifié dans vos spam si le mail ne parvient pas a vos courriers principaux.</p>
 </section>
 ";
         
@@ -139,6 +140,7 @@ class __TwigTemplate_95f38454245b2b9715267d2502a44502df95f82e0f4a5365992ad1713c0
             </form>
         </div>
     </div>
+    <p class=\"text-center text-custom-yellow my-3\">Pensez à vérifié dans vos spam si le mail ne parvient pas a vos courriers principaux.</p>
 </section>
 {% endblock %}", "security/forget-password.html.twig", "/shared/httpd/Projet-Final/templates/security/forget-password.html.twig");
     }

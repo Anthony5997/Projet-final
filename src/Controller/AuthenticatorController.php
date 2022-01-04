@@ -86,7 +86,7 @@ class AuthenticatorController extends AbstractController
 
             $url = $this->generateUrl('reset_forget_password', array('id' => $user->getId(), 'token' => $formatedToken ), UrlGeneratorInterface::ABSOLUTE_URL);
 
-            $this->sendEmail($mailerInterface, $user, $formatedToken, $url);
+            $this->sendEmail($mailerInterface, $user, $url);
             $this->addFlash('message', 'E-mail de réinitialisation du mot de passe envoyé !');
 
             return $this->redirectToRoute('login');
@@ -107,6 +107,11 @@ class AuthenticatorController extends AbstractController
         if($tokenDate != $currentDate->format('dmY')){
            
             $this->addFlash('error', 'Votre lien à expiré, veuillez recommencer l\'opération');
+            return $this->redirectToRoute('login');
+            
+        }elseif($user->getResetToken() != $token){
+
+            $this->addFlash('error', 'Une erreur est survenue, veuillez recommencer l\'opération');
             return $this->redirectToRoute('login');
 
         }else{
