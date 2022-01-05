@@ -195,6 +195,7 @@ class UserController extends AbstractController
         $userVehicule->setYear(null);
         $userVehicule->setId(null);
         $user->setVehicule(null);
+        $this->deletePicture($this->getParameter('profile_picture_directory').'/'. $this->getUser()->getProfile_Picture());
         $user->setProfile_Picture("default_profile_picture.jpg");
         $user->setBio(null);
         $user->setEmail(null);
@@ -212,7 +213,6 @@ class UserController extends AbstractController
 
         // if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
 
-        //     $this->deletePicture($this->getParameter('profile_picture_directory').'/'. $this->getUser()->getProfile_Picture());
         //     $entityManager = $this->getDoctrine()->getManager();
         //     $entityManager->remove($user);
         //     $entityManager->flush();

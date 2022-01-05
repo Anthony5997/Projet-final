@@ -5,6 +5,7 @@ let divArrivalGuess = document.querySelector("#arrivalInput");
 let currentSearch;
 
 divDepartureGuess.addEventListener("input", (e)=> {
+    currentSearch = e.target.value;
     departure.innerHTML = ''
     console.log(currentSearch);
     if(currentSearch.length > 2){
