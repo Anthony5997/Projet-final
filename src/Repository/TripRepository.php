@@ -27,7 +27,7 @@ class TripRepository extends ServiceEntityRepository
     public function findLastTrip(){
         
         return $this->createQueryBuilder('trip')
-        ->orderBy('trip.created_at', 'ASC')
+        ->orderBy('trip.created_at', 'DESC')
         ->setMaxResults(3)
         ->getQuery()
         ->getResult()
