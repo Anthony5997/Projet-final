@@ -62,7 +62,8 @@ class TripController extends AbstractController
                 ]);
            }
 
-           if($form->get('startTime')->getData()->format('H:i:s') < $time){
+
+           if($form->get('startTime')->getData()->format('H:i:s') < $time && $form->get('date_of_trip')->getData()->format('Y-m-d') === $date->format('Y-m-d') ){
                $this->addFlash('error', 'L\'heure sélectionnée est dépassée.');
                return $this->render('trip/new.html.twig', [
                    'trip' => $trip,

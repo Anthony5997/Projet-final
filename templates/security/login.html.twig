@@ -22,7 +22,11 @@
                             <h3 class="text-extrabold">Connectez vous</h3>
                            <form  method="post">
                             {% if error %}
-                                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                                <div class="alert alert-danger">
+                                {% if error.messageKey == 'Invalid credentials.' %}
+                                    Les informations d'identification sont invalides.
+                                {% endif %}
+                                </div>
                             {% endif %}
                             {% if app.user %}
                                 <div class="red-text">

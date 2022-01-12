@@ -7130,6 +7130,7 @@ header .fa-user {
   padding-top: 20px;
   padding-bottom: 20px;
   min-height: 415px;
+  border-radius: 0px 10px 0px 0px;
 }
 
 .button-update-profile {
@@ -7736,6 +7737,7 @@ input[type=file] {
 body {
   background-color: #F0F1F2;
   overflow-x: hidden;
+  height: 100%;
 }
 
 p {

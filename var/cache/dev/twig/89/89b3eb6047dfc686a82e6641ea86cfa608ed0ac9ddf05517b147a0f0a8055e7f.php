@@ -175,9 +175,17 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
         $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 78, $this->source); })()), "flashes", [0 => "success"], "method", false, false, false, 78));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
             // line 79
-            echo "            <div class=\"alert alert-success text-white pt-4\" style=\"z-index: 999; background-color:chartreuse;\">
+            echo "            <div id=\"alert-success\" class=\"alert alert-success text-white pt-4\" style=\"
+            z-index: 999;  
+            background-color: #bfff42;
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 30%;
+            text-align: center;
+            font-size: 20px;\">
                 ";
-            // line 80
+            // line 88
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
             echo "
             </div>
@@ -186,15 +194,23 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 83
+        // line 91
         echo "        ";
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 83, $this->source); })()), "flashes", [0 => "error"], "method", false, false, false, 83));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 91, $this->source); })()), "flashes", [0 => "error"], "method", false, false, false, 91));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 84
-            echo "            <div class=\"alert alert-error text-white pt-4\" style=\"z-index: 999; background-color:chocolate;\">
+            // line 92
+            echo "            <div id=\"alert-error\" class=\"alert alert-error text-white pt-4\" style=\"
+            background-color:chocolate;
+            z-index: 999;  
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 30%;
+            text-align: center;
+            font-size: 20px;\">
                 ";
-            // line 85
+            // line 101
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
             echo "
             </div>
@@ -203,10 +219,10 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 88
+        // line 104
         echo "    ";
         $this->displayBlock('body', $context, $blocks);
-        // line 91
+        // line 107
         echo "    </div>
           <footer class=\"footer\">
 
@@ -226,19 +242,19 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
     </ul>
     <ul class=\"menu\">
       <li class=\"menu__item\"><a class=\"menu__link\" href=\"";
-        // line 109
+        // line 125
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\">Accueil</a></li>
       <li class=\"menu__item\"><a class=\"menu__link\" href=\"";
-        // line 110
+        // line 126
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("trip_search");
         echo "\">Rechercher un trajet</a></li>
       <li class=\"menu__item\"><a class=\"menu__link\" href=\"";
-        // line 111
+        // line 127
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("trip_search");
         echo "\">Publier un trajet</a></li>
       <li class=\"menu__item\"><a class=\"menu__link\" href=\"";
-        // line 112
+        // line 128
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\">Contactez nous</a></li>
     </ul>
@@ -246,9 +262,9 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
   </footer>
 
         ";
-        // line 117
+        // line 133
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 130
+        // line 150
         echo "    </body>
 </html>";
         
@@ -309,7 +325,7 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
 
     }
 
-    // line 88
+    // line 104
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -319,7 +335,7 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 89
+        // line 105
         echo "    
     ";
         
@@ -330,7 +346,7 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
 
     }
 
-    // line 117
+    // line 133
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -340,36 +356,40 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 118
+        // line 134
         echo "            <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ\" crossorigin=\"anonymous\"></script>
             <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>
             <script src=\"https://code.jquery.com/jquery-3.4.1.min.js\"></script>
             <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.0.8/popper.min.js\"></script>
             <script src=\"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js\"></script>
             <script src=\"";
-        // line 123
+        // line 139
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/tabLink.js"), "html", null, true);
         echo "\"></script>
             <script src=\"";
-        // line 124
+        // line 140
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/navbarScript.js"), "html", null, true);
         echo "\"></script>
             <script src=\"";
-        // line 125
+        // line 141
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/guessPlaces.js"), "html", null, true);
         echo "\"></script>
             <script src=\"";
-        // line 126
+        // line 142
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/searchPlaces.js"), "html", null, true);
         echo "\"></script>
             <script src=\"";
-        // line 127
+        // line 143
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/routeRequest.js"), "html", null, true);
         echo "\"></script>
             <script src=\"";
-        // line 128
+        // line 144
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/adminPannel.js"), "html", null, true);
         echo "\"></script>
+            <script>
+                \$( \"#alert-success\" ).fadeIn( 300 ).delay( 5000 ).fadeOut( 400 );
+                \$( \"#alert-error\" ).fadeIn( 300 ).delay( 5000 ).fadeOut( 400 );
+            </script>
         ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -391,7 +411,7 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
 
     public function getDebugInfo()
     {
-        return array (  371 => 128,  367 => 127,  363 => 126,  359 => 125,  355 => 124,  351 => 123,  344 => 118,  334 => 117,  323 => 89,  313 => 88,  297 => 15,  292 => 12,  282 => 11,  263 => 9,  252 => 130,  250 => 117,  242 => 112,  238 => 111,  234 => 110,  230 => 109,  210 => 91,  207 => 88,  198 => 85,  195 => 84,  190 => 83,  181 => 80,  178 => 79,  174 => 78,  168 => 74,  158 => 66,  151 => 62,  143 => 57,  140 => 56,  138 => 55,  130 => 50,  121 => 44,  117 => 42,  112 => 40,  107 => 39,  102 => 37,  98 => 36,  94 => 35,  90 => 34,  86 => 33,  83 => 32,  81 => 31,  72 => 27,  64 => 21,  62 => 11,  57 => 9,  47 => 1,);
+        return array (  387 => 144,  383 => 143,  379 => 142,  375 => 141,  371 => 140,  367 => 139,  360 => 134,  350 => 133,  339 => 105,  329 => 104,  313 => 15,  308 => 12,  298 => 11,  279 => 9,  268 => 150,  266 => 133,  258 => 128,  254 => 127,  250 => 126,  246 => 125,  226 => 107,  223 => 104,  214 => 101,  203 => 92,  198 => 91,  189 => 88,  178 => 79,  174 => 78,  168 => 74,  158 => 66,  151 => 62,  143 => 57,  140 => 56,  138 => 55,  130 => 50,  121 => 44,  117 => 42,  112 => 40,  107 => 39,  102 => 37,  98 => 36,  94 => 35,  90 => 34,  86 => 33,  83 => 32,  81 => 31,  72 => 27,  64 => 21,  62 => 11,  57 => 9,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -474,12 +494,28 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
 
     <div class=\"base-content\">
         {% for message in app.flashes('success') %}
-            <div class=\"alert alert-success text-white pt-4\" style=\"z-index: 999; background-color:chartreuse;\">
+            <div id=\"alert-success\" class=\"alert alert-success text-white pt-4\" style=\"
+            z-index: 999;  
+            background-color: #bfff42;
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 30%;
+            text-align: center;
+            font-size: 20px;\">
                 {{ message }}
             </div>
         {% endfor %}
         {% for message in app.flashes('error') %}
-            <div class=\"alert alert-error text-white pt-4\" style=\"z-index: 999; background-color:chocolate;\">
+            <div id=\"alert-error\" class=\"alert alert-error text-white pt-4\" style=\"
+            background-color:chocolate;
+            z-index: 999;  
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 30%;
+            text-align: center;
+            font-size: 20px;\">
                 {{ message }}
             </div>
         {% endfor %}
@@ -524,6 +560,10 @@ class __TwigTemplate_a51ca8251e6bb87101383760d58d462a7ca8d1fe8bbcdce2835ba30d237
             <script src=\"{{asset('assets/js/searchPlaces.js')}}\"></script>
             <script src=\"{{asset('assets/js/routeRequest.js')}}\"></script>
             <script src=\"{{asset('assets/js/adminPannel.js')}}\"></script>
+            <script>
+                \$( \"#alert-success\" ).fadeIn( 300 ).delay( 5000 ).fadeOut( 400 );
+                \$( \"#alert-error\" ).fadeIn( 300 ).delay( 5000 ).fadeOut( 400 );
+            </script>
         {% endblock %}
     </body>
 </html>", "base.html.twig", "/shared/httpd/Projet-Final/templates/base.html.twig");

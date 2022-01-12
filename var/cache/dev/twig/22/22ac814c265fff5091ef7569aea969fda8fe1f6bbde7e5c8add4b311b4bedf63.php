@@ -132,32 +132,39 @@ class __TwigTemplate_11f42f7c4b3c79e863ae9cb3e312bb8461cba2c6ec22c71e237be4d8a71
         // line 24
         if ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 24, $this->source); })())) {
             // line 25
-            echo "                                <div class=\"alert alert-danger\">";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 25, $this->source); })()), "messageKey", [], "any", false, false, false, 25), twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 25, $this->source); })()), "messageData", [], "any", false, false, false, 25), "security"), "html", null, true);
-            echo "</div>
+            echo "                                <div class=\"alert alert-danger\">
+                                ";
+            // line 26
+            if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 26, $this->source); })()), "messageKey", [], "any", false, false, false, 26), "Invalid credentials."))) {
+                // line 27
+                echo "                                    Les informations d'identification sont invalides.
+                                ";
+            }
+            // line 29
+            echo "                                </div>
                             ";
         }
-        // line 27
+        // line 31
         echo "                            ";
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 27, $this->source); })()), "user", [], "any", false, false, false, 27)) {
-            // line 28
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 31, $this->source); })()), "user", [], "any", false, false, false, 31)) {
+            // line 32
             echo "                                <div class=\"red-text\">
                                     Vous êtes connecté en tant que ";
-            // line 29
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 29, $this->source); })()), "user", [], "any", false, false, false, 29), "username", [], "any", false, false, false, 29), "html", null, true);
+            // line 33
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 33, $this->source); })()), "user", [], "any", false, false, false, 33), "username", [], "any", false, false, false, 33), "html", null, true);
             echo ", <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">Logout</a>
                                 </div>
                             ";
         }
-        // line 31
+        // line 35
         echo " 
                                 <input type=\"hidden\" name=\"_token\" value=\"\">
                                 <div class=\"custom-input-div\"> 
                                     <input type=\"email\" value=\"";
-        // line 34
-        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 34, $this->source); })()), "html", null, true);
+        // line 38
+        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 38, $this->source); })()), "html", null, true);
         echo "\" name=\"email\" id=\"inputEmail\" class=\"custom-field-form\" autocomplete=\"email\" 
                                         autofocus
                                         required
@@ -174,7 +181,7 @@ class __TwigTemplate_11f42f7c4b3c79e863ae9cb3e312bb8461cba2c6ec22c71e237be4d8a71
                                      <label for=\"inputPassword\">Votre mot de passe</label>
                                     <i class=\"fa fa-eye show-password\"></i>
                                     <input type=\"hidden\" name=\"_csrf_token\" value=\"";
-        // line 49
+        // line 53
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("authenticate"), "html", null, true);
         echo "\">
                                     </div>
@@ -190,13 +197,13 @@ class __TwigTemplate_11f42f7c4b3c79e863ae9cb3e312bb8461cba2c6ec22c71e237be4d8a71
                             <div class=\"d-flex align-items-center flex-column\">
                                 <div class=\"links-login mb-3\">
                                     <a href=\"";
-        // line 62
+        // line 66
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("forget_password");
         echo "\">Mot de passe oublié ?</a>
                                 </div>
                                 <div class=\"links-login\">
                                     <a href=\"";
-        // line 65
+        // line 69
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("register");
         echo "\">Vous n'êtes pas encore inscrit ?</a>
                                 </div>
@@ -227,7 +234,7 @@ class __TwigTemplate_11f42f7c4b3c79e863ae9cb3e312bb8461cba2c6ec22c71e237be4d8a71
 
     public function getDebugInfo()
     {
-        return array (  200 => 65,  194 => 62,  178 => 49,  160 => 34,  155 => 31,  147 => 29,  144 => 28,  141 => 27,  135 => 25,  133 => 24,  124 => 17,  115 => 14,  112 => 13,  107 => 12,  98 => 9,  95 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  207 => 69,  201 => 66,  185 => 53,  167 => 38,  162 => 35,  154 => 33,  151 => 32,  148 => 31,  144 => 29,  140 => 27,  138 => 26,  135 => 25,  133 => 24,  124 => 17,  115 => 14,  112 => 13,  107 => 12,  98 => 9,  95 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -256,7 +263,11 @@ class __TwigTemplate_11f42f7c4b3c79e863ae9cb3e312bb8461cba2c6ec22c71e237be4d8a71
                             <h3 class=\"text-extrabold\">Connectez vous</h3>
                            <form  method=\"post\">
                             {% if error %}
-                                <div class=\"alert alert-danger\">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                                <div class=\"alert alert-danger\">
+                                {% if error.messageKey == 'Invalid credentials.' %}
+                                    Les informations d'identification sont invalides.
+                                {% endif %}
+                                </div>
                             {% endif %}
                             {% if app.user %}
                                 <div class=\"red-text\">

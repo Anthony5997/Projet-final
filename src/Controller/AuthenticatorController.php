@@ -28,10 +28,10 @@ class AuthenticatorController extends AbstractController
      */
     public function login(Request $request, AuthenticationUtils $authenticationUtils): Response
     {
+        // $previewPath = $request->get('previewPath');
         if ($this->getUser()) {
             return $this->redirectToRoute('home');
         }
-
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
         // last username entered by the user

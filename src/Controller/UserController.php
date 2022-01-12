@@ -25,6 +25,7 @@ use \App\Traits\CustomResetPassword;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Filesystem\Path;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
 
 /**
  * @Route("/user")
@@ -208,6 +209,7 @@ class UserController extends AbstractController
          $entityManager->remove($userVehicule);
          $entityManager->remove($userPreferences);
         $entityManager->flush();
+        $request->getSession()->invalidate();
         return $this->redirectToRoute('logout');
         
 

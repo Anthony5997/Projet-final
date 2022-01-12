@@ -50,6 +50,7 @@
 body {
   background-color: $gainsboro;
   overflow-x: hidden;
+  height: 100%;
 
 }
 
@@ -248,6 +249,7 @@ p{
 .display-1 {
   padding-top: 5rem;
 }
+
 
 @media screen and (max-width:1200px){
     .inner-container{
