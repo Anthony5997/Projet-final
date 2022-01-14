@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ContactController!{% endblock %}
+
+{% block body %}
+
+  {% for message in app.flashes('success') %}
+    <div class="alert alert-success text-white">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% for message in app.flashes('error') %}
+        <div class="alert alert-error text-white">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <div class="container">
+        <div class="clear-section">
+            <h1 class="text-center">Contactez nous !</h1>
+            <section id="contact">
+                <div class="contact-box">
+                    <div class="contact-links">
+                    <h2>CONTACT</h2>
+                    <div class="links">
+                        <div class="link">
+                            <img class="logo-navbar" src="{{asset('assets/uploads/custom-pic/logo-test-preview.png')}}">
+                        </div>
+                    </div>
+                    </div>
+                    <div class="contact-form-wrapper">
+                    <form>
+                        <div class="form-item">
+                        <input type="text" name="sender" required>
+                        <label>Prénom :</label>
+                        </div>
+                        <div class="form-item">
+                        <input type="text" name="email" required>
+                        <label>Email :</label>
+                        </div>
+                        <div class="form-item">
+                        <input type="text" name="email" required>
+                        <label>Téléphone :</label>
+                        </div>
+                        <div class="form-item">
+                         <input type="text" name="subject" required>
+                        <label>Objet:</label>
+                        </div>
+                        <div class="form-item">
+                        <textarea class="" name="message" required></textarea>
+                        <label>Message:</label>
+                        </div>
+                        <button class="submit-btn">Envoyé</button>  
+                    </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+{% endblock %}

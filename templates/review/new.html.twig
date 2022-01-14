@@ -3,23 +3,23 @@
 {% block title %}New Review{% endblock %}
 
 {% block body %}
-<div class="container">
-    {% if reviewExist == null %}
-        <h1 class="text-center my-5">À quel point recommanderiez-vous ce conducteur</h1>
-        <div class="container">
-            {{ include('review/_form.html.twig') }}
-        </div>
-    {% else %}
-         <h1 class="text-center my-5">Votre avis à bien été prend en compte</h1>
-        <div class="container">
-         <div id="robot-profile-div" class="d-flex justify-content-center">
-            <img class="robot-thumbs-up-img" src="{{asset('assets/uploads/custom-pic/robot-thumbs-up.png')}}">
-        </div>
-            <a class="button-comeback mb-5"href="{{path('user_edit', { 'id' : app.user.id})}}"><i class="fas fa-arrow-left"></i> Retourné au profil</a>
-        </div>
+<div class="clear-section">
+    <div class="container">
+        {% if reviewExist == null %}
+            <h1 class="text-center my-5">À quel point recommanderiez-vous ce conducteur</h1>
+            <div class="container">
+                {{ include('review/_form.html.twig') }}
+            </div>
+        {% else %}
+            <h1 class="text-center my-5">Votre avis à bien été prend en compte</h1>
+            <div class="container">
+            <div id="robot-profile-div" class="d-flex justify-content-center">
+                <img class="robot-thumbs-up-img" src="{{asset('assets/uploads/custom-pic/robot-thumbs-up.png')}}">
+            </div>
+                <a class="button-comeback mb-5"href="{{path('user_edit', { 'id' : app.user.id})}}"><i class="fas fa-arrow-left"></i> Retourné au profil</a>
+            </div>
 
-    {% endif %}
-
-
+        {% endif %}
+    </div>
 </div>
 {% endblock %}

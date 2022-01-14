@@ -27,6 +27,7 @@ class __TwigTemplate_02a3c185f407c0ffe3d0c4de80a0dfe4f31b6eb25fc8ecd3f150a5be3c1
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
+            'javascripts' => [$this, 'block_javascripts'],
         ];
     }
 
@@ -128,6 +129,29 @@ class __TwigTemplate_02a3c185f407c0ffe3d0c4de80a0dfe4f31b6eb25fc8ecd3f150a5be3c1
 
     }
 
+    // line 28
+    public function block_javascripts($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        // line 29
+        echo "  <script src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/routeRequest.js"), "html", null, true);
+        echo "\"></script>
+";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
     public function getTemplateName()
     {
         return "trip/show.html.twig";
@@ -140,7 +164,7 @@ class __TwigTemplate_02a3c185f407c0ffe3d0c4de80a0dfe4f31b6eb25fc8ecd3f150a5be3c1
 
     public function getDebugInfo()
     {
-        return array (  118 => 24,  114 => 23,  100 => 14,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  143 => 29,  133 => 28,  119 => 24,  115 => 23,  101 => 14,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -171,6 +195,9 @@ class __TwigTemplate_02a3c185f407c0ffe3d0c4de80a0dfe4f31b6eb25fc8ecd3f150a5be3c1
                 {{ include('trip/_delete_form.html.twig') }}
              </div>
         </div>
+{% endblock %}
+{% block javascripts %}
+  <script src=\"{{asset('assets/js/routeRequest.js')}}\"></script>
 {% endblock %}", "trip/show.html.twig", "/shared/httpd/Projet-Final/templates/trip/show.html.twig");
     }
 }

@@ -27,6 +27,7 @@ class __TwigTemplate_2beaf0d9b5effa00bf0f995df2578abb3e1ef87de9e33d9b6e73128b249
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
+            'javascripts' => [$this, 'block_javascripts'],
         ];
     }
 
@@ -385,6 +386,29 @@ $context["trip"], "tripStarted", [], "any", false, false, false, 186), true))) {
 
     }
 
+    // line 259
+    public function block_javascripts($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        // line 260
+        echo "    <script src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/adminPannel.js"), "html", null, true);
+        echo "\"></script>
+";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
     public function getTemplateName()
     {
         return "admin/index.html.twig";
@@ -397,7 +421,7 @@ $context["trip"], "tripStarted", [], "any", false, false, false, 186), true))) {
 
     public function getDebugInfo()
     {
-        return array (  374 => 253,  363 => 248,  357 => 245,  344 => 235,  338 => 232,  334 => 230,  330 => 229,  315 => 216,  303 => 210,  294 => 203,  288 => 202,  284 => 200,  281 => 199,  277 => 198,  272 => 195,  266 => 191,  260 => 187,  258 => 186,  253 => 183,  251 => 182,  243 => 177,  238 => 175,  229 => 169,  224 => 168,  218 => 161,  213 => 158,  209 => 157,  182 => 133,  175 => 129,  168 => 125,  162 => 121,  95 => 55,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  400 => 260,  390 => 259,  375 => 253,  364 => 248,  358 => 245,  345 => 235,  339 => 232,  335 => 230,  331 => 229,  316 => 216,  304 => 210,  295 => 203,  289 => 202,  285 => 200,  282 => 199,  278 => 198,  273 => 195,  267 => 191,  261 => 187,  259 => 186,  254 => 183,  252 => 182,  244 => 177,  239 => 175,  230 => 169,  225 => 168,  219 => 161,  214 => 158,  210 => 157,  183 => 133,  176 => 129,  169 => 125,  163 => 121,  96 => 55,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -660,6 +684,10 @@ $context["trip"], "tripStarted", [], "any", false, false, false, 186), true))) {
 </div>
 
 {% endblock %}
+{% block javascripts %}
+    <script src=\"{{asset('assets/js/adminPannel.js')}}\"></script>
+{% endblock %}
+
 ", "admin/index.html.twig", "/shared/httpd/Projet-Final/templates/admin/index.html.twig");
     }
 }

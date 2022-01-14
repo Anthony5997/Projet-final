@@ -3,25 +3,23 @@
 {% block title %}Mes avis{% endblock %}
 
 {% block body %}
-
-<div class="container mt-5">
-
-<h2 class="text-center"> Avis</h2>
-
-    <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#tabs-received" role="tab">Avis que vous avez reçu</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#tabs-send" role="tab">Avis que vous avez laisser</a>
-        </li>
-    </ul>
-     <div class="tab-content">
-        <div class="tab-pane active" id="tabs-received" role="tabpanel">
+<div class="clear-section">
+    <div class="container mt-5">
+        <h2 class="text-center"> Avis</h2>
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#tabs-received" role="tab">Avis que vous avez reçu</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tabs-send" role="tab">Avis que vous avez laisser</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="tabs-received" role="tabpanel">
                 <div class="container profile-section">
-                        {% if reviewReceived|length < 1 %}
+                    {% if reviewReceived|length < 1 %}
                         <h4 class="text-center">Vous n'avez reçu aucun avis pour l'instant</h4>
-                         <div class="row d-flex justify-content-center">
+                        <div class="row d-flex justify-content-center">
                             <img class="robot-sleeping-img" src="{{asset('assets/uploads/custom-pic/robot-sleeping.png')}}">
                         </div>
                         {% else %}
@@ -46,7 +44,7 @@
                                             </div>
                                         </div>
                                         <div class="review-description">
-                                        {{ reviewReceive.content }}
+                                            {{ reviewReceive.content }}
                                         </div>
                                         <div class="review-details">
                                             <div class="review-date">{{reviewReceive.createdAt|date("H:i d M, Y")}}</div>
@@ -54,7 +52,7 @@
                                     </div>
                                 </div>
                             </div>
-                    {% endfor %}
+                        {% endfor %}
                     {% endif %}
                 </div>
             </div>
@@ -62,13 +60,12 @@
                 <div class="container profile-section">
                 {% if reviewLeaved|length < 1 %}
                     <h4 class="text-center">Vous n'avez laissé aucun avis pour l'instant</h4>
-                     <div class="row d-flex justify-content-center">
+                    <div class="row d-flex justify-content-center">
                         <img class="robot-sleeping-img" src="{{asset('assets/uploads/custom-pic/robot-sleeping.png')}}">
                     </div>
                 {% else %}
-                <h3>Avis Laisser</h3>
                     {% for reviewLeave in reviewLeaved %}
-                          <div class="card-review">
+                        <div class="card-review">
                             <div class="reviews-list">
                                 <div class="review-card">
                                     <div class="review-header">
@@ -96,7 +93,7 @@
                 {% endif %}
                 </div>
             </div>
+        </div>
     </div>
-
 </div>
 {% endblock %}

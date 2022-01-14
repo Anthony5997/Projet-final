@@ -132,12 +132,9 @@ class __TwigTemplate_47eb38df3b6e4abad6b5384cd116650b29bd7b4c983003bbef85704df6b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
         // line 26
-        echo "
-            <script src=\"";
-        // line 27
+        echo "    <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/displayMessage.js"), "html", null, true);
         echo "\"></script>
-
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -159,7 +156,7 @@ class __TwigTemplate_47eb38df3b6e4abad6b5384cd116650b29bd7b4c983003bbef85704df6b
 
     public function getDebugInfo()
     {
-        return array (  138 => 27,  135 => 26,  125 => 25,  109 => 18,  103 => 14,  98 => 11,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  135 => 26,  125 => 25,  109 => 18,  103 => 14,  98 => 11,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -189,9 +186,7 @@ class __TwigTemplate_47eb38df3b6e4abad6b5384cd116650b29bd7b4c983003bbef85704df6b
 {% endblock %}
 
 {% block javascripts %}
-
-            <script src=\"{{asset('assets/js/displayMessage.js')}}\"></script>
-
+    <script src=\"{{asset('assets/js/displayMessage.js')}}\"></script>
 {% endblock %}
 ", "message/discussion_detail.html.twig", "/shared/httpd/Projet-Final/templates/message/discussion_detail.html.twig");
     }

@@ -8,16 +8,6 @@
     <div class="container-profile">
     <div class="row">
     <div class="col-9">
-        {% for message in app.flashes('success') %}
-            <div class="alert alert-success text-white">
-                {{ message }}
-            </div>
-        {% endfor %}
-        {% for message in app.flashes('error') %}
-            <div class="alert alert-error text-white">
-                {{ message }}
-            </div>
-        {% endfor %}
         <ul class="nav nav-tabs" role="tablist">
             <li class="nav-item">
                 <a class="nav-link  tab-custom active" data-toggle="tab" href="#tabs-1" role="tab">A Propos</a>

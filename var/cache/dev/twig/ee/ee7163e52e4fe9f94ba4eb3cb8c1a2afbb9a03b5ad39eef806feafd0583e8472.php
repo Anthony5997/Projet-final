@@ -196,39 +196,6 @@ class __TwigTemplate_564d9db4a8728797de8d48a9587a8e831b0203c9c84338c8efb2199f550
         </div>
         <div class=\"col-9\">
             ";
-        // line 98
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 98, $this->source); })()), "flashes", [0 => "success"], "method", false, false, false, 98));
-        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 99
-            echo "                <div class=\"alert alert-success text-white\">
-                    ";
-            // line 100
-            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
-            echo "
-                </div>
-            ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 103
-        echo "            ";
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 103, $this->source); })()), "flashes", [0 => "error"], "method", false, false, false, 103));
-        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 104
-            echo "                <div class=\"alert alert-error text-white\">
-                    ";
-            // line 105
-            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
-            echo "
-                </div>
-            ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
         // line 108
         echo "            <div class=\"tab-content\">
                 <div class=\"tab-pane active section-padding\" id=\"tabs-1\" role=\"tabpanel\">
@@ -926,7 +893,7 @@ $context["booking"], "trip", [], "any", false, false, false, 416), "tripComplete
 
     public function getDebugInfo()
     {
-        return array (  895 => 448,  879 => 434,  873 => 433,  870 => 432,  861 => 426,  858 => 425,  852 => 421,  846 => 417,  844 => 416,  839 => 413,  837 => 412,  833 => 411,  829 => 410,  824 => 408,  821 => 407,  818 => 406,  813 => 405,  804 => 398,  801 => 397,  797 => 395,  795 => 394,  776 => 377,  762 => 376,  759 => 375,  750 => 369,  747 => 368,  741 => 365,  737 => 363,  731 => 359,  729 => 358,  724 => 356,  721 => 355,  719 => 354,  715 => 353,  711 => 352,  706 => 350,  703 => 349,  700 => 348,  682 => 347,  673 => 340,  671 => 339,  668 => 338,  664 => 337,  662 => 336,  646 => 322,  632 => 321,  625 => 316,  619 => 313,  615 => 311,  609 => 307,  607 => 306,  602 => 304,  598 => 303,  595 => 302,  593 => 301,  585 => 296,  580 => 294,  571 => 292,  564 => 287,  561 => 286,  544 => 285,  541 => 284,  537 => 283,  535 => 282,  523 => 273,  517 => 270,  510 => 266,  494 => 253,  481 => 243,  474 => 238,  467 => 234,  463 => 232,  458 => 230,  455 => 229,  452 => 228,  447 => 226,  444 => 225,  441 => 224,  436 => 222,  433 => 221,  431 => 220,  427 => 218,  423 => 216,  421 => 215,  405 => 201,  401 => 199,  396 => 197,  391 => 194,  388 => 193,  383 => 191,  378 => 188,  375 => 187,  370 => 185,  365 => 182,  362 => 181,  357 => 179,  352 => 176,  349 => 175,  344 => 173,  339 => 170,  337 => 169,  334 => 168,  330 => 166,  328 => 165,  304 => 144,  299 => 141,  293 => 139,  291 => 138,  284 => 133,  276 => 130,  273 => 129,  265 => 126,  262 => 125,  260 => 124,  252 => 119,  245 => 115,  241 => 114,  233 => 108,  224 => 105,  221 => 104,  216 => 103,  207 => 100,  204 => 99,  200 => 98,  190 => 91,  185 => 89,  174 => 81,  105 => 15,  99 => 12,  93 => 8,  83 => 7,  64 => 6,  53 => 4,  51 => 2,  49 => 1,  36 => 4,);
+        return array (  862 => 448,  846 => 434,  840 => 433,  837 => 432,  828 => 426,  825 => 425,  819 => 421,  813 => 417,  811 => 416,  806 => 413,  804 => 412,  800 => 411,  796 => 410,  791 => 408,  788 => 407,  785 => 406,  780 => 405,  771 => 398,  768 => 397,  764 => 395,  762 => 394,  743 => 377,  729 => 376,  726 => 375,  717 => 369,  714 => 368,  708 => 365,  704 => 363,  698 => 359,  696 => 358,  691 => 356,  688 => 355,  686 => 354,  682 => 353,  678 => 352,  673 => 350,  670 => 349,  667 => 348,  649 => 347,  640 => 340,  638 => 339,  635 => 338,  631 => 337,  629 => 336,  613 => 322,  599 => 321,  592 => 316,  586 => 313,  582 => 311,  576 => 307,  574 => 306,  569 => 304,  565 => 303,  562 => 302,  560 => 301,  552 => 296,  547 => 294,  538 => 292,  531 => 287,  528 => 286,  511 => 285,  508 => 284,  504 => 283,  502 => 282,  490 => 273,  484 => 270,  477 => 266,  461 => 253,  448 => 243,  441 => 238,  434 => 234,  430 => 232,  425 => 230,  422 => 229,  419 => 228,  414 => 226,  411 => 225,  408 => 224,  403 => 222,  400 => 221,  398 => 220,  394 => 218,  390 => 216,  388 => 215,  372 => 201,  368 => 199,  363 => 197,  358 => 194,  355 => 193,  350 => 191,  345 => 188,  342 => 187,  337 => 185,  332 => 182,  329 => 181,  324 => 179,  319 => 176,  316 => 175,  311 => 173,  306 => 170,  304 => 169,  301 => 168,  297 => 166,  295 => 165,  271 => 144,  266 => 141,  260 => 139,  258 => 138,  251 => 133,  243 => 130,  240 => 129,  232 => 126,  229 => 125,  227 => 124,  219 => 119,  212 => 115,  208 => 114,  200 => 108,  190 => 91,  185 => 89,  174 => 81,  105 => 15,  99 => 12,  93 => 8,  83 => 7,  64 => 6,  53 => 4,  51 => 2,  49 => 1,  36 => 4,);
     }
 
     public function getSourceContext()
@@ -1028,7 +995,7 @@ $context["booking"], "trip", [], "any", false, false, false, 416), "tripComplete
             </ul>
         </div>
         <div class=\"col-9\">
-            {% for message in app.flashes('success') %}
+            {# {% for message in app.flashes('success') %}
                 <div class=\"alert alert-success text-white\">
                     {{ message }}
                 </div>
@@ -1037,7 +1004,7 @@ $context["booking"], "trip", [], "any", false, false, false, 416), "tripComplete
                 <div class=\"alert alert-error text-white\">
                     {{ message }}
                 </div>
-            {% endfor %}
+            {% endfor %} #}
             <div class=\"tab-content\">
                 <div class=\"tab-pane active section-padding\" id=\"tabs-1\" role=\"tabpanel\">
                     <div class=\"mx-auto form-info\">

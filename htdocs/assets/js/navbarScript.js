@@ -7,12 +7,14 @@ $(document).ready(function(){
     $('.fa-bars').click(function(){
         $('.fa-bars').toggleClass('fa-times')
         
-        })
+    })
+
 $(window).scroll(function(){
-if ($(window).scrollTop() >= 20)
-{
-    $('header').addClass('active')
-} else {
-    $('header').removeClass('active')
-}
-});})
+    if ($(window).scrollTop() >= 20)
+    {
+        $('header').addClass('active')
+    } else {
+        $('header').removeClass('active')
+    }
+    });
+})

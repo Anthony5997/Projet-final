@@ -50,7 +50,7 @@ class __TwigTemplate_c3c6ee57a025454099d852a352554b1dc2a225b1c21f18bd3c6d3c341c0
             <div class=\"col-xs-12 col-sm-5 col-md-5\">
                 <div class=\"custom-input-div d-flex flex-column justify-content-center\">
                     <label for=\"departureInput\">Départ</label>
-                        <input id=\"departureInput\" list=\"departureCityGuessData\" name=\"trip[departure]\" class=\"custom-field-form\" />
+                        <input id=\"departureInput\" list=\"departureCityGuessData\" name=\"trip[departure]\" class=\"custom-field-form\" placeholder=\"Lieu de départ\"/>
                         <datalist id=\"departureCityGuessData\" name=\"dataDepart\">
                         </datalist>
                      <div class=\"col-xs-12 col-sm-12 col-md-12\" id=\"departure-list\">
@@ -61,7 +61,7 @@ class __TwigTemplate_c3c6ee57a025454099d852a352554b1dc2a225b1c21f18bd3c6d3c341c0
             <div class=\"col-xs-12 col-sm-5 col-md-5\">
                 <div class=\"custom-input-div d-flex flex-column justify-content-center\">
                     <label for=\"arrivalInput\">Arrivé</label>
-                    <input id=\"arrivalInput\" list=\"arrivalCityGuessData\" name=\"trip[arrival]\" class=\"custom-field-form\" />
+                    <input id=\"arrivalInput\" list=\"arrivalCityGuessData\" name=\"trip[arrival]\" class=\"custom-field-form\" placeholder=\"Lieu d'arrivé\"/>
                     <datalist id=\"arrivalCityGuessData\">
                     </datalist>
                     <div class=\"col-xs-12 col-sm-12 col-md-12\" id=\"arrival-list\">
@@ -69,8 +69,8 @@ class __TwigTemplate_c3c6ee57a025454099d852a352554b1dc2a225b1c21f18bd3c6d3c341c0
                 </div>
             </div>
         </div>
-     
-            <div class=\"col-xs-12 col-sm-5 col-md-5\">
+        <div class=\"row d-flex justify-content-between mt-5\">
+            <div class=\"col-xs-12 col-sm-3 col-md-3\">
                 <div class=\"custom-input-div d-flex flex-column justify-content-center\">
                     ";
         // line 30
@@ -78,15 +78,15 @@ class __TwigTemplate_c3c6ee57a025454099d852a352554b1dc2a225b1c21f18bd3c6d3c341c0
         echo "
                     ";
         // line 31
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 31, $this->source); })()), "date_of_trip", [], "any", false, false, false, 31), 'widget', ["attr" => ["class" => "custom-field-form"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 31, $this->source); })()), "date_of_trip", [], "any", false, false, false, 31), 'widget', ["attr" => ["class" => "custom-field-form custom-input-date"]]);
         echo "
                 </div>
             </div>
-            <div class=\"col-xs-12 col-sm-5 col-md-5\">
+            <div class=\"col-xs-12 col-sm-3 col-md-3\">
                 <div class=\"custom-input-div d-flex flex-column justify-content-center\">
                     ";
         // line 36
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 36, $this->source); })()), "startTime", [], "any", false, false, false, 36), 'label', ["label" => "heure de départ estimé"]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 36, $this->source); })()), "startTime", [], "any", false, false, false, 36), 'label', ["label" => "Heure de départ"]);
         echo "
                     ";
         // line 37
@@ -94,19 +94,21 @@ class __TwigTemplate_c3c6ee57a025454099d852a352554b1dc2a225b1c21f18bd3c6d3c341c0
         echo "
                 </div>
             </div>
-             <div class=\"col-xs-12 col-sm-2 col-md-2\"></div>
-            <div class=\"col-xs-12 col-sm-6 col-md-3\">
+             ";
+        // line 41
+        echo "            <div class=\"col-xs-12 col-sm-3 col-md-3\">
                 <div class=\"custom-input-div d-flex flex-column justify-content-center\">
                     ";
         // line 43
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 43, $this->source); })()), "passengers", [], "any", false, false, false, 43), 'label', ["label" => "Nombre de passager"]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 43, $this->source); })()), "passengers", [], "any", false, false, false, 43), 'label', ["label" => "Passager"]);
         echo "  
                     ";
         // line 44
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 44, $this->source); })()), "passengers", [], "any", false, false, false, 44), 'widget', ["attr" => ["class" => "custom-field-form"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 44, $this->source); })()), "passengers", [], "any", false, false, false, 44), 'widget', ["attr" => ["class" => "custom-field-form", "placeholder" => "Nombre de passager"]]);
         echo "
                 </div>
             </div>    
+        </div>
    
             <div class=\"row\">
                 <div class=\"col-xs-12 col-sm-12 col-md-12 mb-4 mt-4 d-flex justify-content-center\">
@@ -115,8 +117,8 @@ class __TwigTemplate_c3c6ee57a025454099d852a352554b1dc2a225b1c21f18bd3c6d3c341c0
             </div>  
         </div> 
         ";
-        // line 54
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 54, $this->source); })()), 'form_end');
+        // line 55
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 55, $this->source); })()), 'form_end');
         echo "
     </div>
 </section>";
@@ -140,7 +142,7 @@ class __TwigTemplate_c3c6ee57a025454099d852a352554b1dc2a225b1c21f18bd3c6d3c341c0
 
     public function getDebugInfo()
     {
-        return array (  119 => 54,  106 => 44,  102 => 43,  93 => 37,  89 => 36,  81 => 31,  77 => 30,  47 => 3,  43 => 1,);
+        return array (  121 => 55,  107 => 44,  103 => 43,  99 => 41,  93 => 37,  89 => 36,  81 => 31,  77 => 30,  47 => 3,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -152,7 +154,7 @@ class __TwigTemplate_c3c6ee57a025454099d852a352554b1dc2a225b1c21f18bd3c6d3c341c0
             <div class=\"col-xs-12 col-sm-5 col-md-5\">
                 <div class=\"custom-input-div d-flex flex-column justify-content-center\">
                     <label for=\"departureInput\">Départ</label>
-                        <input id=\"departureInput\" list=\"departureCityGuessData\" name=\"trip[departure]\" class=\"custom-field-form\" />
+                        <input id=\"departureInput\" list=\"departureCityGuessData\" name=\"trip[departure]\" class=\"custom-field-form\" placeholder=\"Lieu de départ\"/>
                         <datalist id=\"departureCityGuessData\" name=\"dataDepart\">
                         </datalist>
                      <div class=\"col-xs-12 col-sm-12 col-md-12\" id=\"departure-list\">
@@ -163,7 +165,7 @@ class __TwigTemplate_c3c6ee57a025454099d852a352554b1dc2a225b1c21f18bd3c6d3c341c0
             <div class=\"col-xs-12 col-sm-5 col-md-5\">
                 <div class=\"custom-input-div d-flex flex-column justify-content-center\">
                     <label for=\"arrivalInput\">Arrivé</label>
-                    <input id=\"arrivalInput\" list=\"arrivalCityGuessData\" name=\"trip[arrival]\" class=\"custom-field-form\" />
+                    <input id=\"arrivalInput\" list=\"arrivalCityGuessData\" name=\"trip[arrival]\" class=\"custom-field-form\" placeholder=\"Lieu d'arrivé\"/>
                     <datalist id=\"arrivalCityGuessData\">
                     </datalist>
                     <div class=\"col-xs-12 col-sm-12 col-md-12\" id=\"arrival-list\">
@@ -171,26 +173,27 @@ class __TwigTemplate_c3c6ee57a025454099d852a352554b1dc2a225b1c21f18bd3c6d3c341c0
                 </div>
             </div>
         </div>
-     
-            <div class=\"col-xs-12 col-sm-5 col-md-5\">
+        <div class=\"row d-flex justify-content-between mt-5\">
+            <div class=\"col-xs-12 col-sm-3 col-md-3\">
                 <div class=\"custom-input-div d-flex flex-column justify-content-center\">
                     {{ form_label(form.date_of_trip, 'Date du trajet') }}
-                    {{ form_widget(form.date_of_trip,  { 'attr': {'class': 'custom-field-form'} }) }}
+                    {{ form_widget(form.date_of_trip,  { 'attr': {'class': 'custom-field-form custom-input-date'} }) }}
                 </div>
             </div>
-            <div class=\"col-xs-12 col-sm-5 col-md-5\">
+            <div class=\"col-xs-12 col-sm-3 col-md-3\">
                 <div class=\"custom-input-div d-flex flex-column justify-content-center\">
-                    {{ form_label(form.startTime, 'heure de départ estimé') }}
+                    {{ form_label(form.startTime, 'Heure de départ') }}
                     {{ form_widget(form.startTime,  { 'attr': {'class': 'custom-field-form'} }) }}
                 </div>
             </div>
-             <div class=\"col-xs-12 col-sm-2 col-md-2\"></div>
-            <div class=\"col-xs-12 col-sm-6 col-md-3\">
+             {# <div class=\"col-xs-12 col-sm-2 col-md-2\"></div> #}
+            <div class=\"col-xs-12 col-sm-3 col-md-3\">
                 <div class=\"custom-input-div d-flex flex-column justify-content-center\">
-                    {{ form_label(form.passengers, \"Nombre de passager\") }}  
-                    {{ form_widget(form.passengers,  { 'attr': {'class': 'custom-field-form'} }) }}
+                    {{ form_label(form.passengers, \"Passager\") }}  
+                    {{ form_widget(form.passengers,  { 'attr': {'class': 'custom-field-form', 'placeholder' : 'Nombre de passager'} }) }}
                 </div>
             </div>    
+        </div>
    
             <div class=\"row\">
                 <div class=\"col-xs-12 col-sm-12 col-md-12 mb-4 mt-4 d-flex justify-content-center\">

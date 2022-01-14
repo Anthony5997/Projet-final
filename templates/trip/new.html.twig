@@ -3,19 +3,15 @@
 {% block title %}Nouveau trajet{% endblock %}
 
 {% block body %}
-  {% for message in app.flashes('success') %}
-            <div class="alert alert-success text-white">
-                {{ message }}
-            </div>
-        {% endfor %}
-        {% for message in app.flashes('error') %}
-            <div class="alert alert-error text-white">
-                {{ message }}
-            </div>
-        {% endfor %}
 <div class="container">
+<div class="clear-section">
     <h1 class="text-center">Publier un trajet</h1>
 
     {{ include('trip/_form.html.twig') }}
 </div>
+</div>
+
+{% endblock %}
+{% block javascripts %}
+    <script src="{{asset('assets/js/guessPlaces.js')}}"></script>
 {% endblock %}

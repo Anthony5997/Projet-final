@@ -3,39 +3,38 @@
 {% block title %}Message{% endblock %}
 
 {% block body %}
+<div class="clear-section">
     <h1 class="p-3 my-3 text-center">Boite de réception</h1>
-
-{% if messageReceive == null %}
-    <p class="text-center">Aucun message reçu pour l'instant</p>
-    <div class="row d-flex justify-content-center">
-        <img class="robot-sleeping-img" src="{{asset('assets/uploads/custom-pic/robot-sleeping.png')}}">
-    </div>
-{% else %}
-       {% for message in messageReceive %}
-
-        <div class="row card-receiver-message">
-            <a href="{{path('message_discussion_details', {'id': message.sender.id})}}">
-            <div class="row">
-                <div class="col d-flex flex-column justify-content-center align-items-center">
-                    <p class="font-control">{{message.sender.firstName}}</p>
-                    <img class="img-card"src="{{asset('assets/uploads/profilePicture/') ~ message.sender.profile_picture}}"/>
-                </div>
-                <div class="col d-flex  flex-column justify-content-center">
-                <span class="d-inline-block message-font-control text-truncate" style="max-width: 150px;">
-                    {{message.content}}
-                </span>
-                </div>
-                <div class="col d-flex justify-content-end align-items-center font-control fas fa-chevron-right message-font-control"></div>
-            </div>
-               <span class="d-inline-block message-font-control d-flex justify-content-between">
-                   <div></div>
-                   <div>  {{message.sendAt|date('d M H i')}} </div>
-                </span>
-            </a>
+    {% if messageReceive == null %}
+        <p class="text-center">Aucun message reçu pour l'instant</p>
+        <div class="row d-flex justify-content-center">
+            <img class="robot-sleeping-img" src="{{asset('assets/uploads/custom-pic/robot-sleeping.png')}}">
         </div>
-         
+    {% else %}
+        {% for message in messageReceive %}
+            <div class="row card-receiver-message">
+                <a href="{{path('message_discussion_details', {'id': message.sender.id})}}">
+                <div class="row">
+                    <div class="col d-flex flex-column justify-content-center align-items-center">
+                        <p class="font-control">{{message.sender.firstName}}</p>
+                        <img class="img-card"src="{{asset('assets/uploads/profilePicture/') ~ message.sender.profile_picture}}"/>
+                    </div>
+                    <div class="col d-flex  flex-column justify-content-center">
+                    <span class="d-inline-block message-font-control text-truncate" style="max-width: 150px;">
+                        {{message.content}}
+                    </span>
+                    </div>
+                    <div class="col d-flex justify-content-end align-items-center font-control fas fa-chevron-right message-font-control"></div>
+                </div>
+                <span class="d-inline-block message-font-control d-flex justify-content-between">
+                    <div></div>
+                    <div>  {{message.sendAt|date('d M H i')}} </div>
+                    </span>
+                </a>
+            </div>
         {% endfor %}
-{% endif %}
+    {% endif %}
+</div>
 
 
 {% endblock %}

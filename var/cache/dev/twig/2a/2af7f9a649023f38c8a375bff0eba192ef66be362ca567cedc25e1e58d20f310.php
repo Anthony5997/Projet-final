@@ -85,72 +85,73 @@ class __TwigTemplate_874a1360df4147ca09d52e29db94682bb5dae706d94883158b0e673da71
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1 class=\"p-3 my-3 text-center\">Boite de réception</h1>
-
-";
+        echo "<div class=\"clear-section\">
+    <h1 class=\"p-3 my-3 text-center\">Boite de réception</h1>
+    ";
         // line 8
         if ((0 === twig_compare((isset($context["messageReceive"]) || array_key_exists("messageReceive", $context) ? $context["messageReceive"] : (function () { throw new RuntimeError('Variable "messageReceive" does not exist.', 8, $this->source); })()), null))) {
             // line 9
-            echo "    <p class=\"text-center\">Aucun message reçu pour l'instant</p>
-    <div class=\"row d-flex justify-content-center\">
-        <img class=\"robot-sleeping-img\" src=\"";
+            echo "        <p class=\"text-center\">Aucun message reçu pour l'instant</p>
+        <div class=\"row d-flex justify-content-center\">
+            <img class=\"robot-sleeping-img\" src=\"";
             // line 11
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/uploads/custom-pic/robot-sleeping.png"), "html", null, true);
             echo "\">
-    </div>
-";
+        </div>
+    ";
         } else {
             // line 14
-            echo "       ";
+            echo "        ";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["messageReceive"]) || array_key_exists("messageReceive", $context) ? $context["messageReceive"] : (function () { throw new RuntimeError('Variable "messageReceive" does not exist.', 14, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
                 // line 15
-                echo "
-        <div class=\"row card-receiver-message\">
-            <a href=\"";
-                // line 17
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("message_discussion_details", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["message"], "sender", [], "any", false, false, false, 17), "id", [], "any", false, false, false, 17)]), "html", null, true);
+                echo "            <div class=\"row card-receiver-message\">
+                <a href=\"";
+                // line 16
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("message_discussion_details", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["message"], "sender", [], "any", false, false, false, 16), "id", [], "any", false, false, false, 16)]), "html", null, true);
                 echo "\">
-            <div class=\"row\">
-                <div class=\"col d-flex flex-column justify-content-center align-items-center\">
-                    <p class=\"font-control\">";
-                // line 20
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["message"], "sender", [], "any", false, false, false, 20), "firstName", [], "any", false, false, false, 20), "html", null, true);
+                <div class=\"row\">
+                    <div class=\"col d-flex flex-column justify-content-center align-items-center\">
+                        <p class=\"font-control\">";
+                // line 19
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["message"], "sender", [], "any", false, false, false, 19), "firstName", [], "any", false, false, false, 19), "html", null, true);
                 echo "</p>
-                    <img class=\"img-card\"src=\"";
-                // line 21
-                echo twig_escape_filter($this->env, ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/uploads/profilePicture/") . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["message"], "sender", [], "any", false, false, false, 21), "profile_picture", [], "any", false, false, false, 21)), "html", null, true);
+                        <img class=\"img-card\"src=\"";
+                // line 20
+                echo twig_escape_filter($this->env, ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/uploads/profilePicture/") . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["message"], "sender", [], "any", false, false, false, 20), "profile_picture", [], "any", false, false, false, 20)), "html", null, true);
                 echo "\"/>
-                </div>
-                <div class=\"col d-flex  flex-column justify-content-center\">
-                <span class=\"d-inline-block message-font-control text-truncate\" style=\"max-width: 150px;\">
-                    ";
-                // line 25
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["message"], "content", [], "any", false, false, false, 25), "html", null, true);
+                    </div>
+                    <div class=\"col d-flex  flex-column justify-content-center\">
+                    <span class=\"d-inline-block message-font-control text-truncate\" style=\"max-width: 150px;\">
+                        ";
+                // line 24
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["message"], "content", [], "any", false, false, false, 24), "html", null, true);
                 echo "
-                </span>
+                    </span>
+                    </div>
+                    <div class=\"col d-flex justify-content-end align-items-center font-control fas fa-chevron-right message-font-control\"></div>
                 </div>
-                <div class=\"col d-flex justify-content-end align-items-center font-control fas fa-chevron-right message-font-control\"></div>
-            </div>
-               <span class=\"d-inline-block message-font-control d-flex justify-content-between\">
-                   <div></div>
-                   <div>  ";
-                // line 32
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["message"], "sendAt", [], "any", false, false, false, 32), "d M H i"), "html", null, true);
+                <span class=\"d-inline-block message-font-control d-flex justify-content-between\">
+                    <div></div>
+                    <div>  ";
+                // line 31
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["message"], "sendAt", [], "any", false, false, false, 31), "d M H i"), "html", null, true);
                 echo " </div>
-                </span>
-            </a>
-        </div>
-         
+                    </span>
+                </a>
+            </div>
         ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 36
+            echo "    ";
         }
-        // line 39
-        echo "
+        // line 37
+        echo "</div>
+
 
 ";
         
@@ -173,7 +174,7 @@ class __TwigTemplate_874a1360df4147ca09d52e29db94682bb5dae706d94883158b0e673da71
 
     public function getDebugInfo()
     {
-        return array (  153 => 39,  140 => 32,  130 => 25,  123 => 21,  119 => 20,  113 => 17,  109 => 15,  104 => 14,  98 => 11,  94 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  153 => 37,  150 => 36,  139 => 31,  129 => 24,  122 => 20,  118 => 19,  112 => 16,  109 => 15,  104 => 14,  98 => 11,  94 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -183,39 +184,38 @@ class __TwigTemplate_874a1360df4147ca09d52e29db94682bb5dae706d94883158b0e673da71
 {% block title %}Message{% endblock %}
 
 {% block body %}
+<div class=\"clear-section\">
     <h1 class=\"p-3 my-3 text-center\">Boite de réception</h1>
-
-{% if messageReceive == null %}
-    <p class=\"text-center\">Aucun message reçu pour l'instant</p>
-    <div class=\"row d-flex justify-content-center\">
-        <img class=\"robot-sleeping-img\" src=\"{{asset('assets/uploads/custom-pic/robot-sleeping.png')}}\">
-    </div>
-{% else %}
-       {% for message in messageReceive %}
-
-        <div class=\"row card-receiver-message\">
-            <a href=\"{{path('message_discussion_details', {'id': message.sender.id})}}\">
-            <div class=\"row\">
-                <div class=\"col d-flex flex-column justify-content-center align-items-center\">
-                    <p class=\"font-control\">{{message.sender.firstName}}</p>
-                    <img class=\"img-card\"src=\"{{asset('assets/uploads/profilePicture/') ~ message.sender.profile_picture}}\"/>
-                </div>
-                <div class=\"col d-flex  flex-column justify-content-center\">
-                <span class=\"d-inline-block message-font-control text-truncate\" style=\"max-width: 150px;\">
-                    {{message.content}}
-                </span>
-                </div>
-                <div class=\"col d-flex justify-content-end align-items-center font-control fas fa-chevron-right message-font-control\"></div>
-            </div>
-               <span class=\"d-inline-block message-font-control d-flex justify-content-between\">
-                   <div></div>
-                   <div>  {{message.sendAt|date('d M H i')}} </div>
-                </span>
-            </a>
+    {% if messageReceive == null %}
+        <p class=\"text-center\">Aucun message reçu pour l'instant</p>
+        <div class=\"row d-flex justify-content-center\">
+            <img class=\"robot-sleeping-img\" src=\"{{asset('assets/uploads/custom-pic/robot-sleeping.png')}}\">
         </div>
-         
+    {% else %}
+        {% for message in messageReceive %}
+            <div class=\"row card-receiver-message\">
+                <a href=\"{{path('message_discussion_details', {'id': message.sender.id})}}\">
+                <div class=\"row\">
+                    <div class=\"col d-flex flex-column justify-content-center align-items-center\">
+                        <p class=\"font-control\">{{message.sender.firstName}}</p>
+                        <img class=\"img-card\"src=\"{{asset('assets/uploads/profilePicture/') ~ message.sender.profile_picture}}\"/>
+                    </div>
+                    <div class=\"col d-flex  flex-column justify-content-center\">
+                    <span class=\"d-inline-block message-font-control text-truncate\" style=\"max-width: 150px;\">
+                        {{message.content}}
+                    </span>
+                    </div>
+                    <div class=\"col d-flex justify-content-end align-items-center font-control fas fa-chevron-right message-font-control\"></div>
+                </div>
+                <span class=\"d-inline-block message-font-control d-flex justify-content-between\">
+                    <div></div>
+                    <div>  {{message.sendAt|date('d M H i')}} </div>
+                    </span>
+                </a>
+            </div>
         {% endfor %}
-{% endif %}
+    {% endif %}
+</div>
 
 
 {% endblock %}

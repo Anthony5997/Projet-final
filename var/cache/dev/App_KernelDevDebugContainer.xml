@@ -355,6 +355,13 @@
         <argument type="service" id=".service_locator.5nX7ca3.App\Controller\BookingController"/>
       </call>
     </service>
+    <service id="App\Controller\ContactController" class="App\Controller\ContactController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.5nX7ca3.App\Controller\ContactController"/>
+      </call>
+    </service>
     <service id="App\Controller\HomeController" class="App\Controller\HomeController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -5383,6 +5390,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\BookingController" class="App\Controller\BookingController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\BookingController" class="App\Controller\BookingController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\BookingController" class="App\Controller\BookingController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ContactController" class="App\Controller\ContactController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ContactController" class="App\Controller\ContactController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ContactController" class="App\Controller\ContactController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5819,6 +5829,12 @@
         <argument key="booking" type="service_closure" id=".errored..service_locator.v3bldx6.App\Entity\Booking"/>
       </argument>
     </service>
+    <service id=".service_locator.CpaXrFh" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="mailer" type="service_closure" id="mailer.mailer"/>
+      </argument>
+    </service>
     <service id=".service_locator.PFPujJk" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5998,7 +6014,7 @@
         <argument key="vehicule" type="service_closure" id=".errored..service_locator.0J1782j.App\Entity\Vehicule"/>
       </argument>
     </service>
-    <service id=".service_locator.ob3y_EV" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.YVZt_Ko" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AdminController::index" type="service_closure" id=".service_locator.LBu8vn5"/>
@@ -6009,6 +6025,7 @@
         <argument key="App\Controller\BookingController::delete" type="service_closure" id=".service_locator.v3bldx6"/>
         <argument key="App\Controller\BookingController::index" type="service_closure" id=".service_locator.ENco2Qi"/>
         <argument key="App\Controller\BookingController::new" type="service_closure" id=".service_locator.DpceKts"/>
+        <argument key="App\Controller\ContactController::sendEmail" type="service_closure" id=".service_locator.CpaXrFh"/>
         <argument key="App\Controller\HomeController::index" type="service_closure" id=".service_locator.PFPujJk"/>
         <argument key="App\Controller\MessageController::delete" type="service_closure" id=".service_locator.N8sf8v1"/>
         <argument key="App\Controller\MessageController::detail" type="service_closure" id=".service_locator.8omtK4t"/>
@@ -6065,6 +6082,7 @@
         <argument key="App\Controller\BookingController:delete" type="service_closure" id=".service_locator.v3bldx6"/>
         <argument key="App\Controller\BookingController:index" type="service_closure" id=".service_locator.ENco2Qi"/>
         <argument key="App\Controller\BookingController:new" type="service_closure" id=".service_locator.DpceKts"/>
+        <argument key="App\Controller\ContactController:sendEmail" type="service_closure" id=".service_locator.CpaXrFh"/>
         <argument key="App\Controller\HomeController:index" type="service_closure" id=".service_locator.PFPujJk"/>
         <argument key="App\Controller\MessageController:delete" type="service_closure" id=".service_locator.N8sf8v1"/>
         <argument key="App\Controller\MessageController:detail" type="service_closure" id=".service_locator.8omtK4t"/>
@@ -6446,6 +6464,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.5nX7ca3" method="withContext"/>
     </service>
+    <service id=".service_locator.5nX7ca3.App\Controller\ContactController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ContactController"/>
+      <argument>App\Controller\ContactController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.5nX7ca3" method="withContext"/>
+    </service>
     <service id=".service_locator.5nX7ca3.App\Controller\HomeController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\HomeController"/>
       <argument>App\Controller\HomeController</argument>
@@ -6665,12 +6689,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.ob3y_EV"/>
+      <argument type="service" id=".service_locator.YVZt_Ko"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.ob3y_EV"/>
+      <argument type="service" id=".service_locator.YVZt_Ko"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -7106,7 +7130,7 @@
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.Kbr2i2X" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.ob3y_EV"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.YVZt_Ko"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

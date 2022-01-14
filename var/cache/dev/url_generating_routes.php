@@ -26,6 +26,7 @@ return [
     'booking_index' => [[], ['_controller' => 'App\\Controller\\BookingController::index'], [], [['text', '/booking/']], [], []],
     'booking_new' => [['id'], ['_controller' => 'App\\Controller\\BookingController::new'], [], [['text', '/new'], ['variable', '/', '[^/]++', 'id', true], ['text', '/booking']], [], []],
     'booking_delete' => [['id'], ['_controller' => 'App\\Controller\\BookingController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/booking']], [], []],
+    'contact' => [[], ['_controller' => 'App\\Controller\\ContactController::index'], [], [['text', '/contact']], [], []],
     'home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], []],
     'message_index' => [[], ['_controller' => 'App\\Controller\\MessageController::index'], [], [['text', '/message/']], [], []],
     'message_new' => [['id'], ['_controller' => 'App\\Controller\\MessageController::new'], [], [['text', '/new'], ['variable', '/', '[^/]++', 'id', true], ['text', '/message']], [], []],

@@ -7,53 +7,6 @@
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
-
-{# 
-     <ul class="nav nav-tabs" role="tablist">
-          <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#tabs-trip" role="tab">Derniers utilisateurs inscrit</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#tabs-user" role="tab">Derniers Trajets publier</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">Derniers avis laissé</a>
-            </li>
-        </ul>
-
-
-        <div class="tab-content">
-            <div class="tab-pane active" id="tabs-trip" role="tabpanel">
-               <div class="container">
-                  Les 20 derniers utilisateurs inscrit
-                    {% for user in allUser %}
-                <div class="container my-3">
-                        <div>{{user.firstName}}</div>
-                        <div>{{user.lastName}}</div>
-                        <div>{{user.createdAt|date("d M Y")}}</div>
-                </div>
-                    {% endfor %}
-                </div>
-            </div>
-            <div class="tab-pane" id="tabs-user" role="tabpanel">
-                <div class="container profile-section">
-                        Les 20 derniers trajets publié
-                    {% for trip in allTrip %}
-                    <div class="container my-3">
-                        <div>{{trip.departure}} -> {{trip.arrival}} le {{trip.dateOfTrip|date("d M Y")}} </div>
-                        <div> à {{trip.startTime|date("H:i")}} </div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-            <div class="tab-pane" id="tabs-3" role="tabpanel">
-                <div class="container profile-section">
-           
-                </div>
-            </div>
-        </div> #}
-
-
 <div class="app-container mt-4">
   <div class="app-header">
     <div class="app-header-left">
@@ -256,3 +209,7 @@
 </div>
 
 {% endblock %}
+{% block javascripts %}
+    <script src="{{asset('assets/js/adminPannel.js')}}"></script>
+{% endblock %}
+
